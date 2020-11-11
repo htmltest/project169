@@ -1,5 +1,13 @@
 $(document).ready(function() {
 
+    $('.page-link').click(function(e) {
+        var curBlock = $(this.hash);
+        if (curBlock.length == 1) {
+            $('html, body').animate({'scrollTop': curBlock.offset().top});
+            e.preventDefault();
+        }
+    });
+
     $('.header-search-link').click(function(e) {
         $('html').addClass('header-search-open');
         e.preventDefault();
