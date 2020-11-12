@@ -41,6 +41,7 @@ ol ol li::before {content:counter(point)'.'counter(subpoint); counter-increment:
 blockquote {margin:40px 0; padding:0 0 0 20px; font-size:16px; line-height:24px; border-left:3px solid #504f4f}
 .blockquote-author {color:#000; margin:20px 0 0 0}
 .small-text {margin:40px 0; color:#000; font-size:14px; line-height:21px}
+hr {margin:50px 0; height:1px; border:none; background:#c4c4c4}
 
 .wrapper table {width:100%; margin:40px 0; border-collapse:collapse}
 .wrapper th {vertical-align:middle; padding:0 0 21px 40px; font-weight:normal; font-size:16px; line-height:24px; letter-spacing:0.05em; text-transform:uppercase; color:#000}
@@ -334,6 +335,7 @@ nav ul li ul li a:hover::before {transform:scale(1, 1)}
 .news-filter a.active {background:#000; color:#fff}
 
 .news {font-size:0; line-height:0; letter-spacing:-1px; margin:40px -10px -40px -10px}
+.main-block .archive-card-video-big+.news {margin-top:60px}
 .news-item {display:inline-block; vertical-align:top; width:25%; padding:0 10px 40px 10px}
 .news-item a {display:block; text-decoration:none}
 .news-item-preview img {display:block; width:100%}
@@ -351,6 +353,24 @@ nav ul li ul li a:hover::before {transform:scale(1, 1)}
 .news-item-big .news-item-date span {position:absolute; left:100%; top:0; display:block; margin-left:14px; height:29px; padding:0 10px}
 .news-item-type-forum {background:#686ee9; color:#fff}
 .news-item-type-fest {background:#ffde4f; color:#000}
+
+.news-detail {margin:-30px auto 0 auto; max-width:770px}
+.news-detail-top {text-align:center; color:#000; text-transform:uppercase; line-height:18px}
+.news-detail-tag {font-weight:600; margin:0 0 0 13px}
+.news-detail-header {margin:30px 0 0 0; font-weight:bold; font-size:30px; line-height:42px; color:#000; text-align:center}
+.news-detail-social {margin:30px 0 0 0; text-align:center}
+.news-detail-social-links {margin:8px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px}
+.news-detail-social-links a {display:inline-block; vertical-align:top; width:30px; height:30px; margin:0 0 0 20px}
+.news-detail-social-links a:first-child {margin:0}
+.news-detail-social-links a svg {display:block; width:30px; height:30px; fill:#000; transition:fill 0.2s; border-radius:50%}
+.news-detail-social-links a:hover svg {fill:#ff2f66}
+.news-detail-container {margin:50px 0 0 0}
+
+.news-back-link {margin:40px 0 0 0}
+.news-back-link a {display:inline-block; vertical-align:top; background:#f4f4f4; height:44px; padding:0 20px; text-decoration:none; color:#000; font-weight:500; font-size:12px; line-height:44px; letter-spacing:0.05em; transition:background-color 0.2s; text-transform:uppercase}
+.news-back-link a:hover {color:#ff2f66}
+.news-back-link a span {display:inline-block; vertical-align:middle; margin:-2px 6px 0 0}
+.news-back-link a span svg {display:block; width:13px; height:14px; fill:#25282b}
 
 .speakers-header::after {content:""; display:block; clear:both}
 .speakers-header h1 {float:left; margin:0}
@@ -461,15 +481,16 @@ a.partners-group-item-inner:hover {color:#ff2f66; transform:translateY(-5px)}
 .btn-icon-programm {width:24px; height:24px}
 .btn-icon-image {width:24px; height:24px}
 
-.archive-card-video-big {margin:30px 0 16px 0}
-.archive-card-video-big::after {content:""; display:block; clear:both}
-.archive-card-video-big-preview {float:left; width:50%; padding:0 10px 0 0}
+.archive-card-video-big {margin:30px 0 16px 0; display:table; width:100%}
+.archive-card-video-big-preview {display:table-cell; vertical-align:top; width:50%; padding:0 10px 0 0}
 .archive-card-video-big-preview a {display:block; position:relative}
 .archive-card-video-big-preview a img {display:block; width:100%}
 .archive-card-video-big-preview a:hover .video-gallery-item-preview-icon {background:rgba(0, 0, 0, 0.8)}
-.archive-card-video-big-descr {float:left; width:50%; padding:0 0 0 40px}
+.archive-card-video-big-descr {display:table-cell; vertical-align:middle; width:50%; padding:0 0 0 40px}
 .archive-card-video-big-title {font-weight:600; font-size:30px; line-height:39px; color:#000}
+.archive-card-video-big-title a {text-decoration:none}
 .archive-card-video-big-text {margin:10px 0 0 0}
+.archive-card-video-big-descr .news-detail-top {text-align:left; margin:45px 0 0 0}
 
 .archive-card-fest {margin:120px 0 0 0}
 .archive-card-fest::after {content:""; display:block; clear:both}
@@ -494,6 +515,37 @@ a.partners-group-item-inner:hover {color:#ff2f66; transform:translateY(-5px)}
 .archive-card-winners-item-title {font-weight:600; font-size:22px; line-height:29px; color:#000}
 .archive-card-winners-item-text {margin:4px 0 0 0}
 
+.video-header::after {content:""; display:block; clear:both}
+.video-header h1 {float:left; margin:0}
+.video-ctrl {float:right; margin:7px 0 0 0}
+.video-search {float:left; width:472px}
+.video-search form {margin:0; padding:0; position:relative}
+.video-search-inner {position:relative}
+.video-search-inner .form-input {margin:0}
+.video-search-inner .form-input input {padding-left:15px; padding-right:50px; background:#fff}
+.video-search-submit {position:absolute; right:0; top:0}
+.video-search-submit button {display:block; margin:0; padding:0; overflow:visible; outline:none; width:50px; height:44px; background:transparent; border:none; border-radius:0; position:relative; -webkit-appearance:none; cursor:pointer; box-sizing:border-box}
+.video-search-submit button svg {display:block; position:absolute; left:50%; top:50%; width:26px; height:26px; margin:-13px 0 0 -13px; fill:none; stroke:#b6b6b6; transition:stroke 0.2s}
+.video-search-submit button:hover svg {stroke:#000}
+
+.video-filter {float:left; margin:0 0 0 10px; width:186px; position:relative}
+.video-filter.open {z-index:99}
+.video-filter-current {cursor:pointer; height:44px; padding:0 28px 0 9px; background:#fff; border:1px solid #d9d9d9; font-weight:500; font-size:16px; line-height:42px; text-transform:uppercase; color:#000; position:relative; transition:border-color 0.2s}
+.video-filter-current span {display:block; white-space:nowrap; position:relative; overflow:hidden; text-overflow:ellipsis}
+.video-filter-current span.default {color:#b0b0b0}
+.video-filter-current svg {display:block; position:absolute; right:10px; top:16px; width:12px; height:12px; fill:none; stroke:#5e5e5e}
+.video-filter-current:hover {border-color:#8e8e8e}
+.video-filter-current:active,
+.video-filter.open .video-filter-current {border-color:#000}
+.video-filter ul {display:none; margin:0; padding:0; list-style:none; position:absolute; left:0; top:100%; right:0; max-height:250px; overflow:auto; background:#fdfdfd; border:1px solid #d9d9d9; border-top:none; box-shadow:4px 4px 40px rgba(0, 0, 0, 0.1)}
+.video-filter.open ul {display:block}
+.video-filter ul li {margin:0; padding:0; border-top:1px solid #d9d9d9}
+.video-filter ul li:first-child {border-top:none}
+.video-filter ul li::before {display:none}
+.video-filter ul li a {display:block; padding:7px 9px; font-weight:500; font-size:14px; line-height:21px; text-transform:uppercase; color:#939393; text-decoration:none; transition:background-color 0.2s}
+.video-filter ul li a:hover {background:#f7f7f7}
+.video-filter ul li.active a {color:#000}
+
 .video {margin:20px -10px 0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
 .video-item {display:inline-block; vertical-align:top; width:50%; padding:20px 10px 0 10px}
 .video-item a {display:block; position:relative; text-decoration:none; height:308px; color:#fff}
@@ -517,6 +569,50 @@ a.partners-group-item-inner:hover {color:#ff2f66; transform:translateY(-5px)}
 
 .video-other {margin:129px 0 0 0}
 .video-other h2 {font-size:40px; margin:0; font-weight:900; line-height:40px}
+
+.photo-gallery {font-size:0; line-height:0; letter-spacing:-1px; margin:20px -10px 0 -10px}
+.photo-gallery-item {display:inline-block; vertical-align:top; width:25%}
+.photo-gallery-item-inner {padding:20px 10px 0 10px}
+.photo-gallery-item a {display:block; position:relative}
+.photo-gallery-item a::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%); opacity:0; transition:opacity 0.2s}
+.photo-gallery-item a:hover::after {opacity:0.8}
+.photo-gallery-item img {display:block; width:100%}
+
+.about-forum-welcome {position:relative; padding:94px 0 89px 0}
+.about-forum-welcome-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
+.about-forum-welcome-bg::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#000; opacity:0.7}
+.about-forum-welcome-container h1 {float:left; width:50%; margin:0; color:#fff; position:relative}
+.about-forum-welcome-text {float:right; width:50%; font-weight:500; font-size:30px; line-height:39px; color:#fff; position:relative}
+.about-forum-welcome-digits {padding:60px 0 0 0; position:relative}
+.about-forum-welcome-digit {float:left; padding:0 0 0 40px; width:25%; position:relative}
+.about-forum-welcome-digit::before {content:""; display:block; position:absolute; left:0; top:14px; width:1px; bottom:9px; background:#c4c4c4}
+.about-forum-welcome-digit:first-child {padding:0}
+.about-forum-welcome-digit:first-child::before {display:none}
+.about-forum-welcome-digit-value {font-weight:bold; font-size:64px; line-height:83px; color:#ff2f66}
+.about-forum-welcome-digit-text {font-size:20px; line-height:30px; color:#fff}
+
+.about-forum {margin:75px 0 0 0}
+.about-forum::after {content:""; display:block; clear:both}
+.about-forum-info {float:left; width:50%; padding:0 107px 0 0}
+.about-forum-info-text {font-weight:500; font-size:22px; line-height:33px; color:#000}
+.about-forum-info-logo {line-height:0; margin:68px 0 0 -19px}
+.about-forum-text {float:right; width:50%; padding:0 0 0 10px}
+.about-forum-text > *:first-child {margin-top:0}
+.about-forum-text > *:last-child {margin-bottom:0}
+
+.press-about::after {content:""; display:block; clear:both}
+.press-about h1 {float:left; clear:left; width:50%; margin:0}
+.press-about-text {float:right; clear:right; width:50%}
+.press-about-text-1 {font-weight:500; font-size:30px; line-height:39px; color:#000}
+.press-about-text-2 {margin:20px 0 0 0}
+.press-about-contacts {float:left; clear:left; width:50%; padding:130px 0 0 0}
+.press-about-contacts-title {font-size:22px; line-height:31px; font-weight:500; color:#000}
+.press-about-contacts-text {margin:10px 0 0 0}
+.press-about-contacts-btn {margin:30px 0 0 0}
+
+.photo-gallery-more {margin:30px 0 0 0}
+.photo-gallery-more a {display:block; height:60px; background:#f4f4f4; text-align:center; text-decoration:none; text-transform:uppercase; color:#717171; font-size:14px; line-height:60px; letter-spacing:0.05em}
+.photo-gallery-more a:hover {color:#000}
 
 .prefooter {margin:60px 0 0 0; border-top:1px solid #e7e7e7; padding:18px 0; font-size:14px; line-height:14px}
 

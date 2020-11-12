@@ -87,6 +87,29 @@
 
                     <div class="video-header">
                         <h1>Видеоархив</h1>
+                        <div class="video-ctrl">
+                            <div class="video-search">
+                                <form action="#" method="post">
+                                    <div class="video-search-inner">
+                                        <div class="form-input"><input type="text" name="search" value="" placeholder="ПОИСК" class="required" /></div>
+                                        <div class="video-search-submit"><button><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="video-filter">
+                                <div class="video-filter-current"><span class="default">Год</span><svg><use xlink:href="images/sprite.svg#select-arrow"></use></svg></div>
+                                <ul>
+                                    <li><a href="#">2020</a></li>
+                                    <li><a href="#">2019</a></li>
+                                    <li><a href="#">2018</a></li>
+                                    <li><a href="#">2017</a></li>
+                                    <li><a href="#">2016</a></li>
+                                    <li><a href="#">2015</a></li>
+                                    <li><a href="#">2014</a></li>
+                                    <li><a href="#">2013</a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- video -->
@@ -279,6 +302,7 @@
         <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/slick/slick.min.js"></script>
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
         <script src="js/tools.js"></script>
 
     </body>
