@@ -99,203 +99,292 @@
                         </div>
                     </div>
 
-                    <!-- speakers -->
-                    <div class="speakers">
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-01.jpg" alt="" /></div>
-                                <div class="speaker-name">Эдвард Глейзер</div>
-                                <div class="speaker-text">Профессор экономики им. Фреда и Элеоноры Глимп, директор Центра государственного и местного управления им. Таубмана и Института Большого Бостона им. Раппапорта в Гарвардском университете</div>
-                            </a>
+                    <!-- speakers page -->
+                    <div class="speakers-page">
+
+                        <!-- speakers filter -->
+                        <div class="speakers-filter">
+                            <form action="ajax/speakers.html" method="post">
+                                <!-- speakers filter group -->
+                                <div class="speakers-filter-group">
+                                    <div class="speakers-filter-group-header">Секции программы<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
+                                    <div class="speakers-filter-group-container">
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="section1" /><span>Ток-шоу</span><strong>91</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="section2" /><span>Панельная дискуссия</span><strong>2</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="section3" /><span>Круглый стол</span><strong>21</strong></label></div>
+                                        <div class="speakers-filter-group-all"><a href="#"><span>еще <em></em></span><span>свернуть</span></a></div>
+                                    </div>
+                                </div>
+                                <!-- speakers filter group END -->
+
+                                <!-- speakers filter group -->
+                                <div class="speakers-filter-group">
+                                    <div class="speakers-filter-group-header">День мероприятия<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
+                                    <div class="speakers-filter-group-container">
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date1" /><span>1 июля 2021</span><strong>91</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date2" /><span>2 июля 2021</span><strong>2</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date3" /><span>3 июля 2021</span><strong>21</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date4" /><span>4 июля 2021</span><strong>33</strong></label></div>
+                                        <div class="speakers-filter-group-all"><a href="#"><span>еще <em></em></span><span>свернуть</span></a></div>
+                                    </div>
+                                </div>
+                                <!-- speakers filter group END -->
+
+                                <!-- speakers filter group -->
+                                <div class="speakers-filter-group open">
+                                    <div class="speakers-filter-group-header">Категории спикера<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
+                                    <div class="speakers-filter-group-container">
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="category1" /><span>Чиновники</span><strong>91</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="category2" /><span>Бизнес</span><strong>2</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="category3" /><span>Эксперты</span><strong>21</strong></label></div>
+                                        <div class="speakers-filter-group-all"><a href="#"><span>еще <em></em></span><span>свернуть</span></a></div>
+                                    </div>
+                                </div>
+                                <!-- speakers filter group END -->
+
+                                <!-- speakers filter group -->
+                                <div class="speakers-filter-group open">
+                                    <div class="speakers-filter-group-header">Страна<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
+                                    <div class="speakers-filter-group-container">
+                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country1" /><span><em><img src="files/flags/Russia.png" alt="" /></em>Россия</span><strong>13</strong></label></div>
+                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country2" checked="checked" /><span><em><img src="files/flags/United-Kingdom.png" alt="" /></em>Англия</span><strong>44</strong></label></div>
+                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country3" /><span><em><img src="files/flags/Spain.png" alt="" /></em>Испания</span><strong>9</strong></label></div>
+                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country4" /><span><em><img src="files/flags/Ukraine.png" alt="" /></em>Украина</span><strong>3</strong></label></div>
+                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country5" checked="checked" /><span><em><img src="files/flags/Belarus.png" alt="" /></em>Белорусия</span><strong>1</strong></label></div>
+                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country6" /><span><em><img src="files/flags/France.png" alt="" /></em>Франция</span><strong>57</strong></label></div>
+                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country7" /><span><em><img src="files/flags/Turkey.png" alt="" /></em>Турция</span><strong>33</strong></label></div>
+                                        <div class="speakers-filter-group-all"><a href="#"><span>еще <em></em></span><span>свернуть</span></a></div>
+                                    </div>
+                                </div>
+                                <!-- speakers filter group END -->
+
+                                <div class="speakers-filter-reset"><a href="#">Сбросить</a></div>
+                            </form>
                         </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-02.jpg" alt="" /></div>
-                                <div class="speaker-name">Илариа Капуа</div>
-                                <div class="speaker-text">Вирусолог, Университет Флориды</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-03.jpg" alt="" /></div>
-                                <div class="speaker-name">Эллисон Арвади</div>
-                                <div class="speaker-text">Комиссар Департамента общественного здравоохранения Чикаго, США</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-04.jpg" alt="" /></div>
-                                <div class="speaker-name">Пьеро Пелиццаро</div>
-                                <div class="speaker-text">Директор по вопросам устойчивости, Милан</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-05.jpg" alt="" /></div>
-                                <div class="speaker-name">Саду А. Джонстон</div>
-                                <div class="speaker-text">Сити-менеджер, Ванкувер; бывший главный инспектор по экологии, Чикаго</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-06.jpg" alt="" /></div>
-                                <div class="speaker-name">Майкл Беркович</div>
-                                <div class="speaker-text">Со-основатель, Resilient City Catalyst</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-07.jpg" alt="" /></div>
-                                <div class="speaker-name">Ян Гейл</div>
-                                <div class="speaker-text">Основатель, Gehl Architects</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-08.jpg" alt="" /></div>
-                                <div class="speaker-name">Грег Линдси</div>
-                                <div class="speaker-text">Руководитель направления «Мобильность», NewCities Foundation</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-09.jpg" alt="" /></div>
-                                <div class="speaker-name">Уильям Чилтон</div>
-                                <div class="speaker-text">Со-основатель, Pickard Chilton</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-10.jpg" alt="" /></div>
-                                <div class="speaker-name">Сладжин Паракатил</div>
-                                <div class="speaker-text">Руководитель подразделения рейтинга городов с самым высоким качеством жизни, Mercer</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-11.jpg" alt="" /></div>
-                                <div class="speaker-name">Нильс Лунд</div>
-                                <div class="speaker-text">Глава программы Cities Changing Diabetes, вице-президент по вопросам защиты прав в сфере здравоохранения, Novo Nordisk</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-12.jpg" alt="" /></div>
-                                <div class="speaker-name">Тим Стонор</div>
-                                <div class="speaker-text">Управляющий директор, Space Syntax UK</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-13.jpg" alt="" /></div>
-                                <div class="speaker-name">Майкл Кох</div>
-                                <div class="speaker-text">Исполнительный партнер, Centre for Liveable Cities</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-14.jpg" alt="" /></div>
-                                <div class="speaker-name">Артур Хуан</div>
-                                <div class="speaker-text">Сооснователь и генеральный директор, MINIWIZ</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-15.jpg" alt="" /></div>
-                                <div class="speaker-name">Чарльз Монтгомери</div>
-                                <div class="speaker-text">Автор книги “Счастливый город”, основатель, Happy City</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-16.jpg" alt="" /></div>
-                                <div class="speaker-name">Ларри Бисли</div>
-                                <div class="speaker-text">Экс-директор по городскому планированию Ванкувера, автор книги “Vancouverism”</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-17.jpg" alt="" /></div>
-                                <div class="speaker-name">Карен Ли</div>
-                                <div class="speaker-text">Директор по городской недвижимости Нью-Йоркского Департамента здоровья и ментальной гигиены; ассоциированный профессор в Университете Альберты</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-18.jpg" alt="" /></div>
-                                <div class="speaker-name">Гил Пеньялоса</div>
-                                <div class="speaker-text">Основатель, 8 80 Cities; амбассадор, World Urban Parks (Канада)</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-19.jpg" alt="" /></div>
-                                <div class="speaker-name">Итай Палти</div>
-                                <div class="speaker-text">Директор, Hume; директор, Центр когнитивного дизайна</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-20.jpg" alt="" /></div>
-                                <div class="speaker-name">Кейт Шурети</div>
-                                <div class="speaker-text">И.о. исполнительного директора, Campaign to End Loneliness</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-21.jpg" alt="" /></div>
-                                <div class="speaker-name">Дэвид Напье</div>
-                                <div class="speaker-text">Профессор медицинской антропологии, Университетский колледж Лондона</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-22.jpg" alt="" /></div>
-                                <div class="speaker-name">Майкл Чанг</div>
-                                <div class="speaker-text">Директор программы “Планирование и здравоохранение”, Public Health England</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-23.jpg" alt="" /></div>
-                                <div class="speaker-name">Хелен Пинео</div>
-                                <div class="speaker-text">Преподаватель по устойчивой и здоровой городской среде, Школа Бартлетта окружающей среды, энергетики и ресурсов, Факультет искусственной среды</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-24.jpg" alt="" /></div>
-                                <div class="speaker-name">Том Райт</div>
-                                <div class="speaker-text">Президент и генеральный директор, Regional Plan Association</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <a href="#" class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-25.jpg" alt="" /></div>
-                                <div class="speaker-name">Чон Кун Хин</div>
-                                <div class="speaker-text">Генеральный директор, Совет по жилью и развитию, Сингапур</div>
-                            </a>
-                        </div>
-                        <div class="speaker">
-                            <div class="speaker-inner">
-                                <div class="speaker-photo"><img src="files/speaker-26.jpg" alt="" /></div>
-                                <div class="speaker-name">Моника Косинска</div>
-                                <div class="speaker-text">Руководитель, программа «Здоровые города», ВОЗ</div>
+                        <!-- speakers filter END -->
+
+                        <!-- speakers container -->
+                        <div class="speakers-container">
+                            <div class="speakers-content">
+
+                                <!-- speakers -->
+                                <div class="speakers">
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-01.jpg" alt="" /></div>
+                                            <div class="speaker-name">Эдвард Глейзер</div>
+                                            <div class="speaker-text">Профессор экономики им. Фреда и Элеоноры Глимп, директор Центра государственного и местного управления им. Таубмана и Института Большого Бостона им. Раппапорта в Гарвардском университете</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-02.jpg" alt="" /></div>
+                                            <div class="speaker-name">Илариа Капуа</div>
+                                            <div class="speaker-text">Вирусолог, Университет Флориды</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-03.jpg" alt="" /></div>
+                                            <div class="speaker-name">Эллисон Арвади</div>
+                                            <div class="speaker-text">Комиссар Департамента общественного здравоохранения Чикаго, США</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-04.jpg" alt="" /></div>
+                                            <div class="speaker-name">Пьеро Пелиццаро</div>
+                                            <div class="speaker-text">Директор по вопросам устойчивости, Милан</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-05.jpg" alt="" /></div>
+                                            <div class="speaker-name">Саду А. Джонстон</div>
+                                            <div class="speaker-text">Сити-менеджер, Ванкувер; бывший главный инспектор по экологии, Чикаго</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-06.jpg" alt="" /></div>
+                                            <div class="speaker-name">Майкл Беркович</div>
+                                            <div class="speaker-text">Со-основатель, Resilient City Catalyst</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-07.jpg" alt="" /></div>
+                                            <div class="speaker-name">Ян Гейл</div>
+                                            <div class="speaker-text">Основатель, Gehl Architects</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-08.jpg" alt="" /></div>
+                                            <div class="speaker-name">Грег Линдси</div>
+                                            <div class="speaker-text">Руководитель направления «Мобильность», NewCities Foundation</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-09.jpg" alt="" /></div>
+                                            <div class="speaker-name">Уильям Чилтон</div>
+                                            <div class="speaker-text">Со-основатель, Pickard Chilton</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-10.jpg" alt="" /></div>
+                                            <div class="speaker-name">Сладжин Паракатил</div>
+                                            <div class="speaker-text">Руководитель подразделения рейтинга городов с самым высоким качеством жизни, Mercer</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-11.jpg" alt="" /></div>
+                                            <div class="speaker-name">Нильс Лунд</div>
+                                            <div class="speaker-text">Глава программы Cities Changing Diabetes, вице-президент по вопросам защиты прав в сфере здравоохранения, Novo Nordisk</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-12.jpg" alt="" /></div>
+                                            <div class="speaker-name">Тим Стонор</div>
+                                            <div class="speaker-text">Управляющий директор, Space Syntax UK</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-13.jpg" alt="" /></div>
+                                            <div class="speaker-name">Майкл Кох</div>
+                                            <div class="speaker-text">Исполнительный партнер, Centre for Liveable Cities</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-14.jpg" alt="" /></div>
+                                            <div class="speaker-name">Артур Хуан</div>
+                                            <div class="speaker-text">Сооснователь и генеральный директор, MINIWIZ</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-15.jpg" alt="" /></div>
+                                            <div class="speaker-name">Чарльз Монтгомери</div>
+                                            <div class="speaker-text">Автор книги “Счастливый город”, основатель, Happy City</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-16.jpg" alt="" /></div>
+                                            <div class="speaker-name">Ларри Бисли</div>
+                                            <div class="speaker-text">Экс-директор по городскому планированию Ванкувера, автор книги “Vancouverism”</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-17.jpg" alt="" /></div>
+                                            <div class="speaker-name">Карен Ли</div>
+                                            <div class="speaker-text">Директор по городской недвижимости Нью-Йоркского Департамента здоровья и ментальной гигиены; ассоциированный профессор в Университете Альберты</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-18.jpg" alt="" /></div>
+                                            <div class="speaker-name">Гил Пеньялоса</div>
+                                            <div class="speaker-text">Основатель, 8 80 Cities; амбассадор, World Urban Parks (Канада)</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-19.jpg" alt="" /></div>
+                                            <div class="speaker-name">Итай Палти</div>
+                                            <div class="speaker-text">Директор, Hume; директор, Центр когнитивного дизайна</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-20.jpg" alt="" /></div>
+                                            <div class="speaker-name">Кейт Шурети</div>
+                                            <div class="speaker-text">И.о. исполнительного директора, Campaign to End Loneliness</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-21.jpg" alt="" /></div>
+                                            <div class="speaker-name">Дэвид Напье</div>
+                                            <div class="speaker-text">Профессор медицинской антропологии, Университетский колледж Лондона</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-22.jpg" alt="" /></div>
+                                            <div class="speaker-name">Майкл Чанг</div>
+                                            <div class="speaker-text">Директор программы “Планирование и здравоохранение”, Public Health England</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-23.jpg" alt="" /></div>
+                                            <div class="speaker-name">Хелен Пинео</div>
+                                            <div class="speaker-text">Преподаватель по устойчивой и здоровой городской среде, Школа Бартлетта окружающей среды, энергетики и ресурсов, Факультет искусственной среды</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-24.jpg" alt="" /></div>
+                                            <div class="speaker-name">Том Райт</div>
+                                            <div class="speaker-text">Президент и генеральный директор, Regional Plan Association</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <a href="#" class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-25.jpg" alt="" /></div>
+                                            <div class="speaker-name">Чон Кун Хин</div>
+                                            <div class="speaker-text">Генеральный директор, Совет по жилью и развитию, Сингапур</div>
+                                        </a>
+                                    </div>
+                                    <div class="speaker">
+                                        <div class="speaker-inner">
+                                            <div class="speaker-photo"><img src="files/speaker-26.jpg" alt="" /></div>
+                                            <div class="speaker-name">Моника Косинска</div>
+                                            <div class="speaker-text">Руководитель, программа «Здоровые города», ВОЗ</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- speakers END -->
+
+                                <div class="pager">
+                                    <a href="#" class="pager-prev" data-value="prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
+                                    <a href="#" class="active" data-value="1">1</a>
+                                    <a href="#" data-value="2">2</a>
+                                    <a href="#" data-value="3">3</a>
+                                    <span>...</span>
+                                    <a href="#" data-value="12">12</a>
+                                    <a href="#" data-value="13">13</a>
+                                    <a href="#" data-value="14">14</a>
+                                    <a href="#" class="pager-next" data-value="next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                                </div>
+
                             </div>
                         </div>
-                    </div>
-                    <!-- speakers END -->
+                        <!-- speakers container -->
 
-                    <div class="pager">
-                        <a href="#" class="pager-prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
-                        <a href="#" class="active">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <span>...</span>
-                        <a href="#">12</a>
-                        <a href="#">13</a>
-                        <a href="#">14</a>
-                        <a href="#" class="pager-next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                    </div>
+                    <!-- speakers page -->
+
+                    <div class="speakers-years">
+                        <div class="speakers-years-inner">
+                            <div class="speakers-years-item">
+                                <a href="#">Спикеры <strong>2018</strong></a>
+                            </div>
+                            <div class="speakers-years-item">
+                                <a href="#">Спикеры <strong>2017</strong></a>
+                            </div>
+                            <div class="speakers-years-item">
+                                <a href="#">Спикеры <strong>2016</strong></a>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
