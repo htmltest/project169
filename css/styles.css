@@ -1499,8 +1499,8 @@ footer {margin:60px 0 0 0}
 .analytics-team-next:hover {border-color:#000}
 
 @media screen and (max-width:1199px) {
-    .analytics-team-prev {margin-left:-230px}
-    .analytics-team-next {margin-left:190px}
+    .analytics-team-prev {margin-left:-230px; opacity:0.5}
+    .analytics-team-next {margin-left:190px; opacity:0.5}
 }
 
 .window-analytics-news-container {padding:30px 30px 42px 30px}
