@@ -193,4 +193,8 @@
         <path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol viewBox="0 0 20 12" id="up-link">
+        <path d="M18 10L10 2L2 10" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
 </svg>
