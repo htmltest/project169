@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -84,70 +85,76 @@
             <!-- welcome -->
             <div class="welcome">
                 <div class="welcome-slider">
-                    <div class="welcome-slider-item">
+                    <div class="welcome-slider-item archive-card-slider-type-1">
                         <div class="welcome-slider-item-container">
-                            <div class="welcome-slider-item-bg" style="background-image:url(files/welcome.jpg)"></div>
-                            <div class="container">
-                                <div class="welcome-slider-item-city">
-                                    <div class="welcome-slider-item-city-logo"><img src="files/welcome-logo.png" alt="" /></div>
-                                    <div class="welcome-slider-item-city-title">Проект<br /> правительства<br /> Москвы</div>
-                                </div>
-                                <div class="welcome-slider-item-title">Качество жизни.<br /> Проекты, меняющие<br /> города</div>
-                                <div class="welcome-slider-item-date">1-4 июля 2021</div>
-                                <div class="welcome-slider-item-place">Зарядье</div>
+                            <div class="welcome-slider-item-bg" style="background-image:url(files/archive-card-slider-2019.jpg)"></div>
+                            <div class="archive-card-slider-content">
+                                <div class="archive-card-slider-item-theme">Тема 2019</div>
+                                <div class="archive-card-slider-item-title">Качество жизни.<br /> Проекты, меняющие<br /> города</div>
                             </div>
                         </div>
                     </div>
-                    <div class="welcome-slider-item">
+                    <div class="welcome-slider-item archive-card-slider-type-2">
                         <div class="welcome-slider-item-container">
-                            <div class="welcome-slider-item-bg" style="background-image:url(files/welcome.jpg)"></div>
-                            <div class="container">
-                                <div class="welcome-slider-item-city">
-                                    <div class="welcome-slider-item-city-logo"><img src="files/welcome-logo.png" alt="" /></div>
-                                    <div class="welcome-slider-item-city-title">Проект<br /> правительства<br /> Москвы</div>
-                                </div>
-                                <div class="welcome-slider-item-title">Качество жизни.<br /> Проекты, меняющие<br /> города</div>
-                                <div class="welcome-slider-item-date">1-4 июля 2021</div>
-                                <div class="welcome-slider-item-place">Зарядье</div>
+                            <div class="welcome-slider-item-bg" style="background-image:url(files/archive-card-slider-2018.jpg)"></div>
+                            <div class="archive-card-slider-content">
+                                <div class="archive-card-slider-item-theme">Тема 2018</div>
+                                <div class="archive-card-slider-item-title">Мегаполис будущего.<br /> Новое пространство<br /> для жизни</div>
                             </div>
                         </div>
                     </div>
-                    <div class="welcome-slider-item">
+                    <div class="welcome-slider-item archive-card-slider-type-4">
                         <div class="welcome-slider-item-container">
-                            <div class="welcome-slider-item-bg" style="background-image:url(files/welcome.jpg)"></div>
-                            <div class="container">
-                                <div class="welcome-slider-item-city">
-                                    <div class="welcome-slider-item-city-logo"><img src="files/welcome-logo.png" alt="" /></div>
-                                    <div class="welcome-slider-item-city-title">Проект<br /> правительства<br /> Москвы</div>
-                                </div>
-                                <div class="welcome-slider-item-title">Качество жизни.<br /> Проекты, меняющие<br /> города</div>
-                                <div class="welcome-slider-item-date">1-4 июля 2021</div>
-                                <div class="welcome-slider-item-place">Зарядье</div>
+                            <div class="welcome-slider-item-bg" style="background-image:url(files/archive-card-slider-2017.jpg)"></div>
+                            <div class="archive-card-slider-content">
+                                <div class="archive-card-slider-item-theme">Тема 2017</div>
+                                <div class="archive-card-slider-item-title">Эпоха<br /> агломераций.<br /> Новая карта<br /> мира</div>
                             </div>
                         </div>
                     </div>
-                    <div class="welcome-slider-item">
+                    <div class="welcome-slider-item archive-card-slider-type-1">
                         <div class="welcome-slider-item-container">
-                            <div class="welcome-slider-item-bg" style="background-image:url(files/welcome.jpg)"></div>
-                            <div class="container">
-                                <div class="welcome-slider-item-city">
-                                    <div class="welcome-slider-item-city-logo"><img src="files/welcome-logo.png" alt="" /></div>
-                                    <div class="welcome-slider-item-city-title">Проект<br /> правительства<br /> Москвы</div>
-                                </div>
-                                <div class="welcome-slider-item-title">Качество жизни.<br /> Проекты, меняющие<br /> города</div>
-                                <div class="welcome-slider-item-date">1-4 июля 2021</div>
-                                <div class="welcome-slider-item-place">Зарядье</div>
+                            <div class="welcome-slider-item-bg" style="background-image:url(files/archive-card-slider-2016.jpg)"></div>
+                            <div class="archive-card-slider-content">
+                                <div class="archive-card-slider-item-theme">Тема 2016</div>
+                                <div class="archive-card-slider-item-title">Быстрорастущие<br /> мегаполисы.<br /> Технологии<br /> динамичного<br /> развития</div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="welcome-social">
-                    <div class="container">
-                        <div class="welcome-social-inner">
-                            <div class="welcome-social-item"><a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#icon-fb"></use></svg></a></div>
-                            <div class="welcome-social-item"><a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#icon-instagram"></use></svg></a></div>
-                            <div class="welcome-social-item"><a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#icon-vk"></use></svg></a></div>
-                            <div class="welcome-social-item"><a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#icon-youtube"></use></svg></a></div>
+                    <div class="welcome-slider-item archive-card-slider-type-4">
+                        <div class="welcome-slider-item-container">
+                            <div class="welcome-slider-item-bg" style="background-image:url(files/archive-card-slider-2015.jpg)"></div>
+                            <div class="archive-card-slider-content">
+                                <div class="archive-card-slider-item-theme">Тема 2015</div>
+                                <div class="archive-card-slider-item-title">Москва как<br /> динамичный<br /> мегаполис:<br /> практики гибкого<br /> управления</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome-slider-item archive-card-slider-type-2">
+                        <div class="welcome-slider-item-container">
+                            <div class="welcome-slider-item-bg" style="background-image:url(files/archive-card-slider-2014.jpg)"></div>
+                            <div class="archive-card-slider-content">
+                                <div class="archive-card-slider-item-theme">Тема 2014</div>
+                                <div class="archive-card-slider-item-title">Драйверы развития<br /> мегаполиса</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome-slider-item archive-card-slider-type-1">
+                        <div class="welcome-slider-item-container">
+                            <div class="welcome-slider-item-bg" style="background-image:url(files/archive-card-slider-2013.jpg)"></div>
+                            <div class="archive-card-slider-content">
+                                <div class="archive-card-slider-item-theme">Тема 2013</div>
+                                <div class="archive-card-slider-item-title">Мегаполисы:<br /> развитие<br /> за пределами центра</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="welcome-slider-item archive-card-slider-type-3">
+                        <div class="welcome-slider-item-container">
+                            <div class="welcome-slider-item-bg" style="background-image:url(files/archive-card-slider-2012.jpg)"></div>
+                            <div class="archive-card-slider-content">
+                                <div class="archive-card-slider-item-theme">Тема 2012</div>
+                                <div class="archive-card-slider-item-title">Мегаполис в<br /> масштабе человека</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -778,10 +785,22 @@
                     <div class="archive-others">
                         <div class="archive-other">
                             <a href="#">
-                                <div class="archive-other-bg" style="background-image:url(files/archive-other-1.jpg)"></div>
+                                <div class="archive-other-bg" style="background-image:url(files/archive-other-2019.jpg)"></div>
                                 <div class="archive-other-container">
                                     <div class="archive-other-content">
-                                        <div class="archive-other-title">Moscow Urban Forum 2016</div>
+                                        <div class="archive-other-title">Moscow Urban Forum 2019</div>
+                                        <div class="archive-other-date">17-22 июля 2019</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="archive-other">
+                            <a href="#">
+                                <div class="archive-other-bg" style="background-image:url(files/archive-other-2018.jpg)"></div>
+                                <div class="archive-other-container">
+                                    <div class="archive-other-content">
+                                        <div class="archive-other-title">Moscow Urban Forum 2018</div>
                                         <div class="archive-other-date">17-22 июля 2018</div>
                                     </div>
                                 </div>
@@ -790,11 +809,71 @@
 
                         <div class="archive-other">
                             <a href="#">
-                                <div class="archive-other-bg" style="background-image:url(files/archive-other-2.jpg)"></div>
+                                <div class="archive-other-bg" style="background-image:url(files/archive-other-2017.jpg)"></div>
                                 <div class="archive-other-container">
                                     <div class="archive-other-content">
-                                        <div class="archive-other-title">Moscow Urban Forum 2018</div>
-                                        <div class="archive-other-date">4-5 июля 2019</div>
+                                        <div class="archive-other-title">Moscow Urban Forum 2017</div>
+                                        <div class="archive-other-date">17-22 июля 2017</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="archive-other">
+                            <a href="#">
+                                <div class="archive-other-bg" style="background-image:url(files/archive-other-2016.jpg)"></div>
+                                <div class="archive-other-container">
+                                    <div class="archive-other-content">
+                                        <div class="archive-other-title">Moscow Urban Forum 2016</div>
+                                        <div class="archive-other-date">17-22 июля 2016</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="archive-other">
+                            <a href="#">
+                                <div class="archive-other-bg" style="background-image:url(files/archive-other-2015.jpg)"></div>
+                                <div class="archive-other-container">
+                                    <div class="archive-other-content">
+                                        <div class="archive-other-title">Moscow Urban Forum 2015</div>
+                                        <div class="archive-other-date">17-22 июля 2015</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="archive-other">
+                            <a href="#">
+                                <div class="archive-other-bg" style="background-image:url(files/archive-other-2014.jpg)"></div>
+                                <div class="archive-other-container">
+                                    <div class="archive-other-content">
+                                        <div class="archive-other-title">Moscow Urban Forum 2014</div>
+                                        <div class="archive-other-date">17-22 июля 2014</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="archive-other">
+                            <a href="#">
+                                <div class="archive-other-bg" style="background-image:url(files/archive-other-2013.jpg)"></div>
+                                <div class="archive-other-container">
+                                    <div class="archive-other-content">
+                                        <div class="archive-other-title">Moscow Urban Forum 2013</div>
+                                        <div class="archive-other-date">17-22 июля 2013</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="archive-other">
+                            <a href="#">
+                                <div class="archive-other-bg" style="background-image:url(files/archive-other-2012.jpg)"></div>
+                                <div class="archive-other-container">
+                                    <div class="archive-other-content">
+                                        <div class="archive-other-title">Moscow Urban Forum 2012</div>
+                                        <div class="archive-other-date">17-22 июля 2012</div>
                                     </div>
                                 </div>
                             </a>
@@ -900,6 +979,11 @@
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/masonry.pkgd.min.js"></script>
         <script src="js/clipboard.min.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

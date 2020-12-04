@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -40,7 +41,7 @@
                                 <li><a href="#">Видеоархив</a></li>
                             </ul>
                         </li>
-                        <li class="active"><a href="#"><span>Деловая программа</span></a></li>
+                        <li><a href="#"><span>Деловая программа</span></a></li>
                         <li><a href="#"><span>Спикеры</span></a></li>
                         <li><a href="#"><span>Площадка</span></a></li>
                         <li><a href="#"><span>Премия</span></a></li>
@@ -85,13 +86,87 @@
             <div class="page">
                 <div class="container">
 
+                    <h1>Результаты поиска</h1>
+
+                    <div class="search-form">
+                        <form action="#" method="post">
+                            <div class="search-form-field">
+                                <div class="form-input"><input type="text" name="search" value="Мобильный" class="required" placeholder="Поиск..." /></div>
+                                <div class="form-submit"><button><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                            </div>
+                            <div class="search-form-select">
+                                <div class="form-select">
+                                    <select name="section" data-placeholder="Раздел">
+                                        <option value=""></option>
+                                        <option value="1">О форуме</option>
+                                        <option value="2">Пресс-центр</option>
+                                        <option value="3">Деловая программа</option>
+                                        <option value="4">Спикеры</option>
+                                        <option value="5">Площадка</option>
+                                        <option value="6">Премия</option>
+                                        <option value="7">Партнеры</option>
+                                        <option value="8">Архив</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="search-results">
+                        <div class="search-result">
+                            <div class="search-result-title"><a href="#">MUF Community Awards 2020: Москвичи выбирают лучшие проекты города</a></div>
+                            <div class="search-result-anonce">... Пушкина, Музей Москвы, Политехнический музей, группа “Изозоляция”, концертный зал “Зарядье”, Яндекс.Лавка, Дом Культур на Сретенке, Sportules, <b>Мобильный</b> художественный театр, «VeloMesto», подкасты Arzamas и другие. В экспертное жюри Премии вошли: директор Streа ...</div>
+                            <div class="search-result-path"><a href="#">Партнеры</a> / Ingrad</div>
+                        </div>
+
+                        <div class="search-result">
+                            <div class="search-result-title"><a href="#"><b>Мобильный</b> художественный театр</b></a></div>
+                            <div class="search-result-path">Новости</div>
+                        </div>
+
+                        <div class="search-result">
+                            <div class="search-result-title"><a href="#">Умный город сегодня. Как цифровизация российских городов меняет качество жизни горожан?</a></div>
+                            <div class="search-result-anonce">Цифровые технологии изменили города, объединив горожан в единое информационное поле. Они перевернули наше представление о <b>мобильност</b>и, дали моментальный доступ к множеству услуг и сервисов. Цифровое развитие городов напрямую связывают с качеством жизни в них: ...</div>
+                            <div class="search-result-path">Новости</div>
+                        </div>
+
+                        <div class="search-result">
+                            <div class="search-result-title"><a href="#">MUF Community Awards 2020: Москвичи выбирают лучшие проекты города</a></div>
+                            <div class="search-result-anonce">... Пушкина, Музей Москвы, Политехнический музей, группа “Изозоляция”, концертный зал “Зарядье”, Яндекс.Лавка, Дом Культур на Сретенке, Sportules, <b>Мобильный</b> художественный театр, «VeloMesto», подкасты Arzamas и другие. В экспертное жюри Премии вошли: директор Streа ...</div>
+                            <div class="search-result-path"><a href="#">Партнеры</a> / Ingrad</div>
+                        </div>
+
+                        <div class="search-result">
+                            <div class="search-result-title"><a href="#"><b>Мобильный</b> художественный театр</b></a></div>
+                            <div class="search-result-path">Новости</div>
+                        </div>
+
+                        <div class="search-result">
+                            <div class="search-result-title"><a href="#">Умный город сегодня. Как цифровизация российских городов меняет качество жизни горожан?</a></div>
+                            <div class="search-result-anonce">Цифровые технологии изменили города, объединив горожан в единое информационное поле. Они перевернули наше представление о <b>мобильност</b>и, дали моментальный доступ к множеству услуг и сервисов. Цифровое развитие городов напрямую связывают с качеством жизни в них: ...</div>
+                            <div class="search-result-path">Новости</div>
+                        </div>
+                    </div>
+
+                    <div class="pager">
+                        <a href="#" class="pager-prev"><svg><use xlink:href="images/sprite.svg#pager-prev"></use></svg></a>
+                        <a href="#" class="active">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <span>...</span>
+                        <a href="#">12</a>
+                        <a href="#">13</a>
+                        <a href="#">14</a>
+                        <a href="#" class="pager-next"><svg><use xlink:href="images/sprite.svg#pager-next"></use></svg></a>
+                    </div>
+
                 </div>
             </div>
             <!-- page END -->
 
             <div class="prefooter">
                 <div class="container">
-                    <div class="breadcrumbs"><a href="#">Главная</a> &nbsp;<span>/</span>&nbsp; Деловая программа</div>
+                    <div class="breadcrumbs"><a href="#">Главная</a> &nbsp;<span>/</span>&nbsp; Результаты поиска</div>
                     <div class="sitemap-link"><a href="#">Карта сайта</a></div>
                 </div>
             </div>
@@ -190,6 +265,11 @@
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/masonry.pkgd.min.js"></script>
         <script src="js/clipboard.min.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

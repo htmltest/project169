@@ -607,6 +607,34 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $.validator.addMethod('phoneRU',
+        function(phone_number, element) {
+            return this.optional(element) || phone_number.match(/^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
+        },
+        'Ошибка заполнения'
+    );
+
+    $('form').each(function() {
+        initForm($(this));
+    });
+
+    $('.event-header-text-more a').click(function(e) {
+        $(this).parent().prev().toggleClass('open');
+        e.preventDefault();
+    });
+
+    $('.event-tabs-menu a').click(function(e) {
+        var curItem = $(this).parent();
+        if (!curItem.hasClass('active')) {
+            $('.event-tabs-menu li.active').removeClass('active');
+            curItem.addClass('active');
+            var curIndex = $('.event-tabs-menu li').index(curItem);
+            $('.event-tab.active').removeClass('active');
+            $('.event-tab').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
+    });
+
 });
 
 function filterSpeakers() {
@@ -637,6 +665,14 @@ $(window).on('load resize', function() {
         var curBlock = $(this);
         curBlock.removeClass('open with-more');
         if (curBlock.height() < curBlock.find('.speaker-card-descr-text-inner').height()) {
+            curBlock.addClass('with-more');
+        }
+    });
+
+    $('.event-header-text-container').each(function() {
+        var curBlock = $(this);
+        curBlock.removeClass('open with-more');
+        if (curBlock.height() < curBlock.find('.event-header-text-inner').height()) {
             curBlock.addClass('with-more');
         }
     });
@@ -672,6 +708,36 @@ $(window).on('load resize scroll', function() {
 });
 
 function initForm(curForm) {
+    curForm.find('input.phoneRU').mask('+7 (000) 000-00-00');
+
+    curForm.find('.form-select select').each(function() {
+        var curSelect = $(this);
+        var options = {
+            minimumResultsForSearch: 999
+        }
+        if (curSelect.prop('multiple')) {
+            options['closeOnSelect'] = false;
+        }
+
+        if (curSelect.parents().filter('.window').length == 1) {
+            options['dropdownParent'] = $('.window-content');
+        }
+
+        curSelect.select2(options);
+        curSelect.on('select2:selecting', function (e) {
+            if (curSelect.prop('multiple')) {
+                var $searchfield = $(this).parent().find('.select2-search__field');
+                $searchfield.val('').trigger('focus');
+            }
+        });
+        if (curSelect.find('option:selected').legnth > 0 || curSelect.find('option').legnth == 1 || curSelect.find('option:first').html() != '') {
+            curSelect.trigger({type: 'select2:select'})
+        }
+    });
+
+    curForm.validate({
+        ignore: ''
+    });
 }
 
 function windowOpen(linkWindow, dataWindow) {
