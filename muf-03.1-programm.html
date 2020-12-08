@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8" />
+        <title>Moscow Urban Forum</title>
+
+        <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="js/slick/slick.css" />
+        <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="js/select2/select2.css" />
+
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+
+        <div class="wrapper">
+
+            <header>
+                <div class="logo">
+                    <div class="logo-img"><svg><use xlink:href="images/sprite.svg#logo"></use></svg></div>
+                    <div class="logo-title">MOSCOW URBAN FORUM — крупнейший международный конгресс, посвященный вызовам развития глобальных мегаполисов. Форум проводится ежегодно с 2011 года.</div>
+                    <a href="#"></a>
+                </div>
+
+                <nav class="nav">
+                    <ul>
+                        <li>
+                            <a href="#"><span>О форуме</span><svg><use xlink:href="images/sprite.svg#nav-arrow"></use></svg></a>
+                            <ul>
+                                <li><a href="#">Аналитический центр</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"><span>Пресс-центр</span><svg><use xlink:href="images/sprite.svg#nav-arrow"></use></svg></a>
+                            <ul>
+                                <li><a href="#">Новости</a></li>
+                                <li><a href="#">Фотоархив</a></li>
+                                <li><a href="#">Видеоархив</a></li>
+                            </ul>
+                        </li>
+                        <li class="active"><a href="#"><span>Деловая программа</span></a></li>
+                        <li><a href="#"><span>Спикеры</span></a></li>
+                        <li><a href="#"><span>Площадка</span></a></li>
+                        <li><a href="#"><span>Премия</span></a></li>
+                        <li><a href="#"><span>Партнеры</span></a></li>
+                        <li>
+                            <a href="#"><span>Архив</span><svg><use xlink:href="images/sprite.svg#nav-arrow"></use></svg></a>
+                            <ul>
+                                <li><a href="#">Спикеры всех лет</a></li>
+                                <li><a href="#">Видео</a></li>
+                                <li><a href="#">2019</a></li>
+                                <li><a href="#">2018</a></li>
+                                <li><a href="#">2017</a></li>
+                                <li><a href="#">2016</a></li>
+                                <li><a href="#">2015</a></li>
+                                <li><a href="#">2014</a></li>
+                                <li><a href="#">2013</a></li>
+                                <li><a href="#">2012</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-fest"><a href="#"><span>FEST</span></a></li>
+                    </ul>
+                </nav>
+
+                <div class="header-right">
+                    <a href="#" class="header-lang">EN</a>
+                    <a href="#" class="header-search-link"><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></a>
+                </div>
+
+                <div class="header-search">
+                    <form action="#" method="post">
+                        <div class="header-search-inner">
+                            <div class="form-input"><input type="text" name="search" value="" placeholder="ПОИСК" class="required" /></div>
+                            <div class="header-search-submit"><button><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
+                        </div>
+                        <a href="#" class="header-search-close"><svg><use xlink:href="images/sprite.svg#header-search-close"></use></svg></a>
+                    </form>
+                </div>
+
+            </header>
+
+            <!-- page -->
+            <div class="page">
+                <div class="container">
+
+                    <div class="programm-header">
+                        <h1>Деловая программа MUF&nbsp;2019</h1>
+                        <div class="programm-download"><a href="#" class="btn"><svg class="btn-icon-programm"><use xlink:href="images/sprite.svg#btn-icon-programm"></use></svg>Деловая программа МУФ-2019<span>2.4 Мб</span></a></div>
+                    </div>
+
+                    <div class="programm-ctrl-wrapper">
+                        <div class="programm-ctrl-inner">
+                            <div class="container">
+                                <div class="programm-ctrl">
+                                    <div class="programm-dates">
+                                        <ul>
+                                            <li class="active"><a href="#" data-date="4 июля">4 июля</a></li>
+                                            <li><a href="#" data-date="5 июля">5 июля</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="programm-filter">
+                                        <div class="programm-filter-btn"><a href="#"><svg><use xlink:href="images/sprite.svg#programm-filter"></use></svg>Фильтр</a></div>
+                                        <div class="programm-filter-params">
+                                        </div>
+                                        <div class="programm-filter-window">
+                                            <form action="#" method="post">
+                                                <div class="programm-filter-window-cols">
+                                                    <div class="programm-filter-window-col">
+                                                        <div class="programm-filter-window-block">
+                                                            <div class="programm-filter-window-label">Спикеры</div>
+                                                            <div class="programm-filter-window-select programm-filter-window-select-speakers">
+                                                                <div class="form-select">
+                                                                    <select name="speaker">
+                                                                        <option value="">Все</option>
+                                                                        <option value="Эдвард Глейзер">Эдвард Глейзер</option>
+                                                                        <option value="Илариа Капуа">Илариа Капуа</option>
+                                                                        <option value="Эллисон Арвади">Эллисон Арвади</option>
+                                                                        <option value="Пьеро Пелиццаро">Пьеро Пелиццаро</option>
+                                                                        <option value="Саду А. Джонстон">Саду А. Джонстон</option>
+                                                                        <option value="Майкл Беркович">Майкл Беркович</option>
+                                                                        <option value="Ян Гейл">Ян Гейл</option>
+                                                                        <option value="Грег Линдси">Грег Линдси</option>
+                                                                        <option value="Уильям Чилтон">Уильям Чилтон</option>
+                                                                        <option value="Сладжин Паракатил">Сладжин Паракатил</option>
+                                                                        <option value="Нильс Лунд">Нильс Лунд</option>
+                                                                        <option value="Тим Стонор">Тим Стонор</option>
+                                                                        <option value="Майкл Кох">Майкл Кох</option>
+                                                                        <option value="Артур Хуан">Артур Хуан</option>
+                                                                        <option value="Чарльз Монтгомери">Чарльз Монтгомери</option>
+                                                                        <option value="Ларри Бисли">Ларри Бисли</option>
+                                                                        <option value="Карен Ли">Карен Ли</option>
+                                                                        <option value="Гил Пеньялоса">Гил Пеньялоса</option>
+                                                                        <option value="Итай Палти">Итай Палти</option>
+                                                                        <option value="Кейт Шурети">Кейт Шурети</option>
+                                                                        <option value="Дэвид Напье">Дэвид Напье</option>
+                                                                        <option value="Майкл Чанг">Майкл Чанг</option>
+                                                                        <option value="Хелен Пинео">Хелен Пинео</option>
+                                                                        <option value="Том Райт">Том Райт</option>
+                                                                        <option value="Чон Кун Хин">Чон Кун Хин</option>
+                                                                        <option value="Моника Косинска">Моника Косинска</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="programm-filter-window-block">
+                                                            <div class="programm-filter-window-label">Тип мероприятия</div>
+                                                            <div class="programm-filter-window-checkboxes-wraper">
+                                                                <div class="programm-filter-window-checkboxes programm-filter-window-checkboxes-types">
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="type2" value="2" /><span>#Ток-шоу</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="type3" value="3" /><span>#Панельная дискуссия</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="type4" value="4" /><span>#Мастер-класс</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="type5" value="5" /><span>#Круглый стол</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="type6" value="6" /><span>#Бизнес-диалог</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="type7" value="7" /><span>#Кейс</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="type8" value="8" /><span>#Презентация</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="type9" value="9" /><span>#Обсуждение книги</span></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="programm-filter-window-col">
+                                                        <div class="programm-filter-window-block">
+                                                            <div class="programm-filter-window-label">Секция программы</div>
+                                                            <div class="programm-filter-window-checkboxes-wraper">
+                                                                <div class="programm-filter-window-checkboxes programm-filter-window-checkboxes-sections">
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section1" value="Пьеро Пелиццаро" /><span>Пьеро Пелиццаро</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section2" value="Эллисон Арвади" /><span>Эллисон Арвади</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section3" value="Сладжин Паракатил" /><span>Сладжин Паракатил</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section4" value="Нильс Лунд" /><span>Нильс Лунд</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section5" value="Эллисон Арвади" /><span>Эллисон Арвади</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section6" value="Пьеро Пелиццаро" /><span>Пьеро Пелиццаро</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section7" value="Сладжин Паракатил" /><span>Сладжин Паракатил</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section8" value="Нильс Лунд" /><span>Нильс Лунд</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section9" value="Эллисон Арвади" /><span>Эллисон Арвади</span></label>
+                                                                    </div>
+                                                                    <div class="form-checkbox">
+                                                                        <label><input type="checkbox" name="section10" value="Сладжин Паракатил" /><span>Сладжин Паракатил</span></label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="programm-halls">
+                                    <div class="programm-halls-inner">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        var programmData = [
+                            {
+                                "date"  : "4 июля",
+                                "data"  : [
+                                    {
+                                        "hall"   : "Зал <span>Москва</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "10:00",
+                                                "end"   : "11:30",
+                                                "text"  : "Пленарное заседание международного конгресса Urban Health",
+                                                "title" : "Urban Health. Городское пространство как источник здоровья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "2",
+                                                "speaker" : "Илариа Капуа",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "11:45",
+                                                "end"   : "12:45",
+                                                "text"  : "#Ток-шоу",
+                                                "title" : "Не только типовое. Каким архитекторы видят современное жилье?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эллисон Арвади",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Пьеро Пелиццаро",
+                                                "section" : "Эллисон Арвади",
+                                                "start" : "15:45",
+                                                "end"   : "17:00",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Среда для развития. Комфортный город как драйвер экономики"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Саду А. Джонстон",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:15",
+                                                "end"   : "18:15",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "От коммуналки до пентхауса. Русская культурная традиция и представление об идеальном жилье"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Пахра</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "10:00",
+                                                "end"   : "11:30",
+                                                "text"  : "Пленарное заседание международного конгресса Urban Health",
+                                                "title" : "Urban Health. Городское пространство как источник здоровья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "11:30",
+                                                "end"   : "12:30",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Деньги под проект. Как банкам и девелоперам взаимодействовать в условиях проектного финансирования"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:40",
+                                                "end"   : "13:50",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Инструменты управления городом. Приоритеты и практики городского развития"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "16:45",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Вопрос признания. Как поддерживать молодых архитекторов?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:00",
+                                                "end"   : "18:30",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Доступное жилье в недоступном городе. Мировые практики преодоления дисбаланса на рынке жилья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Клязьма</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "10:00",
+                                                "end"   : "11:30",
+                                                "text"  : "Пленарное заседание международного конгресса Urban Health",
+                                                "title" : "Urban Health. Городское пространство как источник здоровья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "11:30",
+                                                "end"   : "12:30",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Mixed Use. Кварталы смешанного использования как рецепт устойчивого города"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "4",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:40",
+                                                "end"   : "13:50",
+                                                "text"  : "#Мастер-класс",
+                                                "title" : "Инициативный гражданин. Учесть идеи жителей и построить идеальный район"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "16:30",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Баланс нового и старого. Что считать наследием сегодня?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "16:40",
+                                                "end"   : "17:40",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Дом для миллениала. Форматы недвижимости для современных горожан"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:45",
+                                                "end"   : "18:30",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Офис напрокат. Как будет выглядеть рабочее место будущего?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Неглинка</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "10:00",
+                                                "end"   : "11:30",
+                                                "text"  : "Пленарное заседание международного конгресса Urban Health",
+                                                "title" : "Urban Health. Городское пространство как источник здоровья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "5",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "11:30",
+                                                "end"   : "12:30",
+                                                "text"  : "#Круглый стол",
+                                                "title" : "Умный город сегодня. Как цифровизация российских городов меняет качество жизни горожан?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "5",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:40",
+                                                "end"   : "13:50",
+                                                "text"  : "#Круглый стол",
+                                                "title" : "Проекты реновации. Политики обновления городов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "5",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "17:15",
+                                                "text"  : "#Круглый стол",
+                                                "title" : "Водный актив. Москва-река как общегородская рекреация"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "5",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:30",
+                                                "end"   : "18:30",
+                                                "text"  : "#Круглый стол",
+                                                "title" : "Зона ответственности. Какой главный архитектор нужен российским городам?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Сетунь</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "10:00",
+                                                "end"   : "11:30",
+                                                "text"  : "Пленарное заседание международного конгресса Urban Health",
+                                                "title" : "Urban Health. Городское пространство как источник здоровья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "11:40",
+                                                "end"   : "12:30",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Умный район. Цифровая трансформация городской среды"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:40",
+                                                "end"   : "13:50",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Москва и Московская область. Как сбалансировать пространственную структуру агломерации"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "16:45",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Резерв развития. Редевелопмент промзон как путь к компактному городу"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "6",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:00",
+                                                "end"   : "18:00",
+                                                "text"  : "#Бизнес-диалог",
+                                                "title" : "Не едим дома. Новая культура городской еды"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Яуза</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "10:00",
+                                                "end"   : "11:30",
+                                                "text"  : "Пленарное заседание международного конгресса Urban Health",
+                                                "title" : "Urban Health. Городское пространство как источник здоровья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "7",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "11:30",
+                                                "end"   : "12:00",
+                                                "text"  : "#Кейс",
+                                                "title" : "Мини-жилье – тренд или необходимость? Презентация решений от BMW Mini Living"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "8",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:10",
+                                                "end"   : "12:40",
+                                                "text"  : "#Презентация",
+                                                "title" : "Жить в наследии. Опыт реставрации Дома Наркомфина"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "8",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:50",
+                                                "end"   : "13:50",
+                                                "text"  : "#Презентация",
+                                                "title" : "Хранители истории. Как городские администрации и активисты работают с наследием"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "9",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "16:30",
+                                                "text"  : "#Обсуждение книги",
+                                                "title" : "Четыре стены и крыша. Сложная природа простой профессии"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "9",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "16:45",
+                                                "end"   : "17:30",
+                                                "text"  : "#Обсуждение книги",
+                                                "title" : "Высота как новый люкс. Как растут вертикальные города?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Health <span>URBAN</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "10:00",
+                                                "end"   : "11:15",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Большой Париж – Большая Москва. Практики устойчивого развития территорий"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "11:45",
+                                                "end"   : "13:00",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Здоровое пространство. Как внедрить стандарты здоровья в сферу строительства"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "4",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "13:15",
+                                                "end"   : "13:45",
+                                                "text"  : "#Мастер-класс",
+                                                "title" : "Активный город. Среда, которая способствует движению"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "16:45",
+                                                "text"  : "#Дискуссия",
+                                                "title" : "Моя поликлиника. Московский стандарт поликлиники в действии"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "6",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:15",
+                                                "end"   : "18:15",
+                                                "text"  : "#Диалог",
+                                                "title" : "Стресс-тест. Как городская среда влияет на психологическое состояние жителей"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+
+                            {
+                                "date"  : "5 июля",
+                                "data"  : [
+                                    {
+                                        "hall"   : "Зал <span>Москва</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "10:00",
+                                                "end"   : "11:30",
+                                                "text"  : "Пленарное заседание международного конгресса Urban Health",
+                                                "title" : "Urban Health. Городское пространство как источник здоровья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "2",
+                                                "speaker" : "Илариа Капуа",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "11:45",
+                                                "end"   : "12:45",
+                                                "text"  : "#Ток-шоу",
+                                                "title" : "Не только типовое. Каким архитекторы видят современное жилье?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эллисон Арвади",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Пахра</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:40",
+                                                "end"   : "13:50",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Инструменты управления городом. Приоритеты и практики городского развития"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "16:45",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Вопрос признания. Как поддерживать молодых архитекторов?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:00",
+                                                "end"   : "18:30",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Доступное жилье в недоступном городе. Мировые практики преодоления дисбаланса на рынке жилья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Клязьма</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "10:00",
+                                                "end"   : "11:30",
+                                                "text"  : "Пленарное заседание международного конгресса Urban Health",
+                                                "title" : "Urban Health. Городское пространство как источник здоровья"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "16:30",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Баланс нового и старого. Что считать наследием сегодня?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "16:40",
+                                                "end"   : "17:40",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Дом для миллениала. Форматы недвижимости для современных горожан"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:45",
+                                                "end"   : "18:30",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Офис напрокат. Как будет выглядеть рабочее место будущего?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Неглинка</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "5",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "17:15",
+                                                "text"  : "#Круглый стол",
+                                                "title" : "Водный актив. Москва-река как общегородская рекреация"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "5",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:30",
+                                                "end"   : "18:30",
+                                                "text"  : "#Круглый стол",
+                                                "title" : "Зона ответственности. Какой главный архитектор нужен российским городам?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Сетунь</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:40",
+                                                "end"   : "13:50",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Москва и Московская область. Как сбалансировать пространственную структуру агломерации"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "3",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "16:45",
+                                                "text"  : "#Панельная дискуссия",
+                                                "title" : "Резерв развития. Редевелопмент промзон как путь к компактному городу"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "6",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "17:00",
+                                                "end"   : "18:00",
+                                                "text"  : "#Бизнес-диалог",
+                                                "title" : "Не едим дома. Новая культура городской еды"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Зал <span>Яуза</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "8",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:10",
+                                                "end"   : "12:40",
+                                                "text"  : "#Презентация",
+                                                "title" : "Жить в наследии. Опыт реставрации Дома Наркомфина"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "8",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "12:50",
+                                                "end"   : "13:50",
+                                                "text"  : "#Презентация",
+                                                "title" : "Хранители истории. Как городские администрации и активисты работают с наследием"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "9",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "15:45",
+                                                "end"   : "16:30",
+                                                "text"  : "#Обсуждение книги",
+                                                "title" : "Четыре стены и крыша. Сложная природа простой профессии"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "9",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "16:45",
+                                                "end"   : "17:30",
+                                                "text"  : "#Обсуждение книги",
+                                                "title" : "Высота как новый люкс. Как растут вертикальные города?"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    },
+
+                                    {
+                                        "hall"   : "Health <span>URBAN</span>",
+                                        "events" : [
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "4",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "start" : "13:15",
+                                                "end"   : "13:45",
+                                                "text"  : "#Мастер-класс",
+                                                "title" : "Активный город. Среда, которая способствует движению"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "14:00",
+                                                "end"   : "15:30",
+                                                "text"  : "Открывающее пленарное заседание Форума",
+                                                "title" : "Качество жизни. Решения для мировых мегаполисов"
+                                            },
+
+                                            {
+                                                "url"   : "#",
+                                                "type"  : "1",
+                                                "speaker" : "Эдвард Глейзер",
+                                                "section" : "Пьеро Пелиццаро",
+                                                "total" : true,
+                                                "start" : "18:30",
+                                                "end"   : "19:30",
+                                                "title" : "Интервью Ричарда Сеннета Екатерине Шульман (Открытое мероприятие)"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ];
+                    </script>
+
+                    <div class="programm-container">
+                        <div class="programm-content">
+                            <div class="programm-list-container">
+                                <div class="programm-timescale">
+                                </div>
+                                <div class="programm-list">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- page END -->
+
+            <div class="prefooter">
+                <div class="container">
+                    <div class="breadcrumbs"><a href="#">Главная</a> &nbsp;<span>/</span>&nbsp; Деловая программа</div>
+                    <div class="sitemap-link"><a href="#">Карта сайта</a></div>
+                </div>
+            </div>
+
+            <footer>
+                <div class="footer-social">
+                    <div class="container">
+                        <div class="footer-social-item"><a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#icon-fb"></use></svg></a></div>
+                        <div class="footer-social-item"><a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#icon-instagram"></use></svg></a></div>
+                        <div class="footer-social-item"><a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#icon-vk"></use></svg></a></div>
+                        <div class="footer-social-item"><a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#icon-youtube"></use></svg></a></div>
+                    </div>
+                </div>
+
+                <div class="footer-content">
+                    <div class="container">
+                        <div class="footer-inner">
+                            <div class="footer-menu">
+                                <div class="footer-title">Разделы</div>
+                                <div class="footer-menu-inner">
+                                    <div class="footer-menu-item"><a href="#">О форуме</a></div>
+                                    <div class="footer-menu-item"><a href="#">Пресс-центр</a></div>
+                                    <div class="footer-menu-item"><a href="#">Деловая программа</a></div>
+                                    <div class="footer-menu-item"><a href="#">Спикеры</a></div>
+                                    <div class="footer-menu-item"><a href="#">Площадка</a></div>
+                                    <div class="footer-menu-item"><a href="#">Премия</a></div>
+                                    <div class="footer-menu-item"><a href="#">Партнеры</a></div>
+                                    <div class="footer-menu-item"><a href="#">Фестиваль</a></div>
+                                    <div class="footer-menu-item"><a href="#">Мобильное приложение</a></div>
+                                    <div class="footer-menu-item"><a href="#">Moscow AR VR</a></div>
+                                    <div class="footer-menu-item"><a href="#">Форум — «Мой район»</a></div>
+                                </div>
+                            </div>
+
+                            <div class="footer-archive">
+                                <div class="footer-archive-title">Архив</div>
+                                <div class="footer-archive-item"><a href="#">Спикеры всех лет</a></div>
+                                <div class="footer-archive-item"><a href="#">Видео</a></div>
+                                <div class="footer-archive-item"><a href="#">2019</a></div>
+                                <div class="footer-archive-item"><a href="#">2018</a></div>
+                                <div class="footer-archive-item"><a href="#">2017</a></div>
+                                <div class="footer-archive-item"><a href="#">2016</a></div>
+                                <div class="footer-archive-item"><a href="#">2015</a></div>
+                                <div class="footer-archive-item"><a href="#">2014</a></div>
+                                <div class="footer-archive-item"><a href="#">2013</a></div>
+                                <div class="footer-archive-item"><a href="#">2012</a></div>
+                            </div>
+
+                            <div class="footer-contacts">
+                                <div class="footer-contacts-inner">
+                                    <div class="footer-contacts-block">
+                                        <div class="footer-title">По вопросам партнерства</div>
+                                        <div class="footer-contacts-item"><a href="mailto:partners@mosurbanforum.ru">partners@mosurbanforum.ru</a></div>
+                                        <div class="footer-title">Стать подрядчиком</div>
+                                        <div class="footer-contacts-item"><a href="mailto:tenders@mosurbanforum.ru">tenders@mosurbanforum.ru</a></div>
+                                    </div>
+                                    <div class="footer-contacts-block">
+                                        <div class="footer-title">Телефон</div>
+                                        <div class="footer-contacts-item"><a href="tel:+74996411682">+7 (499) 641-16-82</a></div>
+                                        <div class="footer-title">Контакты</div>
+                                        <div class="footer-contacts-item"><a href="mailto:welcome@mosurbanforum.ru">welcome@mosurbanforum.ru</a></div>
+                                    </div>
+                                    <div class="footer-vtb">
+                                        <a href="#" target="_blank">
+                                            <img src="images/vtb.png" alt="" />
+                                            Стратегический спонсор
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="copyrights">© Moscow Urban Forum, 2011-2020.</div>
+                        <div class="policy">С положением о конфиденциальности персональных данных можно ознакомиться <a href="#">здесь</a>.</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <a href="#" class="up-link"><svg><use xlink:href="images/sprite.svg#up-link"></use></svg></a>
+
+        <script>
+            var pathTemplate = './';
+        </script>
+        <script src="js/fonts.js"></script>
+
+        <script src="js/svg4everybody.min.js"></script>
+        <script>svg4everybody();</script>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/slick/slick.min.js"></script>
+        <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+        <script src="js/masonry.pkgd.min.js"></script>
+        <script src="js/clipboard.min.js"></script>
+        <script src="js/select2/select2.min.js"></script>
+        <script src="js/select2/ru.js"></script>
+        <script src="js/jquery.mask.min.js"></script>
+        <script src="js/validation/jquery.validate.min.js"></script>
+        <script src="js/validation/messages_ru.js"></script>
+        <script src="js/tools.js"></script>
+
+    </body>
+</html>

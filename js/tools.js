@@ -635,6 +635,265 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    redrawProgramm();
+
+    $('.programm-filter-btn a').click(function(e) {
+        $('html').toggleClass('programm-filter-open');
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.programm-filter').length == 0 && $(e.target).parents().filter('.select2-container').length == 0) {
+            $('html').removeClass('programm-filter-open');
+        }
+    });
+
+    $('.programm-filter-window-checkboxes').each(function() {
+        var curWrapper = $(this).parent();
+        $(this).mCustomScrollbar({
+            axis: 'y',
+            callbacks: {
+                onInit: function() {
+                    curWrapper.removeClass('with-top');
+                    curWrapper.addClass('with-bottom');
+                },
+
+                whileScrolling: function() {
+                    if (this.mcs.topPct == 100) {
+                        curWrapper.removeClass('with-bottom');
+                    } else {
+                        curWrapper.addClass('with-bottom');
+                    }
+
+                    if (this.mcs.topPct == 0) {
+                        curWrapper.removeClass('with-top');
+                    } else {
+                        curWrapper.addClass('with-top');
+
+                    }
+                }
+            }
+        });
+    });
+
+    $('.programm-filter-window-select .form-select select').change(function() {
+        updateProgrammFilter();
+    });
+
+    $('.programm-filter-window-checkboxes .form-checkbox input').change(function() {
+        updateProgrammFilter();
+    });
+
+    $('.programm-filter').each(function() {
+        updateProgrammFilter();
+    });
+
+    $('body').on('click', '.programm-filter-param a', function(e) {
+        var curLink = $(this);
+        var curType = curLink.attr('data-type');
+        if (curType == 'select') {
+            $('.programm-filter-window-select .form-select select[name="' + curLink.attr('data-name') + '"] option:selected').prop('selected', false);
+            $('.programm-filter-window-select .form-select select[name="' + curLink.attr('data-name') + '"]').trigger('change');
+        }
+        if (curType == 'checkbox') {
+            $('.programm-filter-window-checkboxes .form-checkbox input[name="' + curLink.attr('data-name') + '"]').prop('checked', false).trigger('change');
+        }
+        e.preventDefault();
+    });
+
+    $('.programm-dates a').click(function(e) {
+        var curLi = $(this).parent();
+        if (!curLi.hasClass('active')) {
+            $('.programm-dates li.active').removeClass('active');
+            curLi.addClass('active');
+            redrawProgramm();
+        }
+        e.preventDefault();
+    });
+
+});
+
+function redrawProgramm() {
+    $('.programm-container').each(function() {
+        var curData = null;
+        var curDate = $('.programm-dates li.active a').attr('data-date');
+
+        for (var i = 0; i < programmData.length; i++) {
+            if (programmData[i].date == curDate) {
+                curData = programmData[i].data;
+            }
+        }
+
+        $('.programm-halls-inner').html('');
+        $('.programm-timescale').html('');
+        $('.programm-list').html('');
+
+        if (curData != null) {
+
+            var countHalls = curData.length;
+
+            var minHour = 23;
+            var maxHour = 0;
+            for (var i = 0; i < countHalls; i++) {
+                for (var j = 0; j < curData[i].events.length; j++) {
+                    var curEvent = curData[i].events[j];
+                    var curHour = Number(curEvent.start.substring(0, 2));
+                    if (curHour < minHour) {
+                        minHour = curHour;
+                    }
+                    curHour = Number(curEvent.end.substring(0, 2));
+                    if (curHour > maxHour) {
+                        maxHour = curHour;
+                    }
+                }
+            }
+            maxHour++;
+            var countHour = maxHour - minHour;
+            var currentHour = 0;
+            for (var i = minHour; i < maxHour; i++) {
+                $('.programm-timescale').append('<div class="programm-timescale-item"><span>' + ('0' + i).substr(-2) + ':00</span></div>');
+                currentHour++;
+            }
+            var scheduleHeight = $('.programm-timescale').height();
+
+            for (var i = 0; i < countHalls; i++) {
+                $('.programm-halls-inner').append('<div class="programm-hall" style="width:' + (100 / countHalls) + '%">' + curData[i].hall + '</div>');
+                var hallHTML =  '<div class="programm-list-hall" style="width:' + (100 / countHalls) + '%; height:' + scheduleHeight + 'px">';
+                for (var j = 0; j < curData[i].events.length; j++) {
+                    var curEvent = curData[i].events[j];
+
+                    var startHour = Number(curEvent.start.substr(0, 2));
+                    var startMinutes = Number(curEvent.start.substr(-2));
+                    var eventTop = (((startHour - minHour) + startMinutes / 60) / countHour) * 100;
+                    var endHour = Number(curEvent.end.substr(0, 2));
+                    var endMinutes = Number(curEvent.end.substr(-2));
+                    var eventBottom = (((endHour - minHour) + endMinutes / 60) / countHour) * 100;
+                    var eventHeight = eventBottom - eventTop;
+
+                    var classType = 'programm-list-item-type-' + curEvent.type;
+                    var classTotal = '';
+                    var styleTotal = '';
+                    if (typeof(curEvent.total) != 'undefined' && curEvent.total) {
+                        classTotal = 'programm-list-item-total';
+                        var widthTotal = 0;
+                        for (var m = i - 1; m > -1; m--) {
+                            for (var k = 0; k < curData[m].events.length; k++) {
+                                var prevEvent = curData[m].events[k];
+                                var prevStartHour = Number(prevEvent.start.substr(0, 2));
+                                var prevStartMinutes = Number(prevEvent.start.substr(-2));
+                                if (startHour == prevStartHour && startMinutes == prevStartMinutes && typeof(prevEvent.total) != 'undefined' && prevEvent.total) {
+                                    widthTotal += 1;
+                                    $('.programm-list-item-total[data-start="' + prevEvent.start + '"]').addClass('hidden');
+                                }
+                            }
+                        }
+                        if (widthTotal > 0) {
+                            styleTotal = 'margin-left: -' + (widthTotal * 100) + '%';
+                        }
+                    }
+                    hallHTML +=         '<div class="programm-list-item ' + classType + ' ' + classTotal + '" style="top:' + eventTop + '%; height:' + eventHeight + '%; ' + styleTotal + '" data-start="' + curEvent.start + '" data-speaker="' + curEvent.speaker + '" data-section="' + curEvent.section + '">';
+                    hallHTML +=             '<a href="' + curEvent.url + '">';
+                    hallHTML +=                 '<div class="programm-list-item-inner">';
+                    hallHTML +=                     '<div class="programm-list-item-content">';
+                    if (typeof(curEvent.total) != 'undefined' && curEvent.total) {
+                        if (typeof(curEvent.text) != 'undefined') {
+                            hallHTML +=                 '<div class="programm-list-item-type">' + curEvent.text + '</div>';
+                        }
+                        hallHTML +=                     '<div class="programm-list-item-title">' + curEvent.title + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' - ' + curEvent.end + '</div>';
+                    } else {
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' - ' + curEvent.end + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-type">' + curEvent.text + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-title">' + curEvent.title + '</div>';
+                    }
+                    hallHTML +=                     '</div>';
+                    hallHTML +=                 '</div>';
+                    hallHTML +=             '</a>';
+                    hallHTML +=         '</div>';
+                }
+                hallHTML +=         '</div>';
+                hallHTML +=     '</div>';
+                $('.programm-list').append(hallHTML);
+            }
+            
+            $(window).trigger('resize');
+        }
+
+    });
+}
+
+function updateProgrammFilter() {
+    var paramsHTML = '';
+
+    $('.programm-filter-window-select .form-select select').each(function() {
+        var curSelect = $(this);
+        if (curSelect.val() != '') {
+            paramsHTML += '<div class="programm-filter-param">' + curSelect.val() + '<a href="#" data-type="select" data-name="' + curSelect.attr('name') + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#programm-filter-param-remove"></use></svg></a></div>';
+        }
+    });
+
+    $('.programm-filter-window-checkboxes .form-checkbox input:checked').each(function() {
+        var curInput = $(this);
+        paramsHTML += '<div class="programm-filter-param">' + curInput.parent().find('span').html() + '<a href="#" data-type="checkbox" data-name="' + curInput.attr('name') + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#programm-filter-param-remove"></use></svg></a></div>';
+    });
+
+    $('.programm-filter-params').html(paramsHTML);
+
+    if (paramsHTML == '') {
+        $('.programm-list-item.unfilter').removeClass('unfilter');
+    } else {
+        $('.programm-list-item').addClass('unfilter');
+
+        $('.programm-filter-window-select-speakers .form-select select').each(function() {
+            var curSelect = $(this);
+            if (curSelect.val() != '') {
+                $('.programm-list-item[data-speaker="' + curSelect.val() + '"]').removeClass('unfilter');
+            }
+        });
+
+        $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
+            var curInput = $(this);
+            $('.programm-list-item-type-' + curInput.val()).removeClass('unfilter');
+        });
+
+        $('.programm-filter-window-checkboxes-sections .form-checkbox input:checked').each(function() {
+            var curInput = $(this);
+            $('.programm-list-item[data-section="' + curInput.val() + '"]').removeClass('unfilter');
+        });
+
+        var curTop = 9999;
+        $('.programm-list-item:not(.unfilter, .hidden)').each(function() {
+            console.log($(this).offset().top);
+            if ($(this).offset().top < curTop) {
+                curTop = $(this).offset().top;
+            }
+        });
+        if (curTop != 9999) {
+            $('html, body').animate({'scrollTop': curTop - $('.programm-ctrl-inner').outerHeight()});
+        }
+    }
+}
+
+$(window).on('load resize', function() {
+    $('.programm-container').each(function() {
+        var isCorrectHeight = false;
+        while (!isCorrectHeight) {
+            isCorrectHeight = true;
+            $('.programm-list-item').each(function() {
+                var curItem = $(this);
+                if (curItem.find('a').outerHeight() < curItem.find('.programm-list-item-inner').outerHeight()) {
+                    isCorrectHeight = false;
+                }
+            });
+            if (!isCorrectHeight) {
+                var curHeight = $('.programm-timescale-item').eq(0).height();
+                curHeight += 10;
+                $('.programm-timescale-item').height(curHeight);
+                var scheduleHeight = $('.programm-timescale').height();
+                $('.programm-list-hall').height(scheduleHeight);
+            }
+        }
+    });
 });
 
 function filterSpeakers() {
@@ -683,13 +942,15 @@ $(window).on('load resize', function() {
         $('.window-size-test').remove();
     });
 
-    if ($(window).width() > 1199) {
-        $('.analytics-menu').mCustomScrollbar('destroy');
-    } else {
-        $('.analytics-menu').mCustomScrollbar({
-            axis: 'x'
-        });
-    }
+    $('.analytics-menu').each(function() {
+        if ($(window).width() > 1199) {
+            $('.analytics-menu').mCustomScrollbar('destroy');
+        } else {
+            $('.analytics-menu').mCustomScrollbar({
+                axis: 'x'
+            });
+        }
+    });
 });
 
 $(window).on('load resize scroll', function() {
@@ -705,6 +966,14 @@ $(window).on('load resize scroll', function() {
             $('.up-link').removeClass('visible');
         }
     }
+
+    $('.programm-ctrl-wrapper').each(function() {
+        if (windowScroll >= $('.programm-ctrl-wrapper').offset().top - 40) {
+            $('.programm-ctrl-wrapper').addClass('fixed');
+        } else {
+            $('.programm-ctrl-wrapper').removeClass('fixed');
+        }
+    });
 });
 
 function initForm(curForm) {
@@ -713,7 +982,7 @@ function initForm(curForm) {
     curForm.find('.form-select select').each(function() {
         var curSelect = $(this);
         var options = {
-            minimumResultsForSearch: 999
+            minimumResultsForSearch: 20
         }
         if (curSelect.prop('multiple')) {
             options['closeOnSelect'] = false;
