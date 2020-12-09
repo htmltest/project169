@@ -1355,10 +1355,11 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-download {float:right; margin:11px 0 0 0}
 
 .programm-ctrl-wrapper {margin:40px 0 0 0; height:151px}
-.programm-ctrl-wrapper.fixed .programm-ctrl-inner {position:fixed; left:0; top:0; right:0; background:#fff; box-shadow:0px 4px 40px rgba(0, 0, 0, 0.08); z-index:90; height:178px; padding:28px 0 0 0}
+.programm-ctrl-wrapper.fixed .programm-ctrl-inner {position:fixed; left:0; top:0; right:0; background:#fff; box-shadow:0px 4px 40px rgba(0, 0, 0, 0.08); z-index:90; height:44px}
 .programm-ctrl-wrapper .container {padding:0}
 .programm-ctrl-wrapper.fixed .container {padding:0 20px}
 .programm-ctrl::after {content:""; display:block; clear:both}
+.programm-ctrl-wrapper.fixed .programm-ctrl {position:fixed; bottom:26px}
 
 .programm-dates {float:left}
 .programm-dates ul {margin:0; padding:0; list-style:none}
@@ -1368,6 +1369,9 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-dates ul li a {display:block; padding:0 20px; height:44px; font-weight:600; font-size:16px; line-height:44px; text-transform:uppercase; text-decoration:none; color:#8a8a8a; background:#ededed}
 .programm-dates ul li a:hover,
 .programm-dates ul li.active a {background:#000; color:#fff}
+
+.programm-ctrl-wrapper.fixed .programm-dates ul li {margin:0}
+.programm-ctrl-wrapper.fixed .programm-dates ul li a {padding:0 15px; height:38px; font-size:12px; line-height:38px}
 
 .programm-filter {float:left; margin:0 0 0 80px; position:relative}
 .programm-filter-btn {float:left}
@@ -1405,11 +1409,24 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-filter-window-cols::after {content:""; display:block; clear:both}
 .programm-filter-window-col {float:left; width:50%; padding:0 15px}
 
+.programm-ctrl-wrapper.fixed .programm-filter {margin:0 0 0 20px}
+.programm-ctrl-wrapper.fixed .programm-filter-btn a {padding:0; width:38px; height:38px; font-size:0; line-height:0; position:relative; background:#fff}
+.programm-ctrl-wrapper.fixed .programm-filter-btn a:hover {background:#000}
+.programm-ctrl-wrapper.fixed .programm-filter-btn a svg {margin:-10px 0 0 -11px; position:absolute; left:50%; top:50%}
+.programm-ctrl-wrapper.fixed .programm-filter-params {margin:0; width:1000px}
+.programm-ctrl-wrapper.fixed .programm-filter-param {margin:3px 0 0 10px}
+.programm-ctrl-wrapper.fixed .programm-filter-window {top:auto; bottom:53px; margin-top:0}
+.programm-filter-open .programm-ctrl-wrapper.fixed .programm-filter-window {left:-154px}
+
 .programm-halls {margin:30px 0 0 0; border-top:1px solid rgba(0, 0, 0, 0.2); padding:0 0 14px 98px; border-bottom:1px solid #000}
 .programm-halls-inner {margin:0 -8px}
 .programm-halls-inner::after {content:""; display:block; clear:both}
 .programm-hall {float:left; width:14.28%; padding:15px 8px 0 8px; font-size:16px; line-height:21px; color:#000}
 .programm-hall span {display:block; margin:2px 0 0 0; font-weight:600}
+
+.programm-ctrl-wrapper.fixed .programm-halls {margin:0; border-top:none; padding-bottom:11px}
+.programm-ctrl-wrapper.fixed .programm-hall {color:rgba(0, 0, 0, 0); padding-top:12px; font-size:0; line-height:0}
+.programm-ctrl-wrapper.fixed .programm-hall span {color:#000; font-size:16px; line-height:21px; margin:0}
 
 .programm-content {padding:29px 0 0 98px}
 .programm-list-container {position:relative}
@@ -1436,7 +1453,8 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-list-item-type-7 {background:#daffe0}
 .programm-list-item-type-8 {background:#daffe0}
 .programm-list-item-type-9 {background:#daffe0}
-.programm-list-item a {display:block; text-decoration:none; transition:none; position:absolute; left:0; top:0; right:0; bottom:0}
+.programm-list-item a {display:block; text-decoration:none; transition:none; position:absolute; left:0; top:0; right:0; bottom:0; transition:box-shadow 0.2s}
+.programm-list-item a:hover {box-shadow:4px 4px 20px rgba(85, 85, 85, 0.14)}
 .programm-list-item-inner {position:relative}
 .programm-list-item-content {position:relative; padding:10px}
 .programm-list-item-time {font-size:12px; line-height:16px; color:#000}

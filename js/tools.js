@@ -911,7 +911,7 @@ $(window).on('load resize scroll', function() {
     }
 
     $('.programm-ctrl-wrapper').each(function() {
-        if (windowScroll >= $('.programm-ctrl-wrapper').offset().top - 40) {
+        if (windowScroll >= $('.programm-ctrl-wrapper').offset().top + 97) {
             $('.programm-ctrl-wrapper').addClass('fixed');
         } else {
             $('.programm-ctrl-wrapper').removeClass('fixed');
