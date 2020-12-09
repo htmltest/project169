@@ -138,16 +138,6 @@ $(document).ready(function() {
          $grid.masonry('layout');
     });
 
-    $('.video-filter-current').click(function(e) {
-        $(this).parent().toggleClass('open');
-    });
-
-    $(document).click(function(e) {
-        if ($(e.target).parents().filter('.video-filter').length == 0) {
-            $('.video-filter').removeClass('open');
-        }
-    });
-
     $('.photo-gallery-more a').click(function(e) {
         var curBlock = $(this).parents().filter('.main-block');
         $.ajax({
@@ -214,7 +204,7 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.speaker-card-descr-more a').click(function(e) {
+    $('body').on('click', '.speaker-card-descr-more a', function(e) {
         $(this).parent().prev().toggleClass('open');
         e.preventDefault();
     });
@@ -397,20 +387,6 @@ $(document).ready(function() {
 
         var windowHTML =    '<div class="window-video">';
 
-        windowHTML +=           '<div class="window-video-preview">' +
-                                    '<div class="window-video-preview-inner">' +
-                                        '<div class="window-video-preview-list">';
-
-        var galleryLength = curGallery.find('.video-gallery-item').length;
-        for (var i = 0; i < galleryLength; i++) {
-            var curTitle = '';
-            var curGalleryItem = curGallery.find('.video-gallery-item').eq(i);
-            windowHTML +=                   '<div class="window-video-preview-list-item"><a href="#"><img src="' + curGalleryItem.find('img').attr('src') + '" alt="" /></a></div>';
-        }
-        windowHTML +=                   '</div>' +
-                                    '</div>' +
-                                '</div>';
-
         windowHTML +=           '<a href="#" class="window-video-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-close"></use></svg></a>';
         windowHTML +=           '<div class="window-video-social">';
         windowHTML +=               '<div class="window-video-social-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share"></use></svg></div>';
@@ -424,6 +400,7 @@ $(document).ready(function() {
         windowHTML +=           '<div class="window-video-slider">' +
                                     '<div class="window-video-slider-list">';
 
+        var galleryLength = curGallery.find('.video-gallery-item').length;
         for (var i = 0; i < galleryLength; i++) {
             var curGalleryItem = curGallery.find('.video-gallery-item').eq(i);
             windowHTML +=               '<div class="window-video-slider-list-item">' +
@@ -441,31 +418,6 @@ $(document).ready(function() {
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
         $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
-
-        $('.window-video').each(function() {
-            var marginPhoto = 166;
-            if ($(window).width() < 1200) {
-                marginPhoto = 253;
-            }
-            var newHeight = marginPhoto;
-            $('.window-video-slider-list-item-inner').css({'height': 'calc(100vh - ' + newHeight + 'px)', 'line-height': 'calc(100vh - ' + newHeight + 'px)'});
-        });
-
-        if ($(window).width() > 1199) {
-            $('.window-video-preview-inner').mCustomScrollbar({
-                axis: 'y',
-                scrollButtons: {
-                    enable: true
-                }
-            });
-        } else {
-            $('.window-video-preview-inner').mCustomScrollbar({
-                axis: 'x',
-                scrollButtons: {
-                    enable: true
-                }
-            });
-        }
 
         $('.window-video-slider-list').slick({
             infinite: false,
@@ -486,21 +438,12 @@ $(document).ready(function() {
             ]
         }).on('setPosition', function(event, slick) {
             var currentSlide = $('.window-video-slider-list').slick('slickCurrentSlide');
-            $('.window-video-preview-list-item.active').removeClass('active');
-            $('.window-video-preview-list-item').eq(currentSlide).addClass('active');
             $('.window-video-slider-list-item-inner').html('');
             $('.window-video-slider-list-item').eq(currentSlide).find('.window-video-slider-list-item-inner').each(function() {
                 $(this).html('<iframe width="560" height="315" src="' + $(this).attr('data-videourl') + '?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
             });
-            $('.window-video-preview-inner').mCustomScrollbar('scrollTo', $('.window-video-preview-list-item').eq(currentSlide));
         });
 
-        e.preventDefault();
-    });
-
-    $('body').on('click', '.window-video-preview-list-item a', function(e) {
-        var curIndex = $('.window-video-preview-list-item').index($(this).parent());
-        $('.window-video-slider-list').slick('slickGoTo', curIndex);
         e.preventDefault();
     });
 
@@ -800,9 +743,9 @@ function redrawProgramm() {
                             hallHTML +=                 '<div class="programm-list-item-type">' + curEvent.text + '</div>';
                         }
                         hallHTML +=                     '<div class="programm-list-item-title">' + curEvent.title + '</div>';
-                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' - ' + curEvent.end + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' – ' + curEvent.end + '</div>';
                     } else {
-                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' - ' + curEvent.end + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' – ' + curEvent.end + '</div>';
                         hallHTML +=                     '<div class="programm-list-item-type">' + curEvent.text + '</div>';
                         hallHTML +=                     '<div class="programm-list-item-title">' + curEvent.title + '</div>';
                     }

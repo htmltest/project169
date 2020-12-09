@@ -89,102 +89,192 @@
                     <div class="video-header">
                         <h1>Видеоархив</h1>
                         <div class="video-ctrl">
-                            <div class="video-search">
-                                <form action="#" method="post">
+                            <form action="#" method="post">
+                                <div class="video-search">
                                     <div class="video-search-inner">
                                         <div class="form-input"><input type="text" name="search" value="" placeholder="ПОИСК" class="required" /></div>
                                         <div class="video-search-submit"><button><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
                                     </div>
-                                </form>
-                            </div>
-                            <div class="video-filter">
-                                <div class="video-filter-current"><span class="default">Год</span><svg><use xlink:href="images/sprite.svg#select-arrow"></use></svg></div>
-                                <ul>
-                                    <li><a href="#">2020</a></li>
-                                    <li><a href="#">2019</a></li>
-                                    <li><a href="#">2018</a></li>
-                                    <li><a href="#">2017</a></li>
-                                    <li><a href="#">2016</a></li>
-                                    <li><a href="#">2015</a></li>
-                                    <li><a href="#">2014</a></li>
-                                    <li><a href="#">2013</a></li>
-                                </ul>
-                            </div>
+                                </div>
+                                <div class="video-filter-select">
+                                    <div class="form-select">
+                                        <select name="section" data-placeholder="Год">
+                                            <option value=""></option>
+                                            <option value="2020">2020</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2016">2016</option>
+                                            <option value="2015">2015</option>
+                                            <option value="2014">2014</option>
+                                            <option value="2013">2013</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
 
-                    <!-- video -->
-                    <div class="video">
-                        <div class="video-item">
-                            <a href="#">
-                                <div class="video-item-bg" style="background-image:url(files/video-01.jpg)"></div>
-                                <div class="video-item-container">
-                                    <div class="video-item-title">Видеоархив 2020</div>
-                                    <div class="video-item-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</div>
+                    <!-- video gallery -->
+                    <div class="video-gallery">
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/M1WRws-c3_k">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-01.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
                                 </div>
+                                <div class="video-gallery-item-date">19 мая 2020</div>
+                                <div class="video-gallery-item-title">Открывающее пленарное заседание. Качество жизни. Решения для мировых мегаполисов</div>
                             </a>
                         </div>
-                        <div class="video-item">
-                            <a href="#">
-                                <div class="video-item-bg" style="background-image:url(files/video-02.jpg)"></div>
-                                <div class="video-item-container">
-                                    <div class="video-item-title">Видеоархив 2019</div>
-                                    <div class="video-item-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/eTUJbR2rirQ">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-02.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
                                 </div>
+                                <div class="video-gallery-item-date">20 мая 2020</div>
+                                <div class="video-gallery-item-title">Приоритеты развития. Проекты, меняющие Москву</div>
                             </a>
                         </div>
-                        <div class="video-item">
-                            <a href="#">
-                                <div class="video-item-bg" style="background-image:url(files/video-03.jpg)"></div>
-                                <div class="video-item-container">
-                                    <div class="video-item-title">Видеоархив 2018</div>
-                                    <div class="video-item-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/jpPLVR4jjoY">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-03.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
                                 </div>
+                                <div class="video-gallery-item-date">10 мая 2020</div>
+                                <div class="video-gallery-item-title">New Urban Agenda. На какие ценности ориентируются города сегодня?</div>
                             </a>
                         </div>
-                        <div class="video-item">
-                            <a href="#">
-                                <div class="video-item-bg" style="background-image:url(files/video-04.jpg)"></div>
-                                <div class="video-item-container">
-                                    <div class="video-item-title">Видеоархив 2017</div>
-                                    <div class="video-item-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/ixZakYCtRVg">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-04.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
                                 </div>
+                                <div class="video-gallery-item-date">19 мая 2020</div>
+                                <div class="video-gallery-item-title">Urban Health. Городское пространство как источник здоровья</div>
                             </a>
                         </div>
-                        <div class="video-item">
-                            <a href="#">
-                                <div class="video-item-bg" style="background-image:url(files/video-05.jpg)"></div>
-                                <div class="video-item-container">
-                                    <div class="video-item-title">Видеоархив 2016</div>
-                                    <div class="video-item-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/x_5CUX6f6Jk">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-05.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
                                 </div>
+                                <div class="video-gallery-item-date">20 мая 2020</div>
+                                <div class="video-gallery-item-title">Приоритеты развития. Проекты, меняющие Москву</div>
                             </a>
                         </div>
-                        <div class="video-item">
-                            <a href="#">
-                                <div class="video-item-bg" style="background-image:url(files/video-06.jpg)"></div>
-                                <div class="video-item-container">
-                                    <div class="video-item-title">Видеоархив 2015</div>
-                                    <div class="video-item-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/JGD4fWGxmLg">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-06.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
                                 </div>
+                                <div class="video-gallery-item-date">19 мая 2020</div>
+                                <div class="video-gallery-item-title">Открывающее пленарное заседание. Качество жизни. Решения для мировых мегаполисов</div>
                             </a>
                         </div>
-                        <div class="video-item">
-                            <a href="#">
-                                <div class="video-item-bg" style="background-image:url(files/video-07.jpg)"></div>
-                                <div class="video-item-container">
-                                    <div class="video-item-title">Видеоархив 2014</div>
-                                    <div class="video-item-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/eTUJbR2rirQ">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-02.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
                                 </div>
+                                <div class="video-gallery-item-date">19 мая 2020</div>
+                                <div class="video-gallery-item-title">Urban Health. Городское пространство как источник здоровья</div>
                             </a>
                         </div>
-                        <div class="video-item">
-                            <a href="#">
-                                <div class="video-item-bg" style="background-image:url(files/video-08.jpg)"></div>
-                                <div class="video-item-container">
-                                    <div class="video-item-title">Видеоархив 2013</div>
-                                    <div class="video-item-text">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam.</div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/jpPLVR4jjoY">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-03.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
                                 </div>
+                                <div class="video-gallery-item-date">10 мая 2020</div>
+                                <div class="video-gallery-item-title">New Urban Agenda. На какие ценности ориентируются города сегодня?</div>
+                            </a>
+                        </div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/M1WRws-c3_k">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-01.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
+                                </div>
+                                <div class="video-gallery-item-date">19 мая 2020</div>
+                                <div class="video-gallery-item-title">Открывающее пленарное заседание. Качество жизни. Решения для мировых мегаполисов</div>
+                            </a>
+                        </div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/eTUJbR2rirQ">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-02.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
+                                </div>
+                                <div class="video-gallery-item-date">20 мая 2020</div>
+                                <div class="video-gallery-item-title">Приоритеты развития. Проекты, меняющие Москву</div>
+                            </a>
+                        </div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/jpPLVR4jjoY">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-03.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
+                                </div>
+                                <div class="video-gallery-item-date">10 мая 2020</div>
+                                <div class="video-gallery-item-title">New Urban Agenda. На какие ценности ориентируются города сегодня?</div>
+                            </a>
+                        </div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/ixZakYCtRVg">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-04.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
+                                </div>
+                                <div class="video-gallery-item-date">19 мая 2020</div>
+                                <div class="video-gallery-item-title">Urban Health. Городское пространство как источник здоровья</div>
+                            </a>
+                        </div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/x_5CUX6f6Jk">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-05.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
+                                </div>
+                                <div class="video-gallery-item-date">20 мая 2020</div>
+                                <div class="video-gallery-item-title">Приоритеты развития. Проекты, меняющие Москву</div>
+                            </a>
+                        </div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/JGD4fWGxmLg">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-06.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
+                                </div>
+                                <div class="video-gallery-item-date">19 мая 2020</div>
+                                <div class="video-gallery-item-title">Открывающее пленарное заседание. Качество жизни. Решения для мировых мегаполисов</div>
+                            </a>
+                        </div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/eTUJbR2rirQ">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-02.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
+                                </div>
+                                <div class="video-gallery-item-date">19 мая 2020</div>
+                                <div class="video-gallery-item-title">Urban Health. Городское пространство как источник здоровья</div>
+                            </a>
+                        </div>
+                        <div class="video-gallery-item">
+                            <a href="https://www.youtube.com/embed/jpPLVR4jjoY">
+                                <div class="video-gallery-item-preview">
+                                    <img src="files/video-gallery-03.jpg" alt="" />
+                                    <div class="video-gallery-item-preview-icon"><svg><use xlink:href="images/sprite.svg#video-play"></use></svg></div>
+                                </div>
+                                <div class="video-gallery-item-date">10 мая 2020</div>
+                                <div class="video-gallery-item-title">New Urban Agenda. На какие ценности ориентируются города сегодня?</div>
                             </a>
                         </div>
                     </div>
