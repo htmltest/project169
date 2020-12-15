@@ -542,16 +542,19 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .partners-group-list {margin:15px -10px 0 -10px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden}
 .partners-group-list.slick-initialized {overflow:visible}
 .partners-group-item {display:inline-block; vertical-align:top; width:16.66%; padding:5px 10px 0 10px}
-.partners-group-item-inner {display:block; text-decoration:none; color:#504f4f; transition:transform 0.2s}
-a.partners-group-item-inner:hover {color:#ff2f66; transform:translateY(-5px)}
+.partners-group-item-inner {display:block; text-decoration:none; color:#504f4f; position:relative; top:0; transition:top 0.2s}
+a.partners-group-item-inner:hover {color:#ff2f66; top:-5px}
 .partners-group-item-logo {padding:100% 0 0 0; position:relative; background:#f8f7f6; overflow:hidden}
 .partners-group-item-logo img {display:block; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); max-width:100%; max-height:100%; width:auto; height:auto}
+.partners-group-item-logo span {display:block; position:absolute; left:0; bottom:12px; right:0; font-size:10px; line-height:14px; letter-spacing:0; font-weight:300; text-transform:uppercase; color:#5a5a5a; text-align:center}
 .partners-group-item-title {font-size:14px; line-height:21px; letter-spacing:0; white-space:normal; margin:10px 0 0 0}
 .partners-group-global {margin:15px -10px 0 -10px}
 .partners-group-global-inner {display:table; width:100%}
 .partners-group-global-logo {display:table-cell; vertical-align:middle; width:16.66%; padding:0 10px}
-.partners-group-global-logo-inner {display:block; padding:100% 0 0 0; position:relative; background:#f8f7f6; overflow:hidden}
+.partners-group-global-logo-inner {display:block; padding:100% 0 0 0; position:relative; background:#f8f7f6; overflow:hidden; top:0; transition:top 0.2s}
+a.partners-group-global-logo-inner:hover {top:-5px}
 .partners-group-global-logo-inner img {display:block; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); max-width:100%; max-height:100%; width:auto; height:auto}
+.partners-group-global-logo-inner span {display:block; position:absolute; left:0; bottom:12px; right:0; font-size:10px; line-height:14px; letter-spacing:0; font-weight:300; text-transform:uppercase; color:#5a5a5a; text-align:center}
 .partners-group-global-title {display:table-cell; vertical-align:middle; padding:0 0 0 40px; font-size:18px; line-height:27px}
 .partners-group-global-title-inner {max-width:600px}
 
@@ -1487,6 +1490,7 @@ h1+.main-block {margin:80px 0 0 0}
 footer {margin:60px 0 0 0}
 .prefooter+footer {margin:0}
 .page-main footer {margin:120px 0 0 0}
+.page-main .prefooter+footer {margin:0}
 
 .footer-social {background:#000; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
 .footer-social-item {display:inline-block; vertical-align:top; width:240px; border-right:1px solid #2c2c2c}
