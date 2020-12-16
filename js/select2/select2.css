@@ -11,6 +11,11 @@
     height: 44px;
     user-select: none;
     -webkit-user-select: none; }
+    @media screen and (max-width:767px) {
+      .select2-container .select2-selection--single {
+          height: 66px;
+      }
+    }
     .select2-container .select2-selection--single .select2-selection__rendered {
       display: block;
       padding-left: 9px;
@@ -29,12 +34,41 @@
     box-sizing: border-box;
     cursor: pointer;
     display: block;
+    padding: 0 30px 0 0;
     min-height: 44px;
+    position: relative;
     user-select: none;
     -webkit-user-select: none; }
+    @media screen and (max-width:767px) {
+        .select2-container .select2-selection--multiple {
+            min-height: 66px;
+        }
+    }
+    .select2-container .select2-selection--multiple::after {
+      content: "";
+      display: block;
+      width: 12px;
+      height: 6px;
+      position: absolute;
+      right: 9px;
+      top: 50%;
+      margin-top: -3px;
+      background: url(arrow.svg) no-repeat; }
+      @media screen and (max-width:767px) {
+          .select2-container .select2-selection--multiple::after {
+              width: 14px;
+              height: 8px;
+              margin-top: -4px;
+              background-size: 100% 100%;
+          }
+      }
     .select2-container .select2-selection--multiple .select2-selection__rendered {
-      display: inline;
+      display: inline-block;
       list-style: none;
+      font-size: 0;
+      line-height: 0;
+      letter-spacing: -1px;
+      margin: 0;
       padding: 0; }
     .select2-container .select2-selection--multiple .select2-selection__clear {
       background-color: transparent;
@@ -43,10 +77,25 @@
   .select2-container .select2-search--inline .select2-search__field {
     box-sizing: border-box;
     border: none;
-    font-size: 100%;
-    margin-top: 5px;
-    margin-left: 5px;
-    padding: 0; }
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0 0 0 9px;
+    color: #000;
+    max-width: calc(100% - 9px);
+    padding: 9px 0; }
+    @media screen and (max-width:767px) {
+        .select2-container .select2-search--inline .select2-search__field {
+            font-size: 20px;
+            line-height: 30px;
+            padding: 17px 0;
+        }
+    }
+    .select2-container .select2-search--inline .select2-search__field::-webkit-input-placeholder {opacity:1; color:#b0b0b0}
+    .select2-container .select2-search--inline .select2-search__field::-moz-placeholder {opacity:1; color:#b0b0b0}
+    .select2-container .select2-search--inline .select2-search__field:-ms-input-placeholder {opacity:1; color:#b0b0b0}
+    .fonts-loaded .select2-container .select2-search--inline .select2-search__field {
+      font-family:GraphikLCG, sans-serif; }
     .select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button {
       -webkit-appearance: none; }
 
@@ -81,6 +130,12 @@
   border-top: 1px solid #d9d9d9;
   user-select: none;
   -webkit-user-select: none; }
+  @media screen and (max-width:767px) {
+    .select2-results__option {
+      font-size: 20px;
+      line-height: 30px;
+    }
+  }
   .select2-results__option::before {
     display: none;
   }
@@ -152,11 +207,19 @@
   background-color: #fdfdfd;
   border: 1px solid #d9d9d9;
   border-radius: 0px; }
+  .select2-container--default .select2-selection--single:hover {
+    border-color: #8e8e8e; }
   .select2-container--default .select2-selection--single .select2-selection__rendered {
     color: #000;
     font-size: 16px;
     font-weight: 500;
     line-height: 42px; }
+    @media screen and (max-width:767px) {
+      .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size: 20px;
+        line-height: 64px;
+      }
+    }
   .select2-container--default .select2-selection--single .select2-selection__clear {
     cursor: pointer;
     float: right;
@@ -172,6 +235,11 @@
     top: 0px;
     right: 0px;
     width: 22px; }
+    @media screen and (max-width:767px) {
+      .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 64px;
+      }
+    }
     .select2-container--default .select2-selection--single .select2-selection__arrow b {
       height: 6px;
       left: 0;
@@ -180,6 +248,14 @@
       background: url(arrow.svg) no-repeat;
       margin-top: -3px;
       width: 12px; }
+    @media screen and (max-width:767px) {
+      .select2-container--default .select2-selection--single .select2-selection__arrow b {
+          width: 14px;
+          height: 8px;
+          margin-top: -4px;
+          background-size: 100% 100%;
+      }
+    }
 
 .select2-container--default[dir="rtl"] .select2-selection--single .select2-selection__clear {
   float: left; }
@@ -195,12 +271,12 @@
     display: none; }
 
 .select2-container--default .select2-selection--multiple {
-  background-color: white;
-  border: 1px solid #aaa;
-  border-radius: 4px;
-  cursor: text;
-  padding-bottom: 5px;
-  padding-right: 5px; }
+  background-color: #fdfdfd;
+  border: 1px solid #d9d9d9;
+  border-radius: 0px;
+  cursor: text; }
+  .select2-container--default .select2-selection--multiple:hover {
+    border-color: #8e8e8e; }
   .select2-container--default .select2-selection--multiple .select2-selection__clear {
     cursor: pointer;
     float: right;
@@ -210,32 +286,47 @@
     margin-top: 5px;
     padding: 1px; }
   .select2-container--default .select2-selection--multiple .select2-selection__choice {
-    background-color: #e4e4e4;
-    border: 1px solid #aaa;
-    border-radius: 4px;
+    background-color: #efefef;
     display: inline-block;
-    margin-left: 5px;
-    margin-top: 5px;
+    margin: 6px 0 0 6px;
     padding: 0; }
+    .select2-container--default .select2-selection--multiple .select2-selection__choice::before {
+      display: none; }
   .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
     cursor: default;
-    padding-left: 2px;
-    padding-right: 5px; }
+    display: block;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0;
+    font-weight: normal;
+    color: #000;
+    padding: 4.5px 8px; }
+    @media screen and (max-width:767px) {
+      .select2-container--default .select2-selection--multiple .select2-selection__choice__display {
+          font-size: 16px;
+          line-height: 24px;
+      }
+    }
   .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-    background-color: transparent;
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
     border: none;
-    border-right: 1px solid #aaa;
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-    color: #999;
+    height: 27px;
+    background: url(remove.svg) no-repeat;
+    color: rgba(0, 0, 0, 0);
     cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    padding: 0 4px; }
+    font-size: 0; }
+    .select2-container--default .select2-selection--multiple .select2-selection__choice:hover .select2-selection__choice__remove {
+      display: block; }
+    @media screen and (max-width:767px) {
+    .select2-container--default .select2-selection--multiple .select2-selection__choice:hover .select2-selection__choice__remove {
+      display: none; }
+    }
     .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover, .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:focus {
-      background-color: #f1f1f1;
-      color: #333;
-      outline: none; }
+            outline: none; }
 
 .select2-container--default[dir="rtl"] .select2-selection--multiple .select2-selection__choice {
   margin-left: 5px;
@@ -291,7 +382,7 @@
   -webkit-appearance:none;
   transition:border-color 0.2s;
   border: 1px solid #d9d9d9; }
-  
+
 .fonts-loaded .select2-container--default .select2-search--dropdown .select2-search__field {font-family:GraphikLCG, sans-serif}
 
 .select2-container--default .select2-search--inline .select2-search__field {
@@ -342,6 +433,13 @@
     right: 10px;
     top: 12px;
     background: url(selected.svg) no-repeat; }
+    @media screen and (max-width:767px) {
+        .select2-container--default .select2-results__option--selected::after {
+            width: 20px;
+            height: 20px;
+            background-size: 100% 100%;
+        }
+    }
 
 .select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
   background-color: #f7f7f7; }

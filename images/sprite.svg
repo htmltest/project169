@@ -13,8 +13,8 @@
     </symbol>
 
     <symbol viewBox="0 0 25 24" id="header-search-close">
-        <path d="M2 1.5L23.0312 22.5312" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-        <path d="M23.0312 1.5L2.00003 22.5312" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M2 1.5L23.0312 22.5312" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M23.0312 1.5L2.00003 22.5312" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
     <symbol viewBox="0 0 40 40" id="icon-fb">
@@ -204,6 +204,17 @@
     <symbol viewBox="0 0 24 24" id="programm-filter-param-remove">
         <path d="M15 9L9 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M9 9L15 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol viewBox="0 0 34 34" id="mobile-menu-link">
+        <path d="M4.25 18.5H29.75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4.25 8.5H29.75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M4.25 28.5H29.75" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol viewBox="0 0 24 23" id="mobile-menu-close">
+        <path d="M2.98438 2.48438L21.0156 20.5156" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M21.0156 2.48438L2.9844 20.5156" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
 </svg>

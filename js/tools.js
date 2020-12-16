@@ -9,6 +9,12 @@ $(document).ready(function() {
     });
 
     $('.header-search-link').click(function(e) {
+        if ($('html').hasClass('mobile-menu-open')) {
+            $('html').removeClass('mobile-menu-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
+            $('.wrapper').css('margin-top', 0);
+            $(window).scrollTop($('html').data('scrollTop'));
+        }
         $('html').addClass('header-search-open');
         e.preventDefault();
     });
@@ -38,7 +44,11 @@ $(document).ready(function() {
 
     $('.main-block .speakers').each(function() {
         var curBlock = $(this).parent();
-        if (curBlock.find('.speaker').length > 8) {
+        var curSize = 8;
+        if ($(window).width() < 768) {
+            curSize = 6;
+        }
+        if (curBlock.find('.speaker').length > curSize) {
             curBlock.find('.speakers-more').addClass('visible');
         }
     });
@@ -47,7 +57,11 @@ $(document).ready(function() {
         var curBlock = $(this).parents().filter('.main-block');
         var countItems = curBlock.find('.speaker').length;
         var countVisible = curBlock.find('.speaker:visible').length;
-        countVisible += 8;
+        var curSize = 8;
+        if ($(window).width() < 768) {
+            curSize = 6;
+        }
+        countVisible += curSize;
         if (countVisible >= countItems) {
             curBlock.find('.speakers-more').removeClass('visible');
         }
@@ -61,7 +75,27 @@ $(document).ready(function() {
         slidesToScroll: 6,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    arrows: false,
+                    dots: true
+                }
+            }
+        ]
     });
 
     $('.gallery').each(function() {
@@ -81,7 +115,15 @@ $(document).ready(function() {
             nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
             adaptiveHeight: true,
             fade: true,
-            dots: false
+            dots: false,
+            responsive: [
+                {
+                    breakpoint: 1199,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
         };
         if (curGallery.next().hasClass('gallery-preview')) {
             options.dots = false;
@@ -561,6 +603,17 @@ $(document).ready(function() {
         initForm($(this));
     });
 
+    $('body').on('change', '.form-file input', function() {
+        var curInput = $(this);
+        var curField = curInput.parents().filter('.form-file');
+        var curName = curInput.val().replace(/.*(\/|\\)/, '');
+        if (curName != '') {
+            curField.find('.form-file-input span').html(curName).addClass('full');
+        } else {
+            curField.find('.form-file-input span').html(curField.find('.form-file-input span').attr('data-placeholder')).removeClass('full');
+        }
+    });
+
     $('.event-header-text-more a').click(function(e) {
         $(this).parent().prev().toggleClass('open');
         e.preventDefault();
@@ -651,6 +704,45 @@ $(document).ready(function() {
             curLi.addClass('active');
             redrawProgramm();
         }
+        e.preventDefault();
+    });
+
+    $('.mobile-menu-link').click(function(e) {
+        if ($('html').hasClass('mobile-menu-open')) {
+            $('html').removeClass('mobile-menu-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
+            $('.wrapper').css('margin-top', 0);
+            $(window).scrollTop($('html').data('scrollTop'));
+        } else {
+            var curWidth = $(window).width();
+            if (curWidth < 480) {
+                curWidth = 480;
+            }
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('mobile-menu-open');
+            $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+            $('html').data('scrollTop', curScroll);
+            $('.wrapper').css('margin-top', -curScroll);
+        }
+        e.preventDefault();
+    });
+
+    $('.nav ul li a').click(function(e) {
+        if ($(window).width() < 1200) {
+            if ($(this).parent().find('ul').length != 0) {
+                $(this).parent().toggleClass('open');
+                e.preventDefault();
+            }
+        }
+    });
+
+    $('.footer-menu .footer-title, .footer-archive-title').click(function(e) {
+        $(this).parent().toggleClass('open');
+        e.preventDefault();
+    });
+
+    $('.event-tab-title').click(function(e) {
+        $(this).parent().toggleClass('open');
         e.preventDefault();
     });
 
@@ -758,7 +850,7 @@ function redrawProgramm() {
                 hallHTML +=     '</div>';
                 $('.programm-list').append(hallHTML);
             }
-            
+
             $(window).trigger('resize');
         }
 
@@ -894,6 +986,21 @@ $(window).on('load resize', function() {
             });
         }
     });
+
+    if ($('.table-scroll').length > 0) {
+        if ($(window).width() < 1200) {
+            $('.table-scroll').mCustomScrollbar({
+                axis: 'x',
+                scrollButtons: {
+                    enable: true
+                }
+            });
+        } else {
+            if ($('.table-scroll').length > 0) {
+                $('.table-scroll').mCustomScrollbar('destroy');
+            }
+        }
+    }
 });
 
 $(window).on('load resize scroll', function() {
@@ -921,6 +1028,10 @@ $(window).on('load resize scroll', function() {
 
 function initForm(curForm) {
     curForm.find('input.phoneRU').mask('+7 (000) 000-00-00');
+
+    curForm.find('.form-input input').blur(function(e) {
+        $(this).val($(this).val()).change();
+    });
 
     curForm.find('.form-select select').each(function() {
         var curSelect = $(this);
