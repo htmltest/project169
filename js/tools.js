@@ -33,7 +33,7 @@ $(document).ready(function() {
         pauseOnFocus: false,
         pauseOnHover: false,
         arrows: false,
-        dots: true
+        dots: false
     });
 
     $('.main-block .speakers').each(function() {
