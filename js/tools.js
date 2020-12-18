@@ -243,6 +243,12 @@ $(document).ready(function() {
     $('.speakers-filter-reset a').click(function(e) {
         $('.speakers-filter-item input').prop('checked', false);
         filterSpeakers();
+        if ($('html').hasClass('speakers-filter-open')) {
+            $('html').removeClass('speakers-filter-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
+            $('.wrapper').css('margin-top', 0);
+            $(window).scrollTop($('html').data('scrollTop'));
+        }
         e.preventDefault();
     });
 
@@ -746,6 +752,91 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.speakers-filter-btn').click(function(e) {
+        if (!$('html').hasClass('speakers-filter-open')) {
+            var curWidth = $(window).width();
+            if (curWidth < 480) {
+                curWidth = 480;
+            }
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('speakers-filter-open');
+            $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+            $('html').data('scrollTop', curScroll);
+            $('.wrapper').css('margin-top', -curScroll);
+        }
+        e.preventDefault();
+    });
+
+    $('.speakers-filter-close').click(function(e) {
+        if ($('html').hasClass('speakers-filter-open')) {
+            $('html').removeClass('speakers-filter-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
+            $('.wrapper').css('margin-top', 0);
+            $(window).scrollTop($('html').data('scrollTop'));
+        }
+        e.preventDefault();
+    });
+
+    $('.speakers-filter-apply').click(function(e) {
+        if ($('html').hasClass('speakers-filter-open')) {
+            $('html').removeClass('speakers-filter-open');
+            $('meta[name="viewport"]').attr('content', 'width=device-width');
+            $('.wrapper').css('margin-top', 0);
+            $(window).scrollTop($('html').data('scrollTop'));
+        }
+        e.preventDefault();
+    });
+
+    $('.archive-card-video .video-gallery').each(function() {
+        var curBlock = $(this).parent();
+        var curSize = 12;
+        if (curBlock.find('.video-gallery-item').length > curSize) {
+            curBlock.find('.video-gallery-more').addClass('visible');
+        }
+    });
+
+    $('.video-gallery-more a').click(function(e) {
+        var curBlock = $(this).parents().filter('.archive-card-video');
+        var countItems = curBlock.find('.video-gallery-item').length;
+        var countVisible = curBlock.find('.video-gallery-item:visible').length;
+        var curSize = 12;
+        countVisible += curSize;
+        if (countVisible >= countItems) {
+            curBlock.find('.video-gallery-more').removeClass('visible');
+        }
+        curBlock.find('.video-gallery-item:lt(' + countVisible + ')').addClass('visible');
+        e.preventDefault();
+    });
+
+    $('.main-conf-speakers .speakers').slick({
+        infinite: false,
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    arrows: false,
+                    dots: true
+                }
+            }
+        ]
+    });
+
 });
 
 function redrawProgramm() {
@@ -826,7 +917,7 @@ function redrawProgramm() {
                             styleTotal = 'margin-left: -' + (widthTotal * 100) + '%';
                         }
                     }
-                    hallHTML +=         '<div class="programm-list-item ' + classType + ' ' + classTotal + '" style="top:' + eventTop + '%; height:' + eventHeight + '%; ' + styleTotal + '" data-start="' + curEvent.start + '" data-speaker="' + curEvent.speaker + '" data-section="' + curEvent.section + '">';
+                    hallHTML +=         '<div class="programm-list-item ' + classType + ' ' + classTotal + '" style="background:' + curEvent.color + '; top:' + eventTop + '%; height:' + eventHeight + '%; ' + styleTotal + '" data-start="' + curEvent.start + '" data-speakers="' + curEvent.speakers.join(',') + '" data-sections="' + curEvent.sections.join(',') + '">';
                     hallHTML +=             '<a href="' + curEvent.url + '">';
                     hallHTML +=                 '<div class="programm-list-item-inner">';
                     hallHTML +=                     '<div class="programm-list-item-content">';
@@ -880,9 +971,16 @@ function updateProgrammFilter() {
         $('.programm-list-item').addClass('unfilter');
 
         $('.programm-filter-window-select-speakers .form-select select').each(function() {
-            var curSelect = $(this);
-            if (curSelect.val() != '') {
-                $('.programm-list-item[data-speaker="' + curSelect.val() + '"]').removeClass('unfilter');
+            var curVal = $(this).val();
+            console.log(curVal);
+            if (curVal != '') {
+                $('.programm-list-item').each(function() {
+                    var curItem = $(this);
+                    var curSpeakers = curItem.attr('data-speakers').split(',');
+                    if (curSpeakers.indexOf(curVal) != -1) {
+                        curItem.removeClass('unfilter');
+                    }
+                });
             }
         });
 
@@ -892,13 +990,20 @@ function updateProgrammFilter() {
         });
 
         $('.programm-filter-window-checkboxes-sections .form-checkbox input:checked').each(function() {
-            var curInput = $(this);
-            $('.programm-list-item[data-section="' + curInput.val() + '"]').removeClass('unfilter');
+            var curVal = $(this).val();
+            if (curVal != '') {
+                $('.programm-list-item').each(function() {
+                    var curItem = $(this);
+                    var curSections = curItem.attr('data-sections').split(',');
+                    if (curSections.indexOf(curVal) != -1) {
+                        curItem.removeClass('unfilter');
+                    }
+                });
+            }
         });
 
         var curTop = 9999;
         $('.programm-list-item:not(.unfilter, .hidden)').each(function() {
-            console.log($(this).offset().top);
             if ($(this).offset().top < curTop) {
                 curTop = $(this).offset().top;
             }

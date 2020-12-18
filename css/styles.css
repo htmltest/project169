@@ -24,7 +24,7 @@ strong, b {font-weight:500}
 h1 {margin:0 0 20px 0; padding:0; font-weight:bold; font-size:55px; line-height:55px; color:#000}
 h2 {margin:40px 0 20px 0; padding:0; font-weight:bold; font-size:36px; line-height:36px; color:#000}
 h3 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:30px; line-height:30px; color:#000}
-h4 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:22px; line-height:22px; color:#000}
+h4 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:22px; line-height:28px; color:#000}
 h5 {margin:40px 0 20px 0; padding:0; font-weight:600; font-size:20px; line-height:30px; color:#000}
 h6 {margin:40px 0 20px 0; padding:0; font-weight:600; font-size:18px; line-height:27px; color:#000}
 p {margin:20px 0; padding:0}
@@ -701,7 +701,8 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .main-block .archive-card-video-big+.news {margin-top:60px}
 .news-item {display:inline-block; vertical-align:top; width:25%; padding:0 10px 40px 10px}
 .news-item a {display:block; text-decoration:none}
-.news-item-preview img {display:block; width:100%}
+.news-item-preview {position:relative; padding:65% 0 0 0; overflow:hidden}
+.news-item-preview img {display:block; position:absolute; left:0; top:0; min-height:100%; max-width:none; min-width:100%; width:auto; height:auto}
 .news-item-date {font-weight:500; font-size:12px; line-height:14px; text-transform:uppercase; letter-spacing:0; margin:20px 0 0 0}
 .news-item-title {font-weight:500; font-size:16px; line-height:21px; letter-spacing:0; margin:7px 0 0 0}
 
@@ -725,7 +726,8 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .news-item-big a:hover {color:#fff}
 .news-item-big .news-item-content {position:absolute; left:0; bottom:0; right:0; padding:76px 58px 51px 58px}
 .news-item-big .news-item-content::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(0deg, #222 0%, rgba(34, 34, 34, 0) 100%); transition:opacity 0.2s}
-.news-item-big a:hover .news-item-content::before {opacity:0}
+.news-item-big a:hover .news-item-content::before {opacity:0.8}
+.news-item-big .news-item-preview {padding:53% 0 0 0}
 .news-item-big .news-item-date {display:inline-block; vertical-align:top; padding:0 10px; height:29px; background:#fff; color:#000; font-weight:500; font-size:14px; line-height:30px; position:relative}
 .news-item-big .news-item-title {padding:21px 0 0 0; font-size:30px; line-height:36px; font-weight:bold; color:#fff; position:relative}
 .news-item-big .news-item-date span {position:absolute; left:100%; top:0; display:block; margin-left:14px; height:29px; padding:0 10px}
@@ -744,6 +746,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 @media screen and (max-width:767px) {
     .news-item-big {padding:0}
     .news-item-big .news-item-content {padding:20px 0 0 0}
+    .news-item-big .news-item-preview {padding:65% 0 0 0}
     .news-item-big .news-item-date {margin:0; padding:0; display:block; height:auto; line-height:17px; background:none}
     .news-item-big .news-item-date span {display:none}
     .news-item-big .news-item-title {padding:0; margin:8px 0 0 0; font-size:24px; line-height:31px}
@@ -803,17 +806,36 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 
 .speakers-header::after {content:""; display:block; clear:both}
 .speakers-header h1 {float:left; margin:0}
+.speakers-filter-btn {display:none}
 .partners-header-btn {float:right; margin:6px 0 0 0}
 
 @media screen and (max-width:1199px) {
     .speakers-header h1 {float:none}
     .partners-header-btn {float:none; margin:30px 0 0 0}
+
+    .speakers-filter-btn {float:left; width:170px; display:block}
+    .speakers-filter-btn a {display:block; padding:0; border:2px solid #000; color:#000; text-decoration:none; font-weight:600; font-size:14px; line-height:40px; height:44px; letter-spacing:0.05em; text-transform:uppercase; text-align:center}
+    .speakers-filter-btn a:hover {color:#fff; background:#000}
+    .speakers-filter-btn a svg {display:inline-block; vertical-align:middle; margin:-2px 12px 0 0; width:22px; height:20px; stroke:#25282b; fill:none; transition:all 0.2s}
+    .speakers-filter-btn a:hover svg {stroke:#fff}
+    .speakers-header .video-search {float:right; width:calc(100% - 190px)}
+
+    .speakers-filter-open,
+    .speakers-filter-open body {overflow:hidden; position:fixed; left:0; top:0; right:0; bottom:0}
+}
+
+@media screen and (max-width:767px) {
+    .speakers-filter-btn {float:none; width:auto; margin:30px 0 0 0}
+    .speakers-filter-btn a {border:none; font-weight:normal; font-size:24px; line-height:60px; color:#282828; height:60px; background:#f7f7f7; letter-spacing:0; text-transform:none}
+    .speakers-filter-btn a svg {width:24px; height:22px}
+    .speakers-header .video-search {float:none; width:auto}
 }
 
 .speakers {margin:40px -10px -40px -10px; font-size:0; line-height:0; letter-spacing:-1px}
 .speaker {display:inline-block; vertical-align:top; width:25%; padding:0 10px 40px 10px}
 .speaker-inner {display:block; text-decoration:none; position:relative}
-.speaker-photo img {display:block; width:100%}
+.speaker-photo {position:relative; padding:100% 0 0 0; overflow:hidden}
+.speaker-photo img {display:block; position:absolute; left:0; top:0; width:100%; height:auto}
 .speaker-name {font-weight:600; font-size:20px; line-height:26px; letter-spacing:0; margin:18px 0 0 0}
 .speaker-text {font-size:14px; line-height:21px; letter-spacing:0; margin:5px 0 0 0; max-height:63px; position:relative; overflow:hidden}
 .speaker-detail {position:absolute; left:0; bottom:0; right:0; background:#fff; padding:10px 0 0 0; opacity:0; transition:all 0.2s}
@@ -837,7 +859,16 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .speakers-page::after {content:""; display:block; clear:both}
 .speakers-page .speaker {width:33.33%}
 
+@media screen and (max-width:1199px) {
+    .speakers-page .speaker {width:25%}
+}
+
+@media screen and (max-width:767px) {
+    .speakers-page .speaker {width:50%}
+}
+
 .speakers-filter {float:left; width:230px; padding:40px 0 0 0}
+.speakers-filter-header {display:none}
 .speakers-filter form {margin:0; padding:0}
 .speakers-filter-group {border-top:1px solid #e9e9e9}
 .speakers-filter-group-header {position:relative; padding:18px 0; font-size:16px; line-height:16px; font-weight:500; color:#2c2c2c; cursor:pointer}
@@ -868,16 +899,58 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .speakers-filter-group-container.all .speakers-filter-group-all a span:nth-child(2) {display:inline}
 .speakers-filter-reset {border-top:1px solid #e9e9e9; text-align:right; padding:20px 0 0 0; font-size:14px; line-height:14px}
 .speakers-filter-reset a {text-decoration:none}
+.speakers-filter-apply {display:none}
+
+@media screen and (max-width:1199px) {
+    .speakers-filter {display:none; position:fixed; left:0; top:0; right:0; bottom:0; background:#fff; z-index:990; float:none; width:auto; padding:0}
+    .speakers-filter-open .speakers-filter {display:block}
+    .speakers-filter-header {display:block; height:74px}
+    .speakers-filter-close {float:left; display:block; width:75px; height:74px; position:relative}
+    .speakers-filter-close svg {display:block; position:absolute; left:39px; top:29px; width:16px; height:16px; fill:#bbb}
+    .speakers-filter-header-title {float:left; font-weight:bold; font-size:24px; line-height:74px; color:#000}
+    .speakers-filter-reset {border-top:none; padding:0; position:absolute; right:39px; top:24px; font-size:18px; line-height:27px}
+    .speakers-filter-reset a {color:#8b8b8b}
+    .speakers-filter-group-header {padding:16px 39px; font-size:18px; line-height:28px}
+    .speakers-filter-group-header svg {display:none}
+    .speakers-filter-group-container {display:none}
+    .speakers-filter form {border-bottom:1px solid #e9e9e9}
+    .speakers-filter-apply {display:block; position:absolute; left:39px; bottom:40px; right:39px}
+    .speakers-filter-apply .btn {display:block; width:auto}
+}
+
+@media screen and (max-width:767px) {
+    .speakers-filter-header {height:71px}
+    .speakers-filter-close {width:60px; height:71px}
+    .speakers-filter-close svg {left:20px; top:26px; width:20px; height:20px}
+    .speakers-filter-header-title {font-size:26px; line-height:71px}
+    .speakers-filter-group-header {padding:20px; font-size:20px}
+    .speakers-filter-reset {right:21px; top:22px}
+    .speakers-filter-apply {left:20px; bottom:30px; right:20px}
+}
 
 .speakers-container {margin:0 0 0 296px; position:relative}
 .speakers-content {float:left; width:100%; position:relative; min-height:100px}
 .speakers-container.loading .speakers-content::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.5) url(../images/loading.gif) no-repeat center}
+
+@media screen and (max-width:1199px) {
+    .speakers-container {margin:0}
+    .speakers-content {float:none; width:auto}
+}
 
 .speakers-years {margin:80px 0 0 0; border-top:1px solid rgba(196, 196, 196, 0.5); padding:40px 0 0 0}
 .speakers-years-inner {margin:0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
 .speakers-years-item {display:inline-block; vertical-align:top; width:33.33%; padding:20px 10px 0 10px}
 .speakers-years-item a {display:block; height:140px; font-size:34px; text-decoration:none; letter-spacing:0; line-height:140px; text-align:center; color:#fff; background:#202020 url(../images/speakers-years.svg) no-repeat; background-size:100% 100%}
 .speakers-years-item a strong {color:#ffde4f; font-weight:bold}
+
+@media screen and (max-width:1199px) {
+    .speakers-years {margin:60px 0 0 0; border-top:none; padding:0}
+    .speakers-years-item {width:50%; padding:20px 10px 0 10px}
+}
+
+@media screen and (max-width:767px) {
+    .speakers-years {display:none}
+}
 
 .speaker-card {margin:40px 0 0 0}
 .speaker-card::after {content:""; display:block; clear:both}
@@ -894,6 +967,31 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .speaker-card-session-date span {font-weight:500; margin:0 8px 0 0}
 .speaker-card-session-title {margin:3px 0 0 0; color:#000}
 
+@media screen and (max-width:1199px) {
+    .speaker-card-photo {clear:left; width:300px}
+    .speaker-card-container {margin:0}
+    .speaker-card-content {float:none; width:auto}
+    .speaker-card-content h1 {float:right; clear:right; width:calc(100% - 381px); font-size:32px; line-height:42px; margin:29px 0 0 0}
+    .speaker-card-post {float:right; clear:right; width:calc(100% - 381px); font-size:24px; line-height:36px}
+    .speaker-card-sessions {float:left; clear:left; width:100%; margin:100px 0 0 0}
+    .speaker-card-sessions-title {font-size:32px; line-height:48px}
+    .speaker-card-session {padding:30px 0 33px 0}
+    .speaker-card-session-date {font-size:20px; line-height:20px}
+    .speaker-card-session-title {margin:10px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .speaker-card {margin:30px 0 0 0}
+    .speaker-card-photo {float:none; width:295px; margin:0 auto}
+    .speaker-card-content h1 {float:none; width:auto; margin:40px 0 0 0; font-size:30px; line-height:30px; text-align:center}
+    .speaker-card-post {float:none; width:auto; margin:10px 0 0 0; text-align:center; font-size:20px; line-height:30px}
+    .speaker-card-sessions {float:none; width:auto; margin:40px 0 0 0; border-top:1px solid #d9d9d9; padding:60px 0 0 0; border-bottom:none}
+    .speaker-card-sessions-title {font-size:24px; line-height:24px; padding:0 0 10px 0}
+    .speaker-card-session {padding:20px 0 0 0; border-top:none}
+    .speaker-card-session-date {font-size:18px; line-height:27px}
+    .speaker-card-session-title {margin:0}
+}
+
 .speaker-card-descr {margin:50px 0 0 0}
 .speaker-card-descr-title {font-weight:600; font-size:22px; line-height:22px; color:#000}
 .speaker-card-descr-text {margin:20px 0 0 0; max-height:300px; position:relative; overflow:hidden; transition:max-height 0.2s}
@@ -909,6 +1007,19 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .speaker-card-descr-more a span:nth-child(2) {display:none}
 .speaker-card-descr-text.open+.speaker-card-descr-more a span:nth-child(1) {display:none}
 .speaker-card-descr-text.open+.speaker-card-descr-more a span:nth-child(2) {display:inline}
+
+@media screen and (max-width:1199px) {
+    .speaker-card-descr {margin:80px 0 0 0; float:left; clear:left; width:100%}
+    .speaker-card-descr-title {font-size:32px; line-height:48px}
+    .speaker-card-descr-more {margin:20px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .speaker-card-descr {margin:60px 0 0 0; float:none; width:auto}
+    .speaker-card-descr-title {font-size:24px; line-height:24px}
+    .speaker-card-descr-more {margin:11px 0 0 0}
+    .speaker-card-descr-more a {font-size:16px; line-height:21px; padding:15px 26px}
+}
 
 .speaker-events {margin:120px 0 0 0}
 .speaker-events-list {margin:50px 0 0 0; border-bottom:1px solid #e8e8e8}
@@ -931,6 +1042,41 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .speaker-event-row:first-child .speaker-event-play {top:2px}
 .speaker-event-play:hover {border-color:#000}
 .speaker-event-play svg {display:block; position:absolute; left:8px; top:6px; width:8px; height:10px; fill:#25282b; stroke:#25282b}
+
+@media screen and (max-width:1199px) {
+    .speaker-events {margin:100px 0 0 0}
+    .speaker-events-list {margin:30px 0 0 0}
+    .speaker-events-headers {font-size:16px; line-height:24px}
+    .speaker-events-header:nth-child(1) {width:236px}
+    .speaker-events-header:nth-child(2) {width:218px}
+    .speaker-event-title {width:236px}
+    .speaker-event-container {padding:0}
+    .speaker-event-date {padding:20px 0; width:218px; font-size:20px; line-height:20px; border-top:1px solid #e8e8e8}
+    .speaker-event-row:first-child .speaker-event-date {padding:20px 0; border-top:none}
+    .speaker-event-date span {display:block; margin:0 0 10px 0}
+    .speaker-event-name {padding:20px 0; font-size:20px; line-height:30px; border-top:1px solid #e8e8e8}
+    .speaker-event-row:first-child .speaker-event-name {padding:20px 0; border-top:none}
+    .speaker-event-play {left:-52px; top:50%; width:29px; height:29px; margin-top:-14.5px}
+    .speaker-event-row:first-child .speaker-event-play {top:50%}
+    .speaker-event-play svg {width:10px; height:12px; left:9px; top:7px}
+}
+
+@media screen and (max-width:767px) {
+    .speaker-events {margin:80px 0 0 0}
+    .speaker-events-headers {display:none}
+    .speaker-event-title {width:115px}
+    .speaker-event-content {display:block}
+    .speaker-event-row {display:block; border-top:1px solid #e8e8e8; padding:20px 0}
+    .speaker-event-row:first-child {border-top:none}
+    .speaker-event-date {display:block; padding:0; width:auto; border-top:none; font-size:18px; line-height:27px}
+    .speaker-event-row:first-child .speaker-event-date {padding:0}
+    .speaker-event-date span {display:inline; margin:0 8px 0 0}
+    .speaker-event-name {display:block; padding:0; border-top:none}
+    .speaker-event-row:first-child .speaker-event-name {padding:0}
+    .speaker-event-play {position:relative; left:auto; top:auto; margin:15px 0 0 0; width:40px; height:40px}
+    .speaker-event-row:first-child .speaker-event-play {top:auto}
+    .speaker-event-play svg {width:13px; height:16px; top:10px; left:13px}
+}
 
 .partners-header::after {content:""; display:block; clear:both}
 .partners-header h1 {float:left; margin:0}
@@ -1380,6 +1526,23 @@ a.partners-group-global-logo-inner:hover {top:-5px}
     .video-gallery-item-title {font-size:24px; line-height:31px; margin:8px 0 0 0}
 }
 
+.archive-card-video .video-gallery .video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item+.video-gallery-item {display:none}
+.archive-card-video .video-gallery .video-gallery-item.visible {display:inline-block !important}
+
+.video-gallery-more {margin:66px 0 0 0; display:none}
+.video-gallery-more.visible {display:block}
+.video-gallery-more a {display:block; height:60px; background:#f4f4f4; text-align:center; text-decoration:none; text-transform:uppercase; color:#717171; font-size:14px; line-height:60px; letter-spacing:0.05em}
+.video-gallery-more a:hover {color:#000}
+
+@media screen and (max-width:1199px) {
+    .video-gallery-more {margin:40px 0 0 0}
+    .video-gallery-more a {font-weight:500}
+}
+
+@media screen and (max-width:767px) {
+    .video-gallery-more a {height:63px; font-size:16px; line-height:63px}
+}
+
 .video-other {margin:129px 0 0 0}
 .video-other h2 {font-size:40px; margin:0; font-weight:900; line-height:40px}
 
@@ -1485,11 +1648,31 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .award-header-right {float:right; width:50%}
 .award-header-title {font-weight:600; font-size:22px; line-height:22px; letter-spacing:0.03em; color:#9c9c9c; text-transform:uppercase}
 .award-header h2 {margin:20px 0 0 0}
-.award-header-right {font-weight:500; font-size:30px; line-height:39px; color:#000}
+.award-header-text {font-weight:500; font-size:30px; line-height:39px; color:#000}
+.award-header-btns-mobile {display:none}
 .award-header-btns {margin:46px 0 0 0}
 .award-header-btn {margin:20px 0 0 0}
 .award-header-btn a {display:inline-block; vertical-align:top; line-height:44px; text-decoration:none; height:44px; padding:0 20px; font-weight:500; font-size:14px; letter-spacing:0.05em; text-transform:uppercase; background:#f4f4f4}
 .award-header-btn a svg {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0; fill:none; stroke:#717171}
+
+@media screen and (max-width:1199px) {
+    .award-header-left {float:none; width:auto; padding:0}
+    .award-header-right {float:none; width:auto; margin:30px 0 0 0}
+    .award-header-title {font-size:24px; line-height:24px}
+    .award-header h2 {margin:30px 0 0 0; font-size:40px; line-height:52px; font-weight:900}
+    .award-header-text {font-size:28px; line-height:36px}
+    .award-header-btns {margin:40px 0 0 0}
+    .award-header-btn a svg {width:34px; height:34px}
+}
+
+@media screen and (max-width:767px) {
+    .award-header h2 {margin:20px 0 0 0; font-size:30px; line-height:35px; font-weight:bold}
+    .award-header-btns {display:none; margin:40px 0 0 0}
+    .award-header-btns-mobile {display:block}
+    .award-header-btn a {height:66px; font-size:18px; line-height:66px}
+    .award-header-right {margin:40px 0 0 0}
+    .award-header-text {font-size:30px; line-height:39px}
+}
 
 .award-video {margin:70px 0 0 0}
 .award-video-inner {margin:30px 0 0 0; position:relative; padding:56.25% 0 0 0}
@@ -1498,6 +1681,18 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .award-video-preview:hover .award-video-icon {background:rgba(0, 0, 0, 0.8)}
 .award-video-icon svg {display:block; width:34px; height:39px; fill:#fff; position:absolute; left:50%; top:50%; margin:-20px 0 0 -12px}
 .award-video-inner iframe {display:block; position:absolute; left:0; top:0; width:100%; height:100%}
+
+@media screen and (max-width:1199px) {
+    .award-video {margin:100px 0 0 0}
+    .award-video-icon {width:76px; height:76px; margin:-38px 0 0 -38px}
+    .award-video-icon svg {width:27px; height:32px; margin:-16px 0 0 -10px}
+}
+
+@media screen and (max-width:767px) {
+    .award-video-inner {margin:30px -20px 0 -20px}
+    .award-video-icon {width:85px; height:85px; margin:-43px 0 0 -43px}
+    .award-video-icon svg {width:30px; height:35px; margin:-18px 0 0 -13px}
+}
 
 .award-nominations {margin:48px 0 0 0}
 .award-nomination {margin:60px 0 0 0}
@@ -1512,6 +1707,8 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .award-nominant-header-logo img {display:block; max-width:none; width:80px}
 .award-nominant-header-content {display:table-cell; vertical-align:middle; padding:10px 30px 10px 20px; position:relative}
 .award-nominant-header-title {font-weight:500; font-size:22px; line-height:29px; color:#000}
+.award-nominant-header-title em {display:none}
+.award-nominant-header-title strong {font-weight:500}
 .award-nominant-header-title span {display:inline-block; margin:0 0 0 10px; vertical-align:middle; height:26px; font-size:10px; line-height:26px; letter-spacing:0.05em; text-transform:uppercase; color:#fff; padding:0 10px; background:#4680c2}
 .award-nominant-header-text {margin:4px 0 0 0}
 .award-nominant-header-content svg {display:block; width:12px; height:6px; position:absolute; right:25px; top:50%; margin-top:-3px; stroke:#25282b; fill:none}
@@ -1527,14 +1724,64 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .award-nominant-container-right > *:first-child {margin-top:0}
 .award-nominant-container-right > *:last-child {margin-bottom:0}
 
+@media screen and (max-width:1199px) {
+    .award-nominations {margin:40px 0 0 0}
+    .award-nomination {margin:80px 0 0 0}
+    .award-nomination:first-child {margin:0}
+    .award-nomination-header {padding:0 0 0 46px; font-size:28px; line-height:36px}
+    .award-nominants {margin:34px 0 0 0}
+    .award-nominant-header-logo {width:118px; padding:20px 0}
+    .award-nominant-header-logo img {width:118px}
+    .award-nominant-header-content {padding:20px 50px 20px 40px}
+    .award-nominant-header-title {font-size:24px; line-height:31px}
+    .award-nominant-header-title span {font-size:14px; line-height:31px; height:31px; margin:0 0 0 20px}
+    .award-nominant-header-text {margin:10px 0 0 0}
+    .award-nominant-header-content svg {width:24px; height:14px; right:0; margin-top:-7px}
+    .award-nominant-container {padding:40px 40px 60px 40px}
+    .award-nominant-container-left {float:none; width:auto; padding:0}
+    .award-nominant-container-right {float:none; width:auto; padding:0; margin:30px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .award-nomination-header {padding:0; font-size:30px; line-height:39px}
+    .award-nomination-header span {position:relative; left:auto; top:auto; margin:0 8px 0 0}
+    .award-nominants {margin:20px -20px 0 -20px}
+    .award-nominant-header-logo {width:115px; padding:20px 0 20px 20px; vertical-align:top}
+    .award-nominant-header-logo img {width:95px}
+    .award-nominant-header-content {padding:20px 58px 20px 20px; vertical-align:top}
+    .award-nominant-header-title em {display:inline-block; margin:0 0 8px 0; height:26px; font-style:normal; font-size:12px; line-height:26px; letter-spacing:0.05em; text-transform:uppercase; color:#fff; padding:0 10px; background:#4680c2}
+    .award-nominant-header-title strong {display:block}
+    .award-nominant-header-title span {display:none}
+    .award-nominant-header-text {margin:4px 0 0 0}
+    .award-nominant-header-content svg {width:18px; height:9px; right:20px; margin-top:-5px}
+    .award-nominant-container {padding:40px 20px}
+    .award-nominant-container h6 {margin:40px 0 10px 0}
+}
+
 .award-about::after {content:""; display:block; clear:both}
 .award-about-left {float:left; width:50%; padding:0 10px 0 0}
 .award-about-left h2 {margin:0}
+.award-text-mobile {display:none}
 .award-about-old {margin:85px 0 0 0}
 .award-about-old-btns {margin:22px 0 0 0}
 .award-about-right {float:right; width:50%; padding:0 0 0 10px}
 .award-about-right > *:first-child {margin-top:0}
 .award-about-right > *:last-child {margin-bottom:0}
+
+@media screen and (max-width:1199px) {
+    .award-about-left {float:none; width:auto; padding:0}
+    .award-about-left h2 {margin:0}
+    .award-text-mobile {display:block; margin:30px 0 0 0}
+    .award-about-old {margin:40px 0 0 0}
+    .award-about-old-btns {margin:20px 0 0 0}
+    .award-about-right {float:none; width:auto; margin:60px 0 0 0; padding:0}
+    .award-about-right h4 {font-size:28px; line-height:36px}
+    .award-about-right p {display:none}
+}
+
+@media screen and (max-width:767px) {
+    .award-about-right h4 {font-size:24px; line-height:31px}
+}
 
 .award-reglament {margin:30px 0 0 0}
 .award-reglament::after {content:""; display:block; clear:both}
@@ -1547,6 +1794,20 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .award-reglament-info {margin:23px 0 0 0}
 .award-reglament-info strong {font-weight:500}
 .award-reglament-info p {margin:10px 0 0 0}
+
+@media screen and (max-width:1199px) {
+    .award-reglament-left {float:none; width:auto; padding:0}
+    .award-reglament-right {float:none; width:auto; padding:0; margin:40px 0 0 0}
+    .award-reglament-notice {margin:6px 0 20px 0; font-size:18px; line-height:27px}
+    .award-reglament-info {margin:20px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .award-reglament {margin:40px 0 0 0}
+    .award-reglament h4 {font-size:30px; line-height:39px}
+    .award-reglament-notice {margin:10px 0 20px 0; font-size:20px; line-height:30px}
+    .award-reglament-right {margin:60px 0 0 0}
+}
 
 .analytics-menu {background:#f5f5f5; font-size:0; line-height:0; letter-spacing:-1px; text-align:center; height:60px}
 .analytics-menu ul {margin:0; padding:0; list-style:none; display:inline-block; vertical-align:top}
@@ -2256,6 +2517,7 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-filter-window-checkboxes-sections {max-height:273px}
 .programm-filter-window-checkboxes .form-checkbox {margin:10px 0 0 0}
 .programm-filter-window-checkboxes .form-checkbox:first-child {margin:0}
+.programm-filter-window-checkboxes .form-checkbox em {display:inline-block; width:20px; height:20px; vertical-align:top; margin:0 11px 0 0}
 .programm-filter-window-checkboxes .mCSB_inside > .mCSB_container {margin:0}
 .programm-filter-window-checkboxes .mCSB_scrollTools {opacity:1; width:3px}
 .programm-filter-window-checkboxes .mCSB_scrollTools .mCSB_draggerRail {width:3px; border-radius:2px; background:#e5e5e5}
@@ -2300,15 +2562,6 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-list-item.hidden {display:none}
 .programm-list-item a {display:block; text-decoration:none; transition:none; position:absolute; left:0; top:0; right:0; bottom:0; transition:box-shadow 0.2s}
 .programm-list-item a:hover {box-shadow:4px 4px 20px rgba(85, 85, 85, 0.14)}
-.programm-list-item-type-1 a {background:#f5f5f5}
-.programm-list-item-type-2 a {background:#ffe5ec}
-.programm-list-item-type-3 a {background:#e5edff}
-.programm-list-item-type-4 a {background:#daffe0}
-.programm-list-item-type-5 a {background:#daffe0}
-.programm-list-item-type-6 a {background:#daffe0}
-.programm-list-item-type-7 a {background:#daffe0}
-.programm-list-item-type-8 a {background:#daffe0}
-.programm-list-item-type-9 a {background:#daffe0}
 .programm-list-item.unfilter a {opacity:0.4}
 .programm-list-item-inner {position:relative}
 .programm-list-item-content {position:relative; padding:10px}
@@ -2782,12 +3035,9 @@ footer {margin:60px 0 0 0}
 .window-nominee-text-section-text {margin:15px 0 0 0}
 .window-nominee-text-section-text > *:first-child {margin-top:0}
 .window-nominee-text-section-text > *:last-child {margin-bottom:0}
-.window-nominee+.window-close svg {stroke:#000; width:15px; height:15px}
-.window-nominee .window-title-social {right:55px; top:22px}
-.window-nominee .window-title-social-icon svg {stroke:#000; width:17px; height:16px}
 
-.window-nominee .analytics-team-prev {margin-left:-600px}
-.window-nominee .analytics-team-next {margin-left:560px}
+.window-nominee .analytics-team-prev {margin-left:-650px}
+.window-nominee .analytics-team-next {margin-left:610px}
 
 .window-speaker {width:1030px}
 .window-speaker-container {padding:50px 30px 103px 30px}
@@ -2810,3 +3060,60 @@ footer {margin:60px 0 0 0}
 .window-speaker .speaker-events-header:nth-child(2) {width:251px}
 .window-speaker .speaker-event-title {width:137px}
 .window-speaker .speaker-event-date {width:251px}
+
+.main-conf {margin:100px 0 175px 0}
+.main-conf-title {font-weight:500; font-size:22px; line-height:23px; color:#7e7e7e}
+.main-conf h2 {margin:12px 0 0 0; font-weight:900; font-size:36px; line-height:50px; max-width:55.43%}
+.main-conf-header {margin:1px 0 0 0}
+.main-conf-header::after {content:""; display:block; clear:both}
+.main-conf-date {float:left; margin:11px 0 0 0; font-weight:500; font-size:22px; line-height:33px; color:#000}
+.main-conf-btn {float:right}
+.main-conf-speakers {margin:58px 0 0 0}
+.main-conf-speakers .speakers {margin-top:0; margin-bottom:0; white-space:nowrap}
+.main-conf-speakers .speaker {padding-top:0; padding-bottom:0; white-space:normal}
+
+@media screen and (max-width:1199px) {
+    .main-conf {margin:100px 0}
+    .main-conf h2 {font-size:32px; line-height:45px; margin:20px 0 0 0; font-weight:bold; max-width:68.51%}
+    .main-conf-header {margin:0}
+    .main-conf-date {margin:20px 0 0 0}
+    .main-conf-speakers {margin:51px 0 0 0}
+    .main-conf-speakers .slick-dots {position:relative; margin:40px 0 0 0; padding:0; list-style:none; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
+    .main-conf-speakers .slick-dots li {margin:0 0 0 26px; padding:0; display:inline-block; vertical-align:top; position:relative}
+    .main-conf-speakers .slick-dots li::before {display:none}
+    .main-conf-speakers .slick-dots li:first-child {margin:0}
+    .main-conf-speakers .slick-dots li button {display:block; position:relative; width:14px; height:14px; border-radius:0; border:none; background:#d7d7d7; margin:0; padding:0; outline:none; -webkit-appearance:none; cursor:pointer; font-size:0; line-height:0; text-indent:100px; transition:background 0.2s}
+    .main-conf-speakers .slick-dots li.slick-active button {background:#212121}
+}
+
+@media screen and (max-width:767px) {
+    .main-conf {margin:70px 0 60px 0}
+    .main-conf-title {font-size:18px; line-height:27px}
+    .main-conf h2 {font-size:30px; line-height:39px; margin:20px 0 0 0; max-width:none}
+    .main-conf-date {float:none; font-size:18px; line-height:27px}
+    .main-conf-btn {float:none; margin:40px 0 0 0}
+    .main-conf-btn .btn {display:inline-block; width:auto; height:44px; font-size:14px; line-height:40px; padding:0 20px}
+    .main-conf-speakers {margin:60px 0 0 0}
+    .main-conf-speakers .slick-dots {margin:30px 0 0 0}
+}
+
+.main-conf-speakers .slick-prev,
+.main-conf-speakers .slick-next {display:block; position:absolute; z-index:2; top:120px; width:40px; height:40px; border:1px solid #d2d2d2; border-radius:0; margin:0; padding:0; outline:none; -webkit-appearance:none; cursor:pointer; background:#fff; transition:all 0.2s}
+.main-conf-speakers .slick-prev {left:-10px}
+.main-conf-speakers .slick-next {right:-10px}
+.main-conf-speakers .slick-prev.slick-disabled,
+.main-conf-speakers .slick-next.slick-disabled {display:none !important}
+.main-conf-speakers .slick-prev svg {display:block; position:absolute; left:50%; top:50%; width:10px; height:16px; margin:-8px 0 0 -6px; fill:none; stroke:#000}
+.main-conf-speakers .slick-next svg {display:block; position:absolute; left:50%; top:50%; width:10px; height:16px; margin:-8px 0 0 -4px; fill:none; stroke:#000}
+.main-conf-speakers .slick-prev:hover,
+.main-conf-speakers .slick-next:hover {border-color:#000}
+
+.main-conf-text {margin:51px 0 0 0; font-size:18px; line-height:27px}
+
+@media screen and (max-width:1199px) {
+    .main-conf-text {margin:57px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .main-conf-text {margin:56px 0 0 0; font-size:20px; line-height:30px}
+}

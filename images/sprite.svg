@@ -217,4 +217,9 @@
         <path d="M21.0156 2.48438L2.9844 20.5156" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol viewBox="0 0 16 16" id="speakers-filter-close">
+        <rect width="2.77657" height="19.436" rx="1" transform="matrix(0.707113 0.707101 -0.707113 0.707101 14.0371 0)" />
+        <rect width="19.436" height="2.77657" rx="1" transform="matrix(0.707113 0.707101 -0.707113 0.707101 1.96289 0.294128)" />
+    </symbol>
+
 </svg>
