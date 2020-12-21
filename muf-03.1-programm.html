@@ -120,139 +120,147 @@
                         <div class="programm-ctrl-inner">
                             <div class="container">
                                 <div class="programm-ctrl">
+                                    <div class="programm-halls-mobile">
+                                        <div class="programm-halls-mobile-current">Зал  <span></span><svg><use xlink:href="images/sprite.svg#programm-arrow"></use></svg></div>
+                                        <ul></ul>
+                                    </div>
                                     <div class="programm-dates">
+                                        <div class="programm-dates-current">День <span>4 июля</span><svg><use xlink:href="images/sprite.svg#programm-arrow"></use></svg></div>
                                         <ul>
                                             <li class="active"><a href="#" data-date="4 июля">4 июля</a></li>
                                             <li><a href="#" data-date="5 июля">5 июля</a></li>
                                         </ul>
                                     </div>
                                     <div class="programm-filter">
-                                        <div class="programm-filter-btn"><a href="#"><svg><use xlink:href="images/sprite.svg#programm-filter"></use></svg>Фильтр</a></div>
+                                        <div class="programm-filter-btn"><a href="#"><svg><use xlink:href="images/sprite.svg#programm-filter"></use></svg>Фильтр<span>0</span></a></div>
                                         <div class="programm-filter-params">
                                         </div>
                                         <div class="programm-filter-window">
-                                            <form action="#" method="post">
-                                                <div class="programm-filter-window-cols">
-                                                    <div class="programm-filter-window-col">
-                                                        <div class="programm-filter-window-block">
-                                                            <div class="programm-filter-window-label">Спикеры</div>
-                                                            <div class="programm-filter-window-select programm-filter-window-select-speakers">
-                                                                <div class="form-select">
-                                                                    <select name="speaker">
-                                                                        <option value="">Все</option>
-                                                                        <option value="1">Эдвард Глейзер</option>
-                                                                        <option value="2">Илариа Капуа</option>
-                                                                        <option value="3">Эллисон Арвади</option>
-                                                                        <option value="4">Пьеро Пелиццаро</option>
-                                                                        <option value="5">Саду А. Джонстон</option>
-                                                                        <option value="6">Майкл Беркович</option>
-                                                                        <option value="7">Ян Гейл</option>
-                                                                        <option value="8">Грег Линдси</option>
-                                                                        <option value="9">Уильям Чилтон</option>
-                                                                        <option value="10">Сладжин Паракатил</option>
-                                                                        <option value="11">Нильс Лунд</option>
-                                                                        <option value="12">Тим Стонор</option>
-                                                                        <option value="13">Майкл Кох</option>
-                                                                        <option value="14">Артур Хуан</option>
-                                                                        <option value="15">Чарльз Монтгомери</option>
-                                                                        <option value="16">Ларри Бисли</option>
-                                                                        <option value="17">Карен Ли</option>
-                                                                        <option value="18">Гил Пеньялоса</option>
-                                                                        <option value="19">Итай Палти</option>
-                                                                        <option value="20">Кейт Шурети</option>
-                                                                        <option value="21">Дэвид Напье</option>
-                                                                        <option value="22">Майкл Чанг</option>
-                                                                        <option value="23">Хелен Пинео</option>
-                                                                        <option value="24">Том Райт</option>
-                                                                        <option value="25">Чон Кун Хин</option>
-                                                                        <option value="26">Моника Косинска</option>
-                                                                    </select>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="programm-filter-window-block">
-                                                            <div class="programm-filter-window-label">Тип мероприятия</div>
-                                                            <div class="programm-filter-window-checkboxes-wraper">
-                                                                <div class="programm-filter-window-checkboxes programm-filter-window-checkboxes-types">
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type1" value="1" /><span><em style="background:#f5f5f5"></em>#Сквозное</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type2" value="2" /><span><em style="background:#daffe0"></em>#Ток-шоу</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type3" value="3" /><span><em style="background:#ffe5ec"></em>#Панельная дискуссия</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type4" value="4" /><span><em style="background:#e5f3ff"></em>#Мастер-класс</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type5" value="5" /><span><em style="background:#88e3ff"></em>#Круглый стол</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type6" value="6" /><span><em style="background:#dddbf9"></em>#Бизнес-диалог</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type7" value="7" /><span><em style="background:#93ffec"></em>#Кейс</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type8" value="8" /><span><em style="background:#ffceaa"></em>#Презентация</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type9" value="9" /><span><em style="background:#a7e8ae"></em>#Обсуждение книги</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type10" value="10" /><span><em style="background:#f2f8b5"></em>#Еще какой-то</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="type10" value="11" /><span><em style="background:#e9e8e9"></em>#Еще какой-то 2</span></label>
+                                            <div class="programm-filter-window-inner">
+                                                <form action="#" method="post">
+                                                    <div class="programm-filter-window-cols">
+                                                        <div class="programm-filter-window-col">
+                                                            <div class="programm-filter-window-block">
+                                                                <div class="programm-filter-window-label">Спикеры</div>
+                                                                <div class="programm-filter-window-select programm-filter-window-select-speakers">
+                                                                    <div class="form-select">
+                                                                        <select name="speaker">
+                                                                            <option value="">Все</option>
+                                                                            <option value="1">Эдвард Глейзер</option>
+                                                                            <option value="2">Илариа Капуа</option>
+                                                                            <option value="3">Эллисон Арвади</option>
+                                                                            <option value="4">Пьеро Пелиццаро</option>
+                                                                            <option value="5">Саду А. Джонстон</option>
+                                                                            <option value="6">Майкл Беркович</option>
+                                                                            <option value="7">Ян Гейл</option>
+                                                                            <option value="8">Грег Линдси</option>
+                                                                            <option value="9">Уильям Чилтон</option>
+                                                                            <option value="10">Сладжин Паракатил</option>
+                                                                            <option value="11">Нильс Лунд</option>
+                                                                            <option value="12">Тим Стонор</option>
+                                                                            <option value="13">Майкл Кох</option>
+                                                                            <option value="14">Артур Хуан</option>
+                                                                            <option value="15">Чарльз Монтгомери</option>
+                                                                            <option value="16">Ларри Бисли</option>
+                                                                            <option value="17">Карен Ли</option>
+                                                                            <option value="18">Гил Пеньялоса</option>
+                                                                            <option value="19">Итай Палти</option>
+                                                                            <option value="20">Кейт Шурети</option>
+                                                                            <option value="21">Дэвид Напье</option>
+                                                                            <option value="22">Майкл Чанг</option>
+                                                                            <option value="23">Хелен Пинео</option>
+                                                                            <option value="24">Том Райт</option>
+                                                                            <option value="25">Чон Кун Хин</option>
+                                                                            <option value="26">Моника Косинска</option>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="programm-filter-window-block">
+                                                                <div class="programm-filter-window-label">Тип мероприятия</div>
+                                                                <div class="programm-filter-window-checkboxes-wraper">
+                                                                    <div class="programm-filter-window-checkboxes programm-filter-window-checkboxes-types">
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type1" value="1" /><span><em style="background:#f5f5f5"></em>#Сквозное</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type2" value="2" /><span><em style="background:#daffe0"></em>#Ток-шоу</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type3" value="3" /><span><em style="background:#ffe5ec"></em>#Панельная дискуссия</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type4" value="4" /><span><em style="background:#e5f3ff"></em>#Мастер-класс</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type5" value="5" /><span><em style="background:#88e3ff"></em>#Круглый стол</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type6" value="6" /><span><em style="background:#dddbf9"></em>#Бизнес-диалог</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type7" value="7" /><span><em style="background:#93ffec"></em>#Кейс</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type8" value="8" /><span><em style="background:#ffceaa"></em>#Презентация</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type9" value="9" /><span><em style="background:#a7e8ae"></em>#Обсуждение книги</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type10" value="10" /><span><em style="background:#f2f8b5"></em>#Еще какой-то</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="type10" value="11" /><span><em style="background:#e9e8e9"></em>#Еще какой-то 2</span></label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </div>
-                                                    </div>
 
-                                                    <div class="programm-filter-window-col">
-                                                        <div class="programm-filter-window-block">
-                                                            <div class="programm-filter-window-label">Секция программы</div>
-                                                            <div class="programm-filter-window-checkboxes-wraper">
-                                                                <div class="programm-filter-window-checkboxes programm-filter-window-checkboxes-sections">
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section1" value="1" /><span>Пьеро Пелиццаро</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section2" value="2" /><span>Эллисон Арвади</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section3" value="3" /><span>Сладжин Паракатил</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section4" value="4" /><span>Нильс Лунд</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section5" value="5" /><span>Эллисон Арвади</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section6" value="6" /><span>Пьеро Пелиццаро</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section7" value="7" /><span>Сладжин Паракатил</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section8" value="8" /><span>Нильс Лунд</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section9" value="9" /><span>Эллисон Арвади</span></label>
-                                                                    </div>
-                                                                    <div class="form-checkbox">
-                                                                        <label><input type="checkbox" name="section10" value="10" /><span>Сладжин Паракатил</span></label>
+                                                        <div class="programm-filter-window-col">
+                                                            <div class="programm-filter-window-block">
+                                                                <div class="programm-filter-window-label">Секция программы</div>
+                                                                <div class="programm-filter-window-checkboxes-wraper">
+                                                                    <div class="programm-filter-window-checkboxes programm-filter-window-checkboxes-sections">
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section1" value="1" /><span>Пьеро Пелиццаро</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section2" value="2" /><span>Эллисон Арвади</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section3" value="3" /><span>Сладжин Паракатил</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section4" value="4" /><span>Нильс Лунд</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section5" value="5" /><span>Эллисон Арвади</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section6" value="6" /><span>Пьеро Пелиццаро</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section7" value="7" /><span>Сладжин Паракатил</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section8" value="8" /><span>Нильс Лунд</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section9" value="9" /><span>Эллисон Арвади</span></label>
+                                                                        </div>
+                                                                        <div class="form-checkbox">
+                                                                            <label><input type="checkbox" name="section10" value="10" /><span>Сладжин Паракатил</span></label>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </form>
+                                                </form>
+                                                <a href="#" class="programm-filter-window-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -927,22 +935,9 @@
                                         "events" : [
                                             {
                                                 "url"      : "#",
-                                                "type"     : "1",
-                                                "color"    : "#f5f5f5",
-                                                "speakers" : [1],
-                                                "sections" : [1],
-                                                "total"    : true,
-                                                "start"    : "10:00",
-                                                "end"      : "11:30",
-                                                "text"     : "Пленарное заседание международного конгресса Urban Health",
-                                                "title"    : "Urban Health. Городское пространство как источник здоровья"
-                                            },
-
-                                            {
-                                                "url"      : "#",
                                                 "type"     : "2",
                                                 "color"    : "#daffe0",
-                                                "speakers" : "Илариа Капуа",
+                                                "speakers" : [1],
                                                 "sections" : [1],
                                                 "start"    : "11:45",
                                                 "end"      : "12:45",
@@ -980,6 +975,19 @@
                                     {
                                         "hall"   : "Зал <span>Пахра</span>",
                                         "events" : [
+                                            {
+                                                "url"      : "#",
+                                                "type"     : "1",
+                                                "color"    : "#f5f5f5",
+                                                "speakers" : [1],
+                                                "sections" : [1],
+                                                "total"    : true,
+                                                "start"    : "10:00",
+                                                "end"      : "11:30",
+                                                "text"     : "Пленарное заседание международного конгресса Urban Health",
+                                                "title"    : "Urban Health. Городское пространство как источник здоровья"
+                                            },
+
                                             {
                                                 "url"      : "#",
                                                 "type"     : "3",

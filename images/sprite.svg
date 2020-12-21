@@ -222,4 +222,13 @@
         <rect width="19.436" height="2.77657" rx="1" transform="matrix(0.707113 0.707101 -0.707113 0.707101 1.96289 0.294128)" />
     </symbol>
 
+    <symbol viewBox="0 0 30 31" id="programm-filter-close">
+        <rect width="5.20609" height="36.4426" rx="1" transform="matrix(0.707113 0.707101 -0.707113 0.707101 26.3188 0)" />
+        <rect width="36.4426" height="5.20609" rx="1" transform="matrix(0.707113 0.707101 -0.707113 0.707101 3.68115 0.551607)" />
+    </symbol>
+
+    <symbol viewBox="0 0 24 24" id="programm-arrow">
+        <path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
 </svg>
