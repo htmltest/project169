@@ -225,6 +225,7 @@ $(document).ready(function() {
 
     $('body').on('click', '.speakers-filter-group-header', function(e) {
         $(this).parent().toggleClass('open');
+        $(this).parent().addClass('open-mobile');
     });
 
     $('body').on('click', '.speakers-filter-group-all a', function(e) {
@@ -249,6 +250,25 @@ $(document).ready(function() {
             $('.wrapper').css('margin-top', 0);
             $(window).scrollTop($('html').data('scrollTop'));
         }
+        e.preventDefault();
+    });
+
+    $('.speakers-filter-group-reset').click(function(e) {
+        var curGroup = $(this).parents().filter('.speakers-filter-group');
+        curGroup.find('.speakers-filter-item input').prop('checked', false);
+        filterSpeakers();
+        e.preventDefault();
+    });
+
+    $('.speakers-filter-group-close').click(function(e) {
+        var curGroup = $(this).parents().filter('.speakers-filter-group');
+        curGroup.removeClass('open-mobile');
+        e.preventDefault();
+    });
+
+    $('.speakers-filter-group-apply a').click(function(e) {
+        var curGroup = $(this).parents().filter('.speakers-filter-group');
+        curGroup.removeClass('open-mobile');
         e.preventDefault();
     });
 
@@ -741,6 +761,7 @@ $(document).ready(function() {
             curLi.addClass('active');
             $('.programm-dates-current span').html($(this).html());
             redrawProgramm();
+            updateProgrammFilter();
         }
         $('.programm-dates').removeClass('open');
         e.preventDefault();
@@ -902,6 +923,11 @@ $(document).ready(function() {
                 }
             }
         ]
+    });
+
+    $('.analytics-programm-tab-title').click(function(e) {
+        $(this).parent().toggleClass('open');
+        e.preventDefault();
     });
 
 });
@@ -1248,6 +1274,10 @@ $(window).on('load resize scroll', function() {
         } else {
             curTools.css({'position': 'absolute', 'left': 0, 'bottom': 0, 'right': '0', 'width': 'auto'});
         }
+    });
+
+    $('.programm-filter-params').each(function() {
+        $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 90) + 'px'});
     });
 });
 
