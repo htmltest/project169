@@ -277,6 +277,41 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    function popupCenter(url, title) {
+        var dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
+        var dualScreenTop = window.screenTop !== undefined ? window.screenTop : screen.top;
+        var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+        var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+        var left = ((width / 2) - (480 / 2)) + dualScreenLeft;
+        var top = ((height / 3) - (360 / 3)) + dualScreenTop;
+        var newWindow = window.open(url, title, 'scrollbars=yes, width=' + 480 + ', height=' + 360 + ', top=' + top + ', left=' + left);
+        if (window.focus) {
+            newWindow.focus();
+        }
+    }
+
+    $('body').on('click', '.window-photo-social-item-fb', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://www.facebook.com/sharer/sharer.php?u=' + curUrl, curTitle);
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-photo-social-item-vk', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://vk.com/share.php?url=' + curUrl + '&description=' + curTitle, curTitle);
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-photo-social-item-link', function(e) {
+        e.preventDefault();
+    });
+
     $('body').on('click', '.photo-gallery-item-inner a', function(e) {
         var curLink = $(this);
         var curItem = curLink.parents().filter('.photo-gallery-item');
@@ -310,7 +345,7 @@ $(document).ready(function() {
                                 '</div>';
 
         windowHTML +=           '<a href="#" class="window-photo-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-close"></use></svg></a>';
-        windowHTML +=           '<a href="#" class="window-photo-download download" target="_blank"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-download"></use></svg></a>';
+        windowHTML +=           '<a href="#" class="window-photo-download" target="_blank" download><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-download"></use></svg></a>';
         windowHTML +=           '<div class="window-photo-social">';
         windowHTML +=               '<div class="window-photo-social-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share"></use></svg></div>';
         windowHTML +=               '<div class="window-photo-social-window">';
@@ -336,6 +371,11 @@ $(document).ready(function() {
 
         $('.window-photo').remove();
         $('body').append(windowHTML);
+
+        var clipboardPhoto = new ClipboardJS('.window-photo-social-item-link')
+        clipboardPhoto.on('success', function(e) {
+            alert('OK');
+        });
 
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
@@ -389,6 +429,7 @@ $(document).ready(function() {
             $('.window-photo-preview-list-item').eq(currentSlide).addClass('active');
             $('.window-photo-preview-inner').mCustomScrollbar('scrollTo', $('.window-photo-preview-list-item').eq(currentSlide));
             $('.window-photo-download').attr('href', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
+            $('.window-photo-social-item-link').attr('data-clipboard-text', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
             var curIMG = $('.window-photo-slider-list-item').eq(currentSlide).find('img');
             if (curIMG.attr('src') !== curIMG.attr('data-src')) {
                 var newIMG = $('<img src="" alt="" style="position:fixed; left:-9999px; top:-9999px" />');
@@ -432,6 +473,28 @@ $(document).ready(function() {
                 $('.window-photo-close').trigger('click');
             }
         }
+    });
+
+    $('body').on('click', '.window-video-social-item-fb', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://www.facebook.com/sharer/sharer.php?u=' + curUrl, curTitle);
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-video-social-item-vk', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://vk.com/share.php?url=' + curUrl + '&description=' + curTitle, curTitle);
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-video-social-item-link', function(e) {
+        e.preventDefault();
     });
 
     $('body').on('click', '.video-gallery-item a', function(e) {
@@ -483,6 +546,11 @@ $(document).ready(function() {
         $('.window-video').remove();
         $('body').append(windowHTML);
 
+        var clipboardVideo = new ClipboardJS('.window-video-social-item-link')
+        clipboardVideo.on('success', function(e) {
+            alert('OK');
+        });
+
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
         $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
@@ -507,6 +575,7 @@ $(document).ready(function() {
         }).on('setPosition', function(event, slick) {
             var currentSlide = $('.window-video-slider-list').slick('slickCurrentSlide');
             $('.window-video-slider-list-item-inner').html('');
+            $('.window-video-social-item-link').attr('data-clipboard-text', $('.window-video-slider-list-item').eq(currentSlide).find('.window-video-slider-list-item-inner').attr('data-videourl'));
             $('.window-video-slider-list-item').eq(currentSlide).find('.window-video-slider-list-item-inner').each(function() {
                 $(this).html('<iframe width="560" height="315" src="' + $(this).attr('data-videourl') + '?rel=0" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
             });
@@ -547,6 +616,28 @@ $(document).ready(function() {
     var clipboard = new ClipboardJS('.analytics-location-info-coords span');
     clipboard.on('success', function(e) {
         alert('Координаты скопированы в буфер');
+    });
+
+    $('body').on('click', '.window-title-social-item-fb', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://www.facebook.com/sharer/sharer.php?u=' + curUrl, curTitle);
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-title-social-item-vk', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://vk.com/share.php?url=' + curUrl + '&description=' + curTitle, curTitle);
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.window-title-social-item-link', function(e) {
+        e.preventDefault();
     });
 
     $('body').on('click', '.window-link', function(e) {
@@ -729,8 +820,22 @@ $(document).ready(function() {
         });
     });
 
-    $('.programm-filter-window-select .form-select select').change(function() {
-        updateProgrammFilter();
+    $('.programm-filter-window-select-speakers').each(function() {
+        $('.programm-filter-window-select-speakers select').select2('destroy');
+        $('.programm-filter-window-select-speakers select').select2({
+            data: dataProgrammFilterSpeakers,
+            escapeMarkup: function(markup) {
+                return markup;
+            },
+            templateResult: function(data) {
+                return data.html;
+            },
+            templateSelection: function(data) {
+                return data.html;
+            }
+        }).on('select2:select', function (e) {
+            updateProgrammFilter();
+        });
     });
 
     $('.programm-filter-window-checkboxes .form-checkbox input').change(function() {
@@ -1015,8 +1120,8 @@ function redrawProgramm() {
                             styleTotal = 'margin-left: -' + (widthTotal * 100) + '%';
                         }
                     }
-                    hallHTML +=         '<div class="programm-list-item ' + classType + ' ' + classTotal + '" style="background:' + curEvent.color + '; top:' + eventTop + '%; height:' + eventHeight + '%; ' + styleTotal + '" data-start="' + curEvent.start + '" data-speakers="' + curEvent.speakers.join(',') + '" data-sections="' + curEvent.sections.join(',') + '">';
-                    hallHTML +=             '<a href="' + curEvent.url + '">';
+                    hallHTML +=         '<div class="programm-list-item ' + classType + ' ' + classTotal + '" style="top:calc(' + eventTop + '% + 7px); height:calc(' + eventHeight + '% - 14px); ' + styleTotal + '" data-start="' + curEvent.start + '" data-speakers="' + curEvent.speakers.join(',') + '" data-sections="' + curEvent.sections.join(',') + '">';
+                    hallHTML +=             '<a href="' + curEvent.url + '" style="background:' + curEvent.color + '">';
                     hallHTML +=                 '<div class="programm-list-item-inner">';
                     hallHTML +=                     '<div class="programm-list-item-content">';
                     if (typeof(curEvent.total) != 'undefined' && curEvent.total) {
@@ -1058,7 +1163,7 @@ function updateProgrammFilter() {
 
     $('.programm-filter-window-select .form-select select').each(function() {
         var curSelect = $(this);
-        if (curSelect.val() != '') {
+        if (curSelect.val() != '' && curSelect.val() != '0') {
             paramsHTML += '<div class="programm-filter-param">' + curSelect.find('option:selected').html() + '<a href="#" data-type="select" data-name="' + curSelect.attr('name') + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#programm-filter-param-remove"></use></svg></a></div>';
             countParams++;
         }
@@ -1362,6 +1467,11 @@ function windowOpen(linkWindow, dataWindow) {
 
         $('.window form').each(function() {
             initForm($(this));
+        });
+
+        var clipboardWindow = new ClipboardJS('.window-title-social-item-link')
+        clipboardWindow.on('success', function(e) {
+            alert('OK');
         });
 
         $(window).trigger('resize');
