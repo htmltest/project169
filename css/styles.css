@@ -18,7 +18,7 @@ a:hover {color:#ff2f66; text-decoration:none}
     a {transition:none}
 }
 
-img {border:none; max-width:100%; height:auto; image-rendering:pixelated; image-rendering:-moz-crisp-edges; -ms-interpolation-mode:nearest-neighbor}
+img {border:none; max-width:100%; height:auto}
 iframe {border:none; max-width:100%}
 
 ::-ms-clear {display:none}
@@ -1139,7 +1139,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .partners-group-item-inner {display:block; text-decoration:none; color:#504f4f; position:relative; top:0; transition:top 0.2s}
 a.partners-group-item-inner:hover {color:#ff2f66; top:-5px}
 .partners-group-item-logo {padding:100% 0 0 0; position:relative; background:#f8f7f6; overflow:hidden}
-.partners-group-item-logo img {display:block; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); max-width:100%; max-height:100%; width:auto; height:auto; image-rendering:auto; -ms-interpolation-mode:bicubic}
+.partners-group-item-logo img {display:block; position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); max-width:100%; max-height:100%; width:auto; height:auto}
 .partners-group-item-logo span {display:block; position:absolute; left:0; bottom:12px; right:0; font-size:10px; line-height:14px; letter-spacing:0; font-weight:300; text-transform:uppercase; color:#5a5a5a; text-align:center}
 .partners-group-item-title {font-size:14px; line-height:21px; letter-spacing:0; white-space:normal; margin:10px 0 0 0}
 .partners-group-global {margin:15px -10px 0 -10px}
@@ -2821,12 +2821,13 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-filter-window-checkboxes-wraper {margin:16px 0 0 0; position:relative}
 .programm-filter-window-checkboxes-wraper.with-top::before {content:""; display:block; position:absolute; left:0; top:-10px; right:0; height:10px; background:linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 100%)}
 .programm-filter-window-checkboxes-wraper.with-bottom::after {content:""; display:block; position:absolute; left:0; bottom:-10px; right:0; height:10px; background:linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 100%)}
-.programm-filter-window-checkboxes {max-height:170px; overflow:auto}
+.programm-filter-window-checkboxes {max-height:170px; overflow:auto; white-space:nowrap}
 .programm-filter-window-checkboxes-sections {max-height:273px}
 .programm-filter-window-checkboxes .form-checkbox {margin:10px 0 0 0}
 .programm-filter-window-checkboxes .form-checkbox:first-child {margin:0}
 .programm-filter-window-checkboxes .form-checkbox em {display:inline-block; width:20px; height:20px; vertical-align:top; margin:0 11px 0 0}
 .programm-filter-window-checkboxes .form-checkbox label {float:none; display:block; margin:0 24px 0 0}
+.programm-filter-window-checkboxes .form-checkbox span {overflow:hidden; text-overflow:ellipsis; padding-right:20px}
 .programm-filter-window-checkboxes .form-checkbox strong {font-weight:300; position:absolute; right:0; top:0}
 .programm-filter-window-checkboxes .mCSB_inside > .mCSB_container {margin:0}
 .programm-filter-window-checkboxes .mCSB_scrollTools {opacity:1; width:3px}
@@ -2838,6 +2839,10 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-filter-window-close {display:none}
 .programm-filter-window-select-option {position:relative; padding:0 0 0 35px}
 .programm-filter-window-select-option img {display:block; position:absolute; left:0; top:50%; width:24px; height:24px; margin-top:-12px}
+.programm-filter-window-select-option strong {position:absolute; right:0; top:0; font-weight:300}
+.programm-filter-window-checkbox-hint {position:absolute; z-index:99; pointer-events:none; font-size:14px; line-height:22px; color:#000; background:#fff; margin:0 0 0 30px}
+.programm-filter-window-checkbox-hint em {display:inline-block; width:20px; height:20px; vertical-align:top; margin:0 11px 0 0}
+.programm-filter-window-checkbox-hint strong {display:none}
 
 @media screen and (max-width:1199px) {
     .programm-filter {margin:30px 0 0 0; width:100%; border-top:1px solid #d9d9d9; padding:30px 0 0 0}
@@ -3672,4 +3677,20 @@ footer {margin:60px 0 0 0}
 
 @media screen and (max-width:767px) {
     .main-conf-text {margin:56px 0 0 0; font-size:20px; line-height:30px}
+}
+
+.window-general {width:800px}
+.window-general-container {padding:40px 30px}
+.window-general-container > *:first-child {margin-top:0}
+.window-general-container > *:last-child {margin-bottom:0}
+.window-general-container .anonce-text {font-weight:500; color:#949494; margin:10px 0}
+.window-general-ctrl {text-align:center; background:rgba(0, 0, 0, 0.05); padding:30px}
+.window-general-ctrl .btn {margin:0 8px}
+
+@media screen and (max-width:1199px) {
+    .window-general {width:440px}
+    .window-general-container {padding:30px 20px}
+    .window-general-ctrl {padding:20px}
+    .window-general-ctrl .btn {margin:20px 0 0 0}
+    .window-general-ctrl .btn:first-child {margin:0}
 }

@@ -312,6 +312,11 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    var clipboardPhoto = new ClipboardJS('.window-photo-social-item-link')
+    clipboardPhoto.on('success', function(e) {
+        alert('OK');
+    });
+
     $('body').on('click', '.photo-gallery-item-inner a', function(e) {
         var curLink = $(this);
         var curItem = curLink.parents().filter('.photo-gallery-item');
@@ -371,11 +376,6 @@ $(document).ready(function() {
 
         $('.window-photo').remove();
         $('body').append(windowHTML);
-
-        var clipboardPhoto = new ClipboardJS('.window-photo-social-item-link')
-        clipboardPhoto.on('success', function(e) {
-            alert('OK');
-        });
 
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
@@ -497,6 +497,11 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    var clipboardVideo = new ClipboardJS('.window-video-social-item-link')
+    clipboardVideo.on('success', function(e) {
+        alert('OK');
+    });
+
     $('body').on('click', '.video-gallery-item a', function(e) {
         var curLink = $(this);
         var curItem = curLink.parents().filter('.video-gallery-item');
@@ -545,11 +550,6 @@ $(document).ready(function() {
 
         $('.window-video').remove();
         $('body').append(windowHTML);
-
-        var clipboardVideo = new ClipboardJS('.window-video-social-item-link')
-        clipboardVideo.on('success', function(e) {
-            alert('OK');
-        });
 
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
@@ -638,6 +638,11 @@ $(document).ready(function() {
 
     $('body').on('click', '.window-title-social-item-link', function(e) {
         e.preventDefault();
+    });
+
+    var clipboardWindow = new ClipboardJS('.window-title-social-item-link')
+    clipboardWindow.on('success', function(e) {
+        alert('OK');
     });
 
     $('body').on('click', '.window-link', function(e) {
@@ -842,6 +847,15 @@ $(document).ready(function() {
         updateProgrammFilter();
     });
 
+    $('.programm-filter-window-checkboxes .form-checkbox label').on('mouseenter', function() {
+        var curSpan = $(this).find('span');
+        $('body').append('<div class="programm-filter-window-checkbox-hint" style="left:' + curSpan.offset().left + 'px; top:' + curSpan.offset().top + 'px">' + curSpan.html() + '</div>');
+    });
+
+    $('.programm-filter-window-checkboxes .form-checkbox label').on('mouseleave', function() {
+        $('.programm-filter-window-checkbox-hint').remove();
+    });
+
     $('.programm-filter').each(function() {
         updateProgrammFilter();
     });
@@ -854,8 +868,9 @@ $(document).ready(function() {
             $('.programm-filter-window-select .form-select select[name="' + curLink.attr('data-name') + '"]').trigger('change');
         }
         if (curType == 'checkbox') {
-            $('.programm-filter-window-checkboxes .form-checkbox input[name="' + curLink.attr('data-name') + '"]').prop('checked', false).trigger('change');
+            $('.programm-filter-window-checkboxes .form-checkbox input[name="' + curLink.attr('data-name') + '"]').prop('checked', false);
         }
+        updateProgrammFilter();
         e.preventDefault();
     });
 
@@ -1467,11 +1482,6 @@ function windowOpen(linkWindow, dataWindow) {
 
         $('.window form').each(function() {
             initForm($(this));
-        });
-
-        var clipboardWindow = new ClipboardJS('.window-title-social-item-link')
-        clipboardWindow.on('success', function(e) {
-            alert('OK');
         });
 
         $(window).trigger('resize');
