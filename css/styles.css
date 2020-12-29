@@ -1589,6 +1589,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 
 @media screen and (max-width:767px) {
     .video-gallery-more a {height:63px; font-size:16px; line-height:63px}
+    .video-gallery-more.visible {display:none}
 }
 
 .video-other {margin:129px 0 0 0}
@@ -2528,6 +2529,7 @@ h1+.main-block {margin:80px 0 0 0}
 .event-header-text-container.open+.event-header-text-more a span:nth-child(1) {display:none}
 .event-header-text-container.open+.event-header-text-more a span:nth-child(2) {display:inline}
 .event-header-moderator {float:left; clear:left; width:275px; margin:50px 0 0 0}
+.event-header-moderator-mobile {display:none}
 .event-header-moderator h3 {margin:0; font-weight:bold}
 .event-header-moderator img {display:block; width:100%; margin:30px 0 0 0}
 .event-header-moderator-name {margin:20px 0 0 0; font-weight:600; font-size:20px; line-height:26px; color:#000}
@@ -2566,6 +2568,8 @@ h1+.main-block {margin:80px 0 0 0}
     .event-header-moderator {width:210px; float:none; margin:60px 0 0 0}
     .event-header-moderator-name {margin:19px 0 0 0; font-size:20px; line-height:26px}
     .event-header-moderator-post {font-size:16px; line-height:24px}
+    .event-header-moderator {display:none}
+    .event-header-moderator-mobile {display:block}
 }
 
 .event-tabs-menu {font-weight:bold; font-size:36px; line-height:36px}
@@ -2965,9 +2969,12 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-list::after {content:""; display:block; clear:both}
 .programm-list-hall {float:left; width:14.28%; padding:0 8px; position:relative}
 .programm-list-item {display:block; position:absolute; left:8px; top:0; right:8px; background:#fff}
+.programm-list-item:hover {z-index:2}
 .programm-list-item.hidden {display:none}
-.programm-list-item a {display:block; text-decoration:none; transition:none; position:absolute; left:0; top:0; right:0; bottom:0; transition:box-shadow 0.2s}
-.programm-list-item a:hover {box-shadow:4px 4px 20px rgba(85, 85, 85, 0.14)}
+.programm-list-item a {display:block; text-decoration:none; transition:none; position:absolute; left:0; top:0; right:0; bottom:0; transition:box-shadow 0.2s; overflow:hidden}
+.programm-list-item:hover a {box-shadow:4px 4px 20px rgba(85, 85, 85, 0.14)}
+.programm-list-item a.programm-list-item-full {visibility:hidden; bottom:auto; min-height:100%; overflow:visible; opacity:0; transition:box-shadow 0.2s, opacity 0.2s}
+.programm-list-item:hover a.programm-list-item-full {visibility:visible; opacity:1}
 .programm-list-item.unfilter a {opacity:0.4}
 .programm-list-item-inner {position:relative}
 .programm-list-item-content {position:relative; padding:10px}
@@ -2981,6 +2988,7 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-list-item-total .programm-list-item-time {margin:10px 0 0 0; font-size:18px; line-height:23px}
 .programm-list-item-total .programm-list-item-inner {position:absolute; left:0; top:50%; right:0; transform:translateY(-50%)}
 .programm-list-item-type-mobile {display:none}
+.programm-list-item-shadow {position:absolute; left:0; bottom:0; right:0; height:34px; border-bottom:10px solid #000}
 
 @media screen and (max-width:1199px) {
     .programm-list {font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}

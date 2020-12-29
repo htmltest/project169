@@ -1155,6 +1155,27 @@ function redrawProgramm() {
                     }
                     hallHTML +=                     '</div>';
                     hallHTML +=                 '</div>';
+                    hallHTML +=                 '<div class="programm-list-item-shadow" style="background:linear-gradient(0deg, ' + curEvent.color + ' 0%, rgba(0, 0, 0, 0) 100%); border-bottom-color:' + curEvent.color + '"></div>';
+                    hallHTML +=             '</a>';
+                    hallHTML +=             '<a href="' + curEvent.url + '" style="background:' + curEvent.color + '" class="programm-list-item-full">';
+                    hallHTML +=                 '<div class="programm-list-item-inner">';
+                    hallHTML +=                     '<div class="programm-list-item-content">';
+                    if (typeof(curEvent.total) != 'undefined' && curEvent.total) {
+                        if (typeof(curEvent.text) != 'undefined') {
+                            hallHTML +=                 '<div class="programm-list-item-type">' + curEvent.text + '</div>';
+                        }
+                        hallHTML +=                     '<div class="programm-list-item-title">' + curEvent.title + '</div>';
+                        if (typeof(curEvent.text) != 'undefined') {
+                            hallHTML +=                 '<div class="programm-list-item-type programm-list-item-type-mobile">' + curEvent.text + '</div>';
+                        }
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' – ' + curEvent.end + '</div>';
+                    } else {
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' – ' + curEvent.end + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-type">' + curEvent.text + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-title">' + curEvent.title + '</div>';
+                    }
+                    hallHTML +=                     '</div>';
+                    hallHTML +=                 '</div>';
                     hallHTML +=             '</a>';
                     hallHTML +=         '</div>';
                 }
@@ -1247,28 +1268,6 @@ function updateProgrammFilter() {
         }
     }
 }
-
-$(window).on('load resize', function() {
-    $('.programm-container').each(function() {
-        var isCorrectHeight = false;
-        while (!isCorrectHeight) {
-            isCorrectHeight = true;
-            $('.programm-list-item').each(function() {
-                var curItem = $(this);
-                if (curItem.find('a').outerHeight() < curItem.find('.programm-list-item-inner').outerHeight()) {
-                    isCorrectHeight = false;
-                }
-            });
-            if (!isCorrectHeight) {
-                var curHeight = $('.programm-timescale-item').eq(0).height();
-                curHeight += 10;
-                $('.programm-timescale-item').height(curHeight);
-                var scheduleHeight = $('.programm-timescale').height();
-                $('.programm-list-hall').height(scheduleHeight);
-            }
-        }
-    });
-});
 
 function filterSpeakers() {
     $('.speakers-container').addClass('loading');
