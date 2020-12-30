@@ -873,7 +873,7 @@ $(document).ready(function() {
         updateProgrammFilter();
         e.preventDefault();
     });
-
+    
     $('.programm-dates a').click(function(e) {
         var curLi = $(this).parent();
         if (!curLi.hasClass('active')) {
@@ -886,6 +886,13 @@ $(document).ready(function() {
         $('.programm-dates').removeClass('open');
         e.preventDefault();
     });
+
+    if ($('.programm-dates').length == 1) {
+        if (window.location.hash != '') {
+            var curID = window.location.hash.replace('#', '');
+            $('.programm-dates li a[data-id="' + curID + '"]').trigger('click');
+        }
+    }
 
     $('.programm-dates-current').click(function() {
         $('.programm-dates').toggleClass('open');

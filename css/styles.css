@@ -586,7 +586,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 
 .main-programm {margin:37px -20px 0 -20px}
 .main-programm-inner {display:table; width:100%; border-collapse:separate; border-spacing:20px 0}
-.main-programm-item {display:table-cell; vertical-align:top; width:50%; background:no-repeat center; background-size:cover; padding:46px 107px 44px 60px}
+.main-programm-item {display:table-cell; vertical-align:top; width:50%; background:no-repeat center; background-size:cover; padding:46px 107px 44px 60px; text-decoration:none}
 .main-programm-item-date {text-transform:uppercase; font-size:34px; line-height:51px; color:#fff}
 .main-programm-item-date span {color:#94d6ea; font-weight:bold}
 .main-programm-item-title {margin:12px 0 0 0; font-weight:500; font-size:20px; line-height:30px; letter-spacing:0.03em; text-transform:uppercase; color:#fff}
