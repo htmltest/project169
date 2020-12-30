@@ -1155,7 +1155,8 @@ function redrawProgramm() {
                     }
                     hallHTML +=                     '</div>';
                     hallHTML +=                 '</div>';
-                    hallHTML +=                 '<div class="programm-list-item-shadow" style="background:linear-gradient(0deg, ' + curEvent.color + ' 0%, rgba(0, 0, 0, 0) 100%); border-bottom-color:' + curEvent.color + '"></div>';
+                    var colorRGB = 'rgba(' + hex2rgb(curEvent.color).r + ', ' + hex2rgb(curEvent.color).g + ', ' + hex2rgb(curEvent.color).b + ', 0)';
+                    hallHTML +=                 '<div class="programm-list-item-shadow" style="background:-webkit-linear-gradient(0deg, ' + curEvent.color + ' 0%, ' + colorRGB + ' 100%); background:linear-gradient(0deg, ' + curEvent.color + ' 0%, ' + colorRGB + ' 100%); border-bottom-color:' + curEvent.color + '"></div>';
                     hallHTML +=             '</a>';
                     hallHTML +=             '<a href="' + curEvent.url + '" style="background:' + curEvent.color + '" class="programm-list-item-full">';
                     hallHTML +=                 '<div class="programm-list-item-inner">';
@@ -1191,6 +1192,15 @@ function redrawProgramm() {
         }
 
     });
+}
+
+function hex2rgb(c) {
+    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(c);
+    return result ? {
+        r: parseInt(result[1], 16),
+        g: parseInt(result[2], 16),
+        b: parseInt(result[3], 16)
+    } : null;
 }
 
 function updateProgrammFilter() {
