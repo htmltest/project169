@@ -231,4 +231,8 @@
         <path d="M6 9L12 15L18 9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol viewBox="0 0 46 53" id="main-stream-video-player-preview-btn">
+        <path d="M45.2852 25.9713C45.9518 26.3562 45.9518 27.3185 45.2852 27.7034L2.25343 52.5478C1.58676 52.9327 0.753423 52.4515 0.753423 51.6817L0.753425 1.99298C0.753425 1.22318 1.58676 0.742049 2.25343 1.12695L45.2852 25.9713Z" />
+    </symbol>
+
 </svg>
