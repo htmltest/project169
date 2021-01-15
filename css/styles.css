@@ -1754,6 +1754,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .award-nominants {margin:40px 0 0 0; border-top:1px solid #e2e2e2}
 .award-nominant {border-bottom:1px solid #e2e2e2}
 .award-nominant-header {display:table; width:100%; cursor:pointer}
+.award-nominant-no-link .award-nominant-header {cursor:default}
 .award-nominant-header-logo {display:table-cell; vertical-align:middle; width:80px; padding:10px 0; line-height:0}
 .award-nominant-header-logo img {display:block; max-width:none; width:80px}
 .award-nominant-header-content {display:table-cell; vertical-align:middle; padding:10px 30px 10px 20px; position:relative}

@@ -142,6 +142,7 @@ $(document).ready(function() {
             if (curGallery.next().hasClass('gallery-preview')) {
                 curGallery.next().find('.gallery-preview-item').removeClass('active');
                 curGallery.next().find('.gallery-preview-item').eq(nextSlide).addClass('active');
+                curGallery.next().mCustomScrollbar('scrollTo', curGallery.next().find('.gallery-preview-item').eq(nextSlide));
             }
         }).on('setPosition', function(event, slick) {
             if (curGallery.next().hasClass('gallery-preview')) {
