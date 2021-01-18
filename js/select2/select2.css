@@ -16,6 +16,11 @@
           height: 66px;
       }
     }
+    @media screen and (min-width:1800px) {
+      .select2-container .select2-selection--single {
+          height: 56px;
+      }
+    }
     .select2-container .select2-selection--single .select2-selection__rendered {
       display: block;
       padding-left: 9px;
@@ -42,6 +47,11 @@
     @media screen and (max-width:767px) {
         .select2-container .select2-selection--multiple {
             min-height: 66px;
+        }
+    }
+    @media screen and (min-width:1800px) {
+        .select2-container .select2-selection--multiple {
+            min-height: 56px;
         }
     }
     .select2-container .select2-selection--multiple::after {
@@ -91,6 +101,13 @@
             padding: 17px 0;
         }
     }
+    @media screen and (min-width:1800px) {
+        .select2-container .select2-search--inline .select2-search__field {
+            font-size: 18px;
+            line-height: 27px;
+            padding: 14px 0;
+        }
+    }
     .select2-container .select2-search--inline .select2-search__field::-webkit-input-placeholder {opacity:1; color:#b0b0b0}
     .select2-container .select2-search--inline .select2-search__field::-moz-placeholder {opacity:1; color:#b0b0b0}
     .select2-container .select2-search--inline .select2-search__field:-ms-input-placeholder {opacity:1; color:#b0b0b0}
@@ -134,6 +151,12 @@
     .select2-results__option {
       font-size: 20px;
       line-height: 30px;
+    }
+  }
+  @media screen and (min-width:1800px) {
+    .select2-results__option {
+      font-size: 18px;
+      line-height: 27px;
     }
   }
   .select2-results__option::before {
@@ -220,6 +243,12 @@
         line-height: 64px;
       }
     }
+    @media screen and (min-width:1800px) {
+      .select2-container--default .select2-selection--single .select2-selection__rendered {
+        font-size: 18px;
+        line-height: 54px;
+      }
+    }
   .select2-container--default .select2-selection--single .select2-selection__clear {
     cursor: pointer;
     float: right;
@@ -238,6 +267,11 @@
     @media screen and (max-width:767px) {
       .select2-container--default .select2-selection--single .select2-selection__arrow {
         height: 64px;
+      }
+    }
+    @media screen and (min-width:1800px) {
+      .select2-container--default .select2-selection--single .select2-selection__arrow {
+        height: 54px;
       }
     }
     .select2-container--default .select2-selection--single .select2-selection__arrow b {

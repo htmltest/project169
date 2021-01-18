@@ -48,6 +48,9 @@ $(document).ready(function() {
         if ($(window).width() < 768) {
             curSize = 6;
         }
+        if ($(window).width() > 1799) {
+            curSize = 12;
+        }
         if (curBlock.find('.speaker').length > curSize) {
             curBlock.find('.speakers-more').addClass('visible');
         } else {
@@ -62,6 +65,9 @@ $(document).ready(function() {
         var curSize = 8;
         if ($(window).width() < 768) {
             curSize = 6;
+        }
+        if ($(window).width() > 1799) {
+            curSize = 12;
         }
         countVisible += curSize;
         if (countVisible >= countItems) {
@@ -829,21 +835,38 @@ $(document).ready(function() {
         });
     });
 
-    $('.programm-filter-window-select-speakers').each(function() {
-        $('.programm-filter-window-select-speakers select').select2('destroy');
-        $('.programm-filter-window-select-speakers select').select2({
-            data: dataProgrammFilterSpeakers,
-            escapeMarkup: function(markup) {
-                return markup;
-            },
-            templateResult: function(data) {
-                return data.html;
-            },
-            templateSelection: function(data) {
-                return data.html;
+    $('.programm-filter-window-checkboxes-current').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.programm-filter-window-checkboxes-wraper-with-search').length == 0) {
+            $('.programm-filter-window-checkboxes-wraper-with-search').removeClass('open');
+        }
+    });
+
+    $('.programm-filter-window-checkboxes-wraper-with-search .form-checkbox input').change(function() {
+        var curInput = $(this);
+        var curBlock = $(this).parents().filter('.programm-filter-window-block-with-search');
+        curBlock.find('.programm-filter-window-checkboxes-wraper-with-search').removeClass('open');
+    });
+
+    $('.programm-filter-window-checkboxes-search input').on('keydown', function(e) {
+        if (e.keyCode == 13) {
+            return false;
+        }
+    });
+
+    $('.programm-filter-window-checkboxes-search input').on('keyup', function(e) {
+        var curValue = $(this).val().toLowerCase();
+        var curBlock = $(this).parents().filter('.programm-filter-window-block-with-search');
+        curBlock.find('.programm-filter-window-checkboxes-wraper-with-search .form-checkbox').each(function() {
+            var curItem = $(this);
+            if (curItem.find('span').text().toLowerCase().indexOf(curValue) == -1) {
+                curItem.addClass('hidden');
+            } else {
+                curItem.removeClass('hidden');
             }
-        }).on('select2:select', function (e) {
-            updateProgrammFilter();
         });
     });
 
@@ -853,7 +876,9 @@ $(document).ready(function() {
 
     $('.programm-filter-window-checkboxes .form-checkbox label').on('mouseenter', function() {
         var curSpan = $(this).find('span');
-        $('body').append('<div class="programm-filter-window-checkbox-hint" style="left:' + curSpan.offset().left + 'px; top:' + curSpan.offset().top + 'px">' + curSpan.html() + '</div>');
+        if (curSpan.parents().filter('.programm-filter-window-checkboxes-wraper-with-search').length == 0) {
+            $('body').append('<div class="programm-filter-window-checkbox-hint" style="left:' + curSpan.offset().left + 'px; top:' + curSpan.offset().top + 'px">' + curSpan.html() + '</div>');
+        }
     });
 
     $('.programm-filter-window-checkboxes .form-checkbox label').on('mouseleave', function() {
@@ -867,13 +892,42 @@ $(document).ready(function() {
     $('body').on('click', '.programm-filter-param a', function(e) {
         var curLink = $(this);
         var curType = curLink.attr('data-type');
-        if (curType == 'select') {
-            $('.programm-filter-window-select .form-select select[name="' + curLink.attr('data-name') + '"] option:selected').prop('selected', false);
-            $('.programm-filter-window-select .form-select select[name="' + curLink.attr('data-name') + '"]').trigger('change');
-        }
         if (curType == 'checkbox') {
             $('.programm-filter-window-checkboxes .form-checkbox input[name="' + curLink.attr('data-name') + '"]').prop('checked', false);
         }
+        updateProgrammFilter();
+        e.preventDefault();
+    });
+
+    $('.programm-filter-window-reset a').click(function(e) {
+        $('.programm-filter-window-checkboxes .form-checkbox input').prop('checked', false);
+        updateProgrammFilter();
+        $('.programm-filter-window-close').trigger('click');
+        e.preventDefault();
+    });
+
+    $('.programm-filter-window-apply a').click(function(e) {
+        $('.programm-filter-window-close').trigger('click');
+        e.preventDefault();
+    });
+
+    $('.programm-filter-window-label').click(function(e) {
+        $(this).parent().addClass('open');
+    });
+
+    $('.programm-filter-window-block-close').click(function(e) {
+        $(this).parent().removeClass('open');
+        e.preventDefault();
+    });
+
+    $('.programm-filter-window-block-apply').click(function(e) {
+        $(this).parent().removeClass('open');
+        e.preventDefault();
+    });
+
+    $('.programm-filter-window-block-reset a').click(function(e) {
+        var curBlock = $(this).parent().parent();
+        curBlock.find('.programm-filter-window-checkboxes .form-checkbox input').prop('checked', false);
         updateProgrammFilter();
         e.preventDefault();
     });
@@ -1029,12 +1083,21 @@ $(document).ready(function() {
 
     $('.main-conf-speakers .speakers').slick({
         infinite: false,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 6,
+        slidesToScroll: 6,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
         dots: false,
         responsive: [
+            {
+                breakpoint: 1799,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: true,
+                    dots: false
+                }
+            },
             {
                 breakpoint: 1199,
                 settings: {
@@ -1227,18 +1290,19 @@ function updateProgrammFilter() {
     var paramsHTML = '';
     var countParams = 0;
 
-    $('.programm-filter-window-select .form-select select').each(function() {
-        var curSelect = $(this);
-        if (curSelect.val() != '' && curSelect.val() != '0') {
-            paramsHTML += '<div class="programm-filter-param">' + curSelect.find('option:selected').html() + '<a href="#" data-type="select" data-name="' + curSelect.attr('name') + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#programm-filter-param-remove"></use></svg></a></div>';
-            countParams++;
-        }
-    });
-
     $('.programm-filter-window-checkboxes .form-checkbox input:checked').each(function() {
         var curInput = $(this);
         paramsHTML += '<div class="programm-filter-param">' + curInput.parent().find('span').html() + '<a href="#" data-type="checkbox" data-name="' + curInput.attr('name') + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#programm-filter-param-remove"></use></svg></a></div>';
         countParams++;
+    });
+
+    $('.programm-filter-window-checkboxes-wraper-with-search').each(function() {
+        var curBlock = $(this);
+        if (curBlock.find('.programm-filter-window-checkboxes input:checked').length == 0) {
+            curBlock.find('.programm-filter-window-checkboxes-current').html('');
+        } else {
+            curBlock.find('.programm-filter-window-checkboxes-current').html(curBlock.find('.programm-filter-window-checkboxes input:checked').parent().find('span').html());
+        }
     });
 
     if (countParams > 0) {
@@ -1254,9 +1318,9 @@ function updateProgrammFilter() {
     } else {
         $('.programm-list-item').addClass('unfilter');
 
-        $('.programm-filter-window-select-speakers .form-select select').each(function() {
+        $('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').each(function() {
             var curVal = $(this).val();
-            if (curVal != '') {
+            if (curVal != '0') {
                 $('.programm-list-item').each(function() {
                     var curItem = $(this);
                     var curSpeakers = curItem.attr('data-speakers').split(',');
@@ -1264,6 +1328,8 @@ function updateProgrammFilter() {
                         curItem.removeClass('unfilter');
                     }
                 });
+            } else {
+                $('.programm-list-item').removeClass('unfilter');
             }
         });
 
@@ -1426,7 +1492,7 @@ $(window).on('load resize scroll', function() {
     });
 
     $('.programm-filter-params').each(function() {
-        $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 90) + 'px'});
+        $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 150) + 'px'});
     });
 });
 

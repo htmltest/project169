@@ -137,184 +137,104 @@
                                         </div>
                                         <div class="programm-filter-window">
                                             <div class="programm-filter-window-inner">
+                                                <div class="programm-filter-window-title">Фильтры</div>
                                                 <form action="#" method="post">
                                                     <div class="programm-filter-window-cols">
                                                         <div class="programm-filter-window-col">
-                                                            <div class="programm-filter-window-block">
+                                                            <div class="programm-filter-window-block programm-filter-window-block-with-search">
                                                                 <div class="programm-filter-window-label">Спикеры</div>
-                                                                <div class="programm-filter-window-select programm-filter-window-select-speakers">
-                                                                    <script>
-                                                                        var dataProgrammFilterSpeakers = [
-                                                                            {
-                                                                                id      : 0,
-                                                                                text    : 'Все',
-                                                                                html    : 'Все',
-                                                                                title   : 'Все'
-                                                                            },
-                                                                            {
-                                                                                id      : 1,
-                                                                                text    : 'Эдвард Глейзер',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-01.jpg" alt="" />Эдвард Глейзер<strong>12</strong></div>',
-                                                                                title   : 'Эдвард Глейзер'
-                                                                            },
-                                                                            {
-                                                                                id      : 2,
-                                                                                text    : 'Илариа Капуа',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-02.jpg" alt="" />Илариа Капуа<strong>4</strong></div>',
-                                                                                title   : 'Илариа Капуа'
-                                                                            },
-                                                                            {
-                                                                                id      : 3,
-                                                                                text    : 'Эллисон Арвади',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-03.jpg" alt="" />Эллисон Арвади<strong>1</strong></div>',
-                                                                                title   : 'Эллисон Арвади'
-                                                                            },
-                                                                            {
-                                                                                id      : 4,
-                                                                                text    : 'Пьеро Пелиццаро',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-04.jpg" alt="" />Пьеро Пелиццаро<strong>21</strong></div>',
-                                                                                title   : 'Пьеро Пелиццаро'
-                                                                            },
-                                                                            {
-                                                                                id      : 5,
-                                                                                text    : 'Саду А. Джонстон',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-05.jpg" alt="" />Саду А. Джонстон<strong>31</strong></div>',
-                                                                                title   : 'Саду А. Джонстон'
-                                                                            },
-                                                                            {
-                                                                                id      : 6,
-                                                                                text    : 'Майкл Беркович',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-06.jpg" alt="" />Майкл Беркович<strong>42</strong></div>',
-                                                                                title   : 'Майкл Беркович'
-                                                                            },
-                                                                            {
-                                                                                id      : 7,
-                                                                                text    : 'Ян Гейл',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-07.jpg" alt="" />Ян Гейл<strong>12</strong></div>',
-                                                                                title   : 'Ян Гейл'
-                                                                            },
-                                                                            {
-                                                                                id      : 8,
-                                                                                text    : 'Грег Линдси',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-08.jpg" alt="" />Грег Линдси<strong>4</strong></div>',
-                                                                                title   : 'Грег Линдси'
-                                                                            },
-                                                                            {
-                                                                                id      : 9,
-                                                                                text    : 'Уильям Чилтон',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-09.jpg" alt="" />Уильям Чилтон<strong>1</strong></div>',
-                                                                                title   : 'Уильям Чилтон'
-                                                                            },
-                                                                            {
-                                                                                id      : 10,
-                                                                                text    : 'Сладжин Паракатил',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-10.jpg" alt="" />Сладжин Паракатил<strong>21</strong></div>',
-                                                                                title   : 'Сладжин Паракатил'
-                                                                            },
-                                                                            {
-                                                                                id      : 11,
-                                                                                text    : 'Нильс Лунд',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-11.jpg" alt="" />Нильс Лунд<strong>31</strong></div>',
-                                                                                title   : 'Нильс Лунд'
-                                                                            },
-                                                                            {
-                                                                                id      : 12,
-                                                                                text    : 'Тим Стонор',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-12.jpg" alt="" />Тим Стонор<strong>42</strong></div>',
-                                                                                title   : 'Тим Стонор'
-                                                                            },
-                                                                            {
-                                                                                id      : 13,
-                                                                                text    : 'Майкл Кох',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-13.jpg" alt="" />Майкл Кох<strong>12</strong></div>',
-                                                                                title   : 'Майкл Кох'
-                                                                            },
-                                                                            {
-                                                                                id      : 14,
-                                                                                text    : 'Артур Хуан',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-14.jpg" alt="" />Артур Хуан<strong>4</strong></div>',
-                                                                                title   : 'Артур Хуан'
-                                                                            },
-                                                                            {
-                                                                                id      : 15,
-                                                                                text    : 'Чарльз Монтгомери',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-15.jpg" alt="" />Чарльз Монтгомери<strong>1</strong></div>',
-                                                                                title   : 'Чарльз Монтгомери'
-                                                                            },
-                                                                            {
-                                                                                id      : 16,
-                                                                                text    : 'Ларри Бисли',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-16.jpg" alt="" />Ларри Бисли<strong>21</strong></div>',
-                                                                                title   : 'Ларри Бисли'
-                                                                            },
-                                                                            {
-                                                                                id      : 17,
-                                                                                text    : 'Карен Ли',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-17.jpg" alt="" />Карен Ли<strong>31</strong></div>',
-                                                                                title   : 'Карен Ли'
-                                                                            },
-                                                                            {
-                                                                                id      : 18,
-                                                                                text    : 'Гил Пеньялоса',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-18.jpg" alt="" />Гил Пеньялоса<strong>42</strong></div>',
-                                                                                title   : 'Гил Пеньялоса'
-                                                                            },
-                                                                            {
-                                                                                id      : 19,
-                                                                                text    : 'Итай Палти',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-19.jpg" alt="" />Итай Палти<strong>12</strong></div>',
-                                                                                title   : 'Итай Палти'
-                                                                            },
-                                                                            {
-                                                                                id      : 20,
-                                                                                text    : 'Кейт Шурети',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-20.jpg" alt="" />Кейт Шурети<strong>4</strong></div>',
-                                                                                title   : 'Кейт Шурети'
-                                                                            },
-                                                                            {
-                                                                                id      : 21,
-                                                                                text    : 'Дэвид Напье',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-21.jpg" alt="" />Дэвид Напье<strong>1</strong></div>',
-                                                                                title   : 'Дэвид Напье'
-                                                                            },
-                                                                            {
-                                                                                id      : 22,
-                                                                                text    : 'Майкл Чанг',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-22.jpg" alt="" />Майкл Чанг<strong>21</strong></div>',
-                                                                                title   : 'Майкл Чанг'
-                                                                            },
-                                                                            {
-                                                                                id      : 23,
-                                                                                text    : 'Хелен Пинео',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-23.jpg" alt="" />Хелен Пинео<strong>31</strong></div>',
-                                                                                title   : 'Хелен Пинео'
-                                                                            },
-                                                                            {
-                                                                                id      : 24,
-                                                                                text    : 'Том Райт',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-24.jpg" alt="" />Том Райт<strong>42</strong></div>',
-                                                                                title   : 'Том Райт'
-                                                                            },
-                                                                            {
-                                                                                id      : 25,
-                                                                                text    : 'Чон Кун Хин',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-25.jpg" alt="" />Чон Кун Хин<strong>12</strong></div>',
-                                                                                title   : 'Чон Кун Хин'
-                                                                            },
-                                                                            {
-                                                                                id      : 26,
-                                                                                text    : 'Моника Косинска',
-                                                                                html    : '<div class="programm-filter-window-select-option"><img src="files/speaker-26.jpg" alt="" />Моника Косинска<strong>4</strong></div>',
-                                                                                title   : 'Моника Косинска'
-                                                                            }
-                                                                        ];
-                                                                    </script>
-                                                                    <div class="form-select">
-                                                                        <select name="speaker">
-                                                                            <option value="">Все</option>
-                                                                        </select>
+                                                                <div class="programm-filter-window-checkboxes-wraper programm-filter-window-checkboxes-wraper-with-search">
+                                                                    <div class="programm-filter-window-checkboxes-current"></div>
+                                                                    <div class="programm-filter-window-checkboxes-window">
+                                                                        <div class="programm-filter-window-checkboxes-search form-input"><input type="text" name="speaker_search" value="" /></div>
+                                                                        <div class="programm-filter-window-checkboxes programm-filter-window-checkboxes-speakers">
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="0" /><span>Все</span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="1" /><span><img src="files/speaker-01.jpg" alt="" />Эдвард Глейзер<strong>12</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="2" /><span><img src="files/speaker-02.jpg" alt="" />Илариа Капуа<strong>4</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="3" /><span><img src="files/speaker-03.jpg" alt="" />Эллисон Арвади<strong>1</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="4" /><span><img src="files/speaker-04.jpg" alt="" />Пьеро Пелиццаро<strong>21</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="5" /><span><img src="files/speaker-05.jpg" alt="" />Саду А. Джонстон<strong>31</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="6" /><span><img src="files/speaker-06.jpg" alt="" />Майкл Беркович<strong>42</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="7" /><span><img src="files/speaker-07.jpg" alt="" />Ян Гейл<strong>12</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="8" /><span><img src="files/speaker-08.jpg" alt="" />Грег Линдси<strong>4</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="9" /><span><img src="files/speaker-09.jpg" alt="" />Уильям Чилтон<strong>1</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="10" /><span><img src="files/speaker-10.jpg" alt="" />Сладжин Паракатил<strong>21</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="11" /><span><img src="files/speaker-11.jpg" alt="" />Нильс Лунд<strong>31</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="12" /><span><img src="files/speaker-12.jpg" alt="" />Тим Стонор<strong>42</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="13" /><span><img src="files/speaker-13.jpg" alt="" />Майкл Кох<strong>12</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="14" /><span><img src="files/speaker-14.jpg" alt="" />Артур Хуан<strong>4</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="15" /><span><img src="files/speaker-15.jpg" alt="" />Чарльз Монтгомери<strong>1</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="16" /><span><img src="files/speaker-16.jpg" alt="" />Ларри Бисли<strong>21</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="17" /><span><img src="files/speaker-17.jpg" alt="" />Карен Ли<strong>31</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="18" /><span><img src="files/speaker-18.jpg" alt="" />Гил Пеньялоса<strong>42</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="19" /><span><img src="files/speaker-19.jpg" alt="" />Итай Палти<strong>12</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="20" /><span><img src="files/speaker-20.jpg" alt="" />Кейт Шурети<strong>4</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="21" /><span><img src="files/speaker-21.jpg" alt="" />Дэвид Напье<strong>1</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="22" /><span><img src="files/speaker-22.jpg" alt="" />Майкл Чанг<strong>21</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="23" /><span><img src="files/speaker-23.jpg" alt="" />Хелен Пинео<strong>31</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="24" /><span><img src="files/speaker-24.jpg" alt="" />Том Райт<strong>42</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="25" /><span><img src="files/speaker-25.jpg" alt="" />Чон Кун Хин<strong>12</strong></span></label>
+                                                                            </div>
+                                                                            <div class="form-checkbox">
+                                                                                <label><input type="radio" name="speaker" value="26" /><span><img src="files/speaker-26.jpg" alt="" />Моника Косинска<strong>4</strong></span></label>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
+                                                                <a href="#" class="programm-filter-window-block-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
+                                                                <div class="programm-filter-window-block-reset"><a href="#">Сбросить</a></div>
+                                                                <div class="programm-filter-window-block-apply"><a href="#" class="btn">Применить</a></div>
                                                             </div>
                                                             <div class="programm-filter-window-block">
                                                                 <div class="programm-filter-window-label">Тип мероприятия</div>
@@ -355,6 +275,9 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <a href="#" class="programm-filter-window-block-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
+                                                                <div class="programm-filter-window-block-reset"><a href="#">Сбросить</a></div>
+                                                                <div class="programm-filter-window-block-apply"><a href="#" class="btn">Применить</a></div>
                                                             </div>
                                                         </div>
 
@@ -395,11 +318,16 @@
                                                                         </div>
                                                                     </div>
                                                                 </div>
+                                                                <a href="#" class="programm-filter-window-block-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
+                                                                <div class="programm-filter-window-block-reset"><a href="#">Сбросить</a></div>
+                                                                <div class="programm-filter-window-block-apply"><a href="#" class="btn">Применить</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </form>
                                                 <a href="#" class="programm-filter-window-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
+                                                <div class="programm-filter-window-reset"><a href="#">Сбросить</a></div>
+                                                <div class="programm-filter-window-apply"><a href="#" class="btn">Применить</a></div>
                                             </div>
                                         </div>
                                     </div>
