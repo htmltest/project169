@@ -802,7 +802,7 @@ $(document).ready(function() {
     });
 
     $(document).click(function(e) {
-        if ($(e.target).parents().filter('.programm-filter').length == 0 && $(e.target).parents().filter('.select2-container').length == 0) {
+        if ($(e.target).parents().filter('.programm-filter').length == 0 && $(e.target).parents().filter('.programm-filter-window-block-params-item').length == 0) {
             $('html').removeClass('programm-filter-open');
         }
     });
@@ -928,6 +928,20 @@ $(document).ready(function() {
     $('.programm-filter-window-block-reset a').click(function(e) {
         var curBlock = $(this).parent().parent();
         curBlock.find('.programm-filter-window-checkboxes .form-checkbox input').prop('checked', false);
+        updateProgrammFilter();
+        e.preventDefault();
+    });
+
+    $('.programm-filter-window-block-params-remove').click(function(e) {
+        $(this).parents().filter('.programm-filter-window-block').find('.programm-filter-window-block-reset a').trigger('click');
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.programm-filter-window-block-params-item a', function(e) {
+        var curItem = $(this).parent();
+        var curID = curItem.attr('data-id');
+        var curBlock = curItem.parents().filter('.programm-filter-window-block');
+        curBlock.find('.programm-filter-window-checkboxes .form-checkbox input').eq(curID).prop('checked', false);
         updateProgrammFilter();
         e.preventDefault();
     });
@@ -1149,6 +1163,10 @@ function redrawProgramm() {
         }
 
         $('.programm-halls-inner').html('');
+        var curMobileHallSelected = '';
+        if ($('.programm-halls-mobile ul li.active').length == 1) {
+            curMobileHallSelected = $('.programm-halls-mobile ul li.active a').html();
+        }
         $('.programm-halls-mobile ul').html('');
         $('.programm-timescale').html('');
         $('.programm-list').html('');
@@ -1269,9 +1287,13 @@ function redrawProgramm() {
             }
 
             $(window).trigger('resize');
-            $('.programm-halls-mobile ul li').eq(0).addClass('active');
-            $('.programm-halls-mobile-current span').html($('.programm-halls-mobile ul li').eq(0).find('a').html());
-            $('.programm-list-hall').eq(0).addClass('active');
+            if (curMobileHallSelected == '') {
+                $('.programm-halls-mobile ul li').eq(0).addClass('active');
+                $('.programm-halls-mobile-current span').html($('.programm-halls-mobile ul li').eq(0).find('a').html());
+                $('.programm-list-hall').eq(0).addClass('active');
+            } else {
+                $('.programm-halls-mobile ul li a:contains("' + curMobileHallSelected + '")').trigger('click');
+            }
         }
 
     });
@@ -1294,6 +1316,22 @@ function updateProgrammFilter() {
         var curInput = $(this);
         paramsHTML += '<div class="programm-filter-param">' + curInput.parent().find('span').html() + '<a href="#" data-type="checkbox" data-name="' + curInput.attr('name') + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#programm-filter-param-remove"></use></svg></a></div>';
         countParams++;
+    });
+
+    $('.programm-filter-window-block').each(function() {
+        var curGroup = $(this);
+        var paramsHTMLmobile = '';
+        curGroup.find('.programm-filter-window-checkboxes .form-checkbox input:checked').each(function() {
+            var curInput = $(this);
+            var curIndex = curGroup.find('.form-checkbox').index(curInput.parents().filter('.form-checkbox'));
+            paramsHTMLmobile += '<div class="programm-filter-window-block-params-item" data-id="' + curIndex + '">' + curInput.parent().find('span').html() + '<a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#programm-filter-window-block-params-item-remove"></use></svg></a></div>';
+        });
+        curGroup.find('.programm-filter-window-block-params').html(paramsHTMLmobile);
+        if (paramsHTMLmobile != '') {
+            curGroup.find('.programm-filter-window-block-params').addClass('visible');
+        } else {
+            curGroup.find('.programm-filter-window-block-params').removeClass('visible');
+        }
     });
 
     $('.programm-filter-window-checkboxes-wraper-with-search').each(function() {
@@ -1333,12 +1371,12 @@ function updateProgrammFilter() {
             }
         });
 
-        $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
+        $('.programm-filter-window-checkboxes-sections .form-checkbox input:checked').each(function() {
             var curInput = $(this);
             $('.programm-list-item-type-' + curInput.val()).removeClass('unfilter');
         });
 
-        $('.programm-filter-window-checkboxes-sections .form-checkbox input:checked').each(function() {
+        $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
             var curVal = $(this).val();
             if (curVal != '') {
                 $('.programm-list-item').each(function() {
@@ -1594,3 +1632,37 @@ function windowClose() {
         $(window).scrollTop($('.wrapper').data('curScroll'));
     }
 }
+
+$(window).on('load resize', function() {
+    $('.programm-filter-window-checkboxes-speakers').each(function() {
+        if ($(window).width() < 1200) {
+            $(this).mCustomScrollbar('destroy');
+        } else {
+            var curWrapper = $(this).parent();
+            $(this).mCustomScrollbar({
+                axis: 'y',
+                callbacks: {
+                    onInit: function() {
+                        curWrapper.removeClass('with-top');
+                        curWrapper.addClass('with-bottom');
+                    },
+
+                    whileScrolling: function() {
+                        if (this.mcs.topPct == 100) {
+                            curWrapper.removeClass('with-bottom');
+                        } else {
+                            curWrapper.addClass('with-bottom');
+                        }
+
+                        if (this.mcs.topPct == 0) {
+                            curWrapper.removeClass('with-top');
+                        } else {
+                            curWrapper.addClass('with-top');
+
+                        }
+                    }
+                }
+            });
+        }
+    });
+});

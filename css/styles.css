@@ -3362,12 +3362,12 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-dates-current {display:block; cursor:pointer; height:66px; border:2px solid #dbdbdb; padding:7px 0 0 14px; font-size:16px; line-height:21px; color:#888888; position:relative}
     .programm-dates.open .programm-dates-current {border-color:#000}
     .programm-dates-current svg {width:24px; height:24px; position:absolute; right:8px; top:50%; margin-top:-12px; stroke:#25282b; fill:none}
-    .programm-dates-current span {display:block; margin:2px 0 0 0; font-size:20px; line-height:26px; font-weight:600; color:#000}
+    .programm-dates-current span {display:block; margin:2px 32px 0 0; font-size:20px; line-height:26px; font-weight:600; color:#000; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; position:relative}
     .programm-dates ul {display:none; position:absolute; left:10px; top:100%; right:0; background:#fff; border:2px solid #d9d9d9; border-top:none}
     .programm-dates.open ul {display:block}
     .programm-dates ul li {float:none; margin:0; border-top:2px solid #d9d9d9; position:relative}
     .programm-dates ul li:first-child {border-top:none}
-    .programm-dates ul li a {padding:0 14px; height:57px; color:#828282; font-weight:500; font-size:18px; line-height:57px; background:none; position:relative}
+    .programm-dates ul li a {display:block; padding:0 32px 0 14px; height:57px; color:#828282; font-weight:500; font-size:18px; line-height:57px; background:none; position:relative; white-space:nowrap; text-overflow:ellipsis; overflow:hidden}
     .programm-dates ul li a:hover,
     .programm-dates ul li.active a {background:none; color:#000}
     .programm-dates ul li.active a::after {content:""; display:block; position:absolute; right:10px; top:50%; width:22px; height:22px; margin-top:-11px; background:url(../images/select-mobile.svg) no-repeat}
@@ -3387,9 +3387,9 @@ h1+.main-block {margin:80px 0 0 0}
 @media screen and (max-width:767px) {
     .programm-ctrl-wrapper.fixed .programm-dates {position:absolute; left:283px; top:20px; width:156px; padding:0}
     .programm-ctrl-wrapper.fixed .programm-dates-current {height:44px; padding:7px 0 0 8px; font-size:0; line-height:0}
-    .programm-ctrl-wrapper.fixed .programm-dates-current span {margin:0}
+    .programm-ctrl-wrapper.fixed .programm-dates-current span {margin:0 32px 0 0}
     .programm-ctrl-wrapper.fixed .programm-dates ul {left:0}
-    .programm-ctrl-wrapper.fixed .programm-dates ul li a {padding:0 14px; height:57px; font-size:18px; line-height:57px}
+    .programm-ctrl-wrapper.fixed .programm-dates ul li a {padding:0 32px 0 14px; height:57px; font-size:18px; line-height:57px}
 
     .programm-ctrl-wrapper.fixed .programm-halls-mobile {position:absolute; left:63px; top:20px; width:210px; padding:0}
     .programm-ctrl-wrapper.fixed .programm-halls-mobile-current {height:44px; padding:7px 0 0 8px; font-size:0; line-height:0}
@@ -3471,6 +3471,8 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-filter-window-checkboxes-wraper-with-search .form-checkbox input:checked+span::after {content:""; display:block; width:14px; height:14px; position:absolute; right:10px; top:50%; margin-top:-6px; background:url(../images/selected.svg) no-repeat}
 .programm-filter-window-checkboxes-wraper-with-search .form-checkbox strong {right:38px; top:10px}
 .programm-filter-window-checkboxes-wraper-with-search .form-checkbox img {display:inline-block; width:24px; height:24px; vertical-align:middle; margin:-2px 11px 0 0}
+.programm-filter-window-block-params {display:none}
+.programm-filter-window-block-params-remove {display:none}
 
 @media screen and (min-width:1800px) {
     .programm-filter {margin:0 0 0 100px}
@@ -3480,6 +3482,8 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-filter-window-label {font-size:18px; line-height:23px}
     .programm-filter-window-checkbox-hint {font-size:16px; line-height:24px}
     .programm-filter-window-checkboxes-sections {max-height:285px}
+    .programm-filter-window-checkboxes .form-checkbox em {margin-top:2px}
+    .programm-filter-window-checkbox-hint em {margin-top:2px}
 }
 
 @media screen and (max-width:1199px) {
@@ -3498,7 +3502,7 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-filter-window-apply a {display:block}
     .programm-filter-window form {position:absolute; left:0; top:71px; right:0; bottom:84px; overflow:auto; padding:0 20px; border-top:1px solid #e9e9e9}
 
-    .programm-filter-window-block {margin:0}
+    .programm-filter-window-block {margin:0; border-bottom:1px solid #e9e9e9; position:relative}
     .programm-filter-window-block:first-child {margin:0}
     .programm-filter-window-cols {margin:0}
     .programm-filter-window-col {float:none; width:auto; padding:0; margin:0}
@@ -3506,7 +3510,7 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-filter-window-checkboxes {max-height:none}
     .programm-filter-window-checkboxes-sections {max-height:none}
 
-    .programm-filter-window-label {border-bottom:1px solid #e9e9e9; margin:0 -20px; padding:20px; cursor:pointer; font-size:20px; line-height:28px; font-weight:500; color:#2c2c2c}
+    .programm-filter-window-label {margin:0 -20px; padding:20px; cursor:pointer; font-size:20px; line-height:28px; font-weight:500; color:#2c2c2c}
     .programm-filter-window-select {display:none}
     .programm-filter-window-checkboxes-wraper {display:none}
 
@@ -3531,7 +3535,31 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-filter-window-checkboxes-window {position:absolute; left:0; top:0; right:0; bottom:0; box-shadow:none; width:auto; border:none; padding:0 20px}
     .programm-filter-window-checkboxes-wraper.open .programm-filter-window-checkboxes-window {left:0; top:0}
     .programm-filter-window-block-with-search.open .programm-filter-window-checkboxes-wraper {top:149px; overflow:visible; padding:0}
-    .programm-filter-window-block-with-search.open .programm-filter-window-checkboxes {position:absolute; left:0; top:100px; bottom:0; right:0; overflow:auto}
+    .programm-filter-window-block-with-search.open .programm-filter-window-checkboxes {position:absolute; left:0; top:100px; bottom:0; right:0; overflow:auto; padding:0 20px; border-top:none}
+    .programm-filter-window-checkboxes-wraper-with-search .form-checkbox {border-top:none}
+    .programm-filter-window-checkboxes-wraper-with-search .form-checkbox span {padding:0 24px 0 48px}
+    .programm-filter-window-checkboxes-wraper-with-search .form-checkbox span::before {display:block}
+    .programm-filter-window-checkboxes-wraper-with-search .form-checkbox input:checked+span::after {display:none}
+    .programm-filter-window-checkboxes-wraper-with-search .form-checkbox img {width:44px; height:44px; margin:-10px 20px -8px 0}
+    .programm-filter-window-checkboxes-wraper-with-search .programm-filter-window-checkboxes .form-checkbox span {overflow:visible}
+    .programm-filter-window-checkboxes-wraper-with-search .form-checkbox strong {right:0; top:0}
+    .programm-filter-window-checkboxes-search {padding:0 0 40px 0; position:relative; border-bottom:1px solid #d9d9d9}
+    .programm-filter-window-checkboxes-search input {height:60px; padding:17px 50px 14px 15px; font-size:18px; line-height:27px}
+    .programm-filter-window-checkboxes-search::after {content:""; display:block; position:absolute; right:9px; top:13px; width:32px; height:32px; background:url(../images/programm-filter-window-checkboxes-search.svg) no-repeat; pointer-events:none}
+
+    .programm-filter-window-block-params {font-size:0; line-height:0; letter-spacing:-1px; margin:-24px 0 20px -8px}
+    .programm-filter-window-block-params.visible {display:block}
+    .programm-filter-window-block-params-remove {position:absolute; right:16px; top:34px; width:26px; height:26px}
+    .programm-filter-window-block.open .programm-filter-window-block-params.visible {display:none}
+    .programm-filter-window-block-params.visible+.programm-filter-window-block-params-remove {display:block}
+    .programm-filter-window-block.open .programm-filter-window-block-params.visible+.programm-filter-window-block-params-remove {display:none}
+    .programm-filter-window-block-params-remove svg {display:block; width:26px; height:26px; fill:none}
+    .programm-filter-window-block-params-item {display:inline-block; vertical-align:top; margin:8px 0 0 8px; position:relative; border:1px solid #ebebeb; border-radius:4px; background:#f6f6f6; padding:3px 33px 3px 9px; font-size:16px; line-height:22px; letter-spacing:0; color:#6a6a6a; font-weight:normal}
+    .programm-filter-window-block-params-item em {display:none}
+    .programm-filter-window-block-params-item a {display:block; position:absolute; right:0; top:0; width:33px; bottom:0}
+    .programm-filter-window-block-params-item a svg {display:block; position:absolute; right:9px; width:20px; height:20px; top:50%; margin-top:-10px; fill:none}
+    .programm-filter-window-block-params-item img {width:24px; height:24px; margin:-1px 4px -1px 0; display:inline-block; vertical-align:middle}
+    .programm-filter-window-block-params-item strong {display:none}
 }
 
 @media screen and (max-width:767px) {
@@ -3541,7 +3569,7 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-filter-btn a {padding:0; height:66px; font-size:20px; line-height:62px; text-align:center}
     .programm-filter-btn a svg {width:36px; height:32px}
     .programm-filter-btn span {position:absolute; right:-8px; top:-8px; border-radius:9px; height:18px; padding:0 5px; min-width:18px; background:#ff3838; color:#fff; text-align:center; font-weight:600; font-size:12px; line-height:18px}
-    .programm-ctrl-wrapper.fixed .programm-filter-btn span.visible {display:block}
+    .programm-filter-btn span.visible {display:block}
 
     .programm-filter-window form {bottom:106px}
     .programm-filter-window-block.open .programm-filter-window-checkboxes-wraper {bottom:106px}
@@ -3708,7 +3736,7 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-list-hall.active {position:relative; left:auto; top:auto}
     .programm-list-item {margin-left:0 !important}
     .programm-list-item.hidden {display:block}
-    .programm-list-item-content {padding:20px}
+    .programm-list-item-content {padding:10px 20px}
     .programm-list-item-time {font-size:14px; line-height:18px}
     .programm-list-item-total .programm-list-item-time {position:absolute; left:20px; top:20px; margin:0}
     .programm-list-item-type {font-size:18px; line-height:23px; color:#000}
@@ -3718,7 +3746,7 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-list-item-total .programm-list-item-type {display:none; font-size:16px; line-height:24px; margin:5px 0 0 0}
     .programm-list-item-total .programm-list-item-type-mobile {display:block}
     .programm-list-item-total .programm-list-item-type+.programm-list-item-type {margin:5px 0 0 0}
-    .programm-list-item-inner {position:absolute; left:0; top:50%; right:0; transform:translateY(-50%)}
+    .programm-list-item-inner {position:absolute; left:0; top:50%; right:0; transform:translateY(-50%); max-height:100%}
     .programm-list-item-total .programm-list-item-content {padding-top:43px; position:relative}
 }
 
