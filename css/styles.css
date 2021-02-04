@@ -113,10 +113,12 @@ form.loading::after {content:""; display:block; position:absolute; left:0; top:0
 
 .btn {display:inline-block; vertical-align:top; margin:0; padding:10px 18px 9px 18px; overflow:visible; outline:none; text-decoration:none; background:transparent; color:#000; border:2px solid #000; border-radius:0; font:600 14px/21px Arial, Helvetica, sans-serif; letter-spacing:0.05em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:all 0.2s; box-sizing:border-box}
 .fonts-loaded .btn {font-family:GraphikLCG, sans-serif}
-.btn:hover {color:#000; border-color:#bdbdbd}
-.btn:active {color:#000; background:#ededed; border-color:#000}
+.btn:hover {color:#fff; background:#000}
+.btn:active {color:#fff; background:#454545; border-color:#454545}
 .btn span {margin:0 0 0 10px; font-weight:normal}
-.btn svg {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0; fill:none; stroke:#2b2b2b}
+.btn svg {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0; fill:none; stroke:#2b2b2b; transition:stroke 0.2s}
+.btn:hover svg {stroke:#fff}
+.btn:active svg {stroke:#fff}
 
 @media screen and (min-width:1800px) {
     .btn {padding:14px 24px 15px 24px; font-size:18px; line-height:23px}
@@ -337,14 +339,12 @@ label.error {display:block; font-size:12px; line-height:18px; color:#bd423a; mar
 
 .pager {margin:75px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px; text-align:center}
 .pager a,
-.pager span {display:inline-block; vertical-align:top; width:40px; height:40px; font-weight:normal; font-size:18px; line-height:40px; color:#373737; text-decoration:none; text-align:center; position:relative; margin:0 2px}
-.pager a:hover {color:#ff2f66}
+.pager span {display:inline-block; vertical-align:top; width:40px; height:40px; font-weight:normal; font-size:18px; line-height:40px; color:#373737; text-decoration:none; text-align:center; position:relative; margin:0 2px; transition:background 0.2s}
+.pager a:hover {background:#e8e8e8}
 .pager a.pager-prev {margin:0 2px 0 0; position:relative}
 .pager a.pager-next {margin:0 0 0 2px; position:relative}
 .pager a.pager-prev svg,
-.pager a.pager-next svg {display:block; position:absolute; left:50%; top:50%; width:7px; height:13px; stroke:#3c3c3c; margin:-6.5px 0 0 -3.5px; fill:none; transition:stroke 0.2s}
-.pager a.pager-prev:hover svg,
-.pager a.pager-next:hover svg {stroke:#ff2f66}
+.pager a.pager-next svg {display:block; position:absolute; left:50%; top:50%; width:7px; height:13px; stroke:#3c3c3c; margin:-6.5px 0 0 -3.5px; fill:none}
 .pager a.active {font-weight:500; color:#fff; background:#000}
 
 @media screen and (min-width:1800px) {
@@ -617,7 +617,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .welcome-social-item:first-child {margin:0}
 .welcome-social-item a {display:block}
 .welcome-social-item svg {display:block; width:32px; height:32px; fill:#fff; transition:fill 0.2s}
-.welcome-social-item a:hover svg {fill:#d6d6d6}
+.welcome-social-item a:hover svg {fill:#94d6ea}
 
 @media screen and (min-width:1800px) {
     .welcome-slider-item-container {height:940px}
@@ -716,11 +716,13 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 
 .main-programm {margin:37px -20px 0 -20px}
 .main-programm-inner {display:table; width:100%; border-collapse:separate; border-spacing:20px 0}
-.main-programm-item {display:table-cell; vertical-align:top; width:50%; background:no-repeat center; background-size:cover; padding:46px 107px 44px 60px; text-decoration:none}
-.main-programm-item-date {text-transform:uppercase; font-size:34px; line-height:51px; color:#fff}
+.main-programm-item {display:table-cell; vertical-align:top; width:50%; background:no-repeat center; background-size:cover; padding:46px 107px 44px 60px; text-decoration:none; position:relative}
+.main-programm-item::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#000; opacity:0; transition:opacity 0.2s}
+.main-programm-item:hover::before {opacity:1}
+.main-programm-item-date {position:relative; text-transform:uppercase; font-size:34px; line-height:51px; color:#fff}
 .main-programm-item-date span {color:#94d6ea; font-weight:bold}
-.main-programm-item-title {margin:12px 0 0 0; font-weight:500; font-size:20px; line-height:30px; letter-spacing:0.03em; text-transform:uppercase; color:#fff}
-.main-programm-item-text {margin:12px 0 0 0; font-size:18px; line-height:27px; color:#fff}
+.main-programm-item-title {position:relative; margin:12px 0 0 0; font-weight:500; font-size:20px; line-height:30px; letter-spacing:0.03em; text-transform:uppercase; color:#fff}
+.main-programm-item-text {position:relative; margin:12px 0 0 0; font-size:18px; line-height:27px; color:#fff}
 
 @media screen and (min-width:1800px) {
     .main-programm {margin:60px -20px 0 -20px}
@@ -1227,8 +1229,14 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .speaker-card-sessions-title {font-weight:600; font-size:22px; line-height:22px; color:#000; padding:0 0 20px 0}
 .speaker-card-session {border-top:1px solid #e9e9e9; padding:20px 0}
 .speaker-card-session-date {font-size:16px; line-height:24px; color:#000; font-weight:300}
-.speaker-card-session-date span {font-weight:500; margin:0 8px 0 0}
+.speaker-card-session-date span {display:inline-block; vertical-align:middle; font-weight:500; margin:-2px 8px 0 0; min-width:113px}
+.speaker-card-session-date em {display:inline-block; vertical-align:middle; font-style:normal; margin:-2px 0 0 0; min-width:100px}
+.speaker-card-session-date a {text-decoration:none; display:inline-block; vertical-align:middle; font-style:normal; font-size:14px; line-height:18px; padding:3px 6px; color:#414141; font-weight:normal; background:#eaeaea; margin:-2px 0 0 5px}
+.speaker-card-session-date a:hover {opacity:0.8}
 .speaker-card-session-title {margin:3px 0 0 0; color:#000}
+.speaker-card-session-types {font-size:0; line-height:0; letter-spacing:0; margin:2px 0 0 -8px}
+.speaker-card-session-types a {display:inline-block; text-decoration:none; vertical-align:middle; font-size:14px; line-height:18px; padding:2px 6px; color:#414141; font-weight:normal; margin:8px 0 0 8px}
+.speaker-card-session-types a:hover {opacity:0.8}
 
 @media screen and (min-width:1800px) {
     .speaker-card {margin:34px 0 0 0}
@@ -1240,7 +1248,11 @@ header {height:80px; background:#181818; position:relative; z-index:20}
     .speaker-card-sessions-title {font-size:36px; line-height:54px}
     .speaker-card-session {padding:30px 0}
     .speaker-card-session-date {font-size:20px; line-height:20px}
+    .speaker-card-session-date span {min-width:121px}
+    .speaker-card-session-date em {min-width:121px}
+    .speaker-card-session-date a {font-size:18px; height:23px}
     .speaker-card-session-title {margin:10px 0 0 0}
+    .speaker-card-session-types a {font-size:18px; line-height:23px}
 }
 
 @media screen and (max-width:1199px) {
@@ -1261,11 +1273,14 @@ header {height:80px; background:#181818; position:relative; z-index:20}
     .speaker-card-photo {float:none; width:295px; margin:0 auto}
     .speaker-card-content h1 {float:none; width:auto; margin:40px 0 0 0; font-size:30px; line-height:30px; text-align:center}
     .speaker-card-post {float:none; width:auto; margin:10px 0 0 0; text-align:center; font-size:20px; line-height:30px}
-    .speaker-card-sessions {float:none; width:auto; margin:40px 0 0 0; border-top:1px solid #d9d9d9; padding:60px 0 0 0; border-bottom:none}
+    .speaker-card-sessions {float:none; width:auto; margin:40px 0 0 0; border-top:1px solid #d9d9d9; padding:60px 0 20px 0}
     .speaker-card-sessions-title {font-size:24px; line-height:24px; padding:0 0 10px 0}
-    .speaker-card-session {padding:20px 0 0 0; border-top:none}
+    .speaker-card-session {margin:20px 0 0 0; border-top:1px solid #d9d9d9; padding:20px 0 0 0}
     .speaker-card-session-date {font-size:18px; line-height:27px}
+    .speaker-card-session-date a {font-size:16px; height:21px}
     .speaker-card-session-title {margin:0}
+    .speaker-card-session-types {margin:12px 0 0 -8px}
+    .speaker-card-session-types a {font-size:16px; line-height:21px}
 }
 
 .speaker-card-descr {margin:50px 0 0 0}
@@ -1360,17 +1375,21 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 @media screen and (max-width:767px) {
     .speaker-events {margin:80px 0 0 0}
     .speaker-events-headers {display:none}
-    .speaker-event-title {width:115px}
+    .speaker-event {display:block; width:auto; border-top:none; margin:53px 0 0 0}
+    .speaker-event:first-child {margin:0}
+    .speaker-event-title {width:auto; display:block; padding:0; font-size:24px; line-height:24px}
+    .speaker-event-title br {display:none}
+    .speaker-event-container {display:block; margin:16px 0 0 0; border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8}
     .speaker-event-content {display:block}
-    .speaker-event-row {display:block; border-top:1px solid #e8e8e8; padding:20px 0}
+    .speaker-event-row {display:block; border-top:1px solid #e8e8e8; padding:20px 50px 20px 0; position:relative}
     .speaker-event-row:first-child {border-top:none}
     .speaker-event-date {display:block; padding:0; width:auto; border-top:none; font-size:18px; line-height:27px}
     .speaker-event-row:first-child .speaker-event-date {padding:0}
     .speaker-event-date span {display:inline; margin:0 8px 0 0}
-    .speaker-event-name {display:block; padding:0; border-top:none}
+    .speaker-event-name {display:block; padding:0; border-top:none; position:static}
     .speaker-event-row:first-child .speaker-event-name {padding:0}
-    .speaker-event-play {position:relative; left:auto; top:auto; margin:15px 0 0 0; width:40px; height:40px}
-    .speaker-event-row:first-child .speaker-event-play {top:auto}
+    .speaker-event-play {position:absolute; left:auto; top:50%; right:0; margin:-20px 0 0 0; width:40px; height:40px}
+    .speaker-event-row:first-child .speaker-event-play {top:50%}
     .speaker-event-play svg {width:13px; height:16px; top:10px; left:13px}
 }
 
@@ -1572,8 +1591,9 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 }
 
 .archive-list {margin:90px 0 0 0}
-.archive-list-item {display:block; margin:30px 0 0 0; text-decoration:none; height:345px; position:relative}
-.archive-list-item-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
+.archive-list-item {display:block; margin:30px 0 0 0; text-decoration:none; height:345px; position:relative; overflow:hidden}
+.archive-list-item-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover; transition:transform 0.5s}
+.archive-list-item:hover .archive-list-item-bg {transform:scale(1.086)}
 .archive-list-item-container {position:absolute; left:60px; top:50%; right:60px; transform:translateY(-50%)}
 .archive-list-item-content {float:left; background:rgba(11, 11, 11, 0.9); padding:29px 40px; color:#fff; max-width:65%}
 .archive-list-item-title {font-weight:500; font-size:30px; line-height:39px}
@@ -1806,8 +1826,9 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .archive-others {margin:20px -10px 0 -10px}
 .archive-others::after {content:""; display:block; clear:both}
 .archive-other {float:left; width:50%; padding:20px 10px 0 10px}
-.archive-other a {display:block; text-decoration:none; height:170px; position:relative}
-.archive-other-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
+.archive-other a {display:block; text-decoration:none; height:170px; position:relative; overflow:hidden}
+.archive-other-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover; transition:transform 0.5s}
+.archive-other a:hover .archive-other-bg {transform:scale(1.086)}
 .archive-other-container {position:absolute; left:30px; top:50%; right:30px; transform:translateY(-50%)}
 .archive-other-content {background:rgba(11, 11, 11, 0.9); padding:22px 30px; color:#fff}
 .archive-other-title {font-weight:500; font-size:30px; line-height:39px}
@@ -2087,14 +2108,17 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .award-header-btns-mobile {display:none}
 .award-header-btns {margin:46px 0 0 0}
 .award-header-btn {margin:20px 0 0 0}
-.award-header-btn a {display:inline-block; vertical-align:top; line-height:44px; text-decoration:none; height:44px; padding:0 20px; font-weight:500; font-size:14px; letter-spacing:0.05em; text-transform:uppercase; background:#f4f4f4}
-.award-header-btn a svg {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0; fill:none; stroke:#717171}
+.award-header-btn a {display:inline-block; vertical-align:top; line-height:42px; text-decoration:none; height:44px; border:1px solid #f4f4f4; padding:0 19px; font-weight:500; font-size:14px; letter-spacing:0.05em; text-transform:uppercase; background:#f4f4f4}
+.award-header-btn a:hover {background:#000; color:#fff; border-color:#000}
+.award-header-btn a:active {background:#454545; color:#fff; border-color:#000}
+.award-header-btn a svg {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0; fill:none; stroke:#717171; transition:stroke 0.2s}
+.award-header-btn a:hover svg {stroke:#fff}
 
 @media screen and (min-width:1800px) {
     .award-header-title {font-size:30px; line-height:30px}
     .award-header h2 {margin:30px 0 0 0}
     .award-header-text {font-size:36px; line-height:47px}
-    .award-header-btn a {height:56px; line-height:56px; font-size:18px}
+    .award-header-btn a {height:56px; line-height:54px; font-size:18px}
 }
 
 @media screen and (max-width:1199px) {
@@ -2111,7 +2135,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
     .award-header h2 {margin:20px 0 0 0; font-size:30px; line-height:35px; font-weight:bold}
     .award-header-btns {display:none; margin:40px 0 0 0}
     .award-header-btns-mobile {display:block}
-    .award-header-btn a {height:66px; font-size:18px; line-height:66px}
+    .award-header-btn a {height:66px; font-size:18px; line-height:64px}
     .award-header-right {margin:40px 0 0 0}
     .award-header-text {font-size:30px; line-height:39px}
 }
@@ -3288,10 +3312,12 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 @media screen and (max-width:767px) {
-    .programm-header::after {display:block}
-    .programm-download .btn {padding:15px 102px 15px 78px; font-size:18px; line-height:27px; text-align:left}
-    .programm-download .btn svg {position:absolute; display:block; margin:-19px 0 0 0; left:20px; top:50%; width:38px; height:38px}
-    .programm-download .btn span {position:absolute; display:block; right:20px; top:50%; transform:translateY(-50%)}
+    .programm-header {position:relative}
+    .programm-header::after {display:none}
+    .programm-download {position:absolute; right:0; top:100%; margin-top:50px; z-index:2}
+    .programm-download .btn {padding:0; font-size:0; line-height:0; text-align:center; letter-spacing:-1px; width:66px; height:66px; border-width:2px}
+    .programm-download .btn svg {position:absolute; display:block; margin:-19px 0 0 -19px; left:50%; top:50%; width:38px; height:38px}
+    .programm-download .btn span {display:none}
 }
 
 .programm-ctrl-wrapper {margin:40px 0 0 0; height:151px}
@@ -3315,7 +3341,7 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 @media screen and (max-width:767px) {
-    .programm-ctrl-wrapper {margin:40px 0 0 0; padding:126px 0 0 0; border-top:1px solid #d9d9d9; position:relative; height:193px}
+    .programm-ctrl-wrapper {margin:10px 0 0 0; padding:126px 0 0 0; border-top:none; position:relative; height:193px}
     .programm-ctrl-wrapper.fixed .programm-ctrl-inner {height:84px}
     .programm-ctrl-wrapper.fixed .programm-ctrl {position:relatuve; bottom:auto; right:auto}
 }
@@ -3347,6 +3373,7 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-halls-mobile.open .programm-halls-mobile-current {border-color:#000}
     .programm-halls-mobile-current svg {width:24px; height:24px; position:absolute; right:8px; top:50%; margin-top:-12px; stroke:#25282b; fill:none}
     .programm-halls-mobile-current span {display:block; margin:2px 0 0 0; font-size:20px; line-height:26px; font-weight:600; color:#000}
+    .programm-halls-mobile-current span span {display:none}
     .programm-halls-mobile ul {display:none; position:absolute; right:10px; top:100%; left:0; background:#fff; border:2px solid #d9d9d9; border-top:none; margin:0; padding:0; list-style:none}
     .programm-halls-mobile.open ul {display:block}
     .programm-halls-mobile ul li {float:none; margin:0; padding:0; border-top:2px solid #d9d9d9; position:relative}
@@ -3356,6 +3383,11 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-halls-mobile ul li a:hover,
     .programm-halls-mobile ul li.active a {background:none; color:#000}
     .programm-halls-mobile ul li.active a::after {content:""; display:block; position:absolute; right:10px; top:50%; width:22px; height:22px; margin-top:-11px; background:url(../images/select-mobile.svg) no-repeat}
+    .programm-halls-mobile ul li.with-count a::after {display:none}
+    .programm-halls-mobile ul li a span {display:block; position:absolute; right:8px; top:13px; min-width:27px; height:27px; font-weight:500; font-size:16px; line-height:27px; padding:0 10px; text-align:center; border-radius:13.5px; color:#4e4e4e; background:#e2e2e2}
+    .programm-halls-mobile ul li.active a span {color:#fff; background:#ff5858}
+    .programm-halls-mobile ul li.empty a {color:#b9b9b9}
+    .programm-halls-mobile ul li.empty a span {color:#b9b9b9; background:#eeeeee}
 
     .programm-dates {float:right; margin:0; width:50%; padding:0 0 0 10px; position:relative}
     .programm-dates.open {z-index:99}
@@ -3363,6 +3395,7 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-dates.open .programm-dates-current {border-color:#000}
     .programm-dates-current svg {width:24px; height:24px; position:absolute; right:8px; top:50%; margin-top:-12px; stroke:#25282b; fill:none}
     .programm-dates-current span {display:block; margin:2px 32px 0 0; font-size:20px; line-height:26px; font-weight:600; color:#000; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; position:relative}
+    .programm-dates-current span span {display:none}
     .programm-dates ul {display:none; position:absolute; left:10px; top:100%; right:0; background:#fff; border:2px solid #d9d9d9; border-top:none}
     .programm-dates.open ul {display:block}
     .programm-dates ul li {float:none; margin:0; border-top:2px solid #d9d9d9; position:relative}
@@ -3371,6 +3404,11 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-dates ul li a:hover,
     .programm-dates ul li.active a {background:none; color:#000}
     .programm-dates ul li.active a::after {content:""; display:block; position:absolute; right:10px; top:50%; width:22px; height:22px; margin-top:-11px; background:url(../images/select-mobile.svg) no-repeat}
+    .programm-dates ul li.with-count a::after {display:none}
+    .programm-dates ul li a span {display:block; position:absolute; right:8px; top:13px; min-width:27px; height:27px; font-weight:500; font-size:16px; line-height:27px; padding:0 10px; text-align:center; border-radius:13.5px; color:#4e4e4e; background:#e2e2e2}
+    .programm-dates ul li.active a span {color:#fff; background:#ff5858}
+    .programm-dates ul li.empty a {color:#b9b9b9}
+    .programm-dates ul li.empty a span {color:#b9b9b9; background:#eeeeee}
 }
 
 .programm-ctrl-wrapper.fixed .programm-dates ul li {margin:0}
@@ -3401,8 +3439,10 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-filter-btn {float:left}
 .programm-filter-btn a {display:block; padding:0 20px; border:2px solid #000; color:#000; text-decoration:none; font-weight:600; font-size:14px; line-height:40px; height:44px; letter-spacing:0.05em; text-transform:uppercase; transition:none}
 .programm-filter-btn a:hover {color:#fff; background:#000; transition:color 0.2s, background 0.2s}
+.programm-filter-btn a:active {color:#fff; background:#454545; border-color:#454545; transition:color 0.2s, background 0.2s}
 .programm-filter-btn a svg {display:inline-block; vertical-align:middle; margin:-2px 12px 0 0; width:22px; height:20px; stroke:#25282b; fill:none; transition:stroke 0.2s}
 .programm-filter-btn a:hover svg {stroke:#fff}
+.programm-filter-btn a:active svg {stroke:#fff}
 .programm-filter-btn span {display:none}
 .programm-filter-params {float:left; margin:0 0 0 10px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden; width:590px}
 .programm-filter-params::after {content:""; display:block; position:absolute; right:0; top:0; bottom:0; width:50px; background:linear-gradient(-90deg, #fff 0%, rgba(255, 255, 255, 0) 100%)}
@@ -3565,11 +3605,11 @@ h1+.main-block {margin:80px 0 0 0}
 @media screen and (max-width:767px) {
     .programm-filter {margin:0; width:auto; border-top:none; padding:0; position:absolute; left:0; top:40px; right:0}
     .programm-filter-params {display:none}
-    .programm-filter-btn {float:none}
+    .programm-filter-btn {float:none; margin:0 86px 0 0}
     .programm-filter-btn a {padding:0; height:66px; font-size:20px; line-height:62px; text-align:center}
     .programm-filter-btn a svg {width:36px; height:32px}
-    .programm-filter-btn span {position:absolute; right:-8px; top:-8px; border-radius:9px; height:18px; padding:0 5px; min-width:18px; background:#ff3838; color:#fff; text-align:center; font-weight:600; font-size:12px; line-height:18px}
-    .programm-filter-btn span.visible {display:block}
+    .programm-filter-btn span {vertical-align:middle; border-radius:12.5px; margin:-2px 0 0 10px; height:25px; padding:0 7px; min-width:25px; background:#ff3838; color:#fff; text-align:center; font-weight:600; font-size:16px; line-height:27px}
+    .programm-filter-btn span.visible {display:inline-block}
 
     .programm-filter-window form {bottom:106px}
     .programm-filter-window-block.open .programm-filter-window-checkboxes-wraper {bottom:106px}
@@ -3602,6 +3642,7 @@ h1+.main-block {margin:80px 0 0 0}
 
 @media screen and (max-width:767px) {
     .programm-ctrl-wrapper.fixed .programm-filter {margin:0; position:absolute; left:0; top:20px}
+    .programm-ctrl-wrapper.fixed .programm-filter-btn {margin:0}
     .programm-ctrl-wrapper.fixed .programm-filter-btn a {width:44px; height:44px; background:#000}
     .programm-ctrl-wrapper.fixed .programm-filter-btn a svg {stroke:#fff; width:22px; height:20px}
 }
@@ -3802,9 +3843,9 @@ footer {margin:60px 0 0 0}
 .footer-social {background:#000; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
 .footer-social-item {display:inline-block; vertical-align:top; width:240px; border-right:1px solid #2c2c2c}
 .footer-social-item:first-child {border-left:1px solid #2c2c2c}
-.footer-social-item a {display:block; height:66px; line-height:66px}
-.footer-social-item a svg {width:28px; height:28px; display:inline-block; vertical-align:middle; fill:#fff; transition:fill 0.2s}
-.footer-social-item a:hover svg {fill:#d6d6d6}
+.footer-social-item a {display:block; height:66px; line-height:66px; transition:background 0.2s}
+.footer-social-item a:hover {background:#282727}
+.footer-social-item a svg {width:28px; height:28px; display:inline-block; vertical-align:middle; fill:#fff}
 
 @media screen and (min-width:1800px) {
     .footer-social-item {width:25%}
@@ -3990,9 +4031,13 @@ footer {margin:60px 0 0 0}
     .policy {float:none; margin:7px 0 0 0; font-size:18px; line-height:27px; max-width:none; text-align:center}
 }
 
-.up-link {display:block; opacity:0; visibility:hidden; position:fixed; z-index:90; right:68px; bottom:38px; width:50px; height:50px; border-radius:50%; background:#000; box-shadow:4px 4px 30px rgba(0, 0, 0, 0.15); transition:opacity 0.2s}
+.up-link {display:block; opacity:0; visibility:hidden; position:fixed; z-index:90; right:68px; bottom:38px; width:50px; height:50px; border:2px solid #000; border-radius:50%; background:#000; box-shadow:4px 4px 30px rgba(0, 0, 0, 0.15); transition:opacity 0.2s, background-color 0.2s, border-color 0.2s}
 .up-link.visible {opacity:1; visibility:visible}
-.up-link svg {display:block; position:absolute; left:15px; top:18px; width:20px; height:12px; fill:none; stroke:#fff}
+.up-link:hover {background:#fff}
+.up-link:active {background:#454545; border-color:#454545}
+.up-link svg {display:block; position:absolute; left:13px; top:16px; width:20px; height:12px; fill:none; stroke:#fff; transition:stroke 0.2s}
+.up-link:hover svg {stroke:#000}
+.up-link:active svg {stroke:#fff}
 
 @media screen and (max-width:1199px) {
     .up-link {display:none}

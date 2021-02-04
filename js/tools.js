@@ -1351,6 +1351,11 @@ function updateProgrammFilter() {
 
     $('.programm-filter-params').html(paramsHTML);
 
+    $('.programm-halls-mobile ul li').removeClass('with-count empty');
+    $('.programm-halls-mobile ul li a span').remove();
+    $('.programm-dates ul li').removeClass('with-count empty');
+    $('.programm-dates ul li a span').remove();
+
     if (paramsHTML == '') {
         $('.programm-list-item.unfilter').removeClass('unfilter');
     } else {
@@ -1400,6 +1405,109 @@ function updateProgrammFilter() {
                 $('html, body').animate({'scrollTop': curTop - $('.programm-ctrl-inner').outerHeight()});
             }
         }
+
+        $('.programm-list-hall').each(function() {
+            var curHall = $(this);
+            var curIndexHall = $('.programm-list-hall').index(curHall);
+            var countEvent = curHall.find('.programm-list-item:not(.unfilter)').length;
+            $('.programm-halls-mobile ul li').eq(curIndexHall).each(function() {
+                $(this).find('a').append('<span>' + countEvent + '</span>')
+                if (countEvent == 0) {
+                    $(this).addClass('empty');
+                }
+            });
+        });
+        $('.programm-halls-mobile ul li').addClass('with-count');
+
+        $('.programm-dates ul li').each(function() {;
+            var curDate = $(this).find('a').attr('data-date');
+
+            var curData = null;
+
+            for (var i = 0; i < programmData.length; i++) {
+                if (programmData[i].date == curDate) {
+                    curData = programmData[i].data;
+                }
+            }
+
+            var countEvent = 0;
+
+            if (curData != null) {
+
+                var countHalls = curData.length;
+
+                for (var i = 0; i < countHalls; i++) {
+                    for (var j = 0; j < curData[i].events.length; j++) {
+                        var curEvent = curData[i].events[j];
+
+                        var activeEventSpeaker = false;
+                        $('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').each(function() {
+                            var curVal = $(this).val();
+                            if (curVal != '0') {
+                                if (curEvent.speakers.indexOf(Number(curVal)) != -1) {
+                                    activeEventSpeaker = true;
+                                }
+                            } else {
+                                activeEventSpeaker = true;
+                            }
+                        });
+                        if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length == 0) {
+                            activeEventSpeaker = true;
+                        }
+
+                        var activeEventSections = false;
+                        $('.programm-filter-window-checkboxes-sections .form-checkbox input:checked').each(function() {
+                            var curVal = $(this).val();
+                            if (curEvent.type == curVal) {
+                                activeEventSections = true;
+                            }
+                        });
+                        if ($('.programm-filter-window-checkboxes-sections .form-checkbox input:checked').length == 0) {
+                            activeEventSections = true;
+                        }
+
+                        var activeEventTypes = false;
+                        $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
+                            var curVal = $(this).val();
+                            if (curVal != '') {
+                                if (curEvent.sections.indexOf(Number(curVal)) != -1) {
+                                    activeEventTypes = true;
+                                }
+                            } else {
+                                activeEventTypes = true;
+                            }
+                        });
+                        if ($('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length == 0) {
+                            activeEventTypes = true;
+                        }
+
+                        if (activeEventSpeaker && activeEventSections && activeEventTypes) {
+                            countEvent++;
+                        }
+                    }
+                }
+
+                $(this).find('a').append('<span>' + countEvent + '</span>')
+                if (countEvent == 0) {
+                    $(this).addClass('empty');
+                }
+            }
+        });
+        $('.programm-dates ul li').addClass('with-count');
+
+        $('body').on('click', '.programm-halls-mobile a', function(e) {
+            var curLi = $(this).parent();
+            if (!curLi.hasClass('active')) {
+                $('.programm-halls-mobile li.active').removeClass('active');
+                curLi.addClass('active');
+                $('.programm-halls-mobile-current span').html($(this).html());
+                var curIndex = $('.programm-halls-mobile li').index(curLi);
+                $('.programm-list-hall.active').removeClass('active');
+                $('.programm-list-hall').eq(curIndex).addClass('active');
+            }
+            $('.programm-halls-mobile').removeClass('open');
+            e.preventDefault();
+        });
     }
 }
 
