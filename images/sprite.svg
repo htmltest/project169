@@ -12,6 +12,11 @@
         <path d="M21.0004 20.9999L16.6504 16.6499" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol viewBox="0 0 18 18" id="search-form-submit">
+        <path d="M8.25 14.25C11.5637 14.25 14.25 11.5637 14.25 8.25C14.25 4.93629 11.5637 2.25 8.25 2.25C4.93629 2.25 2.25 4.93629 2.25 8.25C2.25 11.5637 4.93629 14.25 8.25 14.25Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M15.7508 15.7498L12.4883 12.4873" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
     <symbol viewBox="0 0 25 24" id="header-search-close">
         <path d="M2 1.5L23.0312 22.5312" stroke-linecap="round" stroke-linejoin="round" />
         <path d="M23.0312 1.5L2.00003 22.5312" stroke-linecap="round" stroke-linejoin="round" />

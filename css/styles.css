@@ -2997,38 +2997,39 @@ h1+.main-block {margin:80px 0 0 0}
     .arvr-copyrights-mobile a {color:#ff2f66; text-decoration:none; font-weight:500}
 }
 
-.search-form {margin:30px 0 0 0; max-width:768px}
+.search-form {margin:30px 0 0 0; max-width:865px}
 .search-form form {margin:0; padding:0; position:relative}
 .search-form form::after {content:""; display:block; clear:both}
-.search-form-field {float:left; width:472px; position:relative}
+.search-form-field {float:left; width:428px; position:relative}
 .search-form-field .form-input {margin:0}
-.search-form-field .form-input input {padding-left:15px; padding-right:50px; background:#fff}
-.search-form-field .form-submit {position:absolute; right:0; top:0; margin:0}
-.search-form-field .form-submit button {display:block; margin:0; padding:0; overflow:visible; outline:none; width:50px; height:44px; background:transparent; border:none; border-radius:0; position:relative; -webkit-appearance:none; cursor:pointer; box-sizing:border-box}
-.search-form-field .form-submit button svg {display:block; position:absolute; left:50%; top:50%; width:26px; height:26px; margin:-13px 0 0 -13px; fill:none; stroke:#b6b6b6; transition:stroke 0.2s}
-.search-form-field .form-submit button:hover svg {stroke:#000}
-.search-form-select {float:right; width:276px}
+.search-form-field .form-input input {padding-left:15px; padding-right:15px; background:#fff}
+.search-form-select {float:left; width:276px; margin:0 0 0 20px}
 .search-form-select .form-select {margin:0}
+.search-form-submit {float:right; width:122px}
+.search-form-submit .btn {padding-left:0; padding-right:0; display:block; width:100%; text-align:center}
+.search-form-submit svg {display:inline-block; vertical-align:middle; width:18px; height:18px; margin:-2px 0 0 10px}
 
 @media screen and (min-width:1800px) {
     .search-form {margin:60px 0 0 0; max-width:1099px}
-    .search-form-field {width:680px}
-    .search-form-field .form-submit button {width:72px; height:56px}
-    .search-form-field .form-submit button svg {width:32px; height:32px; margin:-16px 0 0 -16px}
-    .search-form-select {width:400px}
+    .search-form-field {width:560px}
+    .search-form-select {width:300px}
+    .search-form-submit {width:200px}
+    .search-form-submit svg {width:20px; height:20px}
 }
 
 @media screen and (max-width:1199px) {
     .search-form {max-width:none}
-    .search-form-field {width:calc(100% - 296px)}
+    .search-form-field {width:calc(100% - 438px)}
 }
 
 @media screen and (max-width:767px) {
     .search-form {margin:40px 0 0 0}
-    .search-form-field {float:none; width:auto}
+    .search-form-field {width:100%}
     .search-form-field .form-submit button {height:66px}
     .search-form-field .form-submit button svg {width:32px; height:32px; margin:-16px 0 0 -16px}
-    .search-form-select {float:none; width:auto; margin:20px 0 0 0}
+    .search-form-select {width:62%; margin:20px 0 0 0; padding:0 10px 0 0}
+    .search-form-submit {width:38%; margin:20px 0 0 0}
+    .search-form-submit svg {width:22px; height:22px}
 }
 
 .search-results {margin:60px 0 0 0; max-width:865px}
