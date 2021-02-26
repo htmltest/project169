@@ -11,7 +11,6 @@ $(document).ready(function() {
     $('.header-search-link').click(function(e) {
         if ($('html').hasClass('mobile-menu-open')) {
             $('html').removeClass('mobile-menu-open');
-            $('meta[name="viewport"]').attr('content', 'width=device-width');
             $('.wrapper').css('margin-top', 0);
             $(window).scrollTop($('html').data('scrollTop'));
         }
@@ -100,6 +99,15 @@ $(document).ready(function() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
+                    arrows: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 479,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
                     arrows: false,
                     dots: true
                 }
@@ -256,7 +264,6 @@ $(document).ready(function() {
         filterSpeakers();
         if ($('html').hasClass('speakers-filter-open')) {
             $('html').removeClass('speakers-filter-open');
-            $('meta[name="viewport"]').attr('content', 'width=device-width');
             $('.wrapper').css('margin-top', 0);
             $(window).scrollTop($('html').data('scrollTop'));
         }
@@ -334,10 +341,6 @@ $(document).ready(function() {
         var curIndex = curGallery.find('.photo-gallery-item').index(curItem);
 
         var curPadding = $('.wrapper').width();
-        var curWidth = $(window).width();
-        if (curWidth < 480) {
-            curWidth = 480;
-        }
         var curScroll = $(window).scrollTop();
         $('html').addClass('window-photo-open');
         curPadding = $('.wrapper').width() - curPadding;
@@ -389,7 +392,6 @@ $(document).ready(function() {
 
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
-        $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
 
         $('.window-photo').each(function() {
             var marginPhoto = 166;
@@ -473,7 +475,6 @@ $(document).ready(function() {
         $('body').css({'margin-right': 0});
         $('.wrapper').css({'top': 0});
         $(window).scrollTop($('.wrapper').data('curScroll'));
-        $('meta[name="viewport"]').attr('content', 'width=device-width');
         e.preventDefault();
     });
 
@@ -522,10 +523,6 @@ $(document).ready(function() {
         var curIndex = curGallery.find('.video-gallery-item').index(curItem);
 
         var curPadding = $('.wrapper').width();
-        var curWidth = $(window).width();
-        if (curWidth < 480) {
-            curWidth = 480;
-        }
         var curScroll = $(window).scrollTop();
         $('html').addClass('window-video-open');
         curPadding = $('.wrapper').width() - curPadding;
@@ -563,7 +560,6 @@ $(document).ready(function() {
 
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
-        $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
 
         $('.window-video-slider-list').slick({
             infinite: false,
@@ -600,7 +596,6 @@ $(document).ready(function() {
         $('body').css({'margin-right': 0});
         $('.wrapper').css({'top': 0});
         $(window).scrollTop($('.wrapper').data('curScroll'));
-        $('meta[name="viewport"]').attr('content', 'width=device-width');
         e.preventDefault();
     });
 
@@ -768,22 +763,16 @@ $(document).ready(function() {
     $('.programm-filter-btn a').click(function(e) {
         if (!$('html').hasClass('programm-filter-open')) {
             if ($(window).width() < 1200) {
-                var curWidth = $(window).width();
-                if (curWidth < 480) {
-                    curWidth = 480;
-                }
                 var curScroll = $(window).scrollTop();
             }
             $('html').addClass('programm-filter-open');
             if ($(window).width() < 1200) {
-                $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
                 $('html').data('scrollTop', curScroll);
                 $('.wrapper').css('margin-top', -curScroll);
             }
         } else {
             $('html').removeClass('programm-filter-open');
             if ($(window).width() < 1200) {
-                $('meta[name="viewport"]').attr('content', 'width=device-width');
                 $('.wrapper').css('margin-top', 0);
                 $(window).scrollTop($('html').data('scrollTop'));
             }
@@ -794,7 +783,6 @@ $(document).ready(function() {
     $('.programm-filter-window-close').click(function(e) {
         $('html').removeClass('programm-filter-open');
         if ($(window).width() < 1200) {
-            $('meta[name="viewport"]').attr('content', 'width=device-width');
             $('.wrapper').css('margin-top', 0);
             $(window).scrollTop($('html').data('scrollTop'));
         }
@@ -1003,17 +991,11 @@ $(document).ready(function() {
     $('.mobile-menu-link').click(function(e) {
         if ($('html').hasClass('mobile-menu-open')) {
             $('html').removeClass('mobile-menu-open');
-            $('meta[name="viewport"]').attr('content', 'width=device-width');
             $('.wrapper').css('margin-top', 0);
             $(window).scrollTop($('html').data('scrollTop'));
         } else {
-            var curWidth = $(window).width();
-            if (curWidth < 480) {
-                curWidth = 480;
-            }
             var curScroll = $(window).scrollTop();
             $('html').addClass('mobile-menu-open');
-            $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
             $('html').data('scrollTop', curScroll);
             $('.wrapper').css('margin-top', -curScroll);
         }
@@ -1041,13 +1023,8 @@ $(document).ready(function() {
 
     $('.speakers-filter-btn').click(function(e) {
         if (!$('html').hasClass('speakers-filter-open')) {
-            var curWidth = $(window).width();
-            if (curWidth < 480) {
-                curWidth = 480;
-            }
             var curScroll = $(window).scrollTop();
             $('html').addClass('speakers-filter-open');
-            $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
             $('html').data('scrollTop', curScroll);
             $('.wrapper').css('margin-top', -curScroll);
         }
@@ -1057,7 +1034,6 @@ $(document).ready(function() {
     $('.speakers-filter-close').click(function(e) {
         if ($('html').hasClass('speakers-filter-open')) {
             $('html').removeClass('speakers-filter-open');
-            $('meta[name="viewport"]').attr('content', 'width=device-width');
             $('.wrapper').css('margin-top', 0);
             $(window).scrollTop($('html').data('scrollTop'));
         }
@@ -1067,7 +1043,6 @@ $(document).ready(function() {
     $('.speakers-filter-apply').click(function(e) {
         if ($('html').hasClass('speakers-filter-open')) {
             $('html').removeClass('speakers-filter-open');
-            $('meta[name="viewport"]').attr('content', 'width=device-width');
             $('.wrapper').css('margin-top', 0);
             $(window).scrollTop($('html').data('scrollTop'));
         }
@@ -1126,6 +1101,15 @@ $(document).ready(function() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
+                    arrows: false,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 479,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
                     arrows: false,
                     dots: true
                 }
@@ -1682,10 +1666,6 @@ function initForm(curForm) {
 function windowOpen(linkWindow, dataWindow) {
     if ($('.window').length == 0) {
         var curPadding = $('.wrapper').width();
-        var curWidth = $(window).width();
-        if (curWidth < 480) {
-            curWidth = 480;
-        }
         var curScroll = $(window).scrollTop();
         $('html').addClass('window-open');
         curPadding = $('.wrapper').width() - curPadding;
@@ -1695,7 +1675,6 @@ function windowOpen(linkWindow, dataWindow) {
 
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
-        $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
     } else {
         $('.window').append('<div class="window-loading"></div>')
         $('.window-container').addClass('window-container-preload');
@@ -1736,7 +1715,6 @@ function windowClose() {
         $('html').removeClass('window-open');
         $('body').css({'margin-right': 0});
         $('.wrapper').css({'top': 0});
-        $('meta[name="viewport"]').attr('content', 'width=device-width');
         $(window).scrollTop($('.wrapper').data('curScroll'));
     }
 }
