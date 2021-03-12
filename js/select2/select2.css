@@ -112,7 +112,7 @@
     .select2-container .select2-search--inline .select2-search__field::-moz-placeholder {opacity:1; color:#b0b0b0}
     .select2-container .select2-search--inline .select2-search__field:-ms-input-placeholder {opacity:1; color:#b0b0b0}
     .fonts-loaded .select2-container .select2-search--inline .select2-search__field {
-      font-family:GraphikLCG, sans-serif; }
+      font-family:Raleway, sans-serif; font-feature-settings:"pnum" on, "lnum" on}
     .select2-container .select2-search--inline .select2-search__field::-webkit-search-cancel-button {
       -webkit-appearance: none; }
 
@@ -417,7 +417,7 @@
   transition:border-color 0.2s;
   border: 1px solid #d9d9d9; }
 
-.fonts-loaded .select2-container--default .select2-search--dropdown .select2-search__field {font-family:GraphikLCG, sans-serif}
+.fonts-loaded .select2-container--default .select2-search--dropdown .select2-search__field {font-family:Raleway, sans-serif; font-feature-settings:"pnum" on, "lnum" on}
 
 .select2-container--default .select2-search--inline .select2-search__field {
   background: transparent;
