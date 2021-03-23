@@ -13,32 +13,32 @@ if (sessionStorage.fontsLoaded) {
     script.async = true;
 
     script.onload = function () {
-        var Raleway300 = new FontFaceObserver('Raleway', {
+        var GraphikLCG300 = new FontFaceObserver('GraphikLCG', {
             weight: '300'
         });
-        var Raleway400 = new FontFaceObserver('Raleway', {
+        var GraphikLCG400 = new FontFaceObserver('GraphikLCG', {
             weight: 'normal'
         });
-        var Raleway500 = new FontFaceObserver('Raleway', {
+        var GraphikLCG500 = new FontFaceObserver('GraphikLCG', {
             weight: '500'
         });
-        var Raleway600 = new FontFaceObserver('Raleway', {
+        var GraphikLCG600 = new FontFaceObserver('GraphikLCG', {
             weight: '600'
         });
-        var Raleway700 = new FontFaceObserver('Raleway', {
+        var GraphikLCG700 = new FontFaceObserver('GraphikLCG', {
             weight: 'bold'
         });
-        var Raleway900 = new FontFaceObserver('Raleway', {
+        var GraphikLCG900 = new FontFaceObserver('GraphikLCG', {
             weight: '900'
         });
 
         Promise.all([
-            Raleway300.load(),
-            Raleway400.load(),
-            Raleway500.load(),
-            Raleway600.load(),
-            Raleway700.load(),
-            Raleway900.load()
+            GraphikLCG300.load(),
+            GraphikLCG400.load(),
+            GraphikLCG500.load(),
+            GraphikLCG600.load(),
+            GraphikLCG700.load(),
+            GraphikLCG900.load()
         ]).then(function () {
             html.classList.add('fonts-loaded');
             sessionStorage.fontsLoaded = true;
