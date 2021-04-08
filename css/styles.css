@@ -1075,10 +1075,11 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 }
 
 .news-back-link {margin:40px 0 0 0}
-.news-back-link a {display:inline-block; vertical-align:top; background:#f4f4f4; height:44px; padding:0 20px; text-decoration:none; color:#000; font-weight:500; font-size:12px; line-height:44px; letter-spacing:0.05em; transition:background-color 0.2s; text-transform:uppercase}
-.news-back-link a:hover {color:#ff2f66}
+.news-back-link a {display:inline-block; vertical-align:top; background:#f4f4f4; height:44px; padding:0 20px; text-decoration:none; color:#000; font-weight:500; font-size:12px; line-height:44px; letter-spacing:0.05em; transition:background-color 0.2s, color 0.2s; text-transform:uppercase}
+.news-back-link a:hover {color:#fff; background:#000}
 .news-back-link a span {display:inline-block; vertical-align:middle; margin:-2px 6px 0 0}
-.news-back-link a span svg {display:block; width:13px; height:14px; fill:#25282b}
+.news-back-link a span svg {display:block; width:13px; height:14px; fill:#25282b; transition:fill 0.2s}
+.news-back-link a:hover span svg {fill:#fff}
 
 @media screen and (max-width:1199px) {
     .news-back-link a {height:52px; font-size:14px; line-height:52px}
@@ -1618,10 +1619,11 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 }
 
 .page-back-link {margin:-54px 0 40px 0}
-.page-back-link a {display:inline-block; vertical-align:top; background:#f4f4f4; height:44px; padding:0 20px; text-decoration:none; color:#000; font-weight:500; font-size:12px; line-height:44px; letter-spacing:0.05em; transition:background-color 0.2s; text-transform:uppercase}
-.page-back-link a:hover {color:#ff2f66}
+.page-back-link a {display:inline-block; vertical-align:top; background:#f4f4f4; height:44px; padding:0 20px; text-decoration:none; color:#000; font-weight:500; font-size:12px; line-height:44px; letter-spacing:0.05em; transition:background-color 0.2s, color 0.2s; text-transform:uppercase}
+.page-back-link a:hover {color:#fff; background:#000}
 .page-back-link a span {display:inline-block; vertical-align:middle; margin:-2px 6px 0 0}
-.page-back-link a span svg {display:block; width:13px; height:14px; fill:#25282b}
+.page-back-link a span svg {display:block; width:13px; height:14px; fill:#25282b; transition:fill 0.2s}
+.page-back-link a:hover span svg {fill:#fff}
 
 @media screen and (min-width:1800px) {
     .page-back-link {margin:-86px 0 34px 0}
