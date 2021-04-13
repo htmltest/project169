@@ -31,7 +31,7 @@ strong, b {font-weight:500}
 
 h1 {margin:0 0 20px 0; padding:0; font-weight:bold; font-size:55px; line-height:55px; color:#000}
 h2 {margin:40px 0 20px 0; padding:0; font-weight:bold; font-size:36px; line-height:36px; color:#000}
-h3 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:30px; line-height:30px; color:#000}
+h3 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:30px; line-height:42px; color:#000}
 h4 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:22px; line-height:28px; color:#000}
 h5 {margin:40px 0 20px 0; padding:0; font-weight:600; font-size:20px; line-height:30px; color:#000}
 h6 {margin:40px 0 20px 0; padding:0; font-weight:600; font-size:18px; line-height:27px; color:#000}
@@ -55,7 +55,7 @@ hr {margin:50px 0; height:1px; border:none; background:#c4c4c4}
 @media screen and (min-width:1800px) {
     h1 {font-size:70px; line-height:91px}
     h2 {font-size:44px; line-height:44px}
-    h3 {font-size:36px; line-height:36px}
+    h3 {font-size:36px; line-height:51px}
     h4 {font-size:30px; line-height:30px}
     h5 {font-size:24px; line-height:31px}
     h6 {font-size:22px; line-height:33px}
@@ -182,7 +182,7 @@ label.error {display:block; font-size:12px; line-height:18px; color:#bd423a; mar
 @media screen and (max-width:767px) {
     .form-input input,
     .form-input textarea {font-size:18px; line-height:64px; height:66px}
-    .form-input textarea {height:auto}
+    .form-input textarea {height:auto; line-height:27px}
     .form-input input::-webkit-input-placeholder {color:#8a8a8a}
     .form-input input::-moz-placeholder {color:#8a8a8a}
     .form-input input:-ms-input-placeholder {color:#8a8a8a}
@@ -4966,4 +4966,107 @@ footer {margin:60px 0 0 0}
 @media screen and (max-width:767px) {
     .main-about-title {float:none; width:auto; padding:0; font-size:24px; line-height:36px}
     .main-about-text {float:none; width:auto; padding:0; margin:20px 0 0 0}
+}
+
+.vacancy {margin:40px 0 0 0; max-width:666px; border-top:1px solid #e8e8e8}
+.vacancy a {display:block; position:relative; padding:30px 30px 30px 0; margin:-1px 0 0 0; text-decoration:none; color:#000; font-weight:500; font-size:22px; line-height:26px; border-top:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8}
+.vacancy a:hover {border-color:#000; z-index:1}
+.vacancy a svg {display:block; width:24px; height:24px; fill:#000; opacity:0.2; position:absolute; right:-7px; top:50%; margin-top:-12px; transition:opacity 0.2s}
+.vacancy a:hover svg {opacity:1}
+
+@media screen and (min-width:1800px) {
+    .vacancy {margin:69px 0 0 0; max-width:954px}
+    .vacancy a {font-size:24px; line-height:29px}
+}
+
+@media screen and (max-width:1199px) {
+    .vacancy {margin:36px 0 0 0; max-width:none}
+    .vacancy a {font-size:24px; line-height:34px; padding-right:50px}
+    .vacancy a svg {width:32px; height:32px; margin-top:-16px; right:13px}
+}
+
+@media screen and (max-width:767px) {
+    .vacancy a svg {right:0}
+}
+
+.window-vacancy {width:822px}
+.window-vacancy-container {padding:50px 30px 81px 30px}
+.window-vacancy-container > *:first-child {margin-top:0}
+.window-vacancy-container > *:last-child {margin-bottom:0}
+
+.window-vacancy .analytics-team-prev {margin-left:-482px}
+.window-vacancy .analytics-team-next {margin-left:442px}
+
+@media screen and (min-width:1800px) {
+    .window-vacancy {width:1303px}
+    .window-vacancy-container {padding:50px 45px 81px 45px}
+
+    .window-vacancy .analytics-team-prev {margin-left:-780px}
+    .window-vacancy .analytics-team-next {margin-left:726px}
+}
+
+@media screen and (max-width:1199px) {
+    .window-vacancy {width:740px}
+    .window-vacancy-container {padding:30px 30px 65px 30px}
+
+    .window-vacancy .analytics-team-prev {display:none}
+    .window-vacancy .analytics-team-next {display:none}
+}
+
+@media screen and (max-width:767px) {
+    .window-vacancy {width:440px}
+    .window-vacancy-container {padding:36px 30px 81px 30px}
+}
+
+@media screen and (max-width:479px) {
+    .window-vacancy {width:300px}
+    .window-vacancy-container {padding:36px 20px 81px 20px}
+}
+
+.window-vacancy-form {margin:81px 0 0 0; border-top:3px solid #f8f8f8; padding:97px 0 10px 0}
+.window-vacancy-form form {margin:0 auto; max-width:420px; padding:0}
+.window-vacancy-form form > *:first-child {margin-top:0}
+.window-vacancy-form form > *:last-child {margin-bottom:0}
+.window-vacancy-form h4 {text-align:center; margin-bottom:40px}
+
+@media screen and (min-width:1800px) {
+    .window-vacancy-form {padding:104px 0 0 0}
+    .window-vacancy-form form {max-width:640px}
+}
+
+@media screen and (max-width:1199px) {
+    .window-vacancy-form {padding:76px 0 0 0}
+    .window-vacancy-form form {max-width:none}
+}
+
+.g-recaptcha {margin:24px 0 44px 0}
+
+@media screen and (max-width:479px) {
+    .g-recaptcha {transform:scale(0.75); transform-origin:left center}
+}
+
+.speakers-letters {margin:40px 0 0 0; font-size:14px; line-height:28px}
+.speakers-letters::after {content:""; display:block; clear:both}
+.speakers-letters a,
+.speakers-letters span {float:left; width:32px; height:32px; border:2px solid #fff; text-align:center; margin:0 0 0 -3px}
+.speakers-letters a {color:#2c2c2c; text-decoration:none; position:relative}
+.speakers-letters a:hover {border-color:#e4e4e4; z-index:1}
+.speakers-letters a.active {border-color:#000; background:#000; color:#fff; z-index:2}
+.speakers-letters a.active::after {content:""; display:block; width:18px; height:18px; position:absolute; right:-11px; top:-11px; background:#eb5757 url(../images/speakers-letters.svg) no-repeat center; border-radius:50%}
+.speakers-letters span {color:#d1d1d1}
+
+@media screen and (min-width:1800px) {
+    .speakers-letters {margin:40px 0 -21px 0; font-size:16px; line-height:38px}
+    .speakers-letters a,
+    .speakers-letters span {width:42px; height:42px}
+}
+
+@media screen and (max-width:1199px) {
+    .speakers-letters {margin:30px 0; font-size:18px; line-height:38px}
+    .speakers-letters a,
+    .speakers-letters span {width:42px; height:42px}
+}
+
+@media screen and (max-width:767px) {
+    .speakers-letters {margin:30px 0}
 }

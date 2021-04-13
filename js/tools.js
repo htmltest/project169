@@ -236,6 +236,18 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('click', '.speakers-letters a', function(e) {
+        var curLink = $(this);
+        if (curLink.hasClass('active')) {
+            curLink.removeClass('active');
+        } else {
+            $('.speakers-letters a.active').removeClass('active');
+            curLink.addClass('active');
+        }
+        filterSpeakers();
+        e.preventDefault();
+    });
+
     $('body').on('change', '.speakers-filter-item input', function(e) {
         filterSpeakers();
         e.preventDefault();
@@ -1131,6 +1143,19 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('click', '.vacancy a, .window-vacancy-link-other', function() {
+        if (typeof($(this).attr('data-id')) != 'undefined') {
+            window.location.hash = $(this).attr('data-id');
+        }
+    });
+    
+    $('.vacancy').each(function() {
+        if (window.location.hash != '') {
+            var curID = window.location.hash.replace('#', '');
+            $('.vacancy a[data-id="' + curID + '"]').trigger('click');
+        }
+    });
+
 });
 
 function redrawProgramm() {
@@ -1500,6 +1525,9 @@ function filterSpeakers() {
     var curForm = $('.speakers-filter form');
     var curData = curForm.serialize();
     curData += '&page=' + $('.pager a.active').attr('data-value');
+    if ($('.speakers-letters a.active').length == 1) {
+        curData += '&letter=' + $('.speakers-letters a.active').html();
+    }
     $.ajax({
         type: 'POST',
         url: curForm.attr('action'),
@@ -1608,7 +1636,7 @@ $(window).on('load resize scroll', function() {
             $('.up-link').css({'margin-bottom': 0});
         }
     }
-    
+
     if ($('.welcome').length > 0) {
         if (windowScroll >= $('.welcome').height()) {
             $('header').addClass('with-mobile-bg');
