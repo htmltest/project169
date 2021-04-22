@@ -117,6 +117,34 @@ hr {margin:50px 0; height:1px; border:none; background:#c4c4c4}
 form.loading {position:relative}
 form.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(255, 255, 255, 0.3) url(../images/loading.gif) no-repeat center; z-index:1}
 
+.message {margin:30px 0; padding:30px 40px 30px 92px; text-align:left}
+.message::after {content:""; display:block; clear:both}
+.message+.message {margin-top:-10px}
+.message-title {font-weight:normal; font-size:18px; line-height:27px; position:relative; float:left; width:140px; margin:9px 0 0 0}
+.message-title::before {content:""; display:block; position:absolute; left:-53px; top:-6px; width:37px; height:37px}
+.message-text {margin:0 0 0 171px; color:#222; position:relative; min-height:48px}
+.message-text::before {content:""; display:block; position:absolute; left:-31px; top:0; bottom:0; width:1px}
+.message-text p {margin:0}
+.message-text p+p {margin-top:10px}
+
+@media screen and (max-width:1169px) {
+    .message {margin:20px 0; padding:27px 30px 20px 30px}
+    .message+.message {margin-top:-5px}
+    .message-title {font-weight:500; font-size:20px; line-height:30px; float:none; width:auto; margin:0; padding:0 0 0 56px}
+    .message-title::before {left:0; top:-3px}
+    .message-text {margin:13px 0 0 0; min-height:0; font-size:18px; line-height:27px; font-weight:normal; color:#696969}
+    .message-text::before {display:none}
+}
+
+.message-success {background:rgba(137, 228, 129, 0.15); border:1px solid rgba(137, 228, 129, 0.67)}
+.message-success .message-title {color:#53804f}
+.message-success .message-title::before {background:url(../images/message-success.svg) no-repeat center}
+.message-success .message-text::before {background:#51cc47}
+.message-error {background:#fef6f6; border:1px solid rgba(236, 29, 34, 0.23)}
+.message-error .message-title::before {background:url(../images/message-error.svg) no-repeat center}
+.message-error .message-title {color:#ec1d22}
+.message-error .message-text::before {background:rgba(236, 29, 34, 0.47)}
+
 .btn {display:inline-block; vertical-align:top; margin:0; padding:10px 18px 9px 18px; overflow:visible; outline:none; text-decoration:none; background:transparent; color:#000; border:2px solid #000; border-radius:0; font:600 14px/21px Arial, Helvetica, sans-serif; letter-spacing:0.05em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:all 0.2s; box-sizing:border-box}
 .fonts-loaded .btn {font-family:GraphikLCG, sans-serif}
 .btn:hover {color:#fff; background:#000}
@@ -146,7 +174,7 @@ form.loading::after {content:""; display:block; position:absolute; left:0; top:0
     .form-field {margin:5px 0 0 0}
 }
 
-.form-input {margin:20px 0}
+.form-input {margin:20px 0; position:relative}
 .form-input input,
 .form-input textarea {position:relative; border:1px solid #d9d9d9; font:500 16px/24px Arial, sans-serif; color:#000; vertical-align:top; margin:0; padding:9px; width:100%; height:44px; box-sizing:border-box; outline:none; border-radius:0; background:#fdfdfd; -webkit-appearance:none; transition:border-color 0.2s}
 .fonts-loaded .form-input input,
@@ -193,6 +221,12 @@ label.error {display:block; font-size:12px; line-height:18px; color:#bd423a; mar
 
 @-webkit-keyframes autofill {to {color:#000; background:#fdfdfd}}
 .form-input input:-webkit-autofill {-webkit-animation-name:autofill; -webkit-animation-fill-mode:both}
+
+.form-input-clear {display:none; position:absolute; right:5px; top:50%; margin-top:-12px; width:24px; height:24px; border-radius:50%; background:#fff; border:1px solid #000}
+.form-input-clear:hover {background:#000}
+.form-input-clear svg {display:block; width:24px; height:24px; fill:none; stroke:#25282b; margin:-1px 0 0 -1px; transition:all 0.2s}
+.form-input-clear:hover svg {stroke:#fff}
+.form-input.full .form-input-clear {display:block}
 
 .form-select {margin:20px 0; position:relative}
 .form-select select {position:relative; border:1px solid #d9d9d9; font:500 16px/24px Arial, sans-serif; color:#000; vertical-align:top; margin:0; padding:9px; width:100%; height:44px; box-sizing:border-box; outline:none; border-radius:0; background:#fdfdfd; -webkit-appearance:none; transition:border-color 0.2s}
@@ -1993,17 +2027,21 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .video-search {float:left; width:472px}
 .video-search-inner {position:relative}
 .video-search-inner .form-input {margin:0}
-.video-search-inner .form-input input {padding-left:15px; padding-right:50px; background:#fff}
+.video-search-inner .form-input input {padding-left:15px; padding-right:92px; background:#fff}
 .video-search-submit {position:absolute; right:0; top:0}
 .video-search-submit button {display:block; margin:0; padding:0; overflow:visible; outline:none; width:50px; height:44px; background:transparent; border:none; border-radius:0; position:relative; -webkit-appearance:none; cursor:pointer; box-sizing:border-box}
 .video-search-submit button svg {display:block; position:absolute; left:50%; top:50%; width:26px; height:26px; margin:-13px 0 0 -13px; fill:none; stroke:#b6b6b6; transition:stroke 0.2s}
 .video-search-submit button:hover svg {stroke:#000}
 
+.video-search-inner .form-input-clear {right:50px; z-index:1}
+
 @media screen and (min-width:1800px) {
     .video-search {width:570px}
-    .video-search-inner .form-input input {padding-left:20px; padding-right:72px}
+    .video-search-inner .form-input input {padding-left:20px; padding-right:92px}
     .video-search-submit button {width:72px; height:56px}
     .video-search-submit button svg {width:32px; height:32px; margin:-16px 0 0 -16px}
+
+    .video-search-inner .form-input-clear {right:62px}
 }
 
 @media screen and (max-width:1199px) {
@@ -5023,20 +5061,22 @@ footer {margin:60px 0 0 0}
     .window-vacancy-container {padding:36px 20px 81px 20px}
 }
 
-.window-vacancy-form {margin:81px 0 0 0; border-top:3px solid #f8f8f8; padding:97px 0 10px 0}
-.window-vacancy-form form {margin:0 auto; max-width:420px; padding:0}
+.window-vacancy-form {margin:80px 0 0 0; border-top:3px solid #f8f8f8; padding:80px 0 10px 0}
+.window-vacancy-form form {margin:0; padding:0}
+.window-vacancy-form-inner {margin:0 auto; max-width:420px}
 .window-vacancy-form form > *:first-child {margin-top:0}
 .window-vacancy-form form > *:last-child {margin-bottom:0}
+.window-vacancy-form-inner > *:first-child {margin-top:0}
+.window-vacancy-form-inner > *:last-child {margin-bottom:0}
 .window-vacancy-form h4 {text-align:center; margin-bottom:40px}
 
 @media screen and (min-width:1800px) {
-    .window-vacancy-form {padding:104px 0 0 0}
-    .window-vacancy-form form {max-width:640px}
+    .window-vacancy-form {padding:80px 0 0 0}
+    .window-vacancy-form-inner {max-width:640px}
 }
 
 @media screen and (max-width:1199px) {
-    .window-vacancy-form {padding:76px 0 0 0}
-    .window-vacancy-form form {max-width:none}
+    .window-vacancy-form-inner {max-width:none}
 }
 
 .g-recaptcha {margin:24px 0 44px 0}

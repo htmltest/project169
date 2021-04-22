@@ -742,6 +742,33 @@ $(document).ready(function() {
         initForm($(this));
     });
 
+	$('body').on('focus', '.form-input input, .form-input textarea', function() {
+		$(this).parent().addClass('focus');
+	});
+
+	$('body').on('blur', '.form-input input, .form-input textarea', function() {
+		$(this).parent().removeClass('focus');
+		if ($(this).val() != '') {
+			$(this).parent().addClass('full');
+		} else {
+			$(this).parent().removeClass('full');
+		}
+	});
+
+	$('body').on('keyup', '.form-input input, .form-input textarea', function() {
+		$(this).parent().removeClass('focus');
+		if ($(this).val() != '') {
+			$(this).parent().addClass('full');
+		} else {
+			$(this).parent().removeClass('full');
+		}
+	});
+
+	$('body').on('click', '.form-input-clear', function(e) {
+        $(this).parent().find('input').val('').trigger('change').trigger('blur');
+        e.preventDefault();
+	});
+
     $('body').on('change', '.form-file input', function() {
         var curInput = $(this);
         var curField = curInput.parents().filter('.form-file');
@@ -1148,7 +1175,7 @@ $(document).ready(function() {
             window.location.hash = $(this).attr('data-id');
         }
     });
-    
+
     $('.vacancy').each(function() {
         if (window.location.hash != '') {
             var curID = window.location.hash.replace('#', '');
@@ -1705,7 +1732,40 @@ function initForm(curForm) {
     });
 
     curForm.validate({
-        ignore: ''
+        ignore: '',
+        submitHandler: function(form) {
+            var curForm = $(form);
+            if (curForm.hasClass('ajax-form')) {
+                curForm.addClass('loading');
+                var formData = new FormData(form);
+
+                if (curForm.find('[type=file]').length != 0) {
+                    var file = curForm.find('[type=file]')[0].files[0];
+                    formData.append('file', file);
+                }
+
+                $.ajax({
+                    type: 'POST',
+                    url: curForm.attr('action'),
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                    data: formData,
+                    cache: false
+                }).done(function(data) {
+                    if (data.status) {
+                        curForm.html('');
+                        curForm.html('<div class="message message-success"><div class="message-title">' + data.message + '</div><div class="message-text">' + data.title + '</div></div>')
+                    } else {
+                        curForm.find('.message').remove();
+                        curForm.prepend('<div class="message message-error"><div class="message-title">' + data.message + '</div><div class="message-text">' + data.title + '</div></div>')
+                    }
+                    curForm.removeClass('loading');
+                });
+            } else {
+                form.submit();
+            }
+        }
     });
 }
 
