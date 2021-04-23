@@ -47,8 +47,11 @@
                     <div class="form-checkbox">
                         <label><input type="checkbox" name="policy" checked="checked" class="required" /><span>согласие на <a href="#">обработку</a> персональных данных</span></label>
                     </div>
-                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                    <div class="g-recaptcha" data-sitekey="6Ldk5DMUAAAAALWRTOM96EQI_0OApr59RQHoMirA"></div>
+                    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                    <div class="form-captcha">
+                        <div class="g-recaptcha"></div>
+                        <input type="hidden" class="required" name="hiddenRecaptcha" value="" />
+                    </div>
                     <div class="form-submit"><button type="submit" class="btn">отправить</button></div>
                 </div>
             </form>

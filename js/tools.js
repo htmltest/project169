@@ -1858,3 +1858,27 @@ $(window).on('load resize', function() {
         }
     });
 });
+
+var captchaKey = '6Ldk5DMUAAAAALWRTOM96EQI_0OApr59RQHoMirA';
+var captchaArray = [];
+
+var onloadCallback = function() {
+    $('.g-recaptcha').each(function() {
+        var newCaptcha = grecaptcha.render(this, {
+            'sitekey' : captchaKey,
+            'callback' : verifyCallback,
+        });
+        captchaArray.push([newCaptcha, $(this)]);
+    });
+};
+
+var verifyCallback = function(response) {
+    for (var i = 0; i < captchaArray.length; i++) {
+        if (grecaptcha.getResponse(captchaArray[i][0])) {
+            var curInput = captchaArray[i][1].next();
+            curInput.val(response);
+            curInput.removeClass('error');
+            curInput.parent().find('label.error').remove();
+        }
+    }
+};
