@@ -1183,6 +1183,12 @@ $(document).ready(function() {
         }
     });
 
+    $('body').on('click', '.main-manifest-more a', function(e) {
+        $('.main-manifest-more').toggleClass('open');
+        $('.main-manifest-detail').slideToggle();
+        e.preventDefault();
+    });
+
 });
 
 function redrawProgramm() {

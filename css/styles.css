@@ -5139,3 +5139,25 @@ footer {margin:60px 0 0 0}
     .no-tablet {display:none}
     .on-tablet {display:block}
 }
+
+.main-manifest-detail {display:none}
+
+.main-manifest-more {margin:66px 0 0 0; display:block}
+.main-manifest-more a {display:block; height:60px; background:#f4f4f4; text-align:center; text-decoration:none; text-transform:uppercase; color:#717171; font-size:14px; line-height:60px; letter-spacing:0.05em}
+.main-manifest-more a:hover {color:#000}
+.main-manifest-more a span:nth-child(2) {display:none}
+.main-manifest-more.open a span:nth-child(1) {display:none}
+.main-manifest-more.open a span:nth-child(2) {display:inline}
+
+@media screen and (min-width:1800px) {
+    .main-manifest-more {margin:70px 0 0 0}
+}
+
+@media screen and (max-width:1199px) {
+    .main-manifest-more {margin:40px 0 0 0}
+    .main-manifest-more a {font-weight:500}
+}
+
+@media screen and (max-width:767px) {
+    .main-manifest-more a {height:63px; font-size:16px; line-height:63px}
+}
