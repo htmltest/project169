@@ -696,7 +696,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .welcome-slider-item-city-logo {float:left; line-height:0}
 .welcome-slider-item-city-title {float:left; margin:6px 0 0 14px; color:#fff; text-transform:uppercase; font-weight:500; font-size:12px; line-height:16px; text-transform:uppercase; letter-spacing:0}
 .welcome-slider-item-title {padding:26px 60px 0 60px; color:#fff; font-weight:900; font-size:50px; line-height:65px; letter-spacing:0; text-transform:uppercase; max-width:75%}
-.welcome-slider-item-date {padding:28px 60px 0 60px; color:#94d6ea; font-weight:600; font-size:30px; line-height:45px; letter-spacing:0; text-transform:uppercase}
+.welcome-slider-item-date {padding:28px 60px 0 60px; color:#d0cfcd; font-weight:600; font-size:30px; line-height:45px; letter-spacing:0; text-transform:uppercase}
 .welcome-slider-item-place {padding:0 60px; color:#fff; font-weight:600; font-size:30px; line-height:45px; letter-spacing:0; text-transform:uppercase}
 .welcome-slider .slick-dots {position:absolute; left:0; bottom:39px; right:0; margin:0; padding:0; list-style:none; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
 .welcome-slider .slick-dots li {margin:0 0 0 18px; padding:0; display:inline-block; vertical-align:top; position:relative}
@@ -759,6 +759,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 
 .archive-card-slider-item-theme {font-weight:bold; font-size:22px; line-height:31px; letter-spacing:0; letter-spacing:0; color:#fff; text-transform:uppercase}
 .archive-card-slider-item-title {margin:30px 0 0 0; font-weight:900; font-size:50px; line-height:65px; letter-spacing:0; letter-spacing:0; color:#fff; text-transform:uppercase; white-space:normal}
+.archive-card-slider-item-date {margin:30px 0 0 0; font-weight:600; font-size:30px; line-height:45px; letter-spacing:0; letter-spacing:0; color:#94d6ea; text-transform:uppercase; white-space:normal}
 .archive-card-slider-type-1 .archive-card-slider-content {position:absolute; left:120px; top:50%; transform:translateY(-50%); max-width:740px}
 .archive-card-slider-type-2 .archive-card-slider-content {position:absolute; left:120px; bottom:80px; max-width:740px}
 .archive-card-slider-type-3 .archive-card-slider-content {position:absolute; right:0; bottom:80px; max-width:740px; padding:0 75px 0 0}
@@ -775,6 +776,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 
 @media screen and (max-width:767px) {
     .archive-card-slider-item-title {margin:24px 0 0 0}
+    .archive-card-slider-item-date {margin:27px 0 0 0; font-size:26px; line-height:39px}
     .archive-card-slider-type-1 .archive-card-slider-content {left:20px; right:20px}
     .archive-card-slider-type-2 .archive-card-slider-content {left:20px; right:20px}
     .archive-card-slider-type-3 .archive-card-slider-content {left:20px; right:20px}
@@ -5109,4 +5111,31 @@ footer {margin:60px 0 0 0}
 
 @media screen and (max-width:767px) {
     .speakers-letters {margin:30px 0}
+}
+
+.main-manifest {margin:80px 0 0 0}
+.main-manifest-container {margin:55px 0 0 0}
+.main-manifest-container::after {content:""; display:block; clear:both}
+.main-manifest-left {float:left; width:53%; padding:0 6% 0 0}
+@media screen and (min-width:1200px) {
+    .main-manifest-left > *:first-child {margin-top:0}
+    .main-manifest-left > h3 {margin-top:-7px}
+    .main-manifest-left > *:last-child {margin-bottom:0}
+}
+.main-manifest-right {float:left; width:47%; padding:0 0 0 6%}
+@media screen and (min-width:1200px) {
+    .main-manifest-right > *:first-child {margin-top:0}
+    .main-manifest-right > *:last-child {margin-bottom:0}
+}
+
+@media screen and (max-width:1199px) {
+    .main-manifest-left {float:none; width:auto; padding:0}
+    .main-manifest-right {float:none; width:auto; padding:0}
+}
+
+.on-tablet {display:none}
+
+@media screen and (max-width:1199px) {
+    .no-tablet {display:none}
+    .on-tablet {display:block}
 }
