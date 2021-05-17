@@ -564,7 +564,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
     .nav ul li ul li a::before {display:none}
     .nav-contacts {display:block; padding:30px 20px 36px 20px; margin:0 -20px; background:#f7f7f7}
     .nav-contacts-social {font-size:0; line-height:0; letter-spacing:-1px}
-    .nav-contacts-social-item {display:inline-block; vertical-align:top; width:40px; margin:0 0 0 48px}
+    .nav-contacts-social-item {display:inline-block; vertical-align:top; width:40px; margin:0 0 0 20px}
     .nav-contacts-social-item:first-child {margin:0}
     .nav-contacts-social-item a {display:block}
     .nav-contacts-social-item svg {display:block; width:40px; height:40px; fill:#000}
@@ -4100,14 +4100,13 @@ footer {margin:60px 0 0 0}
 }
 
 .footer-social {background:#000; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
-.footer-social-item {display:inline-block; vertical-align:top; width:240px; border-right:1px solid #2c2c2c}
+.footer-social-item {display:inline-block; vertical-align:top; width:20%; border-right:1px solid #2c2c2c}
 .footer-social-item:first-child {border-left:1px solid #2c2c2c}
 .footer-social-item a {display:block; height:66px; line-height:66px; transition:background 0.2s}
 .footer-social-item a:hover {background:#282727}
 .footer-social-item a svg {width:28px; height:28px; display:inline-block; vertical-align:middle; fill:#fff}
 
 @media screen and (min-width:1800px) {
-    .footer-social-item {width:25%}
     .footer-social-item a {height:76px; line-height:76px}
     .footer-social-item a svg {width:38px; height:38px}
     .footer-social-item:first-child {border-left:none}
@@ -4115,7 +4114,7 @@ footer {margin:60px 0 0 0}
 }
 
 @media screen and (max-width:1199px) {
-    .footer-social-item {width:25%; border-right:none}
+    .footer-social-item {border-right:none}
     .footer-social-item:first-child {border-left:none}
     .footer-social-item a {height:60px; line-height:60px}
 }
