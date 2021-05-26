@@ -1571,6 +1571,11 @@ function filterSpeakers() {
         $('.speakers-container .speakers').html($(html).find('.speakers').html())
         $('.speakers-container .pager').html($(html).find('.pager').html())
         $('.speakers-container').removeClass('loading');
+        if ($(window).width() > 1199) {
+            $('html, body').animate({'scrollTop': $('.page').offset().top - 50});
+        } else {
+            $('html, body').animate({'scrollTop': 0});
+        }
 
         $('.speaker').each(function() {
             var curItem = $(this);
