@@ -2289,6 +2289,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .award-header::after {content:""; display:block; clear:both}
 .award-header-left {float:left; width:50%; padding:0 40px 0 0}
 .award-header-right {float:right; width:50%}
+.award-header-logo {line-height:0}
 .award-header-title {font-weight:600; font-size:22px; line-height:22px; letter-spacing:0.03em; color:#9c9c9c; text-transform:uppercase}
 .award-header h2 {margin:20px 0 0 0}
 .award-header-text {font-weight:500; font-size:30px; line-height:39px; color:#000}
@@ -2320,6 +2321,8 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 
 @media screen and (max-width:767px) {
     .award-header h2 {margin:20px 0 0 0; font-size:30px; line-height:35px; font-weight:bold}
+    .award-header-logo {margin:0 0 0 -10px; max-width:360px}
+    .award-header-logo:first-child {margin-top:-35px}
     .award-header-btns {display:none; margin:40px 0 0 0}
     .award-header-btns-mobile {display:block}
     .award-header-btn a {height:66px; font-size:18px; line-height:64px}
