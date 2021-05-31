@@ -1201,6 +1201,8 @@ function redrawProgramm() {
         for (var i = 0; i < programmData.length; i++) {
             if (programmData[i].date == curDate) {
                 curData = programmData[i].data;
+                $('.programm-current-day h2').html(programmData[i].datetitle);
+                $('.programm-current-day-text').html(programmData[i].datetext);
             }
         }
 
@@ -1214,7 +1216,7 @@ function redrawProgramm() {
         $('.programm-list').html('');
 
         if (curData != null) {
-
+            
             var countHalls = curData.length;
 
             var minHour = 23;
@@ -1242,7 +1244,11 @@ function redrawProgramm() {
             var scheduleHeight = $('.programm-timescale').height();
 
             for (var i = 0; i < countHalls; i++) {
-                $('.programm-halls-inner').append('<div class="programm-hall" style="width:' + (100 / countHalls) + '%">' + curData[i].hall + '</div>');
+                var onlineTitle = '';
+                if (i == countHalls - 1) {
+                    onlineTitle = '<div class="programm-hall-online">Цифровые треки</div>';
+                }
+                $('.programm-halls-inner').append('<div class="programm-hall" style="width:' + (100 / countHalls) + '%">' + curData[i].hall + onlineTitle + '</div>');
                 var curMobileHall = $('<div>' + curData[i].hall + '</div>').find('span').remove();
                 $('.programm-halls-mobile ul').append('<li><a href="#">' + curMobileHall.html() + '</a></li>');
                 var hallHTML =  '<div class="programm-list-hall" style="width:' + (100 / countHalls) + '%; height:' + scheduleHeight + 'px">';
@@ -1633,7 +1639,7 @@ $(window).on('load resize', function() {
     }
 
     $('.programm-halls').each(function() {
-        if ($(window).width() < 1200 && $(window).width() > 767) {
+        if ($(window).width() < 1601 && $(window).width() > 767) {
             $('.programm-list').mCustomScrollbar({
                 axis: 'x',
                 callbacks: {
