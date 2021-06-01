@@ -457,24 +457,23 @@ label.error {display:block; font-size:12px; line-height:18px; color:#bd423a; mar
     .container {padding:0 20px}
 }
 
-.wrapper {width:100%; min-width:320px; position:relative; overflow:hidden}
+.wrapper {width:100%; min-width:320px; position:relative; overflow:hidden; padding:80px 0 0 0}
+.page-main .wrapper {padding:0}
 
-@media screen and (max-width:1199px) {
-    .wrapper {padding:80px 0 0 0}
-    .page-main .wrapper {padding:0}
+header {height:80px; background:#181818; position:fixed; left:0; top:0; right:0; z-index:20}
+
+.page-main header {background:none; transition:background 0.2s}
+.page-main header.with-mobile-bg {background:#181818}
+
+@media screen and (min-width:1200px) {
+    header.fixed {height:65px; box-shadow:0px 4px 20px rgba(0, 0, 0, 0.1)}
 }
-
-header {height:80px; background:#181818; position:relative; z-index:20}
-.page-main header {position:absolute; left:0; top:0; right:0; background:none}
 
 @media screen and (min-width:1800px) {
     header {height:123px}
-}
-
-@media screen and (max-width:1199px) {
-    header {position:fixed; left:0; top:0; right:0}
-    .page-main header {position:fixed; transition:background 0.2s}
-    .page-main header.with-mobile-bg {background:#181818}
+    header.fixed {height:65px}
+    .wrapper {padding:123px 0 0 0}
+    .page-main .wrapper {padding:0}
 }
 
 .logo {float:left; width:120px; height:80px; position:relative; background:#fff; z-index:1}
@@ -485,11 +484,24 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .logo:hover .logo-title {visibility:visible; opacity:1}
 .logo a {display:block; position:absolute; left:0; top:0; right:0; bottom:0}
 
+@media screen and (min-width:1200px) {
+    .logo {transition:all 0.2s}
+    .logo-img {transition:all 0.2s}
+    .logo-img svg {transition:all 0.2s}
+    header.fixed .logo {width:108px; height:65px}
+    header.fixed .logo-img {top:12px}
+    header.fixed .logo-img svg {width:68px; height:45px}
+}
+
 @media screen and (min-width:1800px) {
     .logo {width:188px; height:123px}
     .logo-img {left:27px; top:21px}
     .logo-img svg {width:122px; height:80px}
     .logo-title {height:123px; font-size:16px; line-height:24px}
+
+    header.fixed .logo {width:108px; height:65px}
+    header.fixed .logo-img {left:17px; top:12px}
+    header.fixed .logo-img svg {width:68px; height:45px}
 }
 
 @media screen and (max-width:1199px) {
@@ -514,6 +526,8 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .nav ul li.active span::before {transform:scale(1, 1)}
 .nav ul li.nav-fest {font-weight:bold; font-size:18px}
 .nav ul li.nav-fest a {color:#ffde4f}
+.nav ul li.nav-reg a {display:inline-block; vertical-align:middle; font-weight:600; font-size:14px; line-height:44px; height:44px; padding:0 20px; color:#fff; background:#ee2852}
+.nav ul li.nav-reg a:hover {color:#fff; background:#000}
 .nav ul li ul {display:none; position:absolute; right:3px; transform:translateX(50%); top:60px; white-space:nowrap; background:#000; border:1px solid #1a1a1a; padding:0 40px 8px 18px; font-weight:normal; font-size:14px; line-height:21px; text-transform:none}
 .nav ul li:hover ul {display:block}
 .nav ul li ul::before {content:""; display:block; position:absolute; left:50%; top:-7px; width:12px; height:12px; border-left:1px solid #1a1a1a; border-top:1px solid #1a1a1a; margin-left:-6px; transform:rotate(45deg); background:#000}
@@ -526,12 +540,19 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .nav ul li ul li a:hover::before {transform:scale(1, 1)}
 .nav-contacts {display:none}
 
+@media screen and (min-width:1200px) {
+    header.fixed .nav-inner > ul {line-height:65px}
+    header.fixed .nav ul li ul {top:45px}
+}
+
 @media screen and (min-width:1800px) {
     .nav {margin:0 323px 0 188px}
     .nav ul {font-size:18px; line-height:123px}
     .nav ul li {margin:0 0 0 30px}
     .nav ul li:first-child {margin:0}
     .nav ul li ul {font-size:18px; line-height:27px; top:92px}
+
+    header.fixed .nav-inner > ul {font-size:14px; line-height:65px}
 }
 
 @media screen and (max-width:1279px) {
@@ -562,6 +583,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
     .nav ul li ul li a {display:block; padding:0; color:#8a8a8a}
     .nav ul li ul li a:hover {color:#8a8a8a}
     .nav ul li ul li a::before {display:none}
+    .nav ul li.nav-reg {display:none}
     .nav-contacts {display:block; padding:30px 20px 36px 20px; margin:0 -20px; background:#f7f7f7}
     .nav-contacts-social {font-size:0; line-height:0; letter-spacing:-1px}
     .nav-contacts-social-item {display:inline-block; vertical-align:top; width:40px; margin:0 0 0 20px}
@@ -581,6 +603,13 @@ header {height:80px; background:#181818; position:relative; z-index:20}
     .nav-contacts-social-item:first-child {margin:0}
 }
 
+.reg-link-mobile {display:none}
+
+@media screen and (max-width:1199px) {
+    .reg-link-mobile {display:block; position:fixed; left:0; bottom:0; right:0; z-index:99}
+    .reg-link-mobile a {display:block; height:66px; text-decoration:none; text-align:center; font-weight:500; font-size:18px; line-height:66px; color:#fff; background:#ee2852; text-transform:uppercase}
+}
+
 .header-right {float:right}
 
 @media screen and (max-width:1199px) {
@@ -593,8 +622,13 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 
 .header-lang {float:right; margin:23px 30px 0 0; width:33px; height:33px; background:#fff; border-radius:50%; text-decoration:none; font-weight:500; font-size:14px; line-height:34px; text-align:center}
 
+@media screen and (min-width:1200px) {
+    header.fixed .header-lang {margin:17px 15px 0 0}
+}
+
 @media screen and (min-width:1800px) {
     .header-lang {margin:39px 130px 0 0; width:45px; height:45px; font-size:18px; line-height:45px}
+    header.fixed .header-lang {margin:17px 15px 0 0; width:33px; height:33px; line-height:34px; font-size:14px}
 }
 
 @media screen and (max-width:1199px) {
@@ -606,9 +640,15 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .header-search-link svg {display:block; position:absolute; left:50%; top:50%; width:24px; height:24px; margin:-12px 0 0 -12px; fill:none; stroke:#fff; transition:stroke 0.2s}
 .header-search-link:hover svg {stroke:#d6d6d6}
 
+@media screen and (min-width:1200px) {
+    header.fixed .header-search-link {margin:0 16px 0 0; width:65px; height:65px}
+}
+
 @media screen and (min-width:1800px) {
     .header-search-link {margin:38px 50px 0 0; width:48px; height:48px}
     .header-search-link svg {width:48px; height:48px; margin:-24px 0 0 -24px}
+    header.fixed .header-search-link {margin:0 16px 0 0; width:65px; height:65px}
+    header.fixed .header-search-link svg {width:24px; height:24px; margin:-12px 0 0 -12px}
 }
 
 @media screen and (max-width:1199px) {
@@ -652,6 +692,12 @@ header {height:80px; background:#181818; position:relative; z-index:20}
 .header-search-close svg {display:block; position:absolute; left:50%; top:50%; width:25px; height:24px; margin:-12px 0 0 -12.5px; stroke:#000; stroke-width:2px; transition:stroke 0.2s}
 .header-search-close:hover svg {stroke:#ff2f66}
 
+@media screen and (min-width:1200px) {
+    header.fixed .header-search {height:65px}
+    header.fixed .header-search form {padding-top:10px}
+    header.fixed .header-search-close {height:65px}
+}
+
 @media screen and (min-width:1800px) {
     .header-search {left:189px; height:123px}
     .header-search form {padding:33px 159px 0 30px}
@@ -659,6 +705,11 @@ header {height:80px; background:#181818; position:relative; z-index:20}
     .header-search-submit button svg {width:32px; height:32px; margin:-16px 0 0 -16px}
     .header-search-close {height:123px}
     .header-search-close svg {width:32px; height:32px; margin:-16px 0 0 -16px}
+
+    header.fixed .header-search {height:65px}
+    header.fixed .header-search form {padding-top:5px}
+    header.fixed .header-search-close {height:65px}
+    .header-search-close svg {width:25px; height:24px; margin:-12px 0 0 -12.5px}
 }
 
 @media screen and (max-width:1199px) {
@@ -666,6 +717,7 @@ header {height:80px; background:#181818; position:relative; z-index:20}
     .header-search form {padding:89px 14px 0 14px; position:absolute; left:0; top:0; right:0; bottom:0}
     .header-search-inner {z-index:1}
     .header-search-inner .form-input {position:relative}
+    .header-search-inner .form-input input {height:66px}
     .header-search-inner .form-input svg {display:block; position:absolute; right:10px; top:16px; width:34px; height:34px; fill:none; stroke:#b6b6b6; pointer-events:none}
     .header-search-submit {position:relative; right:0; top:0; margin:30px 0 0 0}
     .header-search-submit button {width:100%; height:66px; border:3px solid #fff; font:600 20px/60px Arial, sans-serif; text-align:center; text-transform:uppercase; color:#fff; letter-spacing:0.05em}
@@ -948,10 +1000,10 @@ header {height:80px; background:#181818; position:relative; z-index:20}
     .main-archive-btns .btn:first-child {margin:0}
 }
 
-.page {margin:40px 0 0 0}
+.page {margin:94px 0 0 0}
 
 @media screen and (min-width:1800px) {
-    .page {margin:40px 0 0 0}
+    .page {margin:121px 0 0 0}
 }
 
 @media screen and (max-width:1199px) {
@@ -3547,7 +3599,8 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 .programm-header::after {content:""; display:block; clear:both}
-.programm-header h1 {margin:0}
+.programm-header h1 {float:left; margin:0}
+.programm-download {float:right; margin:11px 0 0 0}
 
 @media screen and (min-width:1800px) {
     .programm-download {margin:23px 0 0 0}
@@ -3569,12 +3622,16 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 .programm-ctrl-wrapper {margin:40px 0 0 0; height:282px}
-.programm-ctrl-wrapper.fixed .programm-ctrl-inner {position:fixed; left:0; top:0; right:0; background:#fff; box-shadow:0px 4px 40px rgba(0, 0, 0, 0.08); z-index:90; height:44px}
+.programm-ctrl-wrapper.fixed .programm-ctrl-inner {position:fixed; left:0; top:65px; right:0; background:#fff; box-shadow:0px 4px 40px rgba(0, 0, 0, 0.08); z-index:19; height:44px}
 .programm-ctrl-wrapper .container {padding:0}
 .programm-ctrl-wrapper.fixed .container {padding:0 20px}
 .programm-ctrl::after {content:""; display:block; clear:both}
-.programm-ctrl-wrapper.fixed .programm-ctrl {position:fixed; bottom:26px}
+.programm-ctrl-wrapper.fixed .programm-ctrl {position:fixed; bottom:40px}
 .programm-ctrl-wrapper.fixed .programm-current-day {display:none}
+
+@media screen and (max-width:1600px) {
+    .programm-ctrl-wrapper.fixed .container {padding:0 60px}
+}
 
 @media screen and (min-width:1800px) {
     .programm-ctrl-wrapper {margin:60px 0 0 0; height:311px}
@@ -3585,11 +3642,13 @@ h1+.main-block {margin:80px 0 0 0}
 
 @media screen and (max-width:1199px) {
     .programm-ctrl-wrapper {margin:0; height:435px}
-    .programm-ctrl-wrapper.fixed .programm-ctrl-inner {height:67px}
+    .programm-ctrl-wrapper.fixed .container {padding:0 14px}
+    .programm-ctrl-wrapper.fixed .programm-ctrl-inner {height:67px; top:80px}
     .programm-ctrl-wrapper.fixed .programm-ctrl {bottom:65px; right:24px}
 }
 
 @media screen and (max-width:767px) {
+    .programm-ctrl-wrapper.fixed .container {padding:0}
     .programm-ctrl-wrapper {margin:10px 0 0 0; padding:126px 0 0 0; border-top:none; position:relative; height:324px}
     .programm-ctrl-wrapper.fixed .programm-ctrl-inner {height:84px}
     .programm-ctrl-wrapper.fixed .programm-ctrl {position:relatuve; bottom:auto; right:auto}
@@ -3623,7 +3682,7 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-halls-mobile-current svg {width:24px; height:24px; position:absolute; right:8px; top:50%; margin-top:-12px; stroke:#25282b; fill:none}
     .programm-halls-mobile-current span {display:block; margin:2px 0 0 0; font-size:20px; line-height:26px; font-weight:600; color:#000; text-overflow:ellipsis; overflow:hidden; position:relative; white-space:nowrap}
     .programm-halls-mobile-current span span {display:none}
-    .programm-halls-mobile ul {display:none; position:absolute; right:10px; top:100%; left:0; background:#fff; border:2px solid #d9d9d9; border-top:none; margin:0; padding:0; list-style:none}
+    .programm-halls-mobile ul {display:none; position:absolute; right:10px; top:100%; left:0; background:#fff; border:2px solid #d9d9d9; border-top:none; white-space:nowrap; margin:0; padding:0; list-style:none; max-height:350px; overflow:auto}
     .programm-halls-mobile.open ul {display:block}
     .programm-halls-mobile ul li {float:none; margin:0; padding:0; border-top:2px solid #d9d9d9; position:relative}
     .programm-halls-mobile ul li::before {display:none}
@@ -3914,13 +3973,14 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-halls-inner::after {content:""; display:block; clear:both}
 .programm-hall {float:left; width:14.28%; padding:15px 8px 0 8px; font-size:16px; line-height:21px; color:#000; position:relative}
 .programm-hall span {display:block; margin:2px 0 0 0; font-weight:600}
-.programm-hall-online {position:absolute; right:0; width:200%; top:3px; background-color:#ffde4f; color:#000; line-height:20px; font-size:12px; font-weight:bold; text-align:center;font-family:Arial}
-.programm-ctrl-wrapper.fixed .programm-hall-online {top:auto; bottom:-18px; height:3px; font-size:0; line-height:0}
+.programm-hall-online {position:absolute; right:0; width:200%; top:3px; background-color:#ffde4f; color:#000; line-height:20px; font-size:12px; font-weight:bold; text-align:center}
+.programm-ctrl-wrapper.fixed .programm-hall-online {top:auto; bottom:-13px; height:6px; font-size:0; line-height:0}
 
 @media screen and (min-width:1800px) {
     .programm-halls {margin:30px 0 0 0; padding:0 0 14px 140px}
     .programm-hall {font-size:20px; line-height:26px}
     .programm-hall span {margin:0; font-size:22px; line-height:29px}
+    .programm-ctrl-wrapper.fixed .programm-hall-online {bottom:-22px}
 }
 
 @media screen and (min-width:1601px) {
@@ -3928,16 +3988,18 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 @media screen and (max-width:1600px) {
-    .programm-halls {margin:51px 0 0 0; border-top:none; padding:0 0 23px 90px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
+    .programm-halls {margin:51px 0 0 0; border-top:none; padding:0 0 23px 98px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
     .programm-halls-inner {margin:-10px; display:inline-block; vertical-align:top}
     .programm-hall {float:none; display:inline-block; vertical-align:top; width:190px !important; padding:0 10px; font-size:18px; line-height:23px; letter-spacing:0}
     .programm-hall span {margin:0; font-size:20px; line-height:26px}
     .programm-halls .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0}
     .programm-halls .mCSB_scrollTools {opacity:0 !important; pointer-events:none}
+    .programm-ctrl-wrapper.fixed .programm-hall-online {bottom:-3px}
 }
 
 @media screen and (max-width:1199px) {
     .programm-hall {width:220px !important}
+    .programm-ctrl-wrapper.fixed .programm-hall-online {bottom:-16px}
 }
 
 @media screen and (max-width:767px) {
@@ -3945,7 +4007,7 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 .programm-ctrl-wrapper.fixed .programm-halls {margin:0; border-top:none; padding-bottom:11px}
-.programm-ctrl-wrapper.fixed .programm-hall {color:rgba(0, 0, 0, 0); padding-top:12px; font-size:0; line-height:0}
+.programm-ctrl-wrapper.fixed .programm-hall {color:rgba(0, 0, 0, 0); padding-top:12px; font-size:0; line-height:0; white-space:nowrap}
 .programm-ctrl-wrapper.fixed .programm-hall span {color:#000; font-size:16px; line-height:21px; margin:0}
 
 @media screen and (min-width:1800px) {
@@ -3966,14 +4028,20 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-content {padding:29px 0 0 98px}
 .programm-list-container {position:relative}
 
-@media screen and (min-width:1280px) {
+@media screen and (max-width:1600px) {
+    .programm-list-container {margin:0 -50px 0 0}
 }
 
 @media screen and (min-width:1800px) {
     .programm-content {padding:29px 0 0 140px}
 }
 
+@media screen and (max-width:1279px) {
+    .programm-list-container {margin:0 -20px 0 0}
+}
+
 @media screen and (max-width:1199px) {
+    .programm-list-container {margin:0}
     .programm-content {padding:40px 0 0 90px}
 }
 
@@ -4039,11 +4107,11 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-list {font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
     .programm-list::after {display:none}
     .programm-list-hall {float:none; display:inline-block; width:190px !important; vertical-align:top; padding:0 20px 0 0; letter-spacing:0; white-space:normal}
-    .programm-list .mCSB_scrollTools {opacity:1 !important}
+    .programm-list .mCSB_scrollTools {opacity:0.85 !important}
     .programm-list .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0}
-    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal {bottom:0; height:8px}
-    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {height:8px; background:#ff2f66; border-radius:4px; margin:0}
-    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {height:8px; border-radius:4px; margin:0; background:#dcdcdc}
+    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal {bottom:0; height:10px}
+    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {height:10px; background:#ff2f66; border-radius:5px; margin:0}
+    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {height:10px; border-radius:5px; margin:0; background:#dcdcdc}
 }
 
 @media screen and (max-width:1199px) {

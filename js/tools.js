@@ -1642,6 +1642,10 @@ $(window).on('load resize', function() {
         if ($(window).width() < 1601 && $(window).width() > 767) {
             $('.programm-list').mCustomScrollbar({
                 axis: 'x',
+                scrollInertia: 0,
+                mouseWheel: {
+                    enable: false
+                },
                 callbacks: {
                     onInit: function() {
                         $('.programm-halls-inner').css({'left': 0});
@@ -1714,6 +1718,12 @@ $(window).on('load resize scroll', function() {
     $('.programm-filter-params').each(function() {
         $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 150) + 'px'});
     });
+    
+    if (windowScroll > 0) {
+        $('header').addClass('fixed');
+    } else {
+        $('header').removeClass('fixed');
+    }
 });
 
 function initForm(curForm) {
