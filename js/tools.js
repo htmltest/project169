@@ -1844,13 +1844,26 @@ function windowOpen(linkWindow, dataWindow) {
 
 function windowClose() {
     if ($('.window').length > 0) {
-        $('.window').remove();
-        $('html').removeClass('window-open');
-        $('body').css({'margin-right': 0});
-        $('.wrapper').css({'top': 0});
-        $(window).scrollTop($('.wrapper').data('curScroll'));
+        if (!$('.window').hasClass('changed')) {
+            $('.window').remove();
+            $('html').removeClass('window-open');
+            $('body').css({'margin-right': 0});
+            $('.wrapper').css({'top': 0});
+            $(window).scrollTop($('.wrapper').data('curScroll'));
+        } else {
+            if (confirm('Закрыть форму?')) {
+                $('.window').removeClass('changed');
+                windowClose();
+            }
+        }
     }
 }
+
+$(document).ready(function() {
+    $('body').on('change', '.window input, .window select', function(e) {
+        $('.window').addClass('changed');
+    });
+});
 
 $(window).on('load resize', function() {
     $('.programm-filter-window-checkboxes-speakers').each(function() {
