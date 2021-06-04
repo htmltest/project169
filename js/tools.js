@@ -1216,7 +1216,7 @@ function redrawProgramm() {
         $('.programm-list').html('');
 
         if (curData != null) {
-            
+
             var countHalls = curData.length;
 
             var minHour = 23;
@@ -1718,12 +1718,31 @@ $(window).on('load resize scroll', function() {
     $('.programm-filter-params').each(function() {
         $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 150) + 'px'});
     });
-    
+
     if (windowScroll > 0) {
         $('header').addClass('fixed');
     } else {
         $('header').removeClass('fixed');
     }
+
+    $('.programm-ctrl').each(function() {
+        if ($(window).width() > 767 && $('.programm-ctrl-wrapper').hasClass('fixed')) {
+            var curDiff = 60;
+            if ($(window).width() > 1799) {
+                curDiff = 22;
+            }
+            if ($(window).width() < 1200) {
+                curDiff = 75;
+            }
+            if (windowScroll + windowHeight > $('.prefooter').offset().top) {
+                $('.programm-ctrl').css({'margin-bottom': (windowScroll + windowHeight) - $('.prefooter').offset().top + curDiff});
+            } else {
+                $('.programm-ctrl').css({'margin-bottom': 0});
+            }
+        } else {
+            $('.programm-ctrl').css({'margin-bottom': 0});
+        }
+    });
 });
 
 function initForm(curForm) {
