@@ -1041,6 +1041,13 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.nav ul li').each(function(e) {
+        var curLi = $(this);
+        if (curLi.find('ul').length != 0) {
+            curLi.find('ul').prepend('<li class="nav-mobile-parent"><a href="' + curLi.find('> a').attr('href') + '">' + curLi.find('> a span').html() + '</a></li>');
+        }
+    });
+
     $('.nav ul li a').click(function(e) {
         if ($(window).width() < 1200) {
             if ($(this).parent().find('ul').length != 0) {
@@ -1201,7 +1208,6 @@ function redrawProgramm() {
         for (var i = 0; i < programmData.length; i++) {
             if (programmData[i].date == curDate) {
                 curData = programmData[i].data;
-                $('.programm-current-day h2').html(programmData[i].datetitle);
                 $('.programm-current-day-text').html(programmData[i].datetext);
             }
         }
@@ -1244,11 +1250,7 @@ function redrawProgramm() {
             var scheduleHeight = $('.programm-timescale').height();
 
             for (var i = 0; i < countHalls; i++) {
-                var onlineTitle = '';
-                if (i == countHalls - 1) {
-                    onlineTitle = '<div class="programm-hall-online">Цифровые треки</div>';
-                }
-                $('.programm-halls-inner').append('<div class="programm-hall" style="width:' + (100 / countHalls) + '%">' + curData[i].hall + onlineTitle + '</div>');
+                $('.programm-halls-inner').append('<div class="programm-hall" style="width:' + (100 / countHalls) + '%">' + curData[i].hall + '</div>');
                 var curMobileHall = $('<div>' + curData[i].hall + '</div>').find('span').remove();
                 $('.programm-halls-mobile ul').append('<li><a href="#">' + curMobileHall.html() + '</a></li>');
                 var hallHTML =  '<div class="programm-list-hall" style="width:' + (100 / countHalls) + '%; height:' + scheduleHeight + 'px">';
@@ -1675,9 +1677,9 @@ $(window).on('load resize scroll', function() {
         }
 
         if (windowScroll + windowHeight > $('footer').offset().top) {
-            var bottomDiff = -5;
+            var bottomDiff = 60;
             if ($(window).width() > 1199) {
-                bottomDiff = 20;
+                bottomDiff = 60;
             }
             $('.up-link').css({'margin-bottom': (windowScroll + windowHeight) - $('footer').offset().top + bottomDiff});
         } else {
@@ -1694,7 +1696,7 @@ $(window).on('load resize scroll', function() {
     }
 
     $('.programm-ctrl-wrapper').each(function() {
-        if (windowScroll >= $('.programm-ctrl-wrapper').offset().top + 97) {
+        if (windowScroll >= $('.programm-container').offset().top && windowScroll < $('.programm-container').offset().top + $('.programm-container').height()) {
             $('.programm-ctrl-wrapper').addClass('fixed');
         } else {
             $('.programm-ctrl-wrapper').removeClass('fixed');
@@ -1705,9 +1707,9 @@ $(window).on('load resize scroll', function() {
         var curTools = $(this);
         var curBlock = curTools.parent();
         if (windowScroll + windowHeight > curBlock.offset().top) {
-            var curBottom = (windowScroll + windowHeight) - (curBlock.offset().top + curBlock.height() - 20);
-            if (curBottom < 20) {
-                curBottom = 20;
+            var curBottom = (windowScroll + windowHeight) - (curBlock.offset().top + curBlock.height() - 15);
+            if (curBottom < 15) {
+                curBottom = 15;
             }
             curTools.css({'position': 'fixed', 'z-index': 2, 'left': curBlock.offset().left, 'bottom': curBottom, 'right': 'auto', 'width': curBlock.width()});
         } else {
@@ -1716,7 +1718,7 @@ $(window).on('load resize scroll', function() {
     });
 
     $('.programm-filter-params').each(function() {
-        $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 150) + 'px'});
+        $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 70) + 'px'});
     });
 
     if (windowScroll > 0) {
