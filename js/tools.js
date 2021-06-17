@@ -37,8 +37,9 @@ $(document).ready(function() {
         autoplaySpeed: 5000,
         pauseOnFocus: false,
         pauseOnHover: false,
-        arrows: false,
-        dots: false
+        prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#welcome-prev"></use></svg></button>',
+        nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#welcome-next"></use></svg></button>',
+        dots: true
     });
 
     $('.main-block .speakers').each(function() {
@@ -1659,6 +1660,13 @@ $(window).on('load resize', function() {
             });
         } else {
             $('.programm-list').mCustomScrollbar('destroy');
+        }
+    });
+    
+    $('.welcome-slider').each(function() {
+        if ($('.welcome-slider .slick-dots').length == 1) {
+            $('.welcome-slider .slick-prev').css({'margin-right': $('.welcome-slider .slick-dots').width() / 2 + 20});
+            $('.welcome-slider .slick-next').css({'margin-left': $('.welcome-slider .slick-dots').width() / 2 + 20});
         }
     });
 });

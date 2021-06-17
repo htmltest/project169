@@ -260,4 +260,13 @@
         <path fill-rule="evenodd" clip-rule="evenodd" d="M8 2.99975C8.256 2.99975 8.512 3.09775 8.707 3.29275L16.707 11.2928C17.098 11.6838 17.098 12.3158 16.707 12.7067L8.70699 20.7067C8.31599 21.0977 7.68399 21.0977 7.29299 20.7067C6.90199 20.3157 6.90199 19.6837 7.29299 19.2927L14.586 11.9997L7.293 4.70675C6.902 4.31575 6.902 3.68375 7.293 3.29275C7.488 3.09775 7.744 2.99975 8 2.99975Z" />
     </symbol>
 
+    <symbol viewBox="0 0 30 30" id="welcome-prev">
+        <path d="M16 20L11 15L16 10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+    <symbol viewBox="0 0 30 30" id="welcome-next">
+        <path d="M14 10L19 15L14 20" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
+
 </svg>
