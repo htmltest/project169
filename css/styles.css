@@ -760,6 +760,7 @@ header.fixed .nav-reg {margin-top:10px}
 .welcome-slider-item-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
 .welcome-slider-item-bg::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%); opacity:0.5}
 .welcome-slider-item-bg::after {content:""; display:block; position:absolute; left:0; top:0; right:0; height:79px; background:linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%); opacity:0.8}
+.welcome-slider-item-bg-new::before {background:rgba(36, 61, 52, 0.2); opacity:1}
 .welcome-slider-item-bg-new::after {display:none}
 .archive-card-slider-type-1 .welcome-slider-item-bg::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%); opacity:0.7}
 .archive-card-slider-type-2 .welcome-slider-item-bg::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%); opacity:0.7}
@@ -771,9 +772,9 @@ header.fixed .nav-reg {margin-top:10px}
 .welcome-slider-item-city-logo {float:left; line-height:0}
 .welcome-slider-item-city-title {float:left; margin:6px 0 0 14px; color:#fff; text-transform:uppercase; font-weight:500; font-size:12px; line-height:16px; text-transform:uppercase; letter-spacing:0}
 .welcome-slider-item-title {padding:26px 60px 0 60px; color:#fff; font-weight:900; font-size:50px; line-height:65px; letter-spacing:0; text-transform:uppercase; max-width:75%}
-.welcome-slider-item-title-new {padding-top:197px}
+.welcome-slider-item-title-new {padding-top:180px; font-size:80px; line-height:80px}
 .welcome-slider-item-date {padding:28px 60px 0 60px; color:#d0cfcd; font-weight:600; font-size:30px; line-height:45px; letter-spacing:0; text-transform:uppercase}
-.welcome-slider-item-date-new {color:#6fc8aa}
+.welcome-slider-item-date-new {color:#6fc8aa; padding-top:19px}
 .welcome-slider-item-place {padding:0 60px; color:#fff; font-weight:600; font-size:30px; line-height:45px; letter-spacing:0; text-transform:uppercase}
 .welcome-slider .slick-prev,
 .welcome-slider .slick-next {display:block; position:absolute; z-index:2; bottom:47px; width:30px; height:30px; border:none; border-radius:50%; margin:0; padding:0; outline:none; -webkit-appearance:none; cursor:pointer; background:transparent; transition:all 0.2s}
@@ -796,7 +797,7 @@ header.fixed .nav-reg {margin-top:10px}
 .welcome-social {position:absolute; left:0; bottom:0; right:0}
 .welcome-social .container::after {display:none}
 .welcome-social-inner {float:left; padding:0 0 30px 60px}
-.welcome-slider-item-container .welcome-social-inner {float:none; padding:30px 0 0 60px}
+.welcome-slider-item-container .welcome-social-inner {float:none; padding:56px 0 0 60px}
 .welcome-social-item {float:left; margin:0 0 0 18px}
 .welcome-social-item:first-child {margin:0}
 .welcome-social-item a {display:block}
@@ -809,6 +810,12 @@ header.fixed .nav-reg {margin-top:10px}
 .welcome-social-item a.btn:hover svg {stroke:#000}
 .welcome-social-item a.btn:active svg {stroke:#000}
 .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {margin-left:36px}
+.welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block; margin:-2px 0 0 6px}
+
+.welcome-slider-item-title-new-right {float:right; width:230px; font-weight:900; margin:181px 0 0 0; font-size:40px; line-height:40px; text-transform:uppercase; color:#fff}
+.welcome-slider-item-title-new-right br {display:none}
+.welcome-slider-item-title-new-right span {color:#6fc8aa}
+.welcome-slider-item-title-new-right strong {font-size:94px; line-height:94px; color:#fff; font-weight:100}
 
 @media screen and (min-width:1800px) {
     .welcome-slider-item-container {height:940px}
@@ -817,7 +824,7 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-slider-item-city-logo img {width:100%}
     .welcome-slider-item-city-title {font-size:14px; line-height:18px; margin:11px 0 0 27px}
     .welcome-slider-item-title {font-size:70px; line-height:91px; padding:40px 60px 0 60px}
-    .welcome-slider-item-title-new {padding-top:197px}
+    .welcome-slider-item-title-new {padding-top:180px}
     .welcome-slider-item-date {padding:40px 60px 0 60px; font-size:40px; line-height:60px}
     .welcome-slider-item-place {font-size:40px; line-height:60px}
     .welcome-social-inner {padding:0 0 40px 60px}
@@ -833,7 +840,11 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-slider-item-container {height:670px}
     .welcome-slider-item-city {padding:162px 0 0 46px}
     .welcome-slider-item-title {padding:30px 46px 0 46px; font-size:40px; line-height:52px; max-width:none}
-    .welcome-slider-item-title-new {padding-top:162px}
+    .welcome-slider-item-title-new {padding-top:0}
+    .welcome-slider-item-title-new br {display:none}
+    .welcome-slider-item-title-new-right {float:none; width:auto; margin:0; font-size:40px; line-height:52px; padding:162px 46px 0 46px}
+    .welcome-slider-item-title-new-right br {display:block}
+    .welcome-slider-item-title-new-right strong {font-size:40px; line-height:52px}
     .welcome-slider-item-date {padding:30px 46px 0 46px}
     .welcome-slider-item-place {padding:0 46px}
     .welcome-social-inner {padding:0 0 40px 46px}
@@ -857,7 +868,9 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-slider-item-container {height:650px}
     .welcome-slider-item-city {padding:109px 0 0 4px}
     .welcome-slider-item-title {padding:30px 0 0 0}
-    .welcome-slider-item-title-new {padding-top:109px; font-size:32px; line-height:44px}
+    .welcome-slider-item-title-new {padding-top:0; font-size:32px; line-height:44px}
+    .welcome-slider-item-title-new-right {font-size:32px; line-height:44px; padding:109px 0 0 0}
+    .welcome-slider-item-title-new-right strong {font-size:32px; line-height:44px}
     .welcome-slider-item-date {padding:30px 0 0 0; font-size:26px; line-height:39px}
     .welcome-slider-item-place {padding:0}
     .welcome-slider-item-container .welcome-social-inner {padding:30px 0 0 0}

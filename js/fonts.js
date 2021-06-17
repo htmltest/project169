@@ -13,6 +13,9 @@ if (sessionStorage.fontsLoaded) {
     script.async = true;
 
     script.onload = function () {
+        var GraphikLCG100 = new FontFaceObserver('GraphikLCG', {
+            weight: '100'
+        });
         var GraphikLCG300 = new FontFaceObserver('GraphikLCG', {
             weight: '300'
         });
@@ -33,6 +36,7 @@ if (sessionStorage.fontsLoaded) {
         });
 
         Promise.all([
+            GraphikLCG100.load(),
             GraphikLCG300.load(),
             GraphikLCG400.load(),
             GraphikLCG500.load(),
