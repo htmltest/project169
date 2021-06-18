@@ -1197,6 +1197,13 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('click', '.health-faq-item-title', function(e) {
+        var curItem = $(this).parent();
+        curItem.toggleClass('open');
+        curItem.find('.health-faq-item-text').slideToggle();
+        e.preventDefault();
+    });
+
 });
 
 function redrawProgramm() {
@@ -1662,7 +1669,7 @@ $(window).on('load resize', function() {
             $('.programm-list').mCustomScrollbar('destroy');
         }
     });
-    
+
     $('.welcome-slider').each(function() {
         if ($('.welcome-slider .slick-dots').length == 1) {
             $('.welcome-slider .slick-prev').css({'margin-right': $('.welcome-slider .slick-dots').width() / 2 + 20});

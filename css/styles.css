@@ -760,7 +760,7 @@ header.fixed .nav-reg {margin-top:10px}
 .welcome-slider-item-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
 .welcome-slider-item-bg::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%); opacity:0.5}
 .welcome-slider-item-bg::after {content:""; display:block; position:absolute; left:0; top:0; right:0; height:79px; background:linear-gradient(180deg, #000000 0%, rgba(0, 0, 0, 0) 100%); opacity:0.8}
-.welcome-slider-item-bg-new::before {background:rgba(36, 61, 52, 0.2); opacity:1}
+.welcome-slider-item-bg-new::before {background:rgba(36, 61, 52, 0.7); opacity:1}
 .welcome-slider-item-bg-new::after {display:none}
 .archive-card-slider-type-1 .welcome-slider-item-bg::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%); opacity:0.7}
 .archive-card-slider-type-2 .welcome-slider-item-bg::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%); opacity:0.7}
@@ -5421,4 +5421,149 @@ footer {margin:60px 0 0 0}
 
 @media screen and (max-width:767px) {
     .main-manifest-more a {height:63px; font-size:16px; line-height:63px}
+}
+
+.health-about {margin:100px 0 0 0}
+.health-about::after {content:""; display:block; clear:both}
+.health-about-left {float:left; width:50%; padding:0 60px 0 0}
+.health-about-left h2 {margin:0; font-weight:600}
+.health-about-left h2 span {display:block; color:#7d7d7d}
+.health-about-logo {line-height:0; margin:24px 0 0 -23px}
+.health-about-right {float:right; width:50%; padding:0 0 0 10px}
+.health-about-right *:first-child {margin-top:0}
+.health-about-right *:last-child {margin-bottom:0}
+.health-about-right-anonce {margin:0 0 40px 0; font-size:22px; line-height:33px; color:#000}
+
+@media screen and (max-width:1199px) {
+    .health-about {margin:80px 0 0 0}
+    .health-about-left {float:none; width:auto; padding:0}
+    .health-about-left h2 {font-weight:700}
+    .health-about-right {float:none; width:auto; padding:0; margin:40px 0 0 0}
+    .health-about-right-anonce {margin:0 0 10px 0}
+}
+
+.health-target {margin:100px 0 0 0}
+.health-target::after {content:""; display:block; clear:both}
+.health-target-left {float:left; width:50%; padding:0 60px 0 0}
+.health-target-left h2 {margin:0; font-weight:600}
+.health-target-right {float:right; width:50%; padding:0 0 0 10px}
+.health-target-right *:first-child {margin-top:0}
+.health-target-right *:last-child {margin-bottom:0}
+.health-target-list {margin:45px 0 0 -8px}
+.health-target-item {display:table; width:100%; margin:20px 0 0 0}
+.health-target-icon {display:table-cell; vertical-align:middle; line-height:0; width:66px}
+.health-target-icon img {display:block; max-width:none; width:66px}
+.health-target-text {display:table-cell; vertical-align:middle; padding:0 0 0 23px; font-size:22px; line-height:29px; color:#000}
+
+@media screen and (max-width:1199px) {
+    .health-target {margin:80px 0 0 0}
+    .health-target-left {float:none; width:auto; padding:0}
+    .health-target-left h2 {font-weight:700}
+    .health-target-right {float:none; width:auto; padding:0; margin:30px 0 0 0}
+    .health-target-list {margin:20px 0 0 -8px}
+    .health-target-text {font-size:20px; line-height:26px}
+}
+
+.health-faq {margin:100px 0 0 0}
+.health-faq::after {content:""; display:block; clear:both}
+.health-faq-left {float:left; width:50%; padding:0 60px 0 0}
+.health-faq-left h3 {margin:0; font-weight:600}
+.health-faq-left h3 span {color:#7d7d7d}
+.health-faq-right {float:right; width:50%; padding:0 0 0 10px}
+.health-faq-right > *:first-child {margin-top:0}
+.health-faq-right > *:last-child {margin-bottom:0}
+.health-faq-item {border-top:1px solid #e7e7e7}
+.health-faq-item:first-child {border-top:none}
+.health-faq-item-title {display:block; position:relative; padding:23px 30px 23px 0; font-size:22px; line-height:33px; text-decoration:none}
+.health-faq-item-title svg {display:block; width:30px; height:30px; position:absolute; right:-9px; top:50%; margin-top:-15px; fill:none; stroke:#000; opacity:0.2; transition:opacity 0.2s, transform 0.2s}
+.health-faq-item.open .health-faq-item-title svg {transform:rotate(-180deg)}
+.health-faq-item-title:hover svg {opacity:1}
+.health-faq-item-text {display:none; padding:0 0 30px 0}
+.health-faq-item-text > *:first-child {margin-top:0}
+.health-faq-item-text > *:last-child {margin-bottom:0}
+
+@media screen and (max-width:1199px) {
+    .health-faq {margin:80px 0 0 0}
+    .health-faq-left {float:none; width:auto; padding:0}
+    .health-faq-left h3 {font-weight:700}
+    .health-faq-right {float:none; width:auto; padding:0; margin:30px 0 0 0}
+    .health-faq-item {margin:0 -20px}
+    .health-faq-item-title {padding:20px 100px 20px 20px; font-size:20px; line-height:30px}
+    .health-faq-item-title svg {right:35px}
+    .health-faq-item-text {padding:0 20px 30px 20px}
+}
+
+.health-timeline {margin:100px 0 0 0}
+.health-timeline::after {content:""; display:block; clear:both}
+.health-timeline-left {float:left; width:50%; padding:0 60px 0 0}
+.health-timeline-left h2 {margin:0; font-weight:600}
+.health-timeline-right {float:right; width:50%; padding:0 120px 0 10px}
+.health-timeline-item-date span {display:inline-block; vertical-align:top; height:44px; background:#f5f5f5; color:#002c55; font-size:16px; line-height:44px; padding:0 12px}
+.health-timeline-item-text {margin:0 0 0 20px; border-left:1px solid #e7e7e7; padding:20px 20px 40px 20px; color:#000}
+.health-timeline-item:last-child .health-timeline-item-text {padding-bottom:0}
+
+@media screen and (max-width:1199px) {
+    .health-timeline {margin:80px 0 0 0}
+    .health-timeline-left {float:none; width:auto; padding:0}
+    .health-timeline-left h2 {font-weight:700}
+    .health-timeline-right {float:none; width:auto; padding:0; margin:30px 0 0 0}
+}
+
+.health-winners {margin:100px 0 0 0; border-top:1px solid #e7e7e7; padding:89px 150px 0 150px; font-weight:500; font-size:42px; line-height:55px; color:#000; text-align:center}
+.health-winners span {color:#7d7d7d}
+
+@media screen and (max-width:1199px) {
+    .health-winners {margin:80px 0 0 0; padding:58px 0 0 0; font-size:24px; line-height:31px}
+}
+
+.health-request {margin:90px -999px 0 -999px; padding:60px 999px 60px 999px; text-align:center; color:#fff; background:#72b59e}
+.health-request h2 {margin:0; text-transform:uppercase; color:#fff; line-height:42px; font-weight:600}
+.health-request h2 span {color:#fcff67}
+.health-request-text {padding:23px 0 0 0; font-size:22px; line-height:33px}
+.health-request-link {padding:37px 0 0 0}
+.health-request-link a.btn {border-color:#fff; color:#fff}
+.health-request-link a.btn:hover {border-color:#fff; background:#fff; color:#000}
+.health-request-link a.btn:active {border-color:#fff; background:#fff; color:#000}
+
+@media screen and (max-width:1199px) {
+    .health-request {margin:58px -20px 0 -20px; padding:80px 20px 74px 20px}
+    .health-request h2 {font-size:40px; line-height:47px; font-weight:600}
+    .health-request-text {padding:30px 0 0 0; font-size:20px; line-height:30px}
+    .health-request-link {padding:50px 0 0 0}
+    .health-request-link a.btn {display:inline-block; width:auto; padding:10px 30px; font-size:16px; line-height:21px}
+}
+
+.health-feedback {margin:60px 0 0 0}
+.health-feedback::after {content:""; display:block; clear:both}
+.health-feedback-left {float:left; width:50%}
+.health-feedback-left h3 {margin:0; font-weight:600}
+.health-feedback-right {float:right; width:50%; padding:5px 0 0 108px}
+.health-feedback-phone {font-size:16px; line-height:24px; color:#000}
+.health-feedback-phone a {display:inline-block; vertical-align:top; padding:0 0 0 37px; position:relative; text-decoration:none}
+.health-feedback-phone a svg {display:block; position:absolute; left:0; top:1px; width:22px; height:22px; fill:none; stroke:#000; opacity:0.4}
+.health-feedback-email {font-size:16px; line-height:24px; color:#000; margin:29px 0 0 0}
+.health-feedback-email a {display:inline-block; vertical-align:top; padding:0 0 0 37px; position:relative; text-decoration:none}
+.health-feedback-email a svg {display:block; position:absolute; left:0; top:1px; width:22px; height:22px; fill:none; stroke:#000; opacity:0.4}
+.health-feedback-social {margin:33px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px}
+.health-feedback-social-item {display:inline-block; vertical-align:top; margin:0 0 0 18px}
+.health-feedback-social-item:first-child {margin:0}
+.health-feedback-social-item a {display:block; width:32px}
+.health-feedback-social-item a svg {display:block; width:32px; height:32px; fill:#4f947d; transition:fill 0.2s}
+.health-feedback-social-item a:hover svg {fill:#000}
+
+@media screen and (max-width:1199px) {
+    .health-feedback-left {float:none; width:auto}
+    .health-feedback-left h3 {font-weight:500; font-size:24px; line-height:31px}
+    .health-feedback-right {float:none; width:auto; padding:0; margin:35px 0 0 0}
+    .health-feedback-phone {font-size:20px; line-height:30px; font-weight:300}
+    .health-feedback-phone a {padding:0 0 0 40px}
+    .health-feedback-phone a svg {width:28px; height:28px}
+    .health-feedback-email {font-size:20px; line-height:30px; font-weight:300; margin:28px 0 0 0}
+    .health-feedback-email a {padding:0 0 0 40px}
+    .health-feedback-email a svg {width:28px; height:28px}
+    .health-feedback-social {margin:40px 0 0 0}
+    .health-feedback-social-item {margin:0 0 0 30px}
+    .health-feedback-social-item:first-child {margin:0}
+    .health-feedback-social-item a {width:46px}
+    .health-feedback-social-item a svg {width:46px; height:46px}
 }
