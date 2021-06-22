@@ -980,13 +980,12 @@ header.fixed .nav-reg {margin-top:10px}
 
 .main-programm {margin:37px -20px 0 -20px}
 .main-programm-inner {display:table; width:100%; border-collapse:separate; border-spacing:20px 0}
-.main-programm-item {display:table-cell; vertical-align:top; width:50%; background:no-repeat center; background-size:cover; padding:46px 107px 44px 60px; text-decoration:none; position:relative}
-.main-programm-item::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#000; opacity:0; transition:opacity 0.2s}
+.main-programm-item {display:table-cell; vertical-align:top; width:50%; background:no-repeat center; background-size:cover; padding:42px 107px 39px 60px; text-decoration:none; position:relative}
+.main-programm-item::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#00264f; opacity:0; transition:opacity 0.2s}
 .main-programm-item:hover::before {opacity:1}
 .main-programm-item-date {position:relative; text-transform:uppercase; font-size:34px; line-height:51px; color:#fff}
-.main-programm-item-date span {color:#94d6ea; font-weight:bold}
+.main-programm-item-date span {font-weight:bold}
 .main-programm-item-title {position:relative; margin:12px 0 0 0; font-weight:500; font-size:20px; line-height:30px; letter-spacing:0.03em; text-transform:uppercase; color:#fff}
-.main-programm-item-text {position:relative; margin:12px 0 0 0; font-size:18px; line-height:27px; color:#fff}
 
 @media screen and (min-width:1800px) {
     .main-programm {margin:60px -20px 0 -20px}
