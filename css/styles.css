@@ -532,6 +532,10 @@ header.fixed .nav-reg {margin-top:10px}
     header.fixed .nav-reg a {height:48px; line-height:46px}
 }
 
+@media screen and (max-width:1199px) {
+    header.fixed .nav-reg {margin:22px 30px 0 0}
+}
+
 .nav {margin:0 0 0 25px}
 .nav ul {margin:0; padding:0; list-style:none; font-weight:500; font-size:13px; line-height:80px; text-transform:uppercase; display:inline-block; vertical-align:top}
 .nav ul li {float:left; margin:0 0 0 16px; padding:0; position:relative}
@@ -628,8 +632,8 @@ header.fixed .nav-reg {margin-top:10px}
 @media screen and (max-width:767px) {
     .nav-reg {display:none}
 
-    .reg-link-mobile {display:block; position:fixed; left:0; bottom:0; right:0; z-index:99}
-    .reg-link-mobile a {display:block; height:66px; text-decoration:none; text-align:center; font-weight:500; font-size:18px; line-height:66px; color:#fff; background:#ee2852; text-transform:uppercase}
+    .reg-link-mobile {display:block; position:fixed; left:0; bottom:0; right:0; z-index:99; padding:5px; background:#fff}
+    .reg-link-mobile a {display:block; width:100%; padding:0; padding:0; height:66px; overflow:visible; outline:none; text-decoration:none; background:#fff; color:#000; border:3px solid #000; border-radius:0; font:600 20px/60px Arial, Helvetica, sans-serif; letter-spacing:0.05em; text-transform:uppercase; text-align:center; position:relative; -webkit-appearance:none; cursor:pointer; transition:all 0.2s; box-sizing:border-box}
 }
 
 .header-right {float:right}
@@ -3779,9 +3783,9 @@ h1+.main-block {margin:80px 0 0 0}
 
 @media screen and (max-width:767px) {
     .programm-ctrl-wrapper.fixed .container {padding:0}
-    .programm-ctrl-wrapper {margin:10px 0 0 0; padding:126px 0 0 0; border-top:none; position:relative; height:324px}
+    .programm-ctrl-wrapper {margin:10px 0 0 0; padding:126px 0 0 0; border-top:none; position:relative; height:284px}
     .programm-ctrl-wrapper.fixed .programm-ctrl-inner {height:84px}
-    .programm-ctrl-wrapper.fixed .programm-ctrl {position:relatuve; bottom:auto; right:auto}
+    .programm-ctrl-wrapper.fixed .programm-ctrl {position:relative; bottom:auto; right:auto}
 }
 
 .programm-halls-mobile {display:none}
@@ -3806,36 +3810,38 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 @media screen and (max-width:767px) {
-    .programm-halls-mobile {display:block; float:left; width:50%; padding:0 10px 0 0; position:relative}
+    .programm-halls-mobile {display:block; float:right; width:50%; padding:0 0 0 10px; position:relative}
     .programm-halls-mobile.open {z-index:99}
     .programm-halls-mobile-current {display:block; cursor:pointer; height:66px; border:2px solid #dbdbdb; padding:7px 0 0 14px; font-size:16px; line-height:21px; color:#888888; position:relative}
     .programm-halls-mobile.open .programm-halls-mobile-current {border-color:#000}
     .programm-halls-mobile-current svg {width:24px; height:24px; position:absolute; right:8px; top:50%; margin-top:-12px; stroke:#25282b; fill:none}
     .programm-halls-mobile-current span {display:block; margin:2px 0 0 0; font-size:20px; line-height:26px; font-weight:600; color:#000; text-overflow:ellipsis; overflow:hidden; position:relative; white-space:nowrap}
     .programm-halls-mobile-current span span {display:none}
-    .programm-halls-mobile ul {display:none; position:absolute; right:10px; top:100%; left:0; background:#fff; border:2px solid #d9d9d9; border-top:none; white-space:nowrap; margin:0; padding:0; list-style:none; max-height:350px; overflow:auto}
+    .programm-halls-mobile-current em {display:none}
+    .programm-halls-mobile ul {display:none; position:absolute; right:0; top:100%; left:10px; background:#fff; border:2px solid #d9d9d9; white-space:nowrap; margin:0; padding:0; list-style:none; max-height:350px; overflow:auto}
     .programm-halls-mobile.open ul {display:block}
     .programm-halls-mobile ul li {float:none; margin:0; padding:0; border-top:2px solid #d9d9d9; position:relative}
     .programm-halls-mobile ul li::before {display:none}
     .programm-halls-mobile ul li:first-child {border-top:none}
-    .programm-halls-mobile ul li a {display:block; text-decoration:none; padding:0 14px; height:57px; color:#828282; font-weight:500; font-size:18px; line-height:57px; background:none; position:relative}
+    .programm-halls-mobile ul li a {display:block; text-decoration:none; padding:15px 14px; color:#828282; font-weight:500; font-size:18px; line-height:27px; background:none; position:relative}
     .programm-halls-mobile ul li a:hover,
     .programm-halls-mobile ul li.active a {background:none; color:#000}
     .programm-halls-mobile ul li.active a::after {content:""; display:block; position:absolute; right:10px; top:50%; width:22px; height:22px; margin-top:-11px; background:url(../images/select-mobile.svg) no-repeat}
     .programm-halls-mobile ul li.with-count a::after {display:none}
-    .programm-halls-mobile ul li a span {display:block; position:absolute; right:8px; top:13px; min-width:27px; height:27px; font-weight:500; font-size:16px; line-height:27px; padding:0 10px; text-align:center; border-radius:13.5px; color:#4e4e4e; background:#e2e2e2}
+    .programm-halls-mobile ul li a span {display:block; position:absolute; right:8px; top:50%; margin-top:-13.5px; min-width:27px; height:27px; font-weight:500; font-size:16px; line-height:27px; padding:0 10px; text-align:center; border-radius:13.5px; color:#4e4e4e; background:#e2e2e2}
     .programm-halls-mobile ul li.active a span {color:#fff; background:#ff5858}
     .programm-halls-mobile ul li.empty a {color:#b9b9b9}
     .programm-halls-mobile ul li.empty a span {color:#b9b9b9; background:#eeeeee}
+    .programm-halls-mobile ul li a em {display:block; font-style:normal; font-size:14px; line-height:18px; font-weight:normal; color:#676767}
 
-    .programm-dates {float:right; margin:0; width:50%; padding:0 0 0 10px; position:relative}
+    .programm-dates {float:left; margin:0; width:50%; padding:0 10px 0 0; position:relative}
     .programm-dates.open {z-index:99}
     .programm-dates-current {display:block; cursor:pointer; height:66px; border:2px solid #dbdbdb; padding:7px 0 0 14px; font-size:16px; line-height:21px; color:#888888; position:relative}
     .programm-dates.open .programm-dates-current {border-color:#000}
     .programm-dates-current svg {width:24px; height:24px; position:absolute; right:8px; top:50%; margin-top:-12px; stroke:#25282b; fill:none}
     .programm-dates-current span {display:block; margin:2px 32px 0 0; font-size:20px; line-height:26px; font-weight:600; color:#000; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; position:relative}
     .programm-dates-current span span {display:none}
-    .programm-dates ul {display:none; position:absolute; left:10px; top:100%; right:0; background:#fff; border:2px solid #d9d9d9; border-top:none}
+    .programm-dates ul {display:none; position:absolute; left:0; top:100%; right:10px; background:#fff; border:2px solid #d9d9d9}
     .programm-dates.open ul {display:block}
     .programm-dates ul li {float:none; margin:0; border-top:2px solid #d9d9d9; position:relative}
     .programm-dates ul li:first-child {border-top:none}
@@ -3867,21 +3873,18 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 @media screen and (max-width:767px) {
-    .programm-ctrl-wrapper.fixed .programm-dates {position:absolute; left:283px; top:20px; width:156px; padding:0}
+    .programm-ctrl-wrapper.fixed .programm-dates {position:absolute; left:72px; top:20px; width:calc(50% - 50px); padding:0}
     .programm-ctrl-wrapper.fixed .programm-dates-current {height:44px; padding:7px 0 0 8px; font-size:0; line-height:0}
     .programm-ctrl-wrapper.fixed .programm-dates-current span {margin:0 20px 0 0}
-    .programm-ctrl-wrapper.fixed .programm-dates ul {left:-40px; right:0}
+    .programm-ctrl-wrapper.fixed .programm-dates ul {left:0; right:-40px}
+    .programm-ctrl-wrapper.fixed .programm-dates ul li {margin:0}
+    .programm-ctrl-wrapper.fixed .programm-dates ul li:first-child {margin:0}
     .programm-ctrl-wrapper.fixed .programm-dates ul li a {padding:0 32px 0 14px; height:57px; font-size:18px; line-height:57px}
 
-    .programm-ctrl-wrapper.fixed .programm-halls-mobile {position:absolute; left:63px; top:20px; width:210px; padding:0}
+    .programm-ctrl-wrapper.fixed .programm-halls-mobile {position:absolute; right:14px; top:20px; width:calc(50% - 50px); padding:0}
     .programm-ctrl-wrapper.fixed .programm-halls-mobile-current {height:44px; padding:7px 0 0 8px; font-size:0; line-height:0}
-    .programm-ctrl-wrapper.fixed .programm-halls-mobile ul {left:0; right:-50px}
+    .programm-ctrl-wrapper.fixed .programm-halls-mobile ul {left:-50px; right:0}
     .programm-ctrl-wrapper.fixed .programm-halls-mobile-current span {margin:0 20px 0 0}
-}
-
-@media screen and (max-width:467px) {
-    .programm-ctrl-wrapper.fixed .programm-dates {left:193px; width:100px}
-    .programm-ctrl-wrapper.fixed .programm-halls-mobile {width:120px}
 }
 
 .programm-filter {float:left; margin:0 0 0 20px; position:relative}
@@ -4098,7 +4101,7 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 @media screen and (max-width:767px) {
-    .programm-ctrl-wrapper.fixed .programm-filter {margin:0; position:absolute; left:0; top:20px}
+    .programm-ctrl-wrapper.fixed .programm-filter {margin:0; position:absolute; left:14px; top:20px; width:44px}
     .programm-ctrl-wrapper.fixed .programm-filter-btn {margin:0}
     .programm-ctrl-wrapper.fixed .programm-filter-btn span {border-radius:9px; margin:0; height:18px; padding:0 6px; min-width:18px; font-size:12px; line-height:19px; position:absolute; right:-8px; top:-8px}
     .programm-ctrl-wrapper.fixed .programm-filter-btn span.visible {display:block}
@@ -4121,9 +4124,10 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 @media screen and (max-width:1600px) {
-    .programm-halls {margin:51px 0 0 0; border-top:none; padding:13px 0 13px 98px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
-    .programm-halls-inner {margin:; display:inline-block; vertical-align:top}
-    .programm-hall {float:none; display:inline-block; vertical-align:top; width:190px !important; padding:0 10px; font-size:18px; line-height:23px; letter-spacing:0}
+    .programm-halls {margin:51px 0 0 0; border-top:none; padding:13px 0 13px 98px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; border-bottom-color:#fff}
+    .programm-halls-inner {display:inline-block; vertical-align:top}
+    .programm-halls-inner::before {content:""; display:block; position:absolute; left:-98px; bottom:-14px; right:0; height:1px; background:#000}
+    .programm-hall {float:none; display:inline-block; vertical-align:top; width:200px !important; padding:0 10px; font-size:18px; line-height:23px; letter-spacing:0}
     .programm-hall span {margin:0; font-size:20px; line-height:26px}
     .programm-halls .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0}
     .programm-halls .mCSB_scrollTools {opacity:0 !important; pointer-events:none}
@@ -4147,7 +4151,7 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 @media screen and (max-width:767px) {
-    .programm-current-day {margin:40px 0}
+    .programm-current-day {margin:48px 0 8px 0}
 }
 
 .programm-content {padding:29px 0 0 98px}
@@ -4205,51 +4209,56 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-list-item {display:block; position:absolute; left:8px; top:0; right:8px; background:#fff}
 .programm-list-item:hover {z-index:2}
 .programm-list-item.hidden {display:none}
-.programm-list-item a {display:block; text-decoration:none; transition:none; position:absolute; left:0; top:0; right:0; bottom:0; transition:box-shadow 0.2s; overflow:hidden}
+.programm-list-item a {display:block; text-decoration:none; transition:none; position:absolute; left:0; top:0; right:0; bottom:0; transition:box-shadow 0.2s; overflow:hidden; background:#fff}
+.programm-list-item-total a {background:#f7f7f7}
 .programm-list-item:hover a {box-shadow:4px 4px 20px rgba(85, 85, 85, 0.14)}
 .programm-list-item a.programm-list-item-full {visibility:hidden; bottom:auto; min-height:100%; overflow:visible; opacity:0; transition:box-shadow 0.2s, opacity 0.2s}
 .programm-list-item:hover a.programm-list-item-full {visibility:visible; opacity:1}
 .programm-list-item.unfilter a {opacity:0.4}
 .programm-list-item-inner {position:relative}
 .programm-list-item-content {position:relative; padding:10px}
-.programm-list-item-time {font-size:12px; line-height:16px; color:#000}
-.programm-list-item-type {font-weight:500; font-size:14px; line-height:18px; color:#444; margin:5px 0 0 0}
-.programm-list-item-title {font-size:12px; line-height:18px; color:#444; margin:5px 0 0 0}
-.programm-list-item-total {text-align:center}
-.programm-list-item-total .programm-list-item-type {margin:0; font-size:18px; line-height:27px; font-weight:normal}
-.programm-list-item-total .programm-list-item-title {margin:0; font-size:22px; line-height:29px; font-weight:500; color:#000}
-.programm-list-item-total .programm-list-item-type+.programm-list-item-title {margin:10px 0 0 0}
-.programm-list-item-total .programm-list-item-time {margin:10px 0 0 0; font-size:18px; line-height:23px}
+.programm-list-item-border {position:absolute; left:0; top:0; bottom:0; width:3px}
+.programm-list-item-time {font-size:14px; line-height:18px; color:#4b4b4b}
+.programm-list-item-type {font-size:14px; line-height:18px; color:#4b4b4b; margin:5px 0 0 0; text-transform:uppercase}
+.programm-list-item-title {font-weight:500; font-size:16px; line-height:22px; color:#232323; margin:10px 0 0 0}
+.programm-list-item-total .programm-list-item-type {margin:0 0 0 65px}
+.programm-list-item-total .programm-list-item-title {margin:0 0 0 65px; font-size:42px; line-height:52px; font-weight:bold; color:#000}
+.programm-list-item-total .programm-list-item-type+.programm-list-item-title {margin:0 0 0 65px}
+.programm-list-item-total .programm-list-item-time {margin:10px 0 0 65px; font-size:18px; line-height:23px}
 .programm-list-item-total .programm-list-item-inner {position:absolute; left:0; top:50%; right:0; transform:translateY(-50%)}
 .programm-list-item-type-mobile {display:none}
-.programm-list-item-shadow {position:absolute; left:0; bottom:0; right:0; height:34px; border-bottom:10px solid #000}
+.programm-list-item-shadow {position:absolute; left:3px; bottom:0; right:0; height:34px; border-bottom:10px solid #fff; background:-webkit-linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%); background:linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%)}
+.programm-list-item-total a .programm-list-item-shadow {border-bottom-color:#f7f7f7; background:-webkit-linear-gradient(0deg, #f7f7f7 0%, rgba(247, 247, 247, 0) 100%); background:linear-gradient(0deg, #f7f7f7 0%, rgba(247, 247, 247, 0) 100%)}
 
 @media screen and (min-width:1800px) {
     .programm-list-item-time {font-size:14px; line-height:18px}
-    .programm-list-item-type {font-size:16px; line-height:21px}
+    .programm-list-item-type {font-size:14px; line-height:18px}
     .programm-list-item-title {font-size:16px; line-height:22px}
-    .programm-list-item-total .programm-list-item-type {font-size:20px; line-height:30px}
-    .programm-list-item-total .programm-list-item-title {font-size:30px; line-height:30px}
-    .programm-list-item-total .programm-list-item-type+.programm-list-item-title {margin:20px 0 0 0}
-    .programm-list-item-total .programm-list-item-time {margin:20px 0 0 0; font-size:20px; line-height:26px}
+    .programm-list-item-total .programm-list-item-title {font-size:42px; line-height:52px}
+    .programm-list-item-total .programm-list-item-type+.programm-list-item-title {margin:0 0 0 65px}
+    .programm-list-item-total .programm-list-item-time {margin:9px 0 0 65px; font-size:20px; line-height:26px}
 }
 
 @media screen and (max-width:1600px) {
     .programm-list {left:-158px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
     .programm-list::after {display:none}
-    .programm-list-hall {float:none; display:inline-block; width:190px !important; vertical-align:top; padding:0 20px 0 0; letter-spacing:0; white-space:normal}
+    .programm-list-hall {float:none; display:inline-block; width:200px !important; vertical-align:top; padding:0 20px 0 0; letter-spacing:0; white-space:normal}
     .programm-list-hall:first-child {margin:0 0 0 150px}
     .programm-list-hall:last-child {margin:0 40px 0 0}
+    .programm-list-item-title {font-size:15px}
     .programm-list .mCSB_scrollTools {opacity:1 !important}
     .programm-list .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0}
     .programm-list .mCSB_draggerContainer {margin:0 0 0 150px}
-    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal {bottom:0; height:6px}
-    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {height:6px; background:#aeaeae; border-radius:3px; margin:0}
-    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {height:6px; border-radius:3px; margin:0; background:#e9e9e9}
+    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal {bottom:10px; height:26px}
+    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {height:26px; background:transparent; border-radius:0; margin:0}
+    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar::before {content:""; display:block; position:absolute; left:0; bottom:10px; right:0; height:6px; background:#aeaeae; border-radius:3px}
+    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {height:26px; border-radius:0; margin:0; background:transparent}
+    .programm-list .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail::before {content:""; display:block; position:absolute; left:0; bottom:10px; right:0; height:6px; background:#e9e9e9; border-radius:3px}
 }
 
 @media screen and (max-width:1199px) {
     .programm-list-hall {width:220px !important}
+    .programm-list-item-title {font-size:16px}
 }
 
 @media screen and (max-width:767px) {
@@ -4263,13 +4272,14 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-list-item-content {padding:10px 20px}
     .programm-list-item-time {font-size:14px; line-height:18px}
     .programm-list-item-total .programm-list-item-time {position:absolute; left:20px; top:20px; margin:0}
-    .programm-list-item-type {font-size:18px; line-height:23px; color:#000}
-    .programm-list-item-title {font-size:16px; line-height:24px; color:#000}
+    .programm-list-item-type {font-size:16px; line-height:21px}
+    .programm-list-item-title {font-size:18px; line-height:25px}
     .programm-list-item-total {text-align:left}
     .programm-list-item-total .programm-list-item-title {font-size:18px; line-height:23px; margin:5px 0 0 0}
     .programm-list-item-total .programm-list-item-type {display:none; font-size:16px; line-height:24px; margin:5px 0 0 0}
     .programm-list-item-total .programm-list-item-type-mobile {display:block}
     .programm-list-item-total .programm-list-item-type+.programm-list-item-type {margin:5px 0 0 0}
+    .programm-list-item-total .programm-list-item-type+.programm-list-item-title {margin:5px 0 0 0}
     .programm-list-item-inner {position:absolute; left:0; top:50%; right:0; transform:translateY(-50%); max-height:100%}
     .programm-list-item-total .programm-list-item-content {padding-top:43px; position:relative}
     .programm-list .mCSB_draggerContainer {margin:0}

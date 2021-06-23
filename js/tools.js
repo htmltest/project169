@@ -1259,8 +1259,11 @@ function redrawProgramm() {
 
             for (var i = 0; i < countHalls; i++) {
                 $('.programm-halls-inner').append('<div class="programm-hall" style="width:' + (100 / countHalls) + '%">' + curData[i].hall + '</div>');
-                var curMobileHall = $('<div>' + curData[i].hall + '</div>').find('span').remove();
-                $('.programm-halls-mobile ul').append('<li><a href="#">' + curMobileHall.html() + '</a></li>');
+                var curMobileHall = $('<div>' + curData[i].hall + '</div>').find('span').html();
+                if (typeof(curData[i].digital) != 'undefined' && curData[i].digital) {
+                    curMobileHall = '<em>Digital</em>' + curMobileHall;
+                }
+                $('.programm-halls-mobile ul').append('<li><a href="#">' + curMobileHall + '</a></li>');
                 var hallHTML =  '<div class="programm-list-hall" style="width:' + (100 / countHalls) + '%; height:' + scheduleHeight + 'px">';
                 for (var j = 0; j < curData[i].events.length; j++) {
                     var curEvent = curData[i].events[j];
@@ -1295,7 +1298,8 @@ function redrawProgramm() {
                         }
                     }
                     hallHTML +=         '<div class="programm-list-item ' + classType + ' ' + classTotal + '" style="top:calc(' + eventTop + '% + 7px); height:calc(' + eventHeight + '% - 14px); ' + styleTotal + '" data-start="' + curEvent.start + '" data-speakers="' + curEvent.speakers.join(',') + '" data-sections="' + curEvent.sections.join(',') + '">';
-                    hallHTML +=             '<a href="' + curEvent.url + '" style="background:' + curEvent.color + '">';
+                    hallHTML +=             '<a href="' + curEvent.url + '">';
+                    hallHTML +=                 '<div class="programm-list-item-border" style="background:' + curEvent.color + '"></div>';
                     hallHTML +=                 '<div class="programm-list-item-inner">';
                     hallHTML +=                     '<div class="programm-list-item-content">';
                     if (typeof(curEvent.total) != 'undefined' && curEvent.total) {
@@ -1306,18 +1310,18 @@ function redrawProgramm() {
                         if (typeof(curEvent.text) != 'undefined') {
                             hallHTML +=                 '<div class="programm-list-item-type programm-list-item-type-mobile">' + curEvent.text + '</div>';
                         }
-                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' – ' + curEvent.end + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + '&ndash;' + curEvent.end + '</div>';
                     } else {
-                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' – ' + curEvent.end + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + '&ndash;' + curEvent.end + '</div>';
                         hallHTML +=                     '<div class="programm-list-item-type">' + curEvent.text + '</div>';
                         hallHTML +=                     '<div class="programm-list-item-title">' + curEvent.title + '</div>';
                     }
                     hallHTML +=                     '</div>';
                     hallHTML +=                 '</div>';
-                    var colorRGB = 'rgba(' + hex2rgb(curEvent.color).r + ', ' + hex2rgb(curEvent.color).g + ', ' + hex2rgb(curEvent.color).b + ', 0)';
-                    hallHTML +=                 '<div class="programm-list-item-shadow" style="background:-webkit-linear-gradient(0deg, ' + curEvent.color + ' 0%, ' + colorRGB + ' 100%); background:linear-gradient(0deg, ' + curEvent.color + ' 0%, ' + colorRGB + ' 100%); border-bottom-color:' + curEvent.color + '"></div>';
+                    hallHTML +=                 '<div class="programm-list-item-shadow"></div>';
                     hallHTML +=             '</a>';
-                    hallHTML +=             '<a href="' + curEvent.url + '" style="background:' + curEvent.color + '" class="programm-list-item-full">';
+                    hallHTML +=             '<a href="' + curEvent.url + '" class="programm-list-item-full">';
+                    hallHTML +=                 '<div class="programm-list-item-border" style="background:' + curEvent.color + '"></div>';
                     hallHTML +=                 '<div class="programm-list-item-inner">';
                     hallHTML +=                     '<div class="programm-list-item-content">';
                     if (typeof(curEvent.total) != 'undefined' && curEvent.total) {
@@ -1328,9 +1332,9 @@ function redrawProgramm() {
                         if (typeof(curEvent.text) != 'undefined') {
                             hallHTML +=                 '<div class="programm-list-item-type programm-list-item-type-mobile">' + curEvent.text + '</div>';
                         }
-                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' – ' + curEvent.end + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + '&ndash;' + curEvent.end + '</div>';
                     } else {
-                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + ' – ' + curEvent.end + '</div>';
+                        hallHTML +=                     '<div class="programm-list-item-time">' + curEvent.start + '&ndash;' + curEvent.end + '</div>';
                         hallHTML +=                     '<div class="programm-list-item-type">' + curEvent.text + '</div>';
                         hallHTML +=                     '<div class="programm-list-item-title">' + curEvent.title + '</div>';
                     }
@@ -1355,15 +1359,6 @@ function redrawProgramm() {
         }
 
     });
-}
-
-function hex2rgb(c) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(c);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
 }
 
 function updateProgrammFilter() {
@@ -1711,7 +1706,11 @@ $(window).on('load resize scroll', function() {
     }
 
     $('.programm-ctrl-wrapper').each(function() {
-        if (windowScroll >= $('.programm-container').offset().top && windowScroll < $('.programm-container').offset().top + $('.programm-container').height()) {
+        var curDiff = 100;
+        if ($(window).width() < 1800) {
+            curDiff = 160;
+        }
+        if (windowScroll >= $('.programm-container').offset().top && windowScroll < $('.programm-container').offset().top + $('.programm-container').height() - curDiff) {
             $('.programm-ctrl-wrapper').addClass('fixed');
         } else {
             $('.programm-ctrl-wrapper').removeClass('fixed');
@@ -1722,9 +1721,9 @@ $(window).on('load resize scroll', function() {
         var curTools = $(this);
         var curBlock = curTools.parent();
         if (windowScroll + windowHeight > curBlock.offset().top) {
-            var curBottom = (windowScroll + windowHeight) - (curBlock.offset().top + curBlock.height() - 15);
-            if (curBottom < 15) {
-                curBottom = 15;
+            var curBottom = (windowScroll + windowHeight) - (curBlock.offset().top + curBlock.height() - 5);
+            if (curBottom < 5) {
+                curBottom = 5;
             }
             curTools.css({'position': 'fixed', 'z-index': 2, 'left': curBlock.offset().left, 'bottom': curBottom, 'right': 'auto', 'width': curBlock.width()});
         } else {
