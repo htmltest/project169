@@ -5576,3 +5576,222 @@ footer {margin:60px 0 0 0}
     .health-feedback-social-item a {width:46px}
     .health-feedback-social-item a svg {width:46px; height:46px}
 }
+
+.exponents-header {display:table; width:100%}
+.exponents-header h1 {display:table-cell; vertical-align:middle; margin:0}
+.exponents-search {display:table-cell; vertical-align:middle}
+.exponents-search form {margin:0; padding:0; float:right}
+.exponents-search .form-input {float:left; width:428px; margin:0}
+.exponents-search .form-submit {float:left; margin:0 0 0 16px}
+.exponents-search .form-submit .btn svg {display:inline-block; vertical-align:middle; margin:-2px 0 0 10px; width:18px; height:18px; fill:none; stroke:#000}
+
+@media screen and (max-width:1199px) {
+    .exponents-header {display:block; width:auto}
+    .exponents-header h1 {display:block}
+    .exponents-search {display:block; margin:48px 0 0 0}
+    .exponents-search form {float:none}
+    .exponents-search form::after {content:""; display:block; clear:both}
+    .exponents-search .form-input {width:calc(100% - 59px)}
+    .exponents-search .form-input input {height:60px; line-height:58px}
+    .exponents-search .form-submit {width:60px; margin:0 0 0 -1px}
+    .exponents-search .form-submit .btn {font-size:0; line-height:0; padding:0; width:60px; height:60px; position:relative; border-width:2px}
+    .exponents-search .form-submit .btn svg {width:22px; height:22px; display:block; position:absolute; left:50%; top:50%; margin:-11px 0 0 -11px}
+}
+
+.exponents-stream {display:block; margin:32px 0 0 0; text-align:center; padding:36px 0 25px 0; background:rgba(0, 38, 79, 0.05); text-decoration:none; transition:background 0.2s, color 0.2s}
+.exponents-stream:hover {background:rgba(0, 38, 79, 0.1)}
+.exponents-stream-inner {display:inline-block; vertical-align:top; text-align:left}
+.exponents-stream-icon {float:left; width:46px; height:46px; background:#e5e5e5; border-radius:50%; position:relative; padding:15px 0 0 18px}
+.exponents-stream-icon svg {display:block; width:13px; height:17px; fill:#d12c2c}
+.exponents-stream-container {padding:1px 0 0 0; margin:0 0 0 66px}
+.exponents-stream-title {font-size:22px; line-height:22px; font-weight:500}
+.exponents-stream-text {font-size:16px; line-height:24px; color:#404040; margin:7px 0 0 0}
+
+@media screen and (max-width:1199px) {
+    .exponents-stream {margin:40px 0 0 0; text-align:left; padding:24px}
+    .exponents-stream-title {font-size:20px; line-height:20px; font-weight:500}
+    .exponents-stream-text {font-size:18px; line-height:27px; margin:9px 0 0 0}
+}
+
+.exponents {margin:20px -10px 0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
+.exponents-item {display:inline-block; vertical-align:top; width:33.33%; padding:20px 10px 0 10px}
+.exponents-item a {display:block; height:245px; border:1px solid #d6d6d6; transition:border-color 0.2s, transform 0.2s; text-decoration:none; text-align:center}
+.exponents-item a:hover {border-color:#000; transform:translateY(-5px)}
+.exponents-item-logo {height:148px; padding:10px; line-height:128px}
+.exponents-item-logo img {display:inline-block; vertical-align:middle; max-height:148px}
+.exponents-item-title {display:table; width:100%}
+.exponents-item-title-inner {display:table-cell; vertical-align:middle; padding:0 46px; height:72px; font-size:20px; line-height:24px; letter-spacing:0}
+
+@media screen and (max-width:1199px) {
+    .exponents {margin:60px -10px 0 -10px}
+    .exponents-item {width:50%}
+    .exponents-item a {height:202px}
+    .exponents-item-logo {height:122px; padding:10px; line-height:102px}
+    .exponents-item-title-inner {padding:0 27px; font-size:18px; line-height:18px; height:54px}
+}
+
+@media screen and (max-width:467px) {
+    .exponents-item {width:100%}
+}
+
+.exponents+.pager {margin:50px 0 0 0}
+
+.exponent-back-link {margin:-54px 0 0 0; font-weight:600; font-size:14px; line-height:21px; letter-spacing:0.05em; text-transform:uppercase}
+.exponent-back-link a {text-decoration:none}
+.exponent-back-link svg {display:inline-block; vertical-align:middle; margin:-2px 12px 0 0; width:8px; height:14px; fill:none; stroke:#25282b; transition:stroke 0.2s}
+.exponent-back-link a:hover svg {stroke:#ff2f66}
+
+@media screen and (min-width:1800px) {
+    .exponent-back-link {margin:-81px 0 0 0}
+}
+
+@media screen and (max-width:1199px) {
+    .exponent-back-link {margin:-50px 0 0 0; line-height:45px; font-weight:500}
+    .exponent-back-link a {color:#686868}
+    .exponent-back-link span {display:inline-block; vertical-align:top; width:45px; height:45px; background:#f4f4f4; margin:0 15px 0 0; position:relative}
+    .exponent-back-link svg {display:block; position:absolute; left:50%; top:50%; margin:-7px 0 0 -4px}
+}
+
+.exponent {margin:40px 0 0 0; position:relative; padding:0 0 75px 0}
+.exponent::before {content:""; display:block; position:absolute; left:50%; top:0; bottom:0; width:1px; background:#c4c4c4}
+.exponent::after {content:""; display:block; clear:both}
+.exponent-left {float:left; width:50%; padding:0 40px 0 0}
+.exponent-left h1 {margin:0; font-size:36px; line-height:47px}
+.exponent-logo {margin:25px 0 0 0; line-height:0}
+.exponent-prop {margin:10px 0 0 0; width:100%; display:table; font-size:16px; line-height:24px}
+.exponent-prop-row {display:table-row}
+.exponent-prop-label {display:table-cell; vertical-align:top; padding:18px 0 0 0; white-space:nowrap}
+.exponent-prop-value {display:table-cell; vertical-align:top; padding:18px 0 0 18px; width:100%; color:#000}
+.exponent-prop-value a {text-decoration:none}
+.exponent-right {float:right; width:50%; padding:0 0 0 40px}
+.exponent-position-title {font-weight:500; font-size:18px; line-height:18px; color:#000}
+.exponent-position {margin:19px 0 0 0; font-size:16px; line-height:28px}
+.exponent-position::after {content:""; display:block; clear:both}
+.exponent-position-label {float:left; width:166px}
+.exponent-position-value {margin:0 0 0 166px; color:#000}
+.exponent-position-value svg {display:inline-block; vertical-align:middle; width:28px; height:28px; fill:none; stroke:#25282b; margin:-2px 0 0 10px}
+.exponent-title {margin:57px 0 0 0; font-weight:500; font-size:22px; line-height:22px; color:#000}
+
+@media screen and (max-width:1199px) {
+    .exponent {margin:30px 0 0 0; padding:0}
+    .exponent::before {display:none}
+    .exponent-left {float:none; width:auto; padding:0}
+    .exponent-left h1 {font-size:40px; line-height:52px}
+    .exponent-logo {margin:30px 0 0 0}
+    .exponent-prop {margin:7px 0 0 0; font-size:20px; line-height:30px}
+    .exponent-prop-label {padding:23px 0 0 0}
+    .exponent-prop-value {padding:23px 0 0 18px}
+    .exponent-right {float:none; width:auto; padding:0; margin:88px 0 0 0}
+    .exponent-position-title {font-size:20px; line-height:20px}
+    .exponent-position {font-size:20px; line-height:30px}
+    .exponent-title {margin:47px 0 0 0; font-size:24px; line-height:24px}
+}
+
+.exponent-projects {margin:16px 0 0 0}
+.exponent-projects-title {font-weight:500; font-size:30px; line-height:30px; color:#000}
+
+@media screen and (max-width:1199px) {
+    .exponent-projects {margin:93px 0 0 0}
+}
+
+.exponent-projects-list {margin:40px 0 0 0}
+.exponent-project {margin:60px 0 0 0; padding:60px 0 0 0; border-top:1px solid #c4c4c4}
+.exponent-project:first-child {margin:0; padding:0; border-top:none}
+.exponent-project::after {content:""; display:block; clear:both}
+.exponent-project-container {float:left; width:calc(100% - 460px)}
+.exponent-project-title {font-weight:500; font-size:22px; line-height:22px; color:#000; margin:0 0 0 -16px}
+.exponent-project-title strong {font-weight:500; margin:0 0 0 16px}
+.exponent-project-title span {font-weight:normal; font-size:16px; color:#504f4f; margin:0 0 0 16px}
+.exponent-project-files {margin:15px -80px 0 -20px}
+.exponent-project-files::after {content:""; display:block; clear:both}
+.exponent-project-file {float:left; margin:20px 0 0 20px}
+.exponent-project-photos {float:right; width:390px; margin:-10px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px}
+
+@media screen and (max-width:1199px) {
+    .exponent-project {margin:50px -20px 0 -20px; padding:40px 20px 0 20px}
+    .exponent-project:first-child {margin:0; padding:0}
+    .exponent-project-container {float:none; width:auto}
+    .exponent-project-title {font-size:24px; line-height:34px; color:#000; margin:0 0 0 -18px}
+    .exponent-project-title strong {display:block; margin:0 0 0 18px}
+    .exponent-project-title span {font-size:18px; line-height:27px; margin:13px 0 0 18px}
+    .exponent-project-files {margin:50px 0 0 0}
+    .exponent-project-file {float:none; margin:30px 0 0 0}
+    .exponent-project-file .btn {display:inline-block; width:auto; text-align:left; padding-left:40px; position:relative}
+    .exponent-project-file .btn svg {position:absolute; margin:0; left:10px; top:8px}
+    .exponent-project-photos {float:none; width:auto; margin:40px 0 0 -10px}
+}
+
+@media screen and (max-width:767px) {
+    .exponent-project-file .btn {padding-left:60px}
+    .exponent-project-file .btn svg {top:10px}
+}
+
+.exponent-project-photos .photo-gallery {margin:0}
+.exponent-project-photos .photo-gallery-item {width:33.33%}
+.exponent-project-photos .photo-gallery-item-inner {padding:10px 0 0 10px}
+.exponent-project-photos .photo-gallery-item a {transition:box-shadow 0.2s, transform 0.2s}
+.exponent-project-photos .photo-gallery-item a::after {display:none}
+.exponent-project-photos .photo-gallery-item a:hover {transform:translateY(-5px); box-shadow:0 0 5px rgba(0, 0, 0, 0.4)}
+
+@media screen and (min-width:1800px) {
+    .exponent-project-photos .photo-gallery-item {width:33.33%}
+}
+
+@media screen and (max-width:1199px) {
+    .exponent-project-photos .photo-gallery {margin:0}
+    .exponent-project-photos .photo-gallery-item-inner {padding:10px 0 0 10px}
+}
+
+@media screen and (max-width:767px) {
+    .exponent-project-photos .photo-gallery {margin:0}
+    .exponent-project-photos .photo-gallery-item {width:33.33%}
+    .exponent-project-photos .photo-gallery-item-inner {padding:10px 0 0 10px}
+}
+
+@media screen and (max-width:479px) {
+    .exponent-project-photos .photo-gallery-item {width:33.33%}
+}
+
+.exponent-left .exponent-text {margin:18px 0 0 0}
+.exponent-left .exponent-text-container {max-height:216px}
+.exponent-right .exponent-text {margin:15px 0 0 0}
+.exponent-right .exponent-text-container {max-height:216px}
+.exponent-project .exponent-text {margin:15px 0 0 0}
+.exponent-project .exponent-text-container {max-height:216px}
+
+@media screen and (min-width:1800px) {
+    .exponent-left .exponent-text-container {max-height:264px}
+    .exponent-right .exponent-text-container {max-height:264px}
+    .exponent-project .exponent-text-container {max-height:231px}
+}
+
+@media screen and (max-width:1199px) {
+    .exponent-left .exponent-text {margin:23px 0 0 0}
+    .exponent-left .exponent-text-container {max-height:480px}
+    .exponent-right .exponent-text {margin:25px 0 0 0}
+    .exponent-right .exponent-text-container {max-height:480px}
+    .exponent-project .exponent-text {margin:20px 0 0 0}
+    .exponent-project .exponent-text-container {max-height:240px}
+}
+
+.exponent-text-container {position:relative; overflow:hidden; transition:max-height 0.2s}
+.exponent-text.open .exponent-text-container {max-height:2999px}
+.exponent-text.with-more .exponent-text-container::after {content:""; display:block; position:absolute; left:0; bottom:0; right:0; height:76px; background:linear-gradient(0deg, #fff 0%, rgba(255, 255, 255, 0) 100%)}
+.exponent-text.with-more.open .exponent-text-container::after {display:none}
+.exponent-text-content *:first-child {margin-top:0}
+.exponent-text-content *:last-child {margin-bottom:0}
+.exponent-text-more {display:none; margin:0}
+.exponent-text.with-more .exponent-text-more {display:block}
+.exponent-text-more a {text-decoration:none}
+.exponent-text-more a span:nth-child(2) {display:none}
+.exponent-text.open .exponent-text-more a span:nth-child(1) {display:none}
+.exponent-text.open .exponent-text-more a span:nth-child(2) {display:inline}
+.exponent-text-more a svg {display:inline-block; width:20px; height:20px; vertical-align:middle; margin:-2px 0 0 8px; fill:#000; transition:fill 0.2s}
+.exponent-text-more a:hover svg {fill:#ff2f66}
+.exponent-text.open .exponent-text-more a svg {transform:rotate(-180deg)}
+
+@media screen and (max-width:1199px) {
+    .exponent-text-more {margin:15px 0 0 0}
+    .exponent-text-more a {display:inline-block; height:51px; font-size:16px; line-height:51px; padding:0 15px; font-weight:500; color:#717171; background:#f4f4f4; text-transform:uppercase; letter-spacing:0.05em}
+    .exponent-text-more a svg {display:none}
+}

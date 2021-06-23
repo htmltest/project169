@@ -1204,6 +1204,12 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('click', '.exponent-text-more a', function(e) {
+        var curBlock = $(this).parents().filter('.exponent-text');
+        curBlock.toggleClass('open');
+        e.preventDefault();
+    });
+
 });
 
 function redrawProgramm() {
@@ -1669,6 +1675,14 @@ $(window).on('load resize', function() {
         if ($('.welcome-slider .slick-dots').length == 1) {
             $('.welcome-slider .slick-prev').css({'margin-right': $('.welcome-slider .slick-dots').width() / 2 + 20});
             $('.welcome-slider .slick-next').css({'margin-left': $('.welcome-slider .slick-dots').width() / 2 + 20});
+        }
+    });
+
+    $('.exponent-text').each(function() {
+        var curBlock = $(this);
+        curBlock.removeClass('open with-more');
+        if (curBlock.find('.exponent-text-container').height() < curBlock.find('.exponent-text-content').height()) {
+            curBlock.addClass('with-more');
         }
     });
 });
