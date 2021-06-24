@@ -514,9 +514,7 @@ header {height:80px; background:#000; position:fixed; left:0; top:0; right:0; z-
 
 .nav-reg {float:right; margin:22px 30px 0 0}
 .nav-reg a {display:inline-block; vertical-align:middle; font-weight:500; font-size:13px; line-height:38px; height:40px; letter-spacing:0.05em; padding:0 20px; color:#fff; background:transparent; border:1px solid #676767; text-decoration:none; text-transform:uppercase}
-.nav-reg-red a {background:#ee2852; border-color:#ee2852}
 .nav-reg a:hover {color:#000; background:#fff}
-.nav-reg-red a:hover {color:#fff; background:#000; border-color:#000}
 header.fixed .nav-reg {margin-top:10px}
 
 @media screen and (min-width:1200px) {
@@ -4220,7 +4218,7 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-list-item-border {position:absolute; left:0; top:0; bottom:0; width:3px}
 .programm-list-item-time {font-size:14px; line-height:18px; color:#4b4b4b}
 .programm-list-item-type {font-size:14px; line-height:18px; color:#4b4b4b; margin:5px 0 0 0; text-transform:uppercase}
-.programm-list-item-title {font-weight:500; font-size:16px; line-height:22px; color:#232323; margin:10px 0 0 0}
+.programm-list-item-title {font-weight:600; font-size:16px; line-height:22px; color:#232323; margin:10px 0 0 0}
 .programm-list-item-total .programm-list-item-type {margin:0 0 0 65px}
 .programm-list-item-total .programm-list-item-title {margin:0 0 0 65px; font-size:42px; line-height:52px; font-weight:bold; color:#000}
 .programm-list-item-total .programm-list-item-type+.programm-list-item-title {margin:0 0 0 65px}
@@ -5608,9 +5606,12 @@ footer {margin:60px 0 0 0}
 .exponents-stream-text {font-size:16px; line-height:24px; color:#404040; margin:7px 0 0 0}
 
 @media screen and (max-width:1199px) {
-    .exponents-stream {margin:40px 0 0 0; text-align:left; padding:24px}
+    .exponents-stream {margin:40px 0 0 0; text-align:left; padding:40px 34px 29px 32px}
+    .exponents-stream-inner {position:relative; padding:0 0 0 71px}
+    .exponents-stream-icon {float:none; position:absolute; left:0; top:50%; margin-top:-23px}
+    .exponents-stream-container {padding:0; margin:0}
     .exponents-stream-title {font-size:20px; line-height:20px; font-weight:500}
-    .exponents-stream-text {font-size:18px; line-height:27px; margin:9px 0 0 0}
+    .exponents-stream-text {font-size:18px; line-height:27px; margin:7px 0 0 0}
 }
 
 .exponents {margin:20px -10px 0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
@@ -5664,6 +5665,7 @@ footer {margin:60px 0 0 0}
 .exponent-prop-value {display:table-cell; vertical-align:top; padding:18px 0 0 18px; width:100%; color:#000}
 .exponent-prop-value a {text-decoration:none}
 .exponent-right {float:right; width:50%; padding:0 0 0 40px}
+.exponent-right > *:first-child {margin-top:0}
 .exponent-position-title {font-weight:500; font-size:18px; line-height:18px; color:#000}
 .exponent-position {margin:19px 0 0 0; font-size:16px; line-height:28px}
 .exponent-position::after {content:""; display:block; clear:both}
@@ -5732,6 +5734,11 @@ footer {margin:60px 0 0 0}
 .exponent-project-photos .photo-gallery-item a {transition:box-shadow 0.2s, transform 0.2s}
 .exponent-project-photos .photo-gallery-item a::after {display:none}
 .exponent-project-photos .photo-gallery-item a:hover {transform:translateY(-5px); box-shadow:0 0 5px rgba(0, 0, 0, 0.4)}
+.exponent-project-photos .photo-gallery-item+.photo-gallery-item+.photo-gallery-item+.photo-gallery-item+.photo-gallery-item+.photo-gallery-item {display:none}
+.exponent-project-photos .photo-gallery-item+.photo-gallery-item+.photo-gallery-item+.photo-gallery-item+.photo-gallery-item+.photo-gallery-item+.photo-gallery-item-count {display:inline-block}
+.photo-gallery-item-count-text {height:80px; line-height:80px; background:#ededed; text-align:center; font-size:18px; letter-spacing:0; color:#969696; cursor:pointer; transition:background 0.2s}
+.photo-gallery-item-count-text:hover {background:#cdcdcd}
+.photo-gallery-item-count-text span {color:#000; font-weight:500}
 
 @media screen and (min-width:1800px) {
     .exponent-project-photos .photo-gallery-item {width:33.33%}
