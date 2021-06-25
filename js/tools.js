@@ -192,6 +192,18 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+
+    $('.exponent-project-photos .photo-gallery').each(function() {
+        var curBlock = $(this);
+        if (curBlock.find('.photo-gallery-item').length > 5) {
+            curBlock.append('<div class="photo-gallery-item photo-gallery-item-count"><div class="photo-gallery-item-inner"><div class="photo-gallery-item-count-text"><span>+30</span> фото</div></div>');
+        }
+    });
+    
+    $('.photo-gallery-item-count-text').click(function(e) {
+        $(this).parents().filter('.photo-gallery').find('.photo-gallery-item').eq(5).find('a').trigger('click');
+    });
+
     var $grid = $('.photo-gallery').masonry({
         itemSelector: '.photo-gallery-item'
     });
@@ -1684,6 +1696,12 @@ $(window).on('load resize', function() {
         if (curBlock.find('.exponent-text-container').height() < curBlock.find('.exponent-text-content').height()) {
             curBlock.addClass('with-more');
         }
+    });
+
+    $('.photo-gallery-item-count-text').each(function() {
+        var prevBlock = $(this).parents().filter('.photo-gallery').find('.photo-gallery-item:not(.photo-gallery-item-count):visible').eq(-1);
+        var prevHeight = prevBlock.find('.photo-gallery-item-inner').height();
+        $(this).css({'height': prevHeight + 'px', 'line-height': prevHeight + 'px'});
     });
 });
 
