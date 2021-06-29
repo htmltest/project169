@@ -3752,7 +3752,7 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 .programm-ctrl-wrapper {margin:40px 0 0 0; height:282px}
-.programm-ctrl-wrapper.fixed .programm-ctrl-inner {position:fixed; left:0; top:0; right:0; background:#fff; box-shadow:0px 4px 40px rgba(0, 0, 0, 0.08); z-index:20; height:76px}
+.programm-ctrl-wrapper.fixed .programm-ctrl-inner {position:fixed; left:0; top:0; right:0; background:#fff; box-shadow:0px 4px 40px rgba(0, 0, 0, 0.08); z-index:99; height:76px}
 .programm-ctrl-wrapper .container {padding:0}
 .programm-ctrl-wrapper.fixed .container {padding:0 20px}
 .programm-ctrl::after {content:""; display:block; clear:both}
@@ -4063,8 +4063,9 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-filter-btn span {vertical-align:middle; border-radius:12.5px; margin:-2px 0 0 10px; height:25px; padding:0 7px; min-width:25px; background:#ff3838; color:#fff; text-align:center; font-weight:600; font-size:16px; line-height:27px}
     .programm-filter-btn span.visible {display:inline-block}
 
-    .programm-filter-window form {bottom:106px}
-    .programm-filter-window-block.open .programm-filter-window-checkboxes-wraper {bottom:106px}
+    .programm-filter-window-block.open .programm-filter-window-block-apply {position:fixed}
+    .programm-filter-window form {bottom:105px}
+    .programm-filter-window-block.open .programm-filter-window-checkboxes-wraper {bottom:105px}
 }
 
 @media screen and (max-width:479px) {
