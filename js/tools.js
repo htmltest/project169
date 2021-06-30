@@ -196,7 +196,7 @@ $(document).ready(function() {
     $('.exponent-project-photos .photo-gallery').each(function() {
         var curBlock = $(this);
         if (curBlock.find('.photo-gallery-item').length > 5) {
-            curBlock.append('<div class="photo-gallery-item photo-gallery-item-count"><div class="photo-gallery-item-inner"><div class="photo-gallery-item-count-text"><span>+30</span> фото</div></div>');
+            curBlock.append('<div class="photo-gallery-item photo-gallery-item-count"><div class="photo-gallery-item-inner"><div class="photo-gallery-item-count-text"><span>+' + (curBlock.find('.photo-gallery-item').length - 5) + '</span> фото</div></div>');
         }
     });
     
