@@ -5804,3 +5804,55 @@ footer {margin:60px 0 0 0}
     .exponent-text-more a {display:inline-block; height:51px; font-size:16px; line-height:51px; padding:0 15px; font-weight:500; color:#717171; background:#f4f4f4; text-transform:uppercase; letter-spacing:0.05em}
     .exponent-text-more a svg {display:none}
 }
+
+.covid-h3 {font-weight:normal}
+.covid-h3 strong {font-weight:500; color:#002856}
+.covid-h3-2 {font-weight:bold}
+.covid-cols {margin:36px -30px 102px -30px}
+.covid-cols::after {content:""; display:block; clear:both}
+.covid-col {float:left; width:50%; padding:0 30px}
+.covid-col p {margin:0}
+.covid-col p+p {margin:10px 0 0 0}
+
+@media screen and (max-width:1199px) {
+    .covid-cols {margin:36px 0 72px 0}
+    .covid-col {float:none; width:auto; padding:0; margin:10px 0 0 0}
+}
+
+.covid-list {margin:28px -50px 0 -50px; font-size:0; line-height:0; letter-spacing:-1px}
+.covid-item {display:inline-block; vertical-align:top; padding:50px 50px 0 50px; width:33.33%}
+.covid-item-inner {border-left:2px solid #c4c4c4; padding:0 0 0 16px; font-size:18px; line-height:27px; letter-spacing:0}
+.covid-item-inner span {color:#002856; font-weight:600}
+
+@media screen and (max-width:1199px) {
+    .covid-list {margin:28px 0 0 0}
+    .covid-item {display:block; padding:50px 0 0 0; width:auto}
+    .covid-item-inner {font-size:20px; line-height:30px}
+}
+
+@media screen and (min-width:1800px) {
+    .covid-item-inner {font-size:22px; line-height:33px}
+}
+
+.welcome-slider-covid {position:absolute; right:0; top:50%; transform:translateY(-50%); width:420px; padding:50px 40px 40px 40px; color:#fff; background:#002856; letter-spacing:0}
+.welcome-slider-covid-title {font-weight:900; font-size:22px; line-height:29px; text-transform:uppercase}
+.welcome-slider-covid-text {margin:17px 0 0 0; font-size:16px; line-height:24px}
+.welcome-slider-covid-btn {margin:26px 0 0 0}
+.welcome-slider-covid-btn .btn {color:#fff; border-color:#fff; font-size:13px; font-weight:500; padding:11px 19px}
+.welcome-slider-covid-btn .btn:hover,
+.welcome-slider-covid-btn .btn:active {color:#000; border-color:#fff; background:#fff}
+
+@media screen and (max-width:1199px) {
+    .welcome-slider-covid {display:none}
+}
+
+.welcome-covid-mobile {display:none}
+
+@media screen and (max-width:1199px) {
+    .welcome-covid-mobile {display:block; background:#002856; color:#fff; padding:40px 0}
+    .welcome-slider-covid-title {font-size:24px; line-height:31px}
+    .welcome-slider-covid-text {margin:10px 0 0 0; font-size:18px; line-height:27px}
+    .welcome-slider-covid-text br {display:none}
+    .welcome-slider-covid-btn {margin:20px 0 0 0}
+    .welcome-slider-covid-btn .btn {border-width:3px; font-size:20px; line-height:26px; padding:19px 0; display:block; font-weight:600; letter-spacing:0.05em}
+}
