@@ -460,7 +460,8 @@ label.error {display:block; font-size:12px; line-height:18px; color:#bd423a; mar
 .wrapper {width:100%; min-width:320px; position:relative; overflow:hidden; padding:80px 0 0 0}
 .page-main .wrapper {padding:0}
 
-header {height:80px; background:#000; position:fixed; left:0; top:0; right:0; z-index:20}
+header {height:80px; background:#000; position:absolute; left:0; top:0; right:0; z-index:20}
+header.fixed {position:fixed}
 
 .page-main header {background:none; transition:background 0.2s}
 .page-main header.fixed {background:#000}

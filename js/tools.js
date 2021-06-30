@@ -199,7 +199,7 @@ $(document).ready(function() {
             curBlock.append('<div class="photo-gallery-item photo-gallery-item-count"><div class="photo-gallery-item-inner"><div class="photo-gallery-item-count-text"><span>+' + (curBlock.find('.photo-gallery-item').length - 5) + '</span> фото</div></div>');
         }
     });
-    
+
     $('.photo-gallery-item-count-text').click(function(e) {
         $(this).parents().filter('.photo-gallery').find('.photo-gallery-item').eq(5).find('a').trigger('click');
     });
@@ -1767,7 +1767,8 @@ $(window).on('load resize scroll', function() {
         $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 70) + 'px'});
     });
 
-    if (windowScroll > 0) {
+    var curMarginTop = Number($('html').css('margin-top').replace('px', ''));
+    if (windowScroll > curMarginTop) {
         $('header').addClass('fixed');
     } else {
         $('header').removeClass('fixed');

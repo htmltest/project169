@@ -1,0 +1,67 @@
+/*!
+ * smartbanner.js v1.16.0 <https://github.com/ain/smartbanner.js>
+ * Copyright © 2020 Ain Tohvri, contributors. Licensed under GPL-3.0.
+ */
+.smartbanner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100px;
+  background: #fff;
+  font-family: GraphikLCG, sans-serif;
+  /** Android styles **/ }
+  .smartbanner__exit {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    display: block;
+    margin: -12px 0 0 0;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    background: url(close.svg) no-repeat; }
+  .smartbanner__icon {
+    position: absolute;
+    top: 15px;
+    left: 44px;
+    width: 70px;
+    height: 70px;
+    border-radius: 9px;
+    background-size: 100% 100%; }
+  .smartbanner__info {
+    position: absolute;
+    top: 20px;
+    left: 127px;
+    overflow-y: hidden;
+    color: #000; }
+    .smartbanner__info__title {
+      font-size: 14px;
+      line-height: 24px; }
+    .smartbanner__info__author, .smartbanner__info__price {
+      font-size: 14px;
+      line-height: 17px;
+      color: #7c7c7c;}
+  .smartbanner__button {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    z-index: 1;
+    display: block;
+    padding: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #000;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    text-decoration: none; }
+    .smartbanner__button__label {
+      text-align: center; }
+      
+@media screen and (max-width:479px) {
+      .smartbanner__button {
+          display: none;
+      }
+}
