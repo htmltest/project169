@@ -4270,6 +4270,10 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-list-hall.active {position:relative; left:auto; top:auto}
     .programm-list-item {margin-left:0 !important}
     .programm-list-item.hidden {display:block}
+    .programm-list-item-total {display:none}
+    .programm-list-item-total-inside {display:block}
+    .programm-list-item-total.hidden {display:none}
+    .programm-list-item-total-inside.hidden {display:block}
     .programm-list-item-content {padding:10px 20px}
     .programm-list-item-time {font-size:14px; line-height:18px}
     .programm-list-item-total .programm-list-item-time {position:absolute; left:20px; top:20px; margin:0}

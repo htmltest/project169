@@ -1299,6 +1299,9 @@ function redrawProgramm() {
                     var styleTotal = '';
                     if (typeof(curEvent.total) != 'undefined' && curEvent.total) {
                         classTotal = 'programm-list-item-total';
+                        if (typeof(curEvent.totalinside) != 'undefined' && curEvent.totalinside) {
+                            classTotal = classTotal + ' programm-list-item-total-inside';
+                        }
                         var widthTotal = 0;
                         for (var m = i - 1; m > -1; m--) {
                             for (var k = 0; k < curData[m].events.length; k++) {
