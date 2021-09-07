@@ -1535,6 +1535,7 @@ header.fixed .nav-reg {margin-top:10px}
 .speaker-card-session-date a {text-decoration:none; display:inline-block; vertical-align:middle; font-style:normal; font-size:14px; line-height:18px; padding:3px 6px; color:#414141; font-weight:normal; background:#eaeaea; margin:-2px 0 0 5px}
 .speaker-card-session-date a:hover {opacity:0.8}
 .speaker-card-session-title {margin:3px 0 0 0; color:#000}
+.speaker-card-session-title a {text-decoration:none}
 .speaker-card-session-types {font-size:0; line-height:0; letter-spacing:0; margin:2px 0 0 -8px}
 .speaker-card-session-types a {display:inline-block; text-decoration:none; vertical-align:middle; font-size:14px; line-height:18px; padding:2px 6px; color:#414141; font-weight:normal; margin:8px 0 0 8px}
 .speaker-card-session-types a:hover {opacity:0.8}
@@ -1640,6 +1641,7 @@ header.fixed .nav-reg {margin-top:10px}
 .speaker-event-row:first-child .speaker-event-date {padding:0}
 .speaker-event-date span {font-weight:500; margin:0 8px 0 0}
 .speaker-event-name {display:table-cell; vertical-align:middle; color:#000; font-size:18px; line-height:27px; padding:30px 0 0 0; position:relative}
+.speaker-event-name a {text-decoration:none}
 .speaker-event-row:first-child .speaker-event-name {padding:0}
 .speaker-event-play {display:block; position:absolute; left:-36px; top:32px; width:25px; height:25px; border:2px solid #d2d2d2; border-radius:50%}
 .speaker-event-row:first-child .speaker-event-play {top:2px}
@@ -2432,7 +2434,6 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .sitemap ul li a:hover svg {stroke:#ff2f66}
 .sitemap ul li ul {margin:10px 0 20px 0; font-weight:normal; column-count:1}
 .sitemap ul li ul li {position:relative; padding:0 0 0 30px}
-.sitemap ul li ul li:first-child {margin:0}
 .sitemap ul li ul li::after {content:""; display:block; position:absolute; left:0; top:13px; width:20px; height:1px; background:#c4c4c4}
 .sitemap ul li ul li a {color:#504f4f}
 .sitemap ul li ul li a:hover {color:#ff2f66}
@@ -3509,6 +3510,7 @@ h1+.main-block {margin:80px 0 0 0}
 .event-header-hash {font-weight:normal; font-size:0; line-height:0; letter-spacing:-1px; text-transform:uppercase; color:#000; margin:0 -10px}
 .event-header-hash a {display:inline-block; vertical-align:top; padding:8px 15px; margin:20px 10px 0 10px; font-size:18px; line-height:27px; letter-spacing:0.03em; text-decoration:none; color:#000}
 .event-header-hash a:hover {opacity:0.8}
+.event-header-muf {float:left; clear:left; width:275px; background:#f8f8f8; padding:30px 0 30px 30px; color:#000; margin:0 0 30px 0}
 .event-header-where {float:left; clear:left; width:275px; background:#f8f8f8; padding:30px 0 30px 30px; color:#000}
 .event-header-date {font-size:18px; line-height:23px}
 .event-header-date::after {content:""; display:block; clear:both}
@@ -3541,6 +3543,7 @@ h1+.main-block {margin:80px 0 0 0}
 @media screen and (min-width:1800px) {
     .event-header {margin:0}
     .event-header-title {float:left; clear:left; width:calc(100% - 697px)}
+    .event-header-muf {float:right; clear:right; width:400px; background:#f8f8f8; margin-right:140px}
     .event-header-where {float:right; clear:right; width:400px; margin:0 140px 0 0}
     .event-header-date {font-size:22px; line-height:29px}
     .event-header-place {font-size:30px; line-height:39px}
@@ -3554,7 +3557,9 @@ h1+.main-block {margin:80px 0 0 0}
     .event-header {position:relative; padding:54px 0 0 0}
     .event-header-title {float:none; width:auto}
     .event-header-title h2 {font-size:40px; line-height:52px; font-weight:900}
+    .event-header-muf {float:none; width:auto; background:none; padding:0; position:absolute; left:0; top:0}
     .event-header-where {float:none; width:auto; background:none; padding:0; position:absolute; left:0; top:0}
+    .event-header-muf+.event-header-where {left:200px}
     .event-header-date {float:right; font-size:20px; line-height:31px}
     .event-header-date-time {margin:0 0 0 17px}
     .event-header-place {float:left; font-size:24px; line-height:31px; margin:0 26px 0 0}
@@ -3573,7 +3578,9 @@ h1+.main-block {margin:80px 0 0 0}
     .event-header-hash-mobile {display:block; margin-bottom:30px}
     .event-header-hash a.no-mobile {display:none}
     .event-header-hash a {font-size:16px; line-height:21px}
+    .event-header-muf {position:relative; left:auto; top:auto; margin:30px 0 0 0; background:#f8f8f8; padding:30px}
     .event-header-where {position:relative; left:auto; top:auto; margin:30px 0 0 0; background:#f8f8f8; padding:30px}
+    .event-header-muf+.event-header-where {left:auto}
     .event-header-date {float:none; font-size:18px; line-height:27px}
     .event-header-place {float:none; margin:6px 0 0 0}
     .event-header-text {margin:30px 0 0 0; width:auto; float:none}
