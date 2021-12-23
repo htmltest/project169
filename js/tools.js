@@ -3,7 +3,7 @@ $(document).ready(function() {
     $('.page-link').click(function(e) {
         var curBlock = $(this.hash);
         if (curBlock.length == 1) {
-            $('html, body').animate({'scrollTop': curBlock.offset().top});
+            $('html, body').animate({'scrollTop': curBlock.offset().top - $('header').outerHeight() - 50});
             e.preventDefault();
         }
     });
@@ -1220,6 +1220,84 @@ $(document).ready(function() {
         var curBlock = $(this).parents().filter('.exponent-text');
         curBlock.toggleClass('open');
         e.preventDefault();
+    });
+
+    $('body').on('click', '.academy-welcome-social-item-fb', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://www.facebook.com/sharer/sharer.php?u=' + curUrl, curTitle);
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.academy-welcome-social-item-telegram', function(e) {
+        var curTitle = encodeURIComponent($('title').html());
+        var curUrl = encodeURIComponent(window.location.href);
+
+        popupCenter('https://telegram.me/share/url?url=' + curUrl + '&text=' + curTitle, curTitle);
+
+        e.preventDefault();
+    });
+
+    $('.academy-lectures').each(function() {
+        var curBlock = $(this);
+        var curSize = 4;
+        if (curBlock.find('.archive-card-video-big').length > curSize) {
+            $('.academy-lectures-more').addClass('visible');
+        }
+    });
+
+    $('.academy-lectures-more a').click(function(e) {
+        var curBlock = $(this).parent().parent().find('.academy-lectures');
+        var countItems = curBlock.find('.archive-card-video-big').length;
+        var countVisible = curBlock.find('.archive-card-video-big:visible').length;
+        var curSize = 4;
+        countVisible += curSize;
+        if (countVisible >= countItems) {
+            $('.academy-lectures-more').removeClass('visible');
+        }
+        curBlock.find('.archive-card-video-big:lt(' + countVisible + ')').addClass('visible');
+        e.preventDefault();
+    });
+
+    $('.academy-add .video-gallery').each(function() {
+        var curBlock = $(this);
+        var curSize = 12;
+        if (curBlock.find('.video-gallery-item').length > curSize) {
+            $('.academy-add-video-gallery-more').addClass('visible');
+        }
+    });
+
+    $('.academy-add-video-gallery-more a').click(function(e) {
+        var curBlock = $('.academy-add .video-gallery');
+        var countItems = curBlock.find('.video-gallery-item').length;
+        var countVisible = curBlock.find('.video-gallery-item:visible').length;
+        var curSize = 12;
+        countVisible += curSize;
+        if (countVisible >= countItems) {
+            $('.academy-add-video-gallery-more').removeClass('visible');
+        }
+        curBlock.find('.video-gallery-item:lt(' + countVisible + ')').addClass('visible');
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.faq-item-title', function(e) {
+        var curItem = $(this).parent();
+        curItem.toggleClass('open');
+        curItem.find('.faq-item-text').slideToggle();
+        e.preventDefault();
+    });
+    
+    $('.archive-card-video-big-lectors-item').on('mouseenter', function() {
+        var curWindow = $(this).find('.archive-card-video-big-lectors-item-window');
+        if (curWindow.offset().left + curWindow.outerWidth() > $('.wrapper').width()) {
+            curWindow.addClass('to-right');
+        }
+    });
+
+    $('.archive-card-video-big-lectors-item').on('mouseleave', function() {
+        $('.archive-card-video-big-lectors-item-window').removeClass('to-right');
     });
 
 });
