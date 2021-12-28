@@ -2764,16 +2764,14 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 
 .analytics-directions {margin:60px -40px 0 -40px}
 .analytics-directions-inner {display:table; width:100%; border-collapse:collapse; table-layout:fixed}
-.analytics-direction {display:table-cell; vertical-align:top; padding:0 40px; width:33.33%; border-left:1px solid #d7d7d7}
+.analytics-direction {display:table-cell; vertical-align:top; padding:0 40px; width:25%; border-left:1px solid #d7d7d7; text-align:center}
 .analytics-direction:first-child {border-left:none}
-.analytics-direction-icon {height:56px; line-height:0}
-.analytics-direction-title {font-weight:500; font-size:22px; line-height:29px; color:#000}
+.analytics-direction-icon {height:70px; line-height:70px}
+.analytics-direction-icon img {display:inline-block; vertical-align:middle; max-height:70px}
+.analytics-direction-title {font-size:20px; line-height:26px; color:#000; margin:25px 0 0 0}
 
 @media screen and (min-width:1800px) {
     .analytics-directions {margin:80px -40px 0 -40px}
-    .analytics-direction-icon {height:80px}
-    .analytics-direction-icon img {transform:scale(1.5); transform-origin:left top}
-    .analytics-direction-title {font-size:30px; line-height:39px}
 }
 
 @media screen and (max-width:1199px) {
@@ -2790,7 +2788,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
     .analytics-direction {display:block; padding:26px 0 0 0; margin:26px 0 0 0; width:auto}
     .analytics-direction:first-child {padding:0; margin:0}
     .analytics-direction-icon {display:block; width:auto; padding:0; height:auto}
-    .analytics-direction-title {display:block; padding:24px 0 0 0; font-size:24px; line-height:31px}
+    .analytics-direction-title {display:block; padding:24px 0 0 0; font-size:24px; line-height:31px; margin:0}
 }
 
 .analytics-team-list {margin:0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
@@ -5883,28 +5881,54 @@ footer {margin:60px 0 0 0}
     .welcome-slider-covid-btn .btn {border-width:3px; font-size:20px; line-height:26px; padding:19px 0; display:block; font-weight:600; letter-spacing:0.05em}
 }
 
-.academy-welcome-urban {float:right; line-height:0; padding:254px 0 0 0}
-.academy-welcome-content {float:left; padding:171px 0 0 0; max-width:600px; color:#fff; letter-spacing:0}
-.academy-welcome-tags::after {content:""; display:block; clear:both}
-.academy-welcome-tag {float:left; margin:0 10px 0 0; border:1px solid #fff; font-size:14px; line-height:18px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; padding:12px 19px}
-.academy-welcome-title {margin:30px 0 0 0; font-size:80px; line-height:80px; font-weight:900; text-transform:uppercase}
-.academy-welcome-subtitle {margin:19px 0 0 0; font-size:30px; line-height:45px; font-weight:600}
-.academy-welcome-social {margin:79px 0 0 0}
-.academy-welcome-social::after {content:""; display:block; clear:both}
-.academy-welcome-social-title {float:left; font-weight:600; font-size:18px; line-height:32px; margin:0 10px 0 0}
-.academy-welcome-social-item {float:left; margin:0 0 0 20px}
-.academy-welcome-social-item svg {display:block; width:32px; height:32px; fill:#fff; transition:fill 0.2s}
-.academy-welcome-social-item a:hover svg {fill:#94d6ea}
+.welcome-academy {margin-top:-80px}
+.welcome-academy .welcome-slider-item-bg-new::before {display:none}
+.welcome-academy .welcome-slider-item-bg-new-mobile {display:none}
+.welcome-academy .welcome-slider-item-bg-new-mobile::before {display:none}
+.welcome-academy .welcome-slider-item-bg-new-mobile::after {display:none}
+
+@media screen and (min-width:1800px) {
+    .welcome-academy {margin-top:-110px}
+}
 
 @media screen and (max-width:1199px) {
-    .academy-welcome-urban {float:none; padding:121px 0 0 0}
-    .academy-welcome-urban::after {content:""; display:block; clear:both}
-    .academy-welcome-urban img {float:right; width:163px}
-    .academy-welcome-content {float:nonee; padding:51px 0 0 0; max-width:none}
+    .welcome-academy {margin:0}
+    .welcome-academy .welcome-slider-item-bg-new {display:none}
+    .welcome-academy .welcome-slider-item-bg-new-mobile {display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
+}
+
+.academy-welcome-content {float:left; padding:50px 0 0 60px; max-width:660px; color:#fff; letter-spacing:0; margin-top:80px}
+.academy-welcome-tags::after {content:""; display:block; clear:both}
+.academy-welcome-tag {float:left; margin:0 10px 0 0; border:1px solid #fff; font-size:14px; line-height:18px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; padding:12px 19px}
+.academy-welcome-title {margin:25px 0 0 0; font-size:80px; line-height:80px; font-weight:900; text-transform:uppercase}
+.academy-welcome-subtitle {margin:15px 0 0 0; font-size:36px; line-height:54px; font-weight:300}
+.academy-welcome-subtitle-text {margin:-6px 0 0 0; font-size:22px; line-height:33px; font-weight:300}
+.academy-welcome-social {margin:97px 0 0 0}
+.academy-welcome-social::after {content:""; display:block; clear:both}
+.academy-welcome-social-item {float:left; margin:0 0 0 20px}
+.academy-welcome-social-item:first-child {margin:0}
+.academy-welcome-social-item svg {display:block; width:32px; height:32px; fill:#fff; transition:fill 0.2s}
+.academy-welcome-social-item a:hover svg {fill:#94d6ea}
+.academy-welcome-urban {float:right; line-height:0; padding:126px 60px 0 0; margin-top:80px}
+.academy-welcome-urban span {float:left; width:160px; font-weight:bold; font-size:24px; line-height:20px; text-transform:uppercase; color:#fff}
+.academy-welcome-urban img {float:left}
+.academy-welcome-urban-mobile {display:none}
+
+@media screen and (min-width:1800px) {
+    .academy-welcome-content {margin-top:110px}
+    .academy-welcome-urban {margin-top:110px}
+}
+
+@media screen and (max-width:1199px) {
+    .academy-welcome-content {float:none; padding:80px 0 0 0; max-width:none; margin:0}
     .academy-welcome-tag {padding:11px 15px; font-size:16px; line-height:21px}
-    .academy-welcome-title {margin:19px 0 0 0; font-size:60px; line-height:66px}
-    .academy-welcome-subtitle {margin:4px 0 0 0; font-size:26px; line-height:39px}
-    .academy-welcome-social {margin:43px 0 0 0}
+    .academy-welcome-title {margin:25px 0 0 0; font-size:60px; line-height:66px}
+    .academy-welcome-subtitle {margin:0; font-size:26px; line-height:39px}
+    .academy-welcome-subtitle-text {margin:-4px 0 0 0; font-size:20px; line-height:30px}
+    .academy-welcome-social {margin:28px 0 0 0}
+    .academy-welcome-urban {display:none}
+    .academy-welcome-urban-mobile {display:block; line-height:0; margin:84px 0 0 0}
+    .academy-welcome-urban-mobile img {display:block; width:164px}
 }
 
 @media screen and (max-width:479px) {
@@ -5940,7 +5964,7 @@ footer {margin:60px 0 0 0}
     .academy-about-text-more a span:nth-child(2) {display:none}
     .academy-about-text.open+.academy-about-text-more a span:nth-child(1) {display:none}
     .academy-about-text.open+.academy-about-text-more a span:nth-child(2) {display:inline}
-    
+
     .academy-main-block-title {font-size:40px; line-height:52px}
 }
 
@@ -6116,8 +6140,8 @@ footer {margin:60px 0 0 0}
 }
 
 .academy-add .video-gallery {margin-top:25px}
-.academy-add .video-gallery .video-gallery-item:nth-child(n+13) {display:none}
-.academy-add .video-gallery .video-gallery-item:nth-child(n+13).visible {display:inline-block}
+.academy-add .video-gallery .video-gallery-item:nth-child(n+5) {display:none}
+.academy-add .video-gallery .video-gallery-item:nth-child(n+5).visible {display:inline-block}
 .academy-add .video-gallery-item-preview-icon {background:rgba(107, 205, 178, 0.6)}
 .academy-add .video-gallery-item a:hover .video-gallery-item-preview-icon {background:rgba(107, 205, 178, 0.8)}
 
@@ -6182,13 +6206,13 @@ footer {margin:60px 0 0 0}
     .academy-authors-text.open+.academy-authors-text-more a span:nth-child(2) {display:inline}
 }
 
-.academy-authors-projects-title {margin:40px 0 0 0; font-weight:600; max-width:59.05%}
+.academy-authors-projects-title {margin:40px 0 0 0; font-weight:600; max-width:59.05%; font-size:1.1em; line-height:1.5em}
 .academy-authors-projects {display:table; width:100%; margin:44px 0 0 0; border-collapse:collapse}
 .academy-authors-projects-row {display:table-row}
 .academy-authors-projects-item {display:table-cell; vertical-align:top; width:25%; border-left:1px solid #dadada; border-right:1px solid #dadada; text-align:center; padding:0 20px}
-.academy-authors-projects-item-icon {line-height:42px; height:42px}
-.academy-authors-projects-item-icon img {display:inline-block; vertical-align:middle; max-height:42px}
-.academy-authors-projects-item-title {margin:22px 0 0 0; font-size:20px; line-height:26px; color:#000}
+.academy-authors-projects-item-icon {line-height:70px; height:70px}
+.academy-authors-projects-item-icon img {display:inline-block; vertical-align:middle; max-height:70px}
+.academy-authors-projects-item-title {margin:25px 0 0 0; font-size:20px; line-height:26px; color:#000}
 
 @media screen and (max-width:1199px) {
     .academy-authors-projects-title {margin:50px 0 0 0; font-weight:normal; max-width:none; font-size:24px; line-height:31px}
@@ -6200,7 +6224,7 @@ footer {margin:60px 0 0 0}
     .academy-authors-projects-item-title {display:table-cell; vertical-align:middle; padding:0 0 0 20px; font-size:24px; line-height:31px}
 }
 
-.faq {margin:30px 0 0 0; border-bottom:1px solid #e2e2e2}
+.faq {margin:30px 0 0 0; border-bottom:1px solid #e2e2e2; max-width:80%}
 .faq-item {border-top:1px solid #e2e2e2}
 .faq-item-title {display:block; position:relative; padding:35px 30px 35px 0; font-size:22px; line-height:29px; text-decoration:none; font-weight:500}
 .faq-item-title svg {display:block; width:25px; height:25px; position:absolute; right:20px; top:38px; fill:none; stroke:#000; transition:transform 0.2s}
@@ -6210,7 +6234,7 @@ footer {margin:60px 0 0 0}
 .faq-item-text > *:last-child {margin-bottom:0}
 
 @media screen and (max-width:1199px) {
-    .faq {margin:40px 0 0 0}
+    .faq {margin:40px 0 0 0; max-width:none}
     .faq-item-title {padding-right:60px; font-size:24px; line-height:31px}
     .faq-item-title svg {right:0; top:50%; margin-top:-12px}
     .faq-item-text {padding:0 0 33px 0; margin:-15px 0 0 0}

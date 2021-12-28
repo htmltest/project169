@@ -1250,20 +1250,14 @@ $(document).ready(function() {
 
     $('.academy-lectures-more a').click(function(e) {
         var curBlock = $(this).parent().parent().find('.academy-lectures');
-        var countItems = curBlock.find('.archive-card-video-big').length;
-        var countVisible = curBlock.find('.archive-card-video-big:visible').length;
-        var curSize = 4;
-        countVisible += curSize;
-        if (countVisible >= countItems) {
-            $('.academy-lectures-more').removeClass('visible');
-        }
-        curBlock.find('.archive-card-video-big:lt(' + countVisible + ')').addClass('visible');
+        $('.academy-lectures-more').removeClass('visible');
+        curBlock.find('.archive-card-video-big').addClass('visible');
         e.preventDefault();
     });
 
     $('.academy-add .video-gallery').each(function() {
         var curBlock = $(this);
-        var curSize = 12;
+        var curSize = 4;
         if (curBlock.find('.video-gallery-item').length > curSize) {
             $('.academy-add-video-gallery-more').addClass('visible');
         }
@@ -1271,14 +1265,8 @@ $(document).ready(function() {
 
     $('.academy-add-video-gallery-more a').click(function(e) {
         var curBlock = $('.academy-add .video-gallery');
-        var countItems = curBlock.find('.video-gallery-item').length;
-        var countVisible = curBlock.find('.video-gallery-item:visible').length;
-        var curSize = 12;
-        countVisible += curSize;
-        if (countVisible >= countItems) {
-            $('.academy-add-video-gallery-more').removeClass('visible');
-        }
-        curBlock.find('.video-gallery-item:lt(' + countVisible + ')').addClass('visible');
+        $('.academy-add-video-gallery-more').removeClass('visible');
+        curBlock.find('.video-gallery-item').addClass('visible');
         e.preventDefault();
     });
 
