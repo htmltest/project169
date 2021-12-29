@@ -5881,18 +5881,25 @@ footer {margin:60px 0 0 0}
     .welcome-slider-covid-btn .btn {border-width:3px; font-size:20px; line-height:26px; padding:19px 0; display:block; font-weight:600; letter-spacing:0.05em}
 }
 
-.welcome-academy {margin-top:-80px}
+.welcome.welcome-academy {margin-top:-80px}
 .welcome-academy .welcome-slider-item-bg-new::before {display:none}
 .welcome-academy .welcome-slider-item-bg-new-mobile {display:none}
 .welcome-academy .welcome-slider-item-bg-new-mobile::before {display:none}
 .welcome-academy .welcome-slider-item-bg-new-mobile::after {display:none}
 
+.page-main .welcome-slider-item.welcome-academy {border-top:80px solid #000; overflow:hidden}
+.page-main .welcome-slider-item.welcome-academy .welcome-slider-item-container {margin-top:-80px}
+
 @media screen and (min-width:1800px) {
-    .welcome-academy {margin-top:-110px}
+    .welcome.welcome-academy {margin-top:-110px}
+    .page-main .welcome-slider-item.welcome-academy {border-top:110px solid #000}
+    .page-main .welcome-slider-item.welcome-academy .welcome-slider-item-container {margin-top:-110px}
 }
 
 @media screen and (max-width:1199px) {
-    .welcome-academy {margin:0}
+    .welcome.welcome-academy {margin:0}
+    .page-main .welcome-slider-item.welcome-academy {border-top:none}
+    .page-main .welcome-slider-item.welcome-academy .welcome-slider-item-container {margin-top:0}
     .welcome-academy .welcome-slider-item-bg-new {display:none}
     .welcome-academy .welcome-slider-item-bg-new-mobile {display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
 }
@@ -5900,11 +5907,15 @@ footer {margin:60px 0 0 0}
 .academy-welcome-content {float:left; padding:50px 0 0 60px; max-width:660px; color:#fff; letter-spacing:0; margin-top:80px}
 .academy-welcome-tags::after {content:""; display:block; clear:both}
 .academy-welcome-tag {float:left; margin:0 10px 0 0; border:1px solid #fff; font-size:14px; line-height:18px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; padding:12px 19px}
+.page-main .academy-welcome-tag {background:#fff; color:#56a48c}
 .academy-welcome-title {margin:25px 0 0 0; font-size:80px; line-height:80px; font-weight:900; text-transform:uppercase}
 .academy-welcome-subtitle {margin:15px 0 0 0; font-size:36px; line-height:54px; font-weight:300}
 .academy-welcome-subtitle-text {margin:-6px 0 0 0; font-size:22px; line-height:33px; font-weight:300}
 .academy-welcome-social {margin:97px 0 0 0}
 .academy-welcome-social::after {content:""; display:block; clear:both}
+.academy-welcome-social-link {float:left; margin:-6px 6px 0 0}
+.academy-welcome-social-link a {display:block; border:2px solid #fff; color:#fff; padding:0 18px; height:44px; font-size:14px; font-weight:600; line-height:40px; text-transform:uppercase; letter-spacing:0.05em; text-decoration:none; transition:background 0.2s, color 0.2s}
+.academy-welcome-social-link a:hover {background:#fff; color:#56a48c}
 .academy-welcome-social-item {float:left; margin:0 0 0 20px}
 .academy-welcome-social-item:first-child {margin:0}
 .academy-welcome-social-item svg {display:block; width:32px; height:32px; fill:#fff; transition:fill 0.2s}
@@ -5928,6 +5939,7 @@ footer {margin:60px 0 0 0}
     .academy-welcome-social {margin:28px 0 0 0}
     .academy-welcome-urban {display:none}
     .academy-welcome-urban-mobile {display:block; line-height:0; margin:84px 0 0 0}
+    .page-main .academy-welcome-urban-mobile {margin:40px 0 0 0}
     .academy-welcome-urban-mobile img {display:block; width:164px}
 }
 
@@ -5935,6 +5947,11 @@ footer {margin:60px 0 0 0}
     .academy-welcome-title {font-size:40px; line-height:46px}
     .academy-welcome-tag {padding:10px 13px; font-size:14px; line-height:18px}
     .academy-welcome-subtitle {font-size:20px; line-height:30px}
+    .page-main .academy-welcome-social {margin:20px 0 0 0}
+    .academy-welcome-social-link {float:none; margin:0 0 10px 0}
+    .academy-welcome-social-link::after {content:""; display:block; clear:both}
+    .academy-welcome-social-link a {float:left}
+    .academy-welcome-social-link+.academy-welcome-social-item {margin:0}
 }
 
 .academy-about {margin:80px 0 0 0; color:#000}
