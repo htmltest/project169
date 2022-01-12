@@ -392,7 +392,7 @@ $(document).ready(function() {
         windowHTML +=           '<div class="window-photo-social">';
         windowHTML +=               '<div class="window-photo-social-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share"></use></svg></div>';
         windowHTML +=               '<div class="window-photo-social-window">';
-        windowHTML +=                   '<a href="#" class="window-photo-social-item window-photo-social-item-link"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-link"></use></svg></a>';
+        windowHTML +=                   '<a href="#" data-clipboard-target="#ownd-url" class="window-photo-social-item window-photo-social-item-link"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-link"></use></svg></a>';
         windowHTML +=                   '<a href="#" class="window-photo-social-item window-photo-social-item-fb"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-fb"></use></svg></a>';
         windowHTML +=                   '<a href="#" class="window-photo-social-item window-photo-social-item-vk"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-vk"></use></svg></a>';
         windowHTML +=               '</div>';
@@ -414,6 +414,18 @@ $(document).ready(function() {
 
         $('.window-photo').remove();
         $('body').append(windowHTML);
+
+		var picId = curLink.data( 'id' );
+		var picUrl = curLink.data( 'url' );
+		var url = $( '#ownd-url-base' ).val() +  picId + '/';
+		if ( picUrl != 'undefined' )
+		{
+			url = picUrl;
+		}
+		history.pushState( '', '', url );
+		$( '.window-photo-social-item-vk' ).attr( 'href', 'https://vk.com/share.php?url=http://' + document.domain + url );
+		$( '.window-photo-social-item-fb' ).attr( 'href', 'https://www.facebook.com/sharer/sharer.php?u=http://' + document.domain + url );
+		$( '#ownd-url' ).text( 'http://' + document.domain + url );
 
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
@@ -464,6 +476,19 @@ $(document).ready(function() {
             var currentSlide = $('.window-photo-slider-list').slick('slickCurrentSlide');
             $('.window-photo-preview-list-item.active').removeClass('active');
             $('.window-photo-preview-list-item').eq(currentSlide).addClass('active');
+
+			var picId = $('.window-photo-preview-list-item').eq(currentSlide).find( 'a' ).data( 'id' );
+			var picUrl = $('.window-photo-preview-list-item').eq(currentSlide).find( 'a' ).data( 'url' );
+			var url = $( '#ownd-url-base' ).val() +  picId + '/';
+			if ( picUrl && picUrl != 'undefined' )
+			{
+				url = picUrl;
+			}
+			history.pushState( '', '', url );
+			$( '.window-photo-social-item-vk' ).attr( 'href', 'https://vk.com/share.php?url=http://' + document.domain + url );
+			$( '.window-photo-social-item-fb' ).attr( 'href', 'https://www.facebook.com/sharer/sharer.php?u=http://' + document.domain + url );
+			$( '#ownd-url' ).text( 'http://' + document.domain + url );
+
             $('.window-photo-preview-inner').mCustomScrollbar('scrollTo', $('.window-photo-preview-list-item').eq(currentSlide));
             $('.window-photo-download').attr('href', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
             $('.window-photo-social-item-link').attr('data-clipboard-text', $('.window-photo-slider-list-item').eq(currentSlide).find('img').attr('data-src'));
@@ -501,6 +526,11 @@ $(document).ready(function() {
         $('.wrapper').css({'top': 0});
         $(window).scrollTop($('.wrapper').data('curScroll'));
         e.preventDefault();
+
+		if ( $( '#ownd-url-base' ).length )
+		{
+			history.pushState( '', '', $( '#ownd-url-base' ).val() );
+		}
     });
 
     $('body').on('keyup', function(e) {
@@ -559,7 +589,7 @@ $(document).ready(function() {
         windowHTML +=           '<div class="window-video-social">';
         windowHTML +=               '<div class="window-video-social-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share"></use></svg></div>';
         windowHTML +=               '<div class="window-video-social-window">';
-        windowHTML +=                   '<a href="#" class="window-video-social-item window-video-social-item-link"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-link"></use></svg></a>';
+        windowHTML +=                   '<a href="#" data-clipboard-target="#ownd-url" class="window-video-social-item window-video-social-item-link"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-link"></use></svg></a>';
         windowHTML +=                   '<a href="#" class="window-video-social-item window-video-social-item-fb"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-fb"></use></svg></a>';
         windowHTML +=                   '<a href="#" class="window-video-social-item window-video-social-item-vk"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-vk"></use></svg></a>';
         windowHTML +=               '</div>';
@@ -571,7 +601,7 @@ $(document).ready(function() {
         var galleryLength = curGallery.find('.video-gallery-item').length;
         for (var i = 0; i < galleryLength; i++) {
             var curGalleryItem = curGallery.find('.video-gallery-item').eq(i);
-            windowHTML +=               '<div class="window-video-slider-list-item">' +
+            windowHTML +=               '<div class="window-video-slider-list-item" data-id="' + curGalleryItem.find('a').data( 'id' ) + '">' +
                                             '<div class="window-video-slider-list-item-inner" data-videourl="' + curGalleryItem.find('a').attr('href') + '"></div>' +
                                         '</div>';
         }
@@ -582,6 +612,13 @@ $(document).ready(function() {
 
         $('.window-video').remove();
         $('body').append(windowHTML);
+
+		var videoId = curLink.data( 'id' );
+		var url = $( '#ownd-url-base' ).val() +  videoId + '/';
+		history.pushState( '', '', url );
+		$( '.window-video-social-item-vk' ).attr( 'href', 'http://vk.com/share.php?url=http://' + document.domain + url );
+		$( '.window-video-social-item-fb' ).attr( 'href', 'http://www.facebook.com/sharer/sharer.php?u=http://' + document.domain + url );
+		$( '#ownd-url' ).text( 'http://' + document.domain + url );
 
         $('.wrapper').css({'top': -curScroll});
         $('.wrapper').data('curScroll', curScroll);
@@ -605,6 +642,15 @@ $(document).ready(function() {
             ]
         }).on('setPosition', function(event, slick) {
             var currentSlide = $('.window-video-slider-list').slick('slickCurrentSlide');
+
+			var videoId = $('.slick-current .window-video-slider-list-item').data( 'id' );
+			var url = $( '#ownd-url-base' ).val() +  videoId + '/';
+            console.log(url);
+			history.pushState( '', '', url );
+			$( '.window-video-social-item-vk' ).attr( 'href', 'http://vk.com/share.php?url=http://' + document.domain + url );
+			$( '.window-video-social-item-fb' ).attr( 'href', 'http://www.facebook.com/sharer/sharer.php?u=http://' + document.domain + url );
+			$( '#ownd-url' ).text( 'http://' + document.domain + url );
+
             $('.window-video-slider-list-item-inner').html('');
             $('.window-video-social-item-link').attr('data-clipboard-text', $('.window-video-slider-list-item').eq(currentSlide).find('.window-video-slider-list-item-inner').attr('data-videourl'));
             $('.window-video-slider-list-item').eq(currentSlide).find('.window-video-slider-list-item-inner').each(function() {
@@ -622,6 +668,11 @@ $(document).ready(function() {
         $('.wrapper').css({'top': 0});
         $(window).scrollTop($('.wrapper').data('curScroll'));
         e.preventDefault();
+
+		if ( $( '#ownd-url-base' ).length )
+		{
+			history.pushState( '', '', $( '#ownd-url-base' ).val() );
+		}
     });
 
     $('body').on('keyup', function(e) {
@@ -743,6 +794,12 @@ $(document).ready(function() {
         $('html, body').animate({'scrollTop': 0});
         e.preventDefault();
     });
+
+	if ( $( '#ownd-open-news' ).length )
+	{
+		$( '#ownd-open-news' ).click();
+		$( '#ownd-open-news' ).remove();
+	}
 
     $.validator.addMethod('phoneRU',
         function(phone_number, element) {
@@ -1952,7 +2009,7 @@ function initForm(curForm) {
     });
 }
 
-function windowOpen(linkWindow, dataWindow) {
+function windowOpen(linkWindow, dataWindow, url) {
     if ($('.window').length == 0) {
         var curPadding = $('.wrapper').width();
         var curScroll = $(window).scrollTop();
@@ -1995,6 +2052,13 @@ function windowOpen(linkWindow, dataWindow) {
 
         $(window).trigger('resize');
 
+		if ( url )
+		{
+			history.pushState( '', '', url );
+
+			$( '.window-title-social-item-vk' ).attr( 'href', 'https://vk.com/share.php?url=http://' + document.domain + url );
+			$( '.window-title-social-item-fb' ).attr( 'href', 'https://www.facebook.com/sharer/sharer.php?u=http://' + document.domain + url );
+		}
     });
 }
 
@@ -2013,6 +2077,11 @@ function windowClose() {
             }
         }
     }
+
+	if ( $( '#ownd-url-base' ).length )
+	{
+		history.pushState( '', '', $( '#ownd-url-base' ).val() );
+	}
 }
 
 $(document).ready(function() {
