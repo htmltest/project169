@@ -563,7 +563,7 @@ header.fixed .nav-reg {margin-top:10px}
 .nav ul li.active span::before {transform:scale(1, 1)}
 .nav ul li.nav-fest {font-weight:bold; font-size:15px}
 .nav ul li.nav-fest a {color:#ffde4f}
-.nav ul li ul {display:none; position:absolute; right:3px; transform:translateX(50%); top:60px; white-space:nowrap; background:#000; border:1px solid #1a1a1a; padding:0 40px 8px 18px; font-weight:normal; font-size:14px; line-height:21px; text-transform:none}
+.nav ul li ul {display:none; position:absolute; left:0; top:60px; white-space:nowrap; background:#000; border:1px solid #1a1a1a; padding:0 40px 8px 18px; font-weight:normal; font-size:14px; line-height:21px; text-transform:none}
 .nav ul li:hover ul {display:block}
 .nav ul li ul::before {content:""; display:block; position:absolute; left:50%; top:-7px; width:12px; height:12px; border-left:1px solid #1a1a1a; border-top:1px solid #1a1a1a; margin-left:-6px; transform:rotate(45deg); background:#000}
 .nav ul li ul li {float:none; margin:10px 0 0 0}
@@ -2410,7 +2410,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 @media screen and (max-width:1199px) {
     .press-about h1 {float:none; width:auto}
     .press-about-text {float:none; width:auto; margin:40px 0 0 0}
-    .press-about-text-1 {font-size:28px; line-height:36px 0 0 0}
+    .press-about-text-1 {font-size:28px; line-height:36px}
     .press-about-contacts {float:none; clear:none; width:auto; padding:40px 0 0 0}
     .press-about-contacts-title {font-size:24px; line-height:31px}
     .press-about-contacts-text {margin:20px 0 0 0}
@@ -2563,7 +2563,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .award-nomination:first-child {margin:0}
 .award-nomination-header {position:relative; padding:0 0 0 59px; font-weight:500; font-size:30px; line-height:39px; color:#000}
 .award-nomination-header span {position:absolute; left:0; top:0; color:#4680c2}
-.award-nomination-header span svg {display:block-inline; width:39px; height:36px; vertical-align:top; margin:-2px 0 0 0; fill:none}
+.award-nomination-header span svg {display:inline-block; width:39px; height:36px; vertical-align:top; margin:-2px 0 0 0; fill:none}
 .award-nominants {margin:40px 0 0 0; border-top:1px solid #e2e2e2}
 .award-nominant {border-bottom:1px solid #e2e2e2}
 .award-nominant-header {display:table; width:100%; cursor:pointer}
@@ -2602,7 +2602,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
     .award-nominant-header-title {font-size:30px; line-height:39px}
     .award-nominant-header-title span {height:31px; font-size:14px; line-height:31px}
     .award-nominant-header-text {margin:6px 0 0 0}
-    .award-nominant-header-content svg {width:24px; height:14px; margin-top:-7px 0 0 0; right:0}
+    .award-nominant-header-content svg {width:24px; height:14px; margin-top:-7px; right:0}
     .award-nominant-container {padding:50px 50px 68px 50px}
     .award-nominant-container h6 {margin:40px 0 10px 0}
 }
@@ -3015,6 +3015,9 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .analytics-library-more {margin:60px 0 0 0; max-width:1240px}
 .analytics-library-more a {display:block; height:60px; background:#f4f4f4; text-align:center; text-decoration:none; text-transform:uppercase; color:#717171; font-weight:500; font-size:14px; line-height:60px; letter-spacing:0.05em}
 .analytics-library-more a:hover {color:#000}
+.analytics-programm-more {margin:60px 0 0 0}
+.analytics-programm-more a {display:block; height:60px; background:#f4f4f4; text-align:center; text-decoration:none; text-transform:uppercase; color:#717171; font-weight:500; font-size:14px; line-height:60px; letter-spacing:0.05em}
+.analytics-programm-more a:hover {color:#000}
 
 @media screen and (min-width:1800px) {
     .analytics-library-item {padding:40px}
@@ -3038,6 +3041,8 @@ a.partners-group-global-logo-inner:hover {top:-5px}
     .analytics-library-item-preview img {height:208px}
     .analytics-library-more {margin:48px 0 0 0}
     .analytics-library-more a {height:63px; line-height:63px; font-size:16px}
+    .analytics-programm-more {margin:48px 0 0 0}
+    .analytics-programm-more a {height:63px; line-height:63px; font-size:16px}
 }
 
 @media screen and (max-width:767px) {
@@ -3077,64 +3082,47 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 }
 
 h1+.main-block {margin:80px 0 0 0}
-.analytics-services-text {float:right; width:767px}
-.analytics-services {position:relative; margin:54px 0 0 0; overflow:hidden; font-size:0; line-height:0; letter-spacing:-1px}
-.analytics-service {display:inline-block; vertical-align:middle; width:33.33%; position:relative; padding:44px 0 44px 39px}
-.analytics-service:nth-child(1),
-.analytics-service:nth-child(2),
-.analytics-service:nth-child(3) {padding-top:17px}
-.analytics-service:nth-last-child(1),
-.analytics-service:nth-last-child(2),
-.analytics-service:nth-last-child(3) {padding-bottom:17px}
-.analytics-service:nth-child(3n-2) {padding-left:0}
-.analytics-service:nth-child(3n-1)::before,
-.analytics-service:nth-child(3n)::before {content:""; display:block; position:absolute; left:0; top:-999px; bottom:-999px; width:1px; background:#d7d7d7}
-.analytics-service:nth-child(3n-1)::after {content:""; display:block; position:absolute; left:-999px; top:0; right:-999px; height:1px; background:#d7d7d7}
-.analytics-service:nth-child(2)::after {display:none}
-.analytics-service-inner {display:table}
-.analytics-service-icon {display:table-cell; vertical-align:middle; width:106px}
-.analytics-service-icon-inner {width:106px}
-.analytics-service-text {display:table-cell; vertical-align:middle; font-size:18px; line-height:23px; letter-spacing:0; color:#000; width:189px}
-
-@media screen and (min-width:1800px) {
-    .analytics-services-text {width:calc(100% - 564px)}
-    .analytics-service-text {font-size:22px; line-height:29px; width:auto; padding:0 60px 0 0}
-}
+.analytics-services {position:relative; margin:50px 0 0 0; overflow:hidden; font-size:0; line-height:0; letter-spacing:-1px}
+.analytics-services-container {margin:0 -10px}
+.analytics-service {display:inline-block; vertical-align:top; width:25%; position:relative; padding:0 10px}
+.analytics-service-icon {height:60px; line-height:60px}
+.analytics-service-icon img {display:inline-block; vertical-align:middle; margin:-2px 0 0 0; max-height:60px}
+.analytics-service-title {margin:20px 0 0 0; font-weight:bold; font-size:20px; line-height:26px; color:#000; letter-spacing:0}
+.analytics-service-title svg {display:none}
+.analytics-service-text-1 {margin:24px -10px 0 -10px; padding:30px 10px 0 10px; border-top:1px solid #d9d9d9}
+.analytics-service-text-2 {margin:30px -10px 0 -10px; padding:30px 10px 0 10px; border-top:1px solid #d9d9d9}
+.analytics-service-text-title {font-size:16px; line-height:24px; letter-spacing:0; font-weight:bold}
+.analytics-service-text-descr {margin:10px 0 0 0; font-size:16px; line-height:24px; letter-spacing:0}
+.analytics-service-text-descr p {margin:10px 0}
+.analytics-service-text-descr ul {margin:10px 0}
+.analytics-service-text-descr ul li {margin:10px 0; padding:0 0 0 20px}
+.analytics-service-text-descr ul li::before {width:4px; height:4px; background:#6bcdb2; left:0; top:8px; border-radius:50%}
+.analytics-service-text-descr *:first-child {margin-top:0}
+.analytics-service-text-descr *:last-child {margin-bottom:0}
+.analytics-service-close {display:none}
 
 @media screen and (max-width:1199px) {
     h1+.main-block {margin:40px 0 0 0}
-    .analytics-services-wrapper .main-header h2 {float:none}
-    .analytics-services-text {float:none; width:auto; margin:30px 0 0 0}
-    .analytics-services {margin:40px 0 0 0; overflow:visible}
-    .analytics-service {display:block; width:auto; margin:15px 0 0 0; padding:15px 0 0 0; border-top:1px solid #d4d4d4}
-    .analytics-service:nth-child(1) {margin:0; padding:0; border-top:none}
-    .analytics-service:nth-child(2),
-    .analytics-service:nth-child(3) {padding-top:15px}
-    .analytics-service:nth-last-child(1),
-    .analytics-service:nth-last-child(2),
-    .analytics-service:nth-last-child(3) {padding-bottom:0}
-    .analytics-service:nth-child(3n-1)::before,
-    .analytics-service:nth-child(3n)::before {display:none}
-    .analytics-service:nth-child(3n-1)::after {display:none}
-    .analytics-service-icon {width:126px}
+    .analytics-services {margin:20px 0 0 0}
+    .analytics-services-container {margin:0; border-bottom:1px solid #d4d4d4}
+    .analytics-service {display:block; width:auto; padding:0; border-top:1px solid #d4d4d4}
+    .analytics-service-icon {position:absolute; left:0; top:23px}
     .analytics-service-icon-inner {width:126px}
-    .analytics-service-text {font-size:20px; line-height:26px; width:auto}
-}
-
-@media screen and (max-width:767px) {
-    .analytics-services-text {margin:20px 0 0 0}
-    .analytics-services::after {content:""; display:block; margin:80px -20px 0 -20px; height:6px; background:#e5e5e5}
-    .analytics-service {margin:30px 0 0 0; padding:30px 0 0 0}
-    .analytics-service:nth-child(1) {margin:0; padding:0; border-top:none}
-    .analytics-service:nth-child(2),
-    .analytics-service:nth-child(3) {padding-top:30px}
-}
-
-@media screen and (max-width:479px) {
-    .analytics-service-inner {display:block}
-    .analytics-service-icon {display:block; width:auto; text-align:center}
-    .analytics-service-icon-inner {width:auto}
-    .analytics-service-text {display:block; width:auto; margin:20px 0 0 0}
+    .analytics-service-title {display:table; width:100%; cursor:pointer; padding:0; margin:0}
+    .analytics-service-title span {padding:24px 50px 24px 80px; position:relative; height:100px; display:table-cell; vertical-align:middle}
+    .analytics-service-title svg {display:block; width:20px; height:13px; fill:#000; position:absolute; right:0; top:50%; margin-top:-7px; transition:transform 0.2s}
+    .analytics-service.open .analytics-service-title svg {transform:rotate(-180deg)}
+    .analytics-service-text-1 {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s; margin:12px 0 0 80px; padding:0; border-top:none}
+    .analytics-service.open .analytics-service-text-1 {position:relative; left:auto; top:auto; opacity:1}
+    .analytics-service-text-2 {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s; margin:20px 0 0 80px; padding:0; border-top:none}
+    .analytics-service.open .analytics-service-text-2 {position:relative; left:auto; top:auto; opacity:1}
+    .analytics-service-text-title {font-size:20px; line-height:30px}
+    .analytics-service-text-descr {font-size:20px; line-height:30px}
+    .analytics-service-text-descr ul li::before {top:13px}
+    .analytics-service-close {font-size:16px; line-height:21px; letter-spacing:0.03em; text-transform:uppercase}
+    .analytics-service-close a {display:block; padding:20px 0 30px 0; color:#6bcdb2; text-decoration:none}
+    .analytics-service-close a svg {display:inline-block; vertical-align:middle; width:14px; height:8px; fill:none; stroke:#6bcdb2; margin:-2px 0 0 7px}
+    .analytics-service.open .analytics-service-close {display:block}
 }
 
 .analytics-programm-tabs-menu {margin:50px 0 0 0; font-weight:bold; font-size:22px; line-height:22px}
@@ -3165,21 +3153,27 @@ h1+.main-block {margin:80px 0 0 0}
 .analytics-programm-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.75s ease, transform 0.75s ease; transform:translateY(20px)}
 .analytics-programm-tab.active {position:relative; left:auto; top:auto; opacity:1; transform:none}
 .analytics-programm-tab-title {display:none}
+.analytics-programm-tab-close {display:none}
 
 @media screen and (max-width:1199px) {
     .analytics-programm-tabs {margin:40px 0 0 0}
 }
 
 @media screen and (max-width:767px) {
-    .analytics-programm-tabs {margin:0}
+    .analytics-programm-tabs {margin:23px 0 0 0}
     .analytics-programm-tabs::after {content:""; display:block; margin:50px -20px 0 -20px; height:6px; background:#e5e5e5}
-    .analytics-programm-tab {position:relative; left:auto; top:auto; width:auto; opacity:1; transform:none; margin:20px 0 0 0}
-    .analytics-programm-tab.open {margin:20px 0 40px 0}
-    .analytics-programm-tab-title {display:block; position:relative; cursor:pointer; border:2px solid #dbdbdb; padding:18px 20px; margin:0 -20px; border-left:none; border-right:none; font-size:20px; line-height:26px; color:#000; font-weight:600}
-    .analytics-programm-tab-title::after {content:""; display:block; position:absolute; right:15px; top:19px; width:24px; height:24px; background:url(../images/mobile-menu-arrow.svg) no-repeat; background-size:100% 100%}
-    .analytics-programm-tab.open .analytics-programm-tab-title::after {transform:rotate(-180deg)}
-    .analytics-programm-tab-content {display:none}
+    .analytics-programm-tab {position:relative; left:auto; top:auto; width:auto; opacity:1; transform:none; margin:0 -20px; padding:0; border-top:2px solid #dbdbdb}
+    .analytics-programm-tab:last-child {border-bottom:2px solid #dbdbdb}
+    .analytics-programm-tab-title {display:block; position:relative; cursor:pointer; padding:28px 20px; margin:0; border:none; font-size:22px; line-height:28px; color:#5087c7; font-weight:600}
+    .analytics-programm-tab-title::after {content:""; display:block; position:absolute; right:25px; top:50%; margin-top:-10px; width:11px; height:19px; background:url(../images/analytics-programm-tab-title-mobile.svg) no-repeat; background-size:100% 100%}
+    .analytics-programm-tab-title span {border-bottom:1px dashed #5087c7}
+    .analytics-programm-tab.open .analytics-programm-tab-title::after {transform:rotate(90deg)}
+    .analytics-programm-tab-content {display:none; padding:0 20px}
     .analytics-programm-tab.open .analytics-programm-tab-content {display:block}
+    .analytics-programm-tab-close {font-size:16px; line-height:21px; letter-spacing:0.03em; text-transform:uppercase}
+    .analytics-programm-tab-close a {display:block; padding:0 20px 20px 20px; color:#5087c7; text-decoration:none}
+    .analytics-programm-tab-close a svg {display:inline-block; vertical-align:middle; width:14px; height:8px; fill:none; stroke:#5087c7; margin:-2px 0 0 7px}
+    .analytics-programm-tab.open .analytics-programm-tab-close {display:block}
 }
 
 .analytics-programm-item {margin:40px 0 0 0; padding:40px 40px 40px 40px; position:relative; background:rgba(181, 88, 113, 0.06)}
@@ -3204,6 +3198,14 @@ h1+.main-block {margin:80px 0 0 0}
 .analytics-programm-item-text a:hover {text-decoration:underline}
 .analytics-programm-item-preview {margin:20px 0 -90px -10px; font-size:0; line-height:0; letter-spacing:-1px}
 .analytics-programm-item-preview img {display:inline-block; vertical-align:top; height:100px; margin:10px 0 0 10px}
+.analytics-programm-item-status {margin:-15px 0 20px 0; font-size:12px; line-height:30px; text-transform:uppercase; letter-spacing:0.05em; font-weight:500}
+.analytics-programm-item-status::after {content:""; display:block; clear:both}
+.analytics-programm-item-status-text {float:left; padding:0 10px; color:#fff; height:28px}
+.analytics-programm-item-status-inprocess {background:#6bcdb2}
+.analytics-programm-item-status-completed {background:#ed5830}
+.analytics-programm-item-status-year {float:left; padding:0 10px; margin:0 0 0 10px; background:#fff; color:#8b8b8b; height:28px}
+.analytics-programm-item-journals {margin:-20px 0 20px -10px; font-size:0; line-height:0; letter-spacing:-1px}
+.analytics-programm-item-journals span {display:inline-block; vertical-align:top; margin:10px 0 0 10px; font-size:16px; line-height:30px; height:30px; letter-spacing:0; color:#fff; background:#6bcdb2; padding:0 10px}
 
 @media screen and (min-width:1800px) {
     .analytics-programm-item-title {font-size:30px; line-height:42px}
@@ -3705,7 +3707,7 @@ h1+.main-block {margin:80px 0 0 0}
 }
 
 .publications-periodic {font-size:0; line-height:0; letter-spacing:-1px; margin:-20px -10px 0 -10px}
-.publications-periodic-item {display:inline-block; vertical-align:top; width:33.33%; padding:40px 10px 0 10px}
+.publications-periodic-item {display:inline-block; vertical-align:top; width:25%; padding:40px 10px 0 10px}
 .publications-periodic-item a {display:block; text-decoration:none}
 .publications-periodic-preview {border:1px solid #ccc}
 .publications-periodic-preview img {display:block; width:100%}
@@ -3713,9 +3715,12 @@ h1+.main-block {margin:80px 0 0 0}
 .publications-periodic-title {margin:10px 0 0 0; font-weight:600; font-size:20px; line-height:26px; letter-spacing:0}
 
 @media screen and (min-width:1800px) {
-    .publications-periodic-item {width:25%}
     .publications-periodic-date {font-size:18px; line-height:27px}
     .publications-periodic-title {font-size:24px; line-height:31px}
+}
+
+@media screen and (max-width:1279px) {
+    .publications-periodic-item {width:33.33%}
 }
 
 @media screen and (max-width:767px) {
