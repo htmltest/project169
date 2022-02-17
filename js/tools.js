@@ -1389,6 +1389,12 @@ $(document).ready(function() {
             cache: false
         }).done(function(html) {
             curBlock.find('.analytics-programm-list').append($(html).find('.analytics-programm-list').html());
+            curBlock.find('.analytics-programm-item').each(function() {
+                var curItem = $(this);
+                if (curItem.find('.analytics-programm-item-preview img').length > 0) {
+                    curItem.addClass('analytics-programm-item-with-preview');
+                }
+            });
             if ($(html).find('.analytics-programm-more').length == 1) {
                 curBlock.find('.analytics-programm-more a').attr('href', $(html).find('.analytics-programm-more a').attr('href'));
             } else {
@@ -1401,6 +1407,13 @@ $(document).ready(function() {
     $('.analytics-programm-tab-close a').click(function(e) {
         $(this).parents().filter('.analytics-programm-tab').removeClass('open');
         e.preventDefault();
+    });
+
+    $('.analytics-programm-item').each(function() {
+        var curItem = $(this);
+        if (curItem.find('.analytics-programm-item-preview img').length > 0) {
+            curItem.addClass('analytics-programm-item-with-preview');
+        }
     });
 
 });

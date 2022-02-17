@@ -3015,7 +3015,8 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .analytics-library-more {margin:60px 0 0 0; max-width:1240px}
 .analytics-library-more a {display:block; height:60px; background:#f4f4f4; text-align:center; text-decoration:none; text-transform:uppercase; color:#717171; font-weight:500; font-size:14px; line-height:60px; letter-spacing:0.05em}
 .analytics-library-more a:hover {color:#000}
-.analytics-programm-more {margin:60px 0 0 0}
+.analytics-programm-list {max-width:1240px}
+.analytics-programm-more {margin:60px 0 0 0; max-width:1240px}
 .analytics-programm-more a {display:block; height:60px; background:#f4f4f4; text-align:center; text-decoration:none; text-transform:uppercase; color:#717171; font-weight:500; font-size:14px; line-height:60px; letter-spacing:0.05em}
 .analytics-programm-more a:hover {color:#000}
 
@@ -3188,7 +3189,6 @@ h1+.main-block {margin:80px 0 0 0}
 .analytics-programm-item {margin:40px 0 0 0; padding:40px 40px 40px 40px; position:relative; background:rgba(181, 88, 113, 0.06)}
 .analytics-programm-item:first-child {margin-top:0}
 .analytics-programm-item-with-preview {margin-bottom:90px}
-.analytics-programm-item-with-preview:last-child {margin-bottom:170px}
 .analytics-programm-item:nth-child(odd) {background:rgba(124, 183, 250, 0.12)}
 .analytics-programm-item::after {content:""; display:block; clear:both}
 .analytics-programm-item-content {float:left; width:calc(100% - 310px)}
@@ -3227,7 +3227,6 @@ h1+.main-block {margin:80px 0 0 0}
 @media screen and (max-width:1199px) {
     .analytics-programm-item {margin:60px 0 0 0; padding:40px}
     .analytics-programm-item-with-preview {margin-bottom:110px; padding-bottom:90px}
-    .analytics-programm-item-with-preview:last-child {margin-bottom:110px}
     .analytics-programm-item-content {float:none; width:auto}
     .analytics-programm-item-title {font-size:24px; line-height:31px}
     .analytics-programm-item-download {float:none; margin:30px 0 0 0}
@@ -3240,7 +3239,6 @@ h1+.main-block {margin:80px 0 0 0}
 @media screen and (max-width:767px) {
     .analytics-programm-item {margin:50px -20px 0 -20px; padding:40px 20px}
     .analytics-programm-item-with-preview {margin-bottom:98px; padding-bottom:90px}
-    .analytics-programm-item-with-preview:last-child {margin-bottom:98px}
 }
 
 .analytics-mission-text {float:right; width:570px}
