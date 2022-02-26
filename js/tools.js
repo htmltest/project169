@@ -1129,6 +1129,7 @@ $(document).ready(function() {
         if ($(window).width() < 1200) {
             if ($(this).parent().find('ul').length != 0) {
                 $(this).parent().toggleClass('open');
+                $('html').toggleClass('mobile-submenu-open');
                 e.preventDefault();
             }
         }
@@ -1414,6 +1415,26 @@ $(document).ready(function() {
         if (curItem.find('.analytics-programm-item-preview img').length > 0) {
             curItem.addClass('analytics-programm-item-with-preview');
         }
+    });
+
+    $('.cityform-factor-title').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.cityform-recommend-item-title').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('body').on('click', '.cityform-what-menu ul li a', function(e) {
+        var curLi = $(this).parent();
+        if (!curLi.hasClass('active')) {
+            $('.cityform-what-menu ul li.active').removeClass('active');
+            curLi.addClass('active');
+            var curIndex = $('.cityform-what-menu ul li').index(curLi);
+            $('.cityform-what-content.active').removeClass('active');
+            $('.cityform-what-content').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
     });
 
 });
