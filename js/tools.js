@@ -1437,6 +1437,32 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('click', '.cityform-menu-link', function(e) {
+        $('html').toggleClass('cityform-menu-open');
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.cityform-menu-list ul li a', function(e) {
+        var curBlock = $($(this).attr('href'));
+        if (curBlock.length == 1) {
+            $('html, body').animate({'scrollTop': curBlock.offset().top - $('header').height() - 20});
+        }
+        $('html').removeClass('cityform-menu-open');
+        e.preventDefault();
+    });
+
+    $('.cityform-loss-notice span').on('mouseenter', function() {
+        var curPopup = $(this).find('em');
+        if (curPopup.offset().left + curPopup.outerWidth() > $('.wrapper').width()) {
+            curPopup.addClass('to-right');
+        }
+    });
+
+    $('.cityform-loss-notice span').on('mouseleave', function() {
+        var curPopup = $(this).find('em');
+        curPopup.removeClass('to-right');
+    });
+
 });
 
 function redrawProgramm() {
@@ -2052,6 +2078,26 @@ $(window).on('load resize scroll', function() {
             }
         } else {
             $('.programm-ctrl').css({'margin-bottom': 0});
+        }
+    });
+
+    $('.cityform-menu').each(function() {
+        if (windowScroll > $('.cityform-menu').offset().top - 10 - $('header').height() + Number($('.main-block').eq(0).css('margin-top').replace('px', '')) / 2) {
+            $('.cityform-menu').addClass('fixed');
+        } else {
+            $('.cityform-menu').removeClass('fixed');
+        }
+    });
+
+    $('.cityform-menu-list ul li a').each(function() {
+        var curLink = $(this);
+        var curBlock = $(curLink.attr('href'));
+        if (curBlock.length == 1) {
+            if (windowScroll + windowHeight / 2 > curBlock.offset().top) {
+                $('.cityform-menu-list ul li.active').removeClass('active');
+                curLink.parent().addClass('active');
+                $('.cityform-menu-current').html(curLink.html());
+            }
         }
     });
 });
