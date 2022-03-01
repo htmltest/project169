@@ -1451,16 +1451,24 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('.cityform-loss-notice span').on('mouseenter', function() {
-        var curPopup = $(this).find('em');
-        if (curPopup.offset().left + curPopup.outerWidth() > $('.wrapper').width()) {
-            curPopup.addClass('to-right');
+    $('.cityform-about-world-continent-title').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.cityform-recommend-item-city-header').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.cityform-recommend-item-city-content span').on('mouseenter', function() {
+        var curBlock = $(this).find('em');
+        if (curBlock.offset().left + curBlock.width() > $('.wrapper').width()) {
+            curBlock.addClass('to-right');
         }
     });
 
-    $('.cityform-loss-notice span').on('mouseleave', function() {
-        var curPopup = $(this).find('em');
-        curPopup.removeClass('to-right');
+    $('.cityform-recommend-item-city-content span').on('mouseleave', function() {
+        var curBlock = $(this).find('em');
+        curBlock.removeClass('to-right');
     });
 
 });
