@@ -6515,21 +6515,16 @@ footer {margin:60px 0 0 0}
 .cityform-moscow-structure-row {margin:30px 0 0 0}
 .cityform-moscow-structure-row::after {content:""; display:block; clear:both}
 .cityform-moscow-structure-row-title {float:left; width:125px; font-size:20px; line-height:43px; color:#000}
-.cityform-moscow-structure-row-title img {display:none}
 .cityform-moscow-structure-row-scheme {float:left; width:calc(100% - 125px)}
-.cityform-moscow-structure-row-scheme-item {float:right; text-align:center; color:#fff; font-weight:500; font-size:20px; line-height:45px; padding:0 5px; white-space:nowrap}
+.cityform-moscow-structure-row-scheme-item {float:left; height:43px; text-align:center; color:#fff; font-weight:500; font-size:20px; line-height:45px; padding:0 5px; white-space:nowrap}
 .cityform-moscow-structure-row-scheme-item-inverse {color:#7d75c1}
 .cityform-moscow-structure-row-scheme-item span {position:relative}
 .cityform-moscow-structure-legend {margin:30px 0 0 65px}
 .cityform-moscow-structure-legend::after {content:""; display:block; clear:both}
-.cityform-moscow-structure-legend-item {float:right; width:25%; padding:0 0 0 60px}
+.cityform-moscow-structure-legend-item {float:left; width:25%; padding:0 0 0 60px}
 .cityform-moscow-structure-legend-item-line {height:5px}
 .cityform-moscow-structure-legend-item-text {margin:10px 0 0 0; font-size:16px; line-height:24px; color:#000; font-weight:500}
 .cityform-moscow-structure-legend-item-text span {display:block; color:#676767; font-weight:normal}
-
-@media screen and (min-width:1200px) {
-    .cityform-moscow-structure-row-scheme-item {height:43px !important}
-}
 
 @media screen and (max-width:1199px) {
     #cityform-moscow h2 {font-size:36px; line-height:47px; margin:0}
@@ -6545,20 +6540,6 @@ footer {margin:60px 0 0 0}
     .cityform-moscow-table-value:nth-child(2) {background:none; position:relative}
     .cityform-moscow-table-value:nth-child(2)::after {content:""; display:block; position:absolute; right:25%; top:12px; width:1px; bottom:22px; background:#e2e2e2}
     .cityform-moscow-notice {margin:25px 0 0 0; padding:0 0 0 40px}
-    .cityform-moscow-structure-title {margin:50px 0 0 0}
-    .cityform-moscow-structure {margin:23px 0 0 0}
-    .cityform-moscow-structure::after {content:""; display:block; clear:both}
-    .cityform-moscow-structure-row {float:left; width:76px; margin:0 0 0 25px}
-    .cityform-moscow-structure-row:first-child {margin:0}
-    .cityform-moscow-structure-row:last-child {}
-    .cityform-moscow-structure-row-title {float:none; width:auto; font-size:0; line-height:0; height:48px; text-align:center}
-    .cityform-moscow-structure-row-title img {display:block; margin:0 auto}
-    .cityform-moscow-structure-row-scheme {float:none; width:auto; height:423px}
-    .cityform-moscow-structure-row-scheme-item {float:none; width:auto !important; position:relative}
-    .cityform-moscow-structure-row-scheme-item span {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%)}
-    .cityform-moscow-structure-legend {float:left; margin:48px 0 0 25px; width:calc(100% - 202px)}
-    .cityform-moscow-structure-legend-item {float:none; width:auto; padding:50px 0 0 0}
-    .cityform-moscow-structure-legend-item:first-child {padding:0}
 }
 
 .cityform-health-text {margin:30px 0 0 0}
@@ -6574,23 +6555,25 @@ footer {margin:60px 0 0 0}
 .cityform-death-scheme-row {display:table-row}
 .cityform-death-scheme-row-main {font-weight:600; color:#4849a6}
 .cityform-death-scheme-row-title {display:table-cell; vertical-align:top; padding:10px 10px 10px 0; white-space:nowrap; text-align:right}
-.cityform-death-scheme-row-value {display:table-cell; vertical-align:top; width:100%; padding:10px 0; position:relative; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
-.cityform-death-scheme-row-line {display:inline-block; vertical-align:top; height:5px; background:#e6e3f4; margin:14px 0 0 0; position:relative}
+.cityform-death-scheme-row-value {display:table-cell; vertical-align:top; width:100%; padding:10px 0; position:relative}
+.cityform-death-scheme-row-line {float:left; height:5px; background:#e6e3f4; margin:14px 0 0 0}
 .cityform-death-scheme-row-main .cityform-death-scheme-row-line {background:#4849a6}
-.cityform-death-scheme-row-value-text {display:inline-block; vertical-align:top; margin:0 0 0 10px; position:relative; font-size:20px; line-height:30px; letter-spacing:0}
+.cityform-death-scheme-row-value-text {float:left; margin:0 0 0 10px}
 .cityform-death-scheme-row-back {position:absolute; left:0; top:0; right:0; bottom:0}
 .cityform-death-scheme-row-back-item {position:absolute; top:0; bottom:0; width:1px; background:#e2e2e2}
-.cityform-death-scheme-row-scale {position:absolute; left:0; top:0; right:0; bottom:0; font-size:20px; line-height:30px; letter-spacing:0}
+.cityform-death-scheme-row-scale {position:absolute; left:0; top:0; right:0; bottom:0}
 .cityform-death-scheme-row-scale-item {position:absolute; top:0; transform:translateX(-50%)}
 .cityform-health-scheme {margin:60px 0 0 0; background:#f8f7ff; padding:40px 0 55px 0}
 .cityform-health-scheme-title {text-align:center; font-weight:600; font-size:30px; line-height:39px; color:#4849a6}
 .cityform-health-scheme-content {width:1148px; height:583px; margin:40px auto 0 auto; position:relative}
 .cityform-health-scheme-img img {display:block; width:100%}
-.cityform-health-scheme-img-mobile {display:none}
 .cityform-health-scheme-item {position:absolute; padding:10px 20px; width:345px; transition:background 0.2s, box-shadow 0.2s; cursor:pointer}
+.cityform-health-scheme-item:hover {background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); z-index:2}
 .cityform-health-scheme-item-title {font-weight:500; font-size:22px; line-height:33px}
 .cityform-health-scheme-item-title span {color:#4849a6; text-decoration:none; position:relative; transition:border-color 0.2s; background:url(../images/line-3.svg) repeat-x left bottom}
+.cityform-health-scheme-item:hover .cityform-health-scheme-item-title span {background:none}
 .cityform-health-scheme-item-text {position:absolute; left:-99999px; top:-99999px; opacity:0; transition:opacity 0.2s; padding:7px 0 0 0; font-size:16px; line-height:24px}
+.cityform-health-scheme-item:hover .cityform-health-scheme-item-text {position:relative; left:auto; top:auto; opacity:1}
 .cityform-health-scheme-text {margin:40px 0 0 0; font-size:18px; line-height:27px; position:relative}
 .cityform-health-scheme-text span {cursor:pointer; position:relative}
 .cityform-health-scheme-text span::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line-2.svg) repeat-x left bottom; transition:opacity 0.2s}
@@ -6599,40 +6582,6 @@ footer {margin:60px 0 0 0}
 .cityform-health-scheme-text span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-health-scheme-text span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-health-scheme-text span:hover strong {display:block}
-
-@media screen and (min-width:1200px) {
-    .cityform-health-scheme-item:hover {background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); z-index:2}
-    .cityform-health-scheme-item:hover .cityform-health-scheme-item-title span {background:none}
-    .cityform-health-scheme-item:hover .cityform-health-scheme-item-text {position:relative; left:auto; top:auto; opacity:1}
-}
-
-@media screen and (max-width:1199px) {
-    #cityform-health h2 {font-size:36px; line-height:47px; margin:0}
-    .cityform-health-text {margin:40px 0 0 0}
-    .cityform-death-title {margin:40px 0 0 0}
-    .cityform-death-scheme {margin:36px 30px 0 0; line-height:24px; width:calc(100% - 30px)}
-    .cityform-death-scheme-row-title {width:204px; padding:10px 15px 10px 0; white-space:normal}
-    .cityform-death-scheme-row-value {width:auto; line-height:24px}
-    .cityform-death-scheme-row-line {margin:10px 0 0 0}
-    .cityform-death-scheme-row-scale {font-size:18px; line-height:27px}
-    .cityform-health-scheme {margin:40px -14px 0 -14px; padding:30px 14px}
-    .cityform-health-scheme-title {color:#000}
-    .cityform-health-scheme-content {width:auto; height:auto}
-    .cityform-health-scheme-img {display:none}
-    .cityform-health-scheme-img-mobile {display:block; width:373px; height:458px; margin:0 auto 30px auto; position:relative}
-    .cityform-health-scheme-img-mobile img {display:block; width:100%}
-    .cityform-health-scheme-item-mobile {display:block; position:absolute; cursor:pointer}
-    .cityform-health-scheme-item-mobile svg {display:block; width:24px; height:24px; fill:#4849a6}
-    .cityform-health-scheme-item {position:relative; margin:0 -20px 0 -20px; width:auto; left:auto !important; top:auto !important}
-    .cityform-health-scheme-item.open {background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); z-index:2}
-    .cityform-health-scheme-item.open .cityform-health-scheme-item-title span {background:none}
-    .cityform-health-scheme-item.open .cityform-health-scheme-item-text {position:relative; left:auto; top:auto; opacity:1}
-    .cityform-health-scheme-item-title {font-size:20px; line-height:30px; cursor:pointer}
-}
-
-@media screen and (max-width:767px) {
-    .cityform-health-scheme {margin:40px -20px 0 -20px; padding:30px 20px}
-}
 
 .cityform-loss-list {margin:50px -10px 0 -10px}
 .cityform-loss-list::after {content:""; display:block; clear:both}
@@ -6670,21 +6619,6 @@ footer {margin:60px 0 0 0}
 .cityform-loss-scheme-row-scale {position:absolute; left:0; top:0; right:0; bottom:0}
 .cityform-loss-scheme-row-scale-item {position:absolute; top:0; transform:translateX(-50%)}
 
-@media screen and (max-width:1199px) {
-    #cityform-loss h2 {font-size:36px; line-height:47px; margin:0}
-    .cityform-loss-list {margin:40px 0 0 0}
-    .cityform-loss-item {float:none; width:auto; padding:0; margin:30px 0 0 0}
-    .cityform-loss-item::after {content:""; display:block; clear:both}
-    .cityform-loss-item-icon {float:left; width:55px; text-align:center; padding:4px 0 0 0; height:auto; line-height:0}
-    .cityform-loss-item-icon img {max-height:45px}
-    .cityform-loss-item-text {margin:0 0 0 75px; font-size:18px; line-height:27px}
-    .cityform-loss-notice {margin:40px 0 0 0; padding:30px 0 30px 75px}
-    .cityform-loss-notice svg {width:30px; height:30px; top:30px}
-    .cityform-loss-scheme-title {margin:50px 0 0 0}
-    .cityform-loss-scheme {margin:30px 0 0 0}
-    .cityform-loss-scheme-row-scale-item {font-size:18px; line-height:27px}
-}
-
 .cityform-factors-text {margin:30px 0 0 0}
 .cityform-factors {margin:24px 0 0 0}
 .cityform-factors-group {margin:30px 0 0 0; padding:16px 40px 30px 40px; background:#f7f6fc}
@@ -6705,18 +6639,6 @@ footer {margin:60px 0 0 0}
 .cityform-factor-text ul li {padding:0 0 0 18px}
 .cityform-factor-text ul li::before {left:0; top:11px; width:4px; height:4px; background:#b7afdd; border-radius:50%}
 
-@media screen and (max-width:1199px) {
-    #cityform-factors h2 {font-size:36px; line-height:47px; margin:0}
-    .cityform-factors {margin:30px 0 0 0}
-    .cityform-factors-group {margin:40px 0 0 0; padding:0; background:none}
-    .cityform-factors-group:first-child {margin:0}
-    .cityform-factors-subgroups {margin:20px 0 0 0; padding:30px 20px 16px 20px; background:#f7f6fc}
-    .cityform-factors-subgroup {float:none; width:auto; margin:40px 0 0 0}
-    .cityform-factors-subgroup:first-child {margin:0}
-    .cityform-factors-list {margin:15px 0 0 0}
-    .cityform-factor {margin:15px 0 0 0}
-}
-
 .cityform-factors-subgroup-1 .cityform-factor-title {background:#b7afdd}
 .cityform-factors-subgroup-1 .cityform-factor-text {background:#e6e3f4}
 .cityform-factors-subgroup-2 .cityform-factor-title {background:#f6adac}
@@ -6735,15 +6657,6 @@ footer {margin:60px 0 0 0}
 .cityform-factor-moscow-text p {margin:27px 0 0 0; padding:0}
 .cityform-factor-moscow-scheme {float:right; width:56%}
 .cityform-factor-moscow-scheme img {display:block; width:100%}
-
-@media screen and (max-width:1199px) {
-    #cityform-factor-moscow h2 {font-size:36px; line-height:47px; margin:0}
-    .cityform-factor-moscow {margin:43px 0 0 0}
-    .cityform-factor-moscow-text {float:none; width:auto; font-size:20px; line-height:30px}
-    .cityform-factor-moscow-text ol {font-size:18px; line-height:27px}
-    .cityform-factor-moscow-text p {margin:30px 0 0 0}
-    .cityform-factor-moscow-scheme {float:none; width:auto; margin:30px 0 0 0}
-}
 
 .cityform-factor-with-hint {color:#4849a6; cursor:pointer; position:relative}
 .cityform-factor-with-hint::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line.svg) repeat-x left bottom; transition:opacity 0.2s}
@@ -6820,25 +6733,6 @@ footer {margin:60px 0 0 0}
 .cityform-recommend-item-indicators-item-bottom-right {float:right; width:50%; text-align:right}
 .cityform-recommend-item-indicators-item-bottom-title {font-weight:500}
 
-@media screen and (max-width:1199px) {
-    #cityform-recommend h2 {font-size:36px; line-height:47px; margin:0}
-    .cityform-recommend-item-title strong {padding-right:0}
-    .cityform-recommend-item-team {margin:30px 0 0 0}
-    .cityform-recommend-item-team-item {display:table; width:100%; padding:0; text-align:left; margin:20px 0 0 0}
-    .cityform-recommend-item-team-item-photo {width:100px; display:table-cell; vertical-align:middle}
-    .cityform-recommend-item-team-item-photo img {width:100px}
-    .cityform-recommend-item-team-item-info {display:table-cell; vertical-align:middle; padding:0 0 0 15px}
-    .cityform-recommend-item-team-item-name {margin:0}
-    .cityform-recommend-item-team-list {margin:30px 0 0 0; column-count:1; column-gap:0}
-    .cityform-recommend-item-team-list-item {margin:20px 0 0 0}
-    .cityform-recommend-item-team-list-item-post {padding:0}
-    .cityform-recommend-item-cities {margin:30px 0 0 0}
-    .cityform-recommend-item-cities-col {float:none; width:auto; padding:0; margin:20px 0 0 0}
-    .cityform-recommend-item-indicators {margin:30px 0 0 0}
-    .cityform-recommend-item-indicators-item {float:none; width:auto; padding:0; margin:40px 0 0 0}
-    .cityform-recommend-item-indicators-title {margin:30px 0 0 0}
-}
-
 .cityform-what {margin:40px 0 0 0}
 .cityform-what::after {content:""; display:block; clear:both}
 .cityform-what-side {float:left; width:380px}
@@ -6864,7 +6758,6 @@ footer {margin:60px 0 0 0}
 .cityform-what-container {float:right; width:calc(100% - 445px)}
 .cityform-what-content {position:absolute; left:-9999px; top:-9999px; font-size:18px; line-height:27px; opacity:0; transition:opacity 0.2s}
 .cityform-what-content.active {position:relative; left:auto; top:auto; opacity:1}
-.cityform-what-content-title {display:none}
 .cityform-what-content p {margin:0; padding:0}
 .cityform-what-content ul {margin:0; padding:0}
 .cityform-what-content ul li {margin:0; padding:0 0 0 20px}
@@ -6872,28 +6765,6 @@ footer {margin:60px 0 0 0}
 .cityform-what-content-img {margin:46px 0 0 0; max-width:563px}
 .cityform-what-notice {margin:30px 0 0 0; padding:30px 0 30px 43px; position:relative; font-size:20px; line-height:30px; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2}
 .cityform-what-notice svg {display:block; width:21px; height:21px; position:absolute; left:0; top:34px; fill:#4849a6}
-
-@media screen and (max-width:1199px) {
-    #cityform-what h2 {font-size:36px; line-height:47px; margin:0}
-    .cityform-what-side {display:none}
-    .cityform-what-container {float:none; width:auto; margin:40px 0 0 0}
-    .cityform-what-content {position:relative; left:auto; top:auto; opacity:1; margin:30px 0 0 0}
-    .cityform-what-content-img {margin:30px 0 0 0}
-    .cityform-what-content-title {display:block; font-size:16px; line-height:24px; font-weight:600}
-    .cityform-what-content-title a {display:block; position:relative; text-decoration:none; background:#e6e3f4; color:#4849a6; padding:21px 20px 21px 52px; transition:color 0.2s, background 0.2s}
-    .cityform-what-content-title a:hover,
-    .cityform-what-content.open .cityform-what-content-title a {color:#fff; background:#4849a6}
-    .cityform-what-content-title a span {display:block; position:absolute; left:0; top:50%; width:52px; text-align:center; line-height:0; transform:translateY(-50%)}
-    .cityform-what-content-title a span svg {display:inline-block; fill:#4849a6; transition:fill 0.2s}
-    .cityform-what-content-title a:hover span svg,
-    .cityform-what-content.open .cityform-what-content-title a span svg {fill:#fff}
-    .cityform-what-content.open .cityform-what-content-title a::after {content:""; display:block; position:absolute; left:50%; margin-left:-12px; width:25px; height:25px; bottom:-8px; background:#4849a6; transform:rotate(45deg)}
-    .cityform-what-content-inner {display:none; margin:30px 0 0 0}
-    .cityform-what-content.open .cityform-what-content-inner {display:block}
-    .cityform-what-content-title-arrow {display:block; width:24px; height:24px; position:absolute; right:10px; top:50%; fill:none; stroke:#4849a6; margin-top:-12px; transform:rotate(-90deg)}
-    .cityform-what-content-title a:hover .cityform-what-content-title-arrow {stroke:#fff}
-    .cityform-what-content.open .cityform-what-content-title-arrow {stroke:#fff; transform:rotate(0deg)}
-}
 
 .cityform-warning {border-top:2px solid #4849a6; border-bottom:2px solid #4849a6; padding:90px 60px; color:#4849a6; font-weight:500; font-size:22px; line-height:33px; text-align:center}
 
