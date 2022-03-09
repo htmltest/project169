@@ -1470,6 +1470,22 @@ $(document).ready(function() {
         curBlock.removeClass('to-right');
     });
 
+    $('.cityform-health-scheme-item-title').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.cityform-health-scheme-item-mobile').click(function() {
+        var curItem = $(this);
+        var curIndex = $('.cityform-health-scheme-item-mobile').index(curItem);
+        $('.cityform-health-scheme-item').eq(curIndex).addClass('open');
+        $('html, body').animate({'scrollTop': $('.cityform-health-scheme-item').eq(curIndex).offset().top - $('header').height()});
+    });
+
+    $('.cityform-what-content-title a').click(function(e) {
+        $(this).parent().parent().toggleClass('open');
+        e.preventDefault();
+    });
+
 });
 
 function redrawProgramm() {
