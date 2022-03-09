@@ -400,4 +400,8 @@
         <path d="M7.06474 10.3651L10.9891 12.7337L9.9477 8.26957L13.4149 5.26596L8.84913 4.8786L7.06474 0.668457L5.28035 4.8786L0.7146 5.26596L4.18178 8.26957L3.14035 12.7337L7.06474 10.3651Z" />
     </symbol>
 
+    <symbol viewBox="0 0 25 25" id="cityform-about-world-continent-title">
+        <path d="M6.72021 9.19946L12.7202 15.1995L18.7202 9.19946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
 </svg>
