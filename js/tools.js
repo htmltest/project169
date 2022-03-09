@@ -1129,6 +1129,7 @@ $(document).ready(function() {
         if ($(window).width() < 1200) {
             if ($(this).parent().find('ul').length != 0) {
                 $(this).parent().toggleClass('open');
+                $('html').toggleClass('mobile-submenu-open');
                 e.preventDefault();
             }
         }
