@@ -1436,7 +1436,7 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $('body').on('click', '.cityform-menu-link', function(e) {
+    $('body').on('click', '.cityform-menu-link, .cityform-menu-current', function(e) {
         $('html').toggleClass('cityform-menu-open');
         e.preventDefault();
     });
@@ -1449,7 +1449,13 @@ $(document).ready(function() {
         $('html').removeClass('cityform-menu-open');
         e.preventDefault();
     });
-
+    
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.cityform-menu').length == 0) {
+            $('html').removeClass('cityform-menu-open');
+        }
+    });
+    
     $('.cityform-about-world-continent-title').click(function() {
         $(this).parent().toggleClass('open');
     });
@@ -2016,7 +2022,28 @@ $(window).on('load resize', function() {
     });
 });
 
+var timerScroll = null;
+
+function updateHistory() {
+    $('.cityform-menu-list ul li.active a').each(function() {
+        var curLink = $(this);
+        if (curLink.attr('href')[0] === '#') {
+            var curBlock = $(curLink.attr('href'));
+            if (curBlock.length == 1) {
+                if (typeof (history.pushState) !== undefined) {
+                    history.pushState(null, null, $(this).attr('href'));
+                }
+            }
+        }
+    });
+}
+
 $(window).on('load resize scroll', function() {
+    window.clearTimeout(timerScroll);
+    timerScroll = window.setTimeout(function() {
+        updateHistory();
+    }, 500);
+
     var windowScroll = $(window).scrollTop();
     $('body').append('<div id="body-test-height" style="position:fixed; left:0; top:0; right:0; bottom:0; z-index:-1"></div>');
     var windowHeight = $('#body-test-height').height();
@@ -2105,7 +2132,7 @@ $(window).on('load resize scroll', function() {
     });
 
     $('.cityform-menu').each(function() {
-        if (windowScroll > $('.cityform-menu').offset().top - 10 - $('header').height() + Number($('.main-block').eq(0).css('margin-top').replace('px', '')) / 2) {
+        if (windowScroll > $('.cityform-menu').offset().top - 10 - $('header').height() + Number($('.main-block').eq(0).css('margin-top').replace('px', '')) * 0.875) {
             $('.cityform-menu').addClass('fixed');
         } else {
             $('.cityform-menu').removeClass('fixed');
