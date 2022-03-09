@@ -11,10 +11,6 @@ body {min-width:320px; margin:0; padding:0; font:18px/27px Arial, sans-serif; co
     body {font-size:20px; line-height:30px}
 }
 
-@media screen and (max-width:479px) {
-    body {font-size:17px; line-height:27px}
-}
-
 @media screen and (min-width:1800px) {
     body {font-size:22px; line-height:33px}
 }
@@ -34,7 +30,7 @@ iframe {border:none; max-width:100%}
 strong, b {font-weight:500}
 
 h1 {margin:0 0 20px 0; padding:0; font-weight:bold; font-size:55px; line-height:55px; color:#000}
-h2 {margin:40px 0 20px 0; padding:0; font-weight:bold; font-size:36px; line-height:41px; color:#000}
+h2 {margin:40px 0 20px 0; padding:0; font-weight:bold; font-size:36px; line-height:36px; color:#000}
 h3 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:30px; line-height:42px; color:#000}
 h4 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:22px; line-height:28px; color:#000}
 h5 {margin:40px 0 20px 0; padding:0; font-weight:600; font-size:20px; line-height:30px; color:#000}
@@ -58,7 +54,7 @@ hr {margin:50px 0; height:1px; border:none; background:#c4c4c4}
 
 @media screen and (min-width:1800px) {
     h1 {font-size:70px; line-height:91px}
-    h2 {font-size:44px; line-height:50px}
+    h2 {font-size:44px; line-height:44px}
     h3 {font-size:36px; line-height:51px}
     h4 {font-size:30px; line-height:30px}
     h5 {font-size:24px; line-height:31px}
@@ -87,9 +83,8 @@ hr {margin:50px 0; height:1px; border:none; background:#c4c4c4}
 
 @media screen and (max-width:479px) {
     h1 {font-size:32px; line-height:48px}
-    h2 {font-size:28px; line-height:38px}
+    h2 {font-size:28px; line-height:42px}
     h3 {font-size:26px; line-height:39px}
-    h4 {font-size:20px; line-height:30px}
 }
 
 .wrapper table {width:100%; margin:40px 0; border-collapse:collapse}
@@ -604,10 +599,9 @@ header.fixed .nav-reg {margin-top:10px}
 }
 
 @media screen and (max-width:1199px) {
-    .nav {display:block; margin:0; text-align:left; float:none; position:fixed; z-index:-1; opacity:0; left:0; top:0; right:0; bottom:0; background:rgba(0, 0, 0, 0.4); transform:translateX(100%)}
-    .mobile-menu-open .nav {z-index:990; opacity:1; transform:translateX(0)}
-    .nav-inner {position:absolute; left:135px; top:82px; right:0; bottom:0; overflow:auto; background:#fff; padding:0 20px; opacity:0; transform:translateX(100%); transition:transform 0.2s, opacity 0.2s}
-    .mobile-menu-open .nav-inner {transform:translateX(0); opacity:1}
+    .nav {display:none; margin:0; text-align:left; float:none}
+    .mobile-menu-open .nav {display:block; position:fixed; z-index:990; left:0; top:0; right:0; bottom:0; background:rgba(0, 0, 0, 0.4)}
+    .nav-inner {position:absolute; left:135px; top:82px; right:0; bottom:0; overflow:auto; background:#fff; padding:0 20px}
     .nav ul {font-size:20px; line-height:30px; display:block}
     .nav ul li {float:none; margin:0; border-top:1px solid #e8e8e8}
     .mobile-submenu-open .nav ul li {display:none}
@@ -622,9 +616,9 @@ header.fixed .nav-reg {margin-top:10px}
     .nav ul li a span::before {display:none}
     .nav ul li.nav-fest {margin:0 -20px; border-top:none}
     .nav ul li.nav-fest a {padding:20px; background:#000; font-weight:600; font-size:24px; line-height:36px}
-    .nav ul li ul {right:auto; white-space:normal; background:#fff; border:none; padding:0 0 30px 0; font-weight:500; font-size:20px; line-height:30px; text-transform:uppercase; display:block; position:absolute; left:0; top:0; z-index:-1; opacity:0; transform:translateX(100%); transition:transform 0.2s, opacity 0.2s}
-    .nav ul li:hover ul {display:block}
-    .nav ul li.open ul {position:relative; transform:translateX(0); opacity:1}
+    .nav ul li ul {position:relative; right:auto; transform:none; top:auto; white-space:normal; background:none; border:none; padding:0 0 30px 0; font-weight:500; font-size:20px; line-height:30px; text-transform:uppercase}
+    .nav ul li:hover ul {display:none}
+    .nav ul li.open ul {display:block}
     .nav ul li ul::before {display:none}
     .nav ul li ul li {margin:0; border-top:1px solid #e8e8e8}
     .nav ul li ul li.nav-mobile-parent {display:block}
@@ -663,10 +657,7 @@ header.fixed .nav-reg {margin-top:10px}
 .header-right {float:right}
 
 @media screen and (max-width:1199px) {
-    .header-right {position:relative}
-    .header-right::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#fff; transform:translateX(100%); opacity:0; transition:transform 0.2s, opacity 0.2s}
-    .mobile-menu-open .header-right::before {transform:translateX(0); opacity:1}
-    .mobile-menu-open .header-right {float:none; position:fixed; left:135px; top:0; right:0; height:82px; z-index:991}
+    .mobile-menu-open .header-right {float:none; position:fixed; left:135px; top:0; right:0; height:82px; background:#fff; z-index:991}
 }
 
 @media screen and (max-width:479px) {
@@ -685,7 +676,7 @@ header.fixed .nav-reg {margin-top:10px}
 }
 
 @media screen and (max-width:1199px) {
-    .header-lang {float:left; margin:20px 0 0 0; width:40px; height:40px; font-size:18px; line-height:40px; position:relative}
+    .header-lang {float:left; margin:20px 0 0 0; width:40px; height:40px; font-size:18px; line-height:40px}
     .mobile-menu-open .header-lang {margin:21px 0 0 20px; background:#000; color:#fff; transition:none}
 }
 
@@ -6349,13 +6340,6 @@ footer {margin:60px 0 0 0}
     .cityform-welcome-download .btn .btn-icon-programm {width:24px; height:24px}
 }
 
-@media screen and (max-width:479px) {
-    .cityform-welcome-bg-mobile {background-size:800px 443px}
-    .cityform-welcome-download .btn {font-size:12px; line-height:17px; padding:10px}
-    .cityform-welcome-download .btn .btn-icon-programm {width:18px; height:18px}
-}
-
-#cityform-about h2 {max-width:860px}
 .cityform-about {margin:40px 0 0 0}
 .cityform-about::after {content:""; display:block; clear:both}
 .cityform-about-main {float:left; width:56.2%}
@@ -6403,11 +6387,6 @@ footer {margin:60px 0 0 0}
     .cityform-about-world-continent-cities+.cityform-about-world-continent-cities {margin-left:40px}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-about h2 {font-size:28px; line-height:38px}
-}
-
-#cityform-epidemic h2 {max-width:860px}
 .cityform-epidemic-about {margin:40px 0 0 0}
 .cityform-epidemic-about::after {content:""; display:block; clear:both}
 .cityform-epidemic-about-main {color:#000; font-weight:500}
@@ -6416,7 +6395,7 @@ footer {margin:60px 0 0 0}
 .cityform-epidemic-digits::after {content:""; display:block; clear:both}
 .cityform-epidemic-digit {float:left; width:25%; padding:0 10px}
 .cityform-epidemic-digit-value {font-weight:bold; font-size:48px; line-height:48px; color:#4849a6; position:relative; cursor:pointer}
-.cityform-epidemic-digit-value span {display:none; position:absolute; left:0; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-epidemic-digit-value span {display:none; position:absolute; left:0; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-epidemic-digit-value:hover span {display:block}
 .cityform-epidemic-digit-value span::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:20px; top:-10px; background:#fff}
 .cityform-epidemic-digit-text {margin:16px 0 0 0; font-size:22px; line-height:33px; color:#a0a0a0}
@@ -6430,17 +6409,13 @@ footer {margin:60px 0 0 0}
     .cityform-epidemic-digit-text {margin:10px 0 0 0; font-size:20px; line-height:30px}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-epidemic h2 {font-size:28px; line-height:38px}
-}
-
 .cityform-epidemic-scheme {margin:65px 0 0 0}
 .cityform-epidemic-scheme-title {font-weight:600; font-size:30px; line-height:39px; color:#000}
-.cityform-epidemic-scheme-title span {color:#4849a6; cursor:pointer; position:relative; white-space:nowrap}
+.cityform-epidemic-scheme-title span {color:#4849a6; cursor:pointer; position:relative}
 .cityform-epidemic-scheme-title span::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line.svg) repeat-x left bottom; transition:opacity 0.2s}
 .cityform-epidemic-scheme-title span:hover {z-index:20}
 .cityform-epidemic-scheme-title span:hover::after {opacity:0}
-.cityform-epidemic-scheme-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; width:530px; white-space:normal; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-epidemic-scheme-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; width:530px; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-epidemic-scheme-title span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-epidemic-scheme-title span:hover strong {display:block}
 .cityform-epidemic-scheme-map {margin:50px 0 0 0}
@@ -6464,22 +6439,24 @@ footer {margin:60px 0 0 0}
     .cityform-epidemic-scheme-legend-item:first-child {margin:15px 0 0 10px}
 }
 
-#cityform-russia h2 {max-width:860px}
 .cityform-russia {margin:45px 0 0 0}
 .cityform-russia-title {font-weight:600; font-size:30px; line-height:39px; color:#000}
-.cityform-russia-title span {cursor:pointer; position:relative; color:#4849a6; white-space:nowrap}
+.cityform-russia-title span {cursor:pointer; position:relative; color:#4849a6}
 .cityform-russia-title span::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line.svg) repeat-x left bottom; transition:opacity 0.2s}
 .cityform-russia-title span:hover {z-index:20}
 .cityform-russia-title span:hover::after {opacity:0}
-.cityform-russia-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-russia-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-russia-title span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-russia-title span:hover strong {display:block}
 .cityform-russia-text {margin:15px 0 0 0}
 .cityform-russia-scheme {margin:36px 0 0 0}
 .cityform-russia-scheme::after {content:""; display:block; clear:both}
 .cityform-russia-scheme-map {float:left; margin:35px 0 0 0; width:64.48%}
-.cityform-russia-scheme-img {position:relative}
+.cityform-russia-scheme-img {position:relative; cursor:pointer}
 .cityform-russia-scheme-img img {display:block; width:100%}
+.cityform-russia-scheme-img span {display:none; position:absolute; left:50%; transform:translateX(-50%); top:100%; margin-top:-50px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-russia-scheme-img:hover span {display:block}
+.cityform-russia-scheme-img span::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:50%; margin-left:-10px; top:-10px; background:#fff}
 .cityform-russia-scheme-info {float:right; width:32.07%}
 .cityform-russia-scheme-regions {margin:40px 0 0 0}
 .cityform-russia-scheme-regions:first-child {margin:0}
@@ -6489,7 +6466,7 @@ footer {margin:60px 0 0 0}
 .cityform-russia-scheme-digit-title {font-weight:bold; font-size:24px; line-height:24px; color:#4849a6; text-transform:uppercase}
 .cityform-russia-scheme-digit-title span {cursor:pointer; position:relative}
 .cityform-russia-scheme-digit-title span:hover {z-index:20}
-.cityform-russia-scheme-digit-title span strong {display:none; position:absolute; left:0; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff; text-transform:none}
+.cityform-russia-scheme-digit-title span strong {display:none; position:absolute; left:0; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-russia-scheme-digit-title span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:20px; top:-10px; background:#fff}
 .cityform-russia-scheme-digit-title span:hover strong {display:block}
 .cityform-russia-scheme-digit-text {margin:9px 0 0 0; font-size:20px; line-height:30px; color:#676767}
@@ -6506,16 +6483,11 @@ footer {margin:60px 0 0 0}
     .cityform-russia-scheme-digit {margin:25px 0 0 0}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-russia h2 {font-size:28px; line-height:38px}
-}
-
-#cityform-moscow h2 {max-width:860px}
-#cityform-moscow h2 span {cursor:pointer; position:relative; color:#4849a6; white-space:nowrap}
+#cityform-moscow h2 span {cursor:pointer; position:relative; color:#4849a6}
 #cityform-moscow h2 span::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line.svg) repeat-x left bottom; transition:opacity 0.2s}
 #cityform-moscow h2 span:hover {z-index:20}
 #cityform-moscow h2 span:hover::after {opacity:0}
-#cityform-moscow h2 span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+#cityform-moscow h2 span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 #cityform-moscow h2 span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 #cityform-moscow h2 span:hover strong {display:block}
 .cityform-moscow-table {margin:50px 0 0 0; display:table; width:100%}
@@ -6526,7 +6498,7 @@ footer {margin:60px 0 0 0}
 .cityform-moscow-table-header img {display:inline-block; vertical-align:middle; margin:-2px 12px 0 0}
 .cityform-moscow-table-value {display:table-cell; vertical-align:middle; border-bottom:1px solid #e2e2e2; padding:30px 0; text-align:center; font-weight:500; font-size:22px; line-height:33px; color:#000; width:23.88%}
 .cityform-moscow-table-value:nth-child(2) {background:#f8f7ff}
-.cityform-moscow-table-container span {display:none; position:absolute; left:50%; transform:translateX(-50%); top:100%; margin-top:10px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-moscow-table-container span {display:none; position:absolute; left:50%; transform:translateX(-50%); top:100%; margin-top:10px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-moscow-table-container:hover span {display:block}
 .cityform-moscow-table-container span::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:50%; margin-left:-10px; top:-10px; background:#fff}
 .cityform-moscow-notice {margin:30px 0 0 0; padding:0 0 0 43px; position:relative; font-size:20px; line-height:30px}
@@ -6536,7 +6508,7 @@ footer {margin:60px 0 0 0}
 .cityform-moscow-structure-title span::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line.svg) repeat-x left bottom; transition:opacity 0.2s}
 .cityform-moscow-structure-title span:hover {z-index:20}
 .cityform-moscow-structure-title span:hover::after {opacity:0}
-.cityform-moscow-structure-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-moscow-structure-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-moscow-structure-title span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-moscow-structure-title span:hover strong {display:block}
 .cityform-moscow-structure {margin:40px 0 0 0; position:relative}
@@ -6578,6 +6550,7 @@ footer {margin:60px 0 0 0}
     .cityform-moscow-structure::after {content:""; display:block; clear:both}
     .cityform-moscow-structure-row {float:left; width:76px; margin:0 0 0 25px}
     .cityform-moscow-structure-row:first-child {margin:0}
+    .cityform-moscow-structure-row:last-child {}
     .cityform-moscow-structure-row-title {float:none; width:auto; font-size:0; line-height:0; height:48px; text-align:center}
     .cityform-moscow-structure-row-title img {display:block; margin:0 auto}
     .cityform-moscow-structure-row-scheme {float:none; width:auto; height:423px}
@@ -6588,21 +6561,13 @@ footer {margin:60px 0 0 0}
     .cityform-moscow-structure-legend-item:first-child {padding:0}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-moscow h2 {font-size:28px; line-height:38px}
-    .cityform-moscow-structure-row {width:60px; margin:0 0 0 10px}
-    .cityform-moscow-structure-row:first-child {margin:0}
-    .cityform-moscow-structure-legend {margin-left:10px; width:calc(100% - 140px)}
-}
-
-#cityform-health h2 {max-width:860px}
 .cityform-health-text {margin:30px 0 0 0}
 .cityform-death-title {margin:50px 0 0 0; font-weight:600; font-size:30px; line-height:39px; color:#000}
-.cityform-death-title span {cursor:pointer; position:relative; color:#4849a6; white-space:nowrap}
+.cityform-death-title span {cursor:pointer; position:relative; color:#4849a6}
 .cityform-death-title span::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line.svg) repeat-x left bottom; transition:opacity 0.2s}
 .cityform-death-title span:hover {z-index:20}
 .cityform-death-title span:hover::after {opacity:0}
-.cityform-death-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-death-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-death-title span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-death-title span:hover strong {display:block}
 .cityform-death-scheme {margin:30px 0 0 0; display:table; width:100%; font-size:20px; line-height:30px; color:#676767}
@@ -6622,18 +6587,16 @@ footer {margin:60px 0 0 0}
 .cityform-health-scheme-content {width:1148px; height:583px; margin:40px auto 0 auto; position:relative}
 .cityform-health-scheme-img img {display:block; width:100%}
 .cityform-health-scheme-img-mobile {display:none}
-.cityform-health-scheme-img-320 {display:none}
 .cityform-health-scheme-item {position:absolute; padding:10px 20px; width:345px; transition:background 0.2s, box-shadow 0.2s; cursor:pointer}
 .cityform-health-scheme-item-title {font-weight:500; font-size:22px; line-height:33px}
 .cityform-health-scheme-item-title span {color:#4849a6; text-decoration:none; position:relative; transition:border-color 0.2s; background:url(../images/line-3.svg) repeat-x left bottom}
 .cityform-health-scheme-item-text {position:absolute; left:-99999px; top:-99999px; opacity:0; transition:opacity 0.2s; padding:7px 0 0 0; font-size:16px; line-height:24px}
-.cityform-health-scheme-text {margin:40px 0 0 0; font-size:18px; line-height:27px; position:relative; padding:40px 0 40px 50px; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2}
-.cityform-health-scheme-text svg {display:block; width:30px; height:30px; position:absolute; left:0; top:38px; fill:#4849a6}
+.cityform-health-scheme-text {margin:40px 0 0 0; font-size:18px; line-height:27px; position:relative}
 .cityform-health-scheme-text span {cursor:pointer; position:relative}
 .cityform-health-scheme-text span::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line-2.svg) repeat-x left bottom; transition:opacity 0.2s}
 .cityform-health-scheme-text span:hover {z-index:20}
 .cityform-health-scheme-text span:hover::after {opacity:0}
-.cityform-health-scheme-text span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-health-scheme-text span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-health-scheme-text span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-health-scheme-text span:hover strong {display:block}
 
@@ -6671,14 +6634,6 @@ footer {margin:60px 0 0 0}
     .cityform-health-scheme {margin:40px -20px 0 -20px; padding:30px 20px}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-health h2 {font-size:28px; line-height:38px}
-    .cityform-death-scheme-row-title {width:120px}
-    .cityform-health-scheme-img-mobile {display:none}
-    .cityform-health-scheme-img-320 {display:block; text-align:center; line-height:0}
-}
-
-#cityform-loss h2 {max-width:860px}
 .cityform-loss-list {margin:50px -10px 0 -10px}
 .cityform-loss-list::after {content:""; display:block; clear:both}
 .cityform-loss-item {float:left; width:33.33%; padding:0 10px}
@@ -6691,7 +6646,7 @@ footer {margin:60px 0 0 0}
 .cityform-loss-notice span::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line.svg) repeat-x left bottom; transition:opacity 0.2s}
 .cityform-loss-notice span:hover {z-index:20}
 .cityform-loss-notice span:hover::after {opacity:0}
-.cityform-loss-notice span em {display:none; font-style:normal; white-space:normal; position:absolute; left:0; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-loss-notice span em {display:none; font-style:normal; white-space:normal; position:absolute; left:0; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-loss-notice span em::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:20px; top:-10px; background:#fff}
 .cityform-loss-notice span:hover em {display:block}
 .cityform-loss-notice svg {display:block; width:32px; height:32px; fill:#4849a6; position:absolute; left:0; top:40px}
@@ -6700,7 +6655,7 @@ footer {margin:60px 0 0 0}
 .cityform-loss-scheme-title span::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line.svg) repeat-x left bottom; transition:opacity 0.2s}
 .cityform-loss-scheme-title span:hover {z-index:20}
 .cityform-loss-scheme-title span:hover::after {opacity:0}
-.cityform-loss-scheme-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-loss-scheme-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-loss-scheme-title span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-loss-scheme-title span:hover strong {display:block}
 .cityform-loss-scheme {margin:20px 0 0 0; display:table; width:100%; font-size:20px; line-height:30px; color:#676767}
@@ -6730,18 +6685,6 @@ footer {margin:60px 0 0 0}
     .cityform-loss-scheme-row-scale-item {font-size:18px; line-height:27px}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-loss h2 {font-size:28px; line-height:38px}
-    .cityform-loss-notice {padding-left:40px}
-    .cityform-loss-notice span {white-space:normal}
-    .cityform-loss-scheme-row-title {font-size:16px; line-height:24px}
-    .cityform-loss-scheme-row-scale-item {font-size:16px; line-height:24px}
-    .cityform-loss-scheme-row-title {padding:5px 10px 5px 0}
-    .cityform-loss-scheme-row-value {padding:5px 0}
-    .cityform-loss-scheme-row-line {margin-top:10px}
-}
-
-#cityform-factors h2 {max-width:860px}
 .cityform-factors-text {margin:30px 0 0 0}
 .cityform-factors {margin:24px 0 0 0}
 .cityform-factors-group {margin:30px 0 0 0; padding:16px 40px 30px 40px; background:#f7f6fc}
@@ -6756,8 +6699,8 @@ footer {margin:60px 0 0 0}
 .cityform-factor-title {position:relative; padding:8px 44px 8px 20px; background:#4849a6; color:#fff; font-size:18px; line-height:27px; font-weight:500; cursor:pointer}
 .cityform-factor-title svg {display:block; width:24px; height:24px; fill:none; position:absolute; right:10px; top:10px}
 .cityform-factor.open .cityform-factor-title svg {transform:rotate(-180deg)}
-.cityform-factor-text {position:absolute; left:-9999px; top:-9999px; opacity:0; transition:opacity 0.5s; padding:5px 20px 8px 20px; background:#e6e3f4; font-size:18px; line-height:27px}
-.cityform-factor.open .cityform-factor-text {position:relative; left:auto; top:auto; opacity:1}
+.cityform-factor-text {display:none; padding:5px 20px 8px 20px; background:#e6e3f4; font-size:18px; line-height:27px}
+.cityform-factor.open .cityform-factor-text {display:block}
 .cityform-factor-text * {margin:0}
 .cityform-factor-text ul li {padding:0 0 0 18px}
 .cityform-factor-text ul li::before {left:0; top:11px; width:4px; height:4px; background:#b7afdd; border-radius:50%}
@@ -6774,20 +6717,15 @@ footer {margin:60px 0 0 0}
     .cityform-factor {margin:15px 0 0 0}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-factors h2 {font-size:28px; line-height:38px}
-}
-
 .cityform-factors-subgroup-1 .cityform-factor-title {background:#b7afdd}
 .cityform-factors-subgroup-1 .cityform-factor-text {background:#e6e3f4}
-.cityform-factors-subgroup-2 .cityform-factor-title {background:#de1182}
-.cityform-factors-subgroup-2 .cityform-factor-text {background:#fee0f0}
-.cityform-factors-subgroup-3 .cityform-factor-title {background:#f6a000}
+.cityform-factors-subgroup-2 .cityform-factor-title {background:#f6adac}
+.cityform-factors-subgroup-2 .cityform-factor-text {background:#fff2f2}
+.cityform-factors-subgroup-3 .cityform-factor-title {background:#f3b55c}
 .cityform-factors-subgroup-3 .cityform-factor-text {background:#fff1dd}
-.cityform-factors-subgroup-4 .cityform-factor-title {background:#6eb74a}
+.cityform-factors-subgroup-4 .cityform-factor-title {background:#bdbf46}
 .cityform-factors-subgroup-4 .cityform-factor-text {background:#f1f1d6}
 
-#cityform-factor-moscow h2 {max-width:860px}
 .cityform-factor-moscow {margin:51px 0 0 0}
 .cityform-factor-moscow::after {content:""; display:block; clear:both}
 .cityform-factor-moscow-text {float:left; width:40%; font-size:18px; line-height:27px}
@@ -6807,26 +6745,19 @@ footer {margin:60px 0 0 0}
     .cityform-factor-moscow-scheme {float:none; width:auto; margin:30px 0 0 0}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-factor-moscow h2 {font-size:28px; line-height:38px}
-}
-
 .cityform-factor-with-hint {color:#4849a6; cursor:pointer; position:relative}
 .cityform-factor-with-hint::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:5px; background:url(../images/line.svg) repeat-x left bottom; transition:opacity 0.2s}
 .cityform-factor-with-hint:hover {z-index:20}
 .cityform-factor-with-hint:hover::after {opacity:0}
-.cityform-factor-with-hint strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; width:530px; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-factor-with-hint strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; width:530px; padding:30px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-factor-with-hint strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-factor-with-hint:hover strong {display:block}
 
-#cityform-recommend h2 {max-width:860px}
 .cityform-recommend {margin:50px 0 0 0; border-bottom:1px solid #e2e2e2}
 .cityform-recommend-item {border-top:1px solid #e2e2e2}
 .cityform-recommend-item-title {position:relative; cursor:pointer; font-weight:500; font-size:18px; line-height:27px; color:#000}
 .cityform-recommend-item-title strong {display:block; padding:30px 92px 30px 13px; margin:0 40px 0 30px; font-weight:500; transition:background 0.2s}
-@media screen and (min-width:1200px) {
-    .cityform-recommend-item-title:hover strong {background:#f7f6fc}
-}
+.cityform-recommend-item-title:hover strong {background:#f7f6fc}
 .cityform-recommend-item-title span {position:absolute; left:0; top:26px; font-weight:bold; font-size:30px; line-height:45px; color:#4849a6}
 .cityform-recommend-item-title svg {display:block; width:24px; height:25px; position:absolute; right:0; top:32px; fill:none; transform:rotate(-180deg)}
 .cityform-recommend-item.open .cityform-recommend-item-title svg {transform:none}
@@ -6859,7 +6790,7 @@ footer {margin:60px 0 0 0}
 .cityform-recommend-item-city-content span::after {content:""; display:block; position:absolute; left:0; bottom:-3px; right:0; height:3px; background:url(../images/line-4.svg) repeat-x left bottom; transition:opacity 0.2s}
 .cityform-recommend-item-city-content span:hover {z-index:20}
 .cityform-recommend-item-city-content span:hover::after {opacity:0}
-.cityform-recommend-item-city-content span em {display:none; position:absolute; left:13px; top:100%; margin-top:10px; z-index:20; width:458px; padding:20px; font-weight:normal; font-style:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
+.cityform-recommend-item-city-content span em {display:none; position:absolute; left:13px; top:100%; margin-top:10px; z-index:20; width:458px; padding:30px; font-weight:normal; font-style:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-recommend-item-city-content span em.to-right {left:auto; right:13px}
 .cityform-recommend-item-city-content span em::after {content:""; display:block; position:absolute; left:0; top:-11px; height:11px; right:0; background:url(../images/blank.gif)}
 .cityform-recommend-item-city-content span em::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:32px; top:-10px; background:#fff}
@@ -6908,11 +6839,6 @@ footer {margin:60px 0 0 0}
     .cityform-recommend-item-indicators-title {margin:30px 0 0 0}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-recommend h2 {font-size:28px; line-height:38px}
-}
-
-#cityform-what h2 {max-width:860px}
 .cityform-what {margin:40px 0 0 0}
 .cityform-what::after {content:""; display:block; clear:both}
 .cityform-what-side {float:left; width:380px}
@@ -6969,32 +6895,19 @@ footer {margin:60px 0 0 0}
     .cityform-what-content.open .cityform-what-content-title-arrow {stroke:#fff; transform:rotate(0deg)}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-what h2 {font-size:28px; line-height:38px}
-}
-
-.cityform-warning::after {content:""; display:block; clear:both}
-.cityform-warning-container {float:left; width:65%}
-.cityform-warning-container h2 {margin:0; padding:0}
-.cityform-warning-text {margin:43px 0 0 0; color:#4849a6; font-weight:500; font-size:22px; line-height:33px}
-.cityform-warning-img {float:right; width:31%; line-height:0}
-.cityform-warning-img img {display:block; max-width:none}
+.cityform-warning {border-top:2px solid #4849a6; border-bottom:2px solid #4849a6; padding:90px 60px; color:#4849a6; font-weight:500; font-size:22px; line-height:33px; text-align:center}
 
 @media screen and (max-width:1199px) {
-    .cityform-warning-container {float:none; width:auto}
-    .cityform-warning-text {margin:30px 0 0 0}
-    .cityform-warning-img {float:none; width:auto; margin:12px -20px}
-    .cityform-warning-img img {margin:0 auto; max-width:100%}
+    .cityform-warning {border-top-width:1px; border-bottom-width:1px; padding:30px 0; font-size:20px; line-height:30px; background:#f7f6fc}
 }
 
-#cityform-final h3 {font-weight:bold}
-.cityform-team {margin:40px 0 -50px 0; column-count:3; column-gap:90px}
+.cityform-team {margin:50px 0 -50px 0; column-count:3; column-gap:90px}
 .cityform-team-group {-webkit-column-break-inside:avoid; page-break-inside:avoid; break-inside:avoid; break-inside:avoid-column}
-.cityform-team-group-title {font-size:18px; line-height:25px; font-weight:600; color:#000}
-.cityform-team-group-list {padding:0 0 20px 0; font-size:18px; line-height:28px; font-weight:500; color:#4849a6}
+.cityform-team-group-title {font-size:18px; line-height:27px; font-weight:500; color:#4849a6}
+.cityform-team-group-list {padding:0 0 20px 0; font-size:14px; line-height:21px}
 
 @media screen and (max-width:1199px) {
-    #cityform-final h2 {font-size:36px; line-height:47px; margin:0}
+    #cityform-team h2 {font-size:36px; line-height:47px; margin:0}
     .cityform-team {margin:40px 0 0 0; column-count:1; column-gap:0}
     .cityform-team-group {margin:40px 0 0 0}
     .cityform-team-group:first-child {margin:0}
@@ -7002,12 +6915,8 @@ footer {margin:60px 0 0 0}
     .cityform-team-group-list {padding:10px 0 0 0; font-size:20px; line-height:30px}
 }
 
-@media screen and (max-width:479px) {
-    #cityform-final h2 {font-size:28px; line-height:38px}
-}
-
 .cityform-menu {position:relative; height:0; z-index:99}
-.cityform-menu-container {position:absolute; right:60px; top:0; z-index:99; margin-top:105px}
+.cityform-menu-container {position:absolute; right:60px; top:0; z-index:99; margin-top:60px}
 .cityform-menu.fixed .cityform-menu-container {position:fixed; top:75px; margin-top:0}
 .cityform-menu-link {display:block; position:absolute; right:0; top:0; width:63px; height:63px; background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); border:1px solid #e6e6e6}
 .cityform-menu-open .cityform-menu-link {border-left-color:#fff; border-bottom-color:#fff; box-shadow:none}
@@ -7016,7 +6925,7 @@ footer {margin:60px 0 0 0}
 .cityform-menu-open .cityform-menu-link svg:nth-child(1) {display:none}
 .cityform-menu-link svg:nth-child(2) {display:none; width:15px; height:15px}
 .cityform-menu-open .cityform-menu-link svg:nth-child(2) {display:block}
-.cityform-menu-current {position:absolute; right:73px; top:0; white-space:nowrap; background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); border:1px solid #e6e6e6; padding:0 25px; font-size:14px; line-height:62px; color:#4849a6; cursor:pointer}
+.cityform-menu-current {position:absolute; right:73px; top:0; white-space:nowrap; background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); border:1px solid #e6e6e6; padding:0 25px; font-size:14px; line-height:62px; color:#4849a6}
 .cityform-menu-open .cityform-menu-current {display:none}
 .cityform-menu-list {display:none; position:absolute; right:0; top:0; white-space:nowrap; padding:44px 98px 44px 45px; text-align:right; font-size:18px; line-height:20px; background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); border:1px solid #e6e6e6}
 .cityform-menu-open .cityform-menu-list {display:block}
@@ -7029,7 +6938,7 @@ footer {margin:60px 0 0 0}
 .cityform-menu-list ul li.active a::after {content:""; display:block; position:absolute; right:-19px; top:50%; width:4px; height:4px; margin-top:-2px; background:#4849a6}
 
 @media screen and (min-width:1800px) {
-    .cityform-menu-container {right:130px; margin-top:140px}
+    .cityform-menu-container {right:130px; margin-top:80px}
     .cityform-menu.fixed .cityform-menu-container {top:90px; margin-top:0}
 }
 
