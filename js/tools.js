@@ -1416,6 +1416,26 @@ $(document).ready(function() {
         }
     });
 
+    $('.cityform-factor-title').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.cityform-recommend-item-title').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('body').on('click', '.cityform-what-menu ul li a', function(e) {
+        var curLi = $(this).parent();
+        if (!curLi.hasClass('active')) {
+            $('.cityform-what-menu ul li.active').removeClass('active');
+            curLi.addClass('active');
+            var curIndex = $('.cityform-what-menu ul li').index(curLi);
+            $('.cityform-what-content.active').removeClass('active');
+            $('.cityform-what-content').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
+    });
+
 });
 
 function redrawProgramm() {
