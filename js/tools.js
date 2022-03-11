@@ -1437,6 +1437,12 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.cityform-menu-list').each(function() {
+        var curLink = $('.cityform-menu-list ul li a').eq(0);
+        curLink.parent().addClass('active');
+        $('.cityform-menu-current').html(curLink.html());
+    });
+
     $('body').on('click', '.cityform-menu-link, .cityform-menu-current', function(e) {
         $('html').toggleClass('cityform-menu-open');
         e.preventDefault();
@@ -1450,13 +1456,13 @@ $(document).ready(function() {
         $('html').removeClass('cityform-menu-open');
         e.preventDefault();
     });
-    
+
     $(document).click(function(e) {
         if ($(e.target).parents().filter('.cityform-menu').length == 0) {
             $('html').removeClass('cityform-menu-open');
         }
     });
-    
+
     $('.cityform-about-world-continent-title').click(function() {
         $(this).parent().toggleClass('open');
     });
@@ -1478,14 +1484,26 @@ $(document).ready(function() {
     });
 
     $('.cityform-health-scheme-item-title').click(function() {
-        $(this).parent().toggleClass('open');
+        $('.cityform-health-scheme-item-window').remove();
+        $('body').append('<div class="cityform-health-scheme-item-window">' + $(this).parent().html() + '</div>');
     });
 
     $('.cityform-health-scheme-item-mobile').click(function() {
         var curItem = $(this);
         var curIndex = $('.cityform-health-scheme-item-mobile').index(curItem);
-        $('.cityform-health-scheme-item').eq(curIndex).addClass('open');
-        $('html, body').animate({'scrollTop': $('.cityform-health-scheme-item').eq(curIndex).offset().top - $('header').height()});
+        $('.cityform-health-scheme-item-window').remove();
+        $('body').append('<div class="cityform-health-scheme-item-window">' + $('.cityform-health-scheme-item').eq(curIndex).html() + '</div>');
+    });
+
+    $('body').on('click', '.cityform-health-scheme-item-btn a, .cityform-health-scheme-item-close', function(e) {
+        $('.cityform-health-scheme-item-window').remove();
+        e.preventDefault();
+    });
+
+    $(document).click(function(e) {
+        if ($(e.target).parents().filter('.cityform-health-scheme-item-mobile').length == 0 && $(e.target).parents().filter('.cityform-health-scheme-item').length == 0 && $(e.target).parents().filter('.cityform-health-scheme-item-window').length == 0) {
+            $('.cityform-health-scheme-item-window').remove();
+        }
     });
 
     $('.cityform-what-content-title a').click(function(e) {
@@ -2021,6 +2039,12 @@ $(window).on('load resize', function() {
             });
         });
     });
+
+    $('.cityform-recommend-item-cities').each(function() {
+        $('.cityform-recommend-item-city.open').removeClass('open');
+        $('.cityform-recommend-item-cities').css({'height': 'auto'});
+        $('.cityform-recommend-item-cities').css({'height': $('.cityform-recommend-item-cities').height()});
+    });
 });
 
 var timerScroll = null;
@@ -2133,7 +2157,11 @@ $(window).on('load resize scroll', function() {
     });
 
     $('.cityform-menu').each(function() {
-        if (windowScroll > $('.cityform-menu').offset().top - 10 - $('header').height() + Number($('.main-block').eq(0).css('margin-top').replace('px', '')) * 0.875) {
+        var curPosition = $('.cityform-menu').offset().top - 10 - $('header').height() + Number($('.main-block').eq(0).css('margin-top').replace('px', '')) * 0.875;
+        if ($(window).width() < 1200) {
+            curPosition = $('.cityform-menu').offset().top - 10 - $('header').height() + Number($('.main-block').eq(0).css('margin-top').replace('px', ''));
+        }
+        if (windowScroll > curPosition) {
             $('.cityform-menu').addClass('fixed');
         } else {
             $('.cityform-menu').removeClass('fixed');

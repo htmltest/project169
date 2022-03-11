@@ -404,4 +404,9 @@
         <path d="M6.72021 9.19946L12.7202 15.1995L18.7202 9.19946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol viewBox="0 0 17 18" id="cityform-health-scheme-item-close">
+        <path d="M16 1.125L1 16.125" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M1 1.125L16 16.125" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+    </symbol>
+
 </svg>
