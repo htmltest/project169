@@ -393,7 +393,7 @@ $(document).ready(function() {
         windowHTML +=               '<div class="window-photo-social-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share"></use></svg></div>';
         windowHTML +=               '<div class="window-photo-social-window">';
         windowHTML +=                   '<a href="#" data-clipboard-target="#ownd-url" class="window-photo-social-item window-photo-social-item-link"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-link"></use></svg></a>';
-        windowHTML +=                   '<a href="#" class="window-photo-social-item window-photo-social-item-fb"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-fb"></use></svg></a>';
+        //windowHTML +=                   '<a href="#" class="window-photo-social-item window-photo-social-item-fb"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-fb"></use></svg></a>';
         windowHTML +=                   '<a href="#" class="window-photo-social-item window-photo-social-item-vk"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-vk"></use></svg></a>';
         windowHTML +=               '</div>';
         windowHTML +=           '</div>';
@@ -594,7 +594,7 @@ $(document).ready(function() {
         windowHTML +=               '<div class="window-video-social-icon"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share"></use></svg></div>';
         windowHTML +=               '<div class="window-video-social-window">';
         windowHTML +=                   '<a href="#" data-clipboard-target="#ownd-url" class="window-video-social-item window-video-social-item-link"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-link"></use></svg></a>';
-        windowHTML +=                   '<a href="#" class="window-video-social-item window-video-social-item-fb"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-fb"></use></svg></a>';
+        //windowHTML +=                   '<a href="#" class="window-video-social-item window-video-social-item-fb"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-fb"></use></svg></a>';
         windowHTML +=                   '<a href="#" class="window-video-social-item window-video-social-item-vk"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#window-photo-share-vk"></use></svg></a>';
         windowHTML +=               '</div>';
         windowHTML +=           '</div>';
@@ -2389,3 +2389,229 @@ var verifyCallback = function(response) {
         }
     }
 };
+
+$(document).ready(function() {
+    $('body').on('mouseenter', '.cityform-russia-scheme-img g, .chart-bar-row-data, .cityform-moscow-structure-row-scheme-item', function(e) {
+        if ($(window).width() > 1199) {
+            $('.window-hint').remove();
+            $('.wrapper').append('<div class="window-hint"><div class="window-hint-inner">' + $(this).attr('data-title') + ', <span>' + $(this).attr('data-value') + '</span></div></div>');
+            var curLeft = e.pageX;
+            var curTop = e.pageY;
+            $('.window-hint').css({'left': curLeft, 'top': curTop});
+            if ($('.window-hint-inner').offset().left + $('.window-hint-inner').outerWidth() > $('.wrapper').width()) {
+                $('.window-hint').addClass('to-right');
+            }
+        }
+    });
+
+    $('body').on('mousemove', '.cityform-russia-scheme-img g, .chart-bar-row-data, .cityform-moscow-structure-row-scheme-item', function(e) {
+        if ($(window).width() > 1199) {
+            var curLeft = e.pageX;
+            var curTop = e.pageY;
+            $('.window-hint').css({'left': curLeft, 'top': curTop});
+            if ($('.window-hint-inner').offset().left + $('.window-hint-inner').outerWidth() > $('.wrapper').width()) {
+                $('.window-hint').addClass('to-right');
+            }
+            if ($('.window-hint').offset().left < 0) {
+                $('.window-hint').removeClass('to-right');
+            }
+        }
+    });
+
+    $('body').on('mouseleave', '.cityform-russia-scheme-img g, .chart-bar-row-data, .cityform-moscow-structure-row-scheme-item', function(e) {
+        if ($(window).width() > 1119) {
+            $('.window-hint').remove();
+        }
+    });
+});
+
+function createRussiaMap(curBlock, data) {
+
+    var newHTML = '';
+
+    newHTML +=  '<div class="cityform-russia-scheme-img"><svg viewBox="0 0 1107.77 630.12" fill="none" xmlns="http://www.w3.org/2000/svg"></svg></div>';
+
+    var curData = data.data;
+
+    newHTML +=  '<div class="cityform-epidemic-scheme-legend">' +
+                    '<div class="cityform-epidemic-scheme-legend-title">' + data.legend + '</div>' +
+                    '<div class="cityform-epidemic-scheme-legend-list">';
+    for (var i = 0; i < data.ranges.length; i++) {
+        newHTML +=      '<div class="cityform-epidemic-scheme-legend-item">' +
+                            '<div class="cityform-epidemic-scheme-legend-item-line" style="background:' + data.ranges[i][2] + '"></div>' +
+                            '<div class="cityform-epidemic-scheme-legend-item-text">' + data.ranges[i][3] + '</div>' +
+                        '</div>';
+    }
+    newHTML +=      '</div>' +
+                '</div>';
+
+    curBlock.html(newHTML);
+
+    if (curData !== null) {
+        var newMap = '';
+
+        for (var j = 0; j < russiaRegions.length; j++) {
+            var curRegion = russiaRegions[j];
+            for (var i = 0; i < curData.length; i++) {
+                if (curRegion.id == curData[i][0]) {
+                    var curColorIndex = -1;
+                    var curValue = Math.round(curData[i][1]);
+                    for (var c = 0; c < data.ranges.length; c++) {
+                        if (curValue >= data.ranges[c][0] && curValue < data.ranges[c][1]) {
+                            curColorIndex = c;
+                        }
+                        if (curValue == 0) {
+                            curColorIndex = 0;
+                        }
+                    }
+
+                    var curColor = data.ranges[curColorIndex][2];
+
+                    newMap += '<g style="fill:' + curColor + '" data-title="' + curRegion.title + '" data-value="' + curValue + data.unit + '">' + curRegion.svg + '</g>';
+                }
+            }
+        }
+        curBlock.find('.cityform-russia-scheme-img svg').html(newMap);
+    }
+
+}
+
+function createBarChart(curBlock, data) {
+
+    var newHTML = '';
+
+    newHTML +=  '<div class="chart-bar">';
+
+    var curData = data.data;
+
+    if (curData !== null) {
+        var curMax = 0;
+        var isInvert = false;
+        if (typeof(data.subzero) != 'undefined' && data.subzero == true) {
+            curMax = Infinity;
+            isInvert = true;
+        }
+        for (var i = 0; i < curData.length; i++) {
+            curValue = curData[i].value;
+            if (isInvert) {
+                if (curMax > curValue) {
+                    curMax = curValue;
+                }
+            } else {
+                if (curMax < curValue) {
+                    curMax = curValue;
+                }
+            }
+        }
+
+        var showValue = false;
+        if (typeof(data.showvalue) != 'undefined' && data.showvalue == true) {
+            showValue = true;
+        }
+
+        var stepMax = Math.ceil(curMax);
+        if (showValue) {
+            stepMax++;
+        }
+        if (isInvert) {
+            stepMax = Math.floor(curMax);
+            if (showValue) {
+                stepMax--;
+            }
+        }
+        var stepSize = stepMax / 6;
+        var steps = [];
+        for (var i = 0; i < 7; i++) {
+            steps.push(Math.ceil(i * stepSize));
+        }
+
+        var legendUnit = '';
+        if (typeof(data.legendunit) != 'undefined') {
+            legendUnit = data.legendunit;
+        }
+
+        for (var i = 0; i < curData.length; i++) {
+            var classMain = '';
+            if (typeof(curData[i].main) != 'undefined' && curData[i].main == true) {
+                classMain = 'chart-bar-row-main'
+            }
+            newHTML +=  '<div class="chart-bar-row chart-bar-row-data ' + classMain + '" data-title="' + curData[i].title + '" data-value="' + curData[i].value + legendUnit + '">' +
+                            '<div class="chart-bar-row-title">' + curData[i].title + '</div>' +
+                            '<div class="chart-bar-row-value">' +
+                                '<div class="chart-bar-row-back">';
+            for (var j = 0; j < steps.length; j++) {
+                newHTML +=          '<div class="chart-bar-row-back-item" style="left:' + (steps[j] / stepMax * 100) + '%"></div>';
+            }
+            newHTML +=          '</div>' +
+                                '<div class="chart-bar-row-line" style="width:' + (curData[i].value / stepMax * 100) + '%"></div>';
+            if (showValue) {
+                    newHTML +=  '<div class="chart-bar-row-value-text">' + curData[i].value + '</div>';
+            }
+
+            newHTML +=      '</div>' +
+                        '</div>';
+        }
+
+        newHTML +=      '<div class="chart-bar-row">' +
+                            '<div class="chart-bar-row-title">&nbsp;</div>' +
+                            '<div class="chart-bar-row-value">' +
+                                '<div class="chart-bar-row-scale">';
+        for (var j = 0; j < steps.length; j++) {
+            newHTML +=              '<div class="chart-bar-row-scale-item" style="left:' + (steps[j] / stepMax * 100) + '%">' + steps[j] + legendUnit + '</div>';
+        }
+        newHTML +=              '</div>' +
+                            '</div>' +
+                        '</div>';
+    }
+
+    newHTML +=  '</div>';
+
+    curBlock.html(newHTML);
+}
+
+function createStackChart(curBlock, data) {
+    var newHTML = '';
+
+    var curData = data.data;
+
+    if (curData !== null) {
+        var legendUnit = '';
+        if (typeof(data.legendunit) != 'undefined') {
+            legendUnit = data.legendunit;
+        }
+
+
+        for (var i = 0; i < curData.length; i++) {
+            newHTML +=  '<div class="cityform-moscow-structure-row">' +
+                            '<div class="cityform-moscow-structure-row-title">' + curData[i].title + '<img src="' + curData[i].icon + '" alt="" /></div>' +
+                            '<div class="cityform-moscow-structure-row-scheme">';
+            var rowHTML = '';
+            for (var j = 0; j < curData[i].values.length; j++) {
+                var curValue = curData[i].values[j];
+                if (curValue > 0) {
+                    var curColor = data.ranges[j][0];
+                    var classInverse = '';
+                    if (j == 0) {
+                        classInverse = 'cityform-moscow-structure-row-scheme-item-inverse';
+                    }
+
+                    rowHTML = '<div class="cityform-moscow-structure-row-scheme-item ' + classInverse + '" data-title="' + data.ranges[j][1] + '" data-value="' + curValue + legendUnit + '" style="background:' + curColor + '; width:' + curValue + '%; height:' + curValue + '%"><span>' + curValue + legendUnit + '</span></div>' + rowHTML;
+                }
+            }
+            newHTML +=      rowHTML + '</div>' +
+                        '</div>';
+        }
+    }
+
+    newHTML +=  '<div class="cityform-moscow-structure-legend">';
+    var legendHTML = '';
+    for (var i = 0; i < data.ranges.length; i++) {
+        legendHTML =    '<div class="cityform-moscow-structure-legend-item">' +
+                            '<div class="cityform-moscow-structure-legend-item-line" style="background-color:' + data.ranges[i][0] + '"></div>' +
+                            '<div class="cityform-moscow-structure-legend-item-text">' + data.ranges[i][1] + '<span>' + data.ranges[i][2] + '</span></div>' +
+                        '</div>' + legendHTML;
+    }
+    newHTML +=  legendHTML + '</div>';
+
+    curBlock.html(newHTML);
+}

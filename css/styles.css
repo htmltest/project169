@@ -36,7 +36,7 @@ strong, b {font-weight:500}
 h1 {margin:0 0 20px 0; padding:0; font-weight:bold; font-size:55px; line-height:55px; color:#000}
 h2 {margin:40px 0 20px 0; padding:0; font-weight:bold; font-size:36px; line-height:41px; color:#000}
 h3 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:30px; line-height:42px; color:#000}
-h4 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:22px; line-height:28px; color:#000}
+h4 {margin:40px 0 20px 0; padding:0; font-weight:500; font-size:22px; line-height:40px; color:#000}
 h5 {margin:40px 0 20px 0; padding:0; font-weight:600; font-size:20px; line-height:30px; color:#000}
 h6 {margin:40px 0 20px 0; padding:0; font-weight:600; font-size:18px; line-height:27px; color:#000}
 p {margin:20px 0; padding:0}
@@ -60,7 +60,7 @@ hr {margin:50px 0; height:1px; border:none; background:#c4c4c4}
     h1 {font-size:70px; line-height:91px}
     h2 {font-size:44px; line-height:50px}
     h3 {font-size:36px; line-height:51px}
-    h4 {font-size:30px; line-height:30px}
+    h4 {font-size:30px; line-height:40px}
     h5 {font-size:24px; line-height:31px}
     h6 {font-size:22px; line-height:33px}
     p.anonce-text {font-size:24px; line-height:36px}
@@ -1267,8 +1267,10 @@ header.fixed .nav-reg {margin-top:10px}
 .news-detail-social {margin:30px 0 0 0; text-align:center}
 .news-detail-social-links {margin:8px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px}
 .news-detail-social-links a {display:inline-block; vertical-align:top; width:30px; height:30px; margin:0 0 0 20px}
+.news-detail-social-links a.news-detail-social-links-zen {width:67px}
 .news-detail-social-links a:first-child {margin:0}
 .news-detail-social-links a svg {display:block; width:30px; height:30px; fill:#000; transition:fill 0.2s; border-radius:50%}
+.news-detail-social-links a.news-detail-social-links-zen svg {width:67px; border-radius:0}
 .news-detail-social-links a:hover svg {fill:#ff2f66}
 .news-detail-container {margin:50px 0 0 0}
 
@@ -1279,8 +1281,10 @@ header.fixed .nav-reg {margin-top:10px}
     .news-detail-social {margin:40px 0 0 0}
     .news-detail-social-links {margin:20px 0 0 0}
     .news-detail-social-links a {width:42px; height:42px; margin:0 0 0 30px}
+    .news-detail-social-links a.news-detail-social-links-zen {width:94px}
     .news-detail-social-links a:first-child {margin:0}
     .news-detail-social-links a svg {width:42px; height:42px}
+    .news-detail-social-links a.news-detail-social-links-zen svg {width:94px}
     .news-detail-container {margin:60px 0 0 0}
     .news-detail-photo {margin-left:-140px; margin-right:-140px}
     .news-detail-photo img {display:block; width:100%}
@@ -1292,7 +1296,9 @@ header.fixed .nav-reg {margin-top:10px}
     .news-detail-header {font-size:32px; line-height:45px}
     .news-detail-social-links {margin:13px 0 0 0}
     .news-detail-social-links a {width:42px; height:42px; margin:0 0 0 30px}
+    .news-detail-social-links a.news-detail-social-links-zen {width:94px}
     .news-detail-social-links a svg {width:42px; height:42px}
+    .news-detail-social-links a.news-detail-social-links-zen svg {width:94px}
     .news-detail-social-links a:first-child {margin:0}
     .news-detail-container {margin:60px 0 0 0}
     .news-detail-photo {margin-left:-14px; margin-right:-14px}
@@ -1305,7 +1311,9 @@ header.fixed .nav-reg {margin-top:10px}
     .news-detail-social {font-size:18px; line-height:27px}
     .news-detail-social-links {margin:10px 0 0 0}
     .news-detail-social-links a {width:40px; height:40px}
+    .news-detail-social-links a.news-detail-social-links-zen {width:90px}
     .news-detail-social-links a svg {width:40px; height:40px}
+    .news-detail-social-links a.news-detail-social-links-zen svg {width:90px}
     .news-detail-photo {margin-left:-20px; margin-right:-20px}
 }
 
@@ -2849,6 +2857,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .analytics-contacts-social-item {float:left; margin:0 0 0 30px}
 .analytics-contacts-social-item:first-child {margin:0}
 .analytics-contacts-social-item svg {display:block; width:46px; height:46px; fill:#000; transition:fill 0.2s}
+.analytics-contacts-social-item-zen svg {width:103px}
 .analytics-contacts-social-item a:hover svg {fill:#ff2f66}
 .analytics-contacts-address {margin:60px 0 0 0; border-top:1px solid #d9d9d9; padding:30px 0}
 .analytics-contacts-address::after {content:""; display:block; clear:both}
@@ -2863,6 +2872,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
     .analytics-contacts-item {font-size:22px; line-height:33px}
     .analytics-contacts-item-value {margin:0 0 0 274px}
     .analytics-contacts-social-item svg {width:54px; height:54px}
+    .analytics-contacts-social-item-zen svg {width:121px}
     .analytics-contacts-address-title {font-size:36px; line-height:47px}
     .analytics-contacts-address-value svg {width:32px; height:32px}
 }
@@ -2875,6 +2885,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
     .analytics-contacts-item-value {margin:0 0 0 250px}
     .analytics-contacts-social {float:none; width:auto; padding:0; margin:40px 0 0 0}
     .analytics-contacts-social-item svg {width:54px; height:54px}
+    .analytics-contacts-social-item-zen svg {width:121px}
     .analytics-contacts-address {display:none}
 }
 
@@ -4390,7 +4401,7 @@ footer {margin:60px 0 0 0}
 }
 
 .footer-social {background:#000; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
-.footer-social-item {display:inline-block; vertical-align:top; width:25%; border-right:1px solid #2c2c2c}
+.footer-social-item {display:inline-block; vertical-align:top; width:20%; border-right:1px solid #2c2c2c}
 .footer-social-item:first-child {border-left:1px solid #2c2c2c}
 .footer-social-item a {display:block; height:66px; line-height:66px; transition:background 0.2s}
 .footer-social-item a:hover {background:#282727}
@@ -4666,13 +4677,15 @@ footer {margin:60px 0 0 0}
 
 .window-photo-social {display:block; position:absolute; right:98px; top:20px}
 .window-photo-social-icon svg {display:block; fill:none; stroke:#fff; transition:all 0.2s; width:17px; height:16px}
-.window-photo-social-window {display:none; position:absolute; z-index:99; left:50%; top:100%; margin:14px 0 0 -72px; padding:9px 0 0 17px; width:144px; height:47px; background:#424242; box-shadow:6px 6px 20px rgba(36, 36, 36, 0.13)}
+.window-photo-social-window {display:none; position:absolute; z-index:99; left:50%; top:100%; margin:14px 0 0 0; transform:translateX(-50%); font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; padding:9px 17px 0 17px; height:47px; background:#424242; box-shadow:6px 6px 20px rgba(36, 36, 36, 0.13)}
 .window-photo-social-window::before {content:""; display:block; position:absolute; left:50%; top:-7px; width:14px; height:14px; background:#424242; margin-left:-7px; transform:rotate(45deg)}
 .window-photo-social-window::after {content:""; display:block; position:absolute; left:-1px; top:-15px; right:-1px; height:16px; background:url(../images/blank.gif)}
 .window-photo-social:hover .window-photo-social-window {display:block}
-.window-photo-social-item {float:left; width:29px; margin:0 0 0 14px; position:relative}
+.window-photo-social-item {display:inline-block; vertical-align:top; width:29px; margin:0 0 0 14px; position:relative}
+.window-photo-social-item-zen {width:65px}
 .window-photo-social-item:first-child {margin:0}
 .window-photo-social-item svg {display:block; width:29px; height:29px; transition:all 0.2s}
+.window-photo-social-item-zen svg {width:65px}
 .window-photo-social-item.window-photo-social-item-link {background:#fff; border-radius:50%}
 .window-photo-social-item.window-photo-social-item-link:hover {background:#ff2f66}
 .window-photo-social-item.window-photo-social-item-link svg {stroke:#000; fill:none}
@@ -4685,10 +4698,12 @@ footer {margin:60px 0 0 0}
 @media screen and (min-width:1800px) {
     .window-photo-social {right:140px; top:20px}
     .window-photo-social-icon svg {width:25px; height:25px}
-    .window-photo-social-window {width:168px; margin-left:-84px; height:56px; padding:10px 0 0 10px}
+    .window-photo-social-window {height:56px; padding:10px 10px 0 10px}
     .window-photo-social-item {width:36px; margin:0 0 0 20px}
+    .window-photo-social-item-zen {width:81px}
     .window-photo-social-item:first-child {margin:0}
     .window-photo-social-item svg {width:36px; height:36px}
+    .window-photo-social-item-zen svg {width:81px}
 }
 
 @media screen and (max-width:1199px) {
@@ -4737,13 +4752,15 @@ footer {margin:60px 0 0 0}
 
 .window-video-social {display:block; position:absolute; right:58px; top:20px}
 .window-video-social-icon svg {display:block; fill:none; stroke:#fff; transition:all 0.2s; width:17px; height:16px}
-.window-video-social-window {display:none; position:absolute; z-index:99; left:50%; top:100%; margin:14px 0 0 -72px; padding:9px 0 0 17px; width:144px; height:47px; background:#424242; box-shadow:6px 6px 20px rgba(36, 36, 36, 0.13)}
+.window-video-social-window {display:none; position:absolute; z-index:99; left:50%; top:100%; margin:14px 0 0 0; padding:9px 17px 0 17px; transform:translateX(-50%); font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; height:47px; background:#424242; box-shadow:6px 6px 20px rgba(36, 36, 36, 0.13)}
 .window-video-social-window::before {content:""; display:block; position:absolute; left:50%; top:-7px; width:14px; height:14px; background:#424242; margin-left:-7px; transform:rotate(45deg)}
 .window-video-social-window::after {content:""; display:block; position:absolute; left:-1px; top:-15px; right:-1px; height:16px; background:url(../images/blank.gif)}
 .window-video-social:hover .window-video-social-window {display:block}
-.window-video-social-item {float:left; width:29px; margin:0 0 0 14px; position:relative}
+.window-video-social-item {display:inline-block; vertical-align:top; width:29px; margin:0 0 0 14px; position:relative}
+.window-video-social-item-zen {width:65px}
 .window-video-social-item:first-child {margin:0}
 .window-video-social-item svg {display:block; width:29px; height:29px; transition:all 0.2s}
+.window-video-social-item-zen svg {width:65px}
 .window-video-social-item.window-video-social-item-link {background:#fff; border-radius:50%}
 .window-video-social-item.window-video-social-item-link:hover {background:#ff2f66}
 .window-video-social-item.window-video-social-item-link svg {stroke:#000; fill:none}
@@ -4756,10 +4773,12 @@ footer {margin:60px 0 0 0}
 @media screen and (min-width:1800px) {
     .window-video-social {right:79px; top:20px}
     .window-video-social-icon svg {width:25px; height:25px}
-    .window-video-social-window {width:168px; margin-left:-84px; height:56px; padding:10px 0 0 10px}
+    .window-video-social-window {height:56px; padding:10px 10px 0 10px}
     .window-video-social-item {width:36px; margin:0 0 0 20px}
+    .window-video-social-item-zen {width:81px}
     .window-video-social-item:first-child {margin:0}
     .window-video-social-item svg {width:36px; height:36px}
+    .window-video-social-item-zen svg {width:81px}
 }
 
 @media screen and (max-width:1199px) {
@@ -4825,13 +4844,15 @@ footer {margin:60px 0 0 0}
 
 .window-title-social {display:block; position:absolute; right:58px; top:20px}
 .window-title-social-icon svg {display:block; fill:none; stroke:#fff; transition:all 0.2s; width:20px; height:20px}
-.window-title-social-window {display:none; position:absolute; z-index:99; left:50%; top:100%; margin:14px 0 0 -72px; padding:9px 0 0 17px; width:144px; height:47px; background:#424242; box-shadow:6px 6px 20px rgba(36, 36, 36, 0.13)}
+.window-title-social-window {display:none; position:absolute; z-index:99; left:50%; top:100%; margin:14px 0 0 0; transform:translateX(-50%); font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; padding:9px 17px 0 17px; height:47px; background:#424242; box-shadow:6px 6px 20px rgba(36, 36, 36, 0.13)}
 .window-title-social-window::before {content:""; display:block; position:absolute; left:50%; top:-7px; width:14px; height:14px; background:#424242; margin-left:-7px; transform:rotate(45deg)}
 .window-title-social-window::after {content:""; display:block; position:absolute; left:-1px; top:-15px; right:-1px; height:16px; background:url(../images/blank.gif)}
 .window-title-social:hover .window-title-social-window {display:block}
-.window-title-social-item {float:left; width:29px; margin:0 0 0 14px; position:relative}
+.window-title-social-item {display:inline-block; vertical-align:top; width:29px; margin:0 0 0 14px; position:relative}
+.window-title-social-item-zen {width:65px}
 .window-title-social-item:first-child {margin:0}
 .window-title-social-item svg {display:block; width:29px; height:29px; transition:all 0.2s}
+.window-title-social-item-zen svg {width:65px}
 .window-title-social-item.window-title-social-item-link {background:#fff; border-radius:50%}
 .window-title-social-item.window-title-social-item-link:hover {background:#ff2f66}
 .window-title-social-item.window-title-social-item-link svg {stroke:#000; fill:none}
@@ -5395,6 +5416,7 @@ footer {margin:60px 0 0 0}
 .vacancy-empty-social-item {float:left; margin:0 0 0 30px}
 .vacancy-empty-social-item:first-child {margin:0}
 .vacancy-empty-social-item svg {display:block; width:46px; height:46px; fill:#000; transition:fill 0.2s}
+.vacancy-empty-social-item-zen svg {width:103px}
 .vacancy-empty-social-item a:hover svg {fill:#ff2f66}
 
 @media screen and (min-width:1800px) {
@@ -5621,7 +5643,9 @@ footer {margin:60px 0 0 0}
 .health-feedback-social-item {display:inline-block; vertical-align:top; margin:0 0 0 18px}
 .health-feedback-social-item:first-child {margin:0}
 .health-feedback-social-item a {display:block; width:32px}
+.health-feedback-social-item-zen a {width:72px}
 .health-feedback-social-item a svg {display:block; width:32px; height:32px; fill:#4f947d; transition:fill 0.2s}
+.health-feedback-social-item-zen a svg {width:72px}
 .health-feedback-social-item a:hover svg {fill:#000}
 
 @media screen and (max-width:1199px) {
@@ -5638,7 +5662,9 @@ footer {margin:60px 0 0 0}
     .health-feedback-social-item {margin:0 0 0 30px}
     .health-feedback-social-item:first-child {margin:0}
     .health-feedback-social-item a {width:46px}
+    .health-feedback-social-item-zen a {width:103px}
     .health-feedback-social-item a svg {width:46px; height:46px}
+    .health-feedback-social-item-zen a svg {width:103px}
 }
 
 .exponents-header {display:table; width:100%}
@@ -5957,7 +5983,7 @@ footer {margin:60px 0 0 0}
 .academy-welcome-social-link a {display:block; border:2px solid #fff; color:#fff; padding:0 18px; height:44px; font-size:14px; font-weight:600; line-height:40px; text-transform:uppercase; letter-spacing:0.05em; text-decoration:none; transition:background 0.2s, color 0.2s}
 .academy-welcome-social-link a:hover {background:#fff; color:#56a48c}
 .academy-welcome-social-item {float:left; margin:0 0 0 20px}
-.academy-welcome-social-item:first-child {margin:0}
+.academy-welcome-social-item:first-child {margin-left:0}
 .academy-welcome-social-item svg {display:block; width:32px; height:32px; fill:#fff; transition:fill 0.2s}
 .academy-welcome-social-item-zen svg {width:72px}
 .academy-welcome-social-item a:hover svg {fill:#94d6ea}
@@ -5969,6 +5995,10 @@ footer {margin:60px 0 0 0}
 @media screen and (min-width:1800px) {
     .academy-welcome-content {margin-top:110px}
     .academy-welcome-urban {margin-top:110px}
+    .academy-welcome-social-link {margin-right:20px}
+    .academy-welcome-social-link a {padding:15px 24px 14px 24px; font-size:18px; line-height:23px; height:auto}
+    .academy-welcome-social-item svg {width:44px; height:44px}
+    .academy-welcome-social-item-zen svg {width:99px}
 }
 
 @media screen and (max-width:1199px) {
@@ -5982,6 +6012,14 @@ footer {margin:60px 0 0 0}
     .academy-welcome-urban-mobile {display:block; line-height:0; margin:84px 0 0 0}
     .page-main .academy-welcome-urban-mobile {margin:40px 0 0 0}
     .academy-welcome-urban-mobile img {display:block; width:164px}
+}
+
+@media screen and (max-width:767px) {
+    .academy-welcome-social-link {margin:0 20px 0 0}
+    .academy-welcome-social-link a {padding:17px; border-width:3px; font-size:20px; line-height:26px; height:auto}
+    .academy-welcome-social-item {margin-top:10px}
+    .academy-welcome-social-item svg {width:44px; height:44px}
+    .academy-welcome-social-item-zen svg {width:99px}
 }
 
 @media screen and (max-width:479px) {
@@ -6345,6 +6383,8 @@ footer {margin:60px 0 0 0}
 .cityform-welcome-bg-mobile {display:none}
 .cityform-welcome-container {position:relative; padding:60px 60px 140px 60px}
 .cityform-welcome-container h1 {font-weight:900; font-size:48px; line-height:62px; color:#4849a6; text-transform:uppercase; max-width:850px; margin:0}
+.cityform-welcome-logos {float:right; width:250px; line-height:0}
+.cityform-welcome-logos img {display:block; width:100%}
 .cityform-welcome-text {margin:20px 0 0 0; font-size:22px; line-height:33px; font-weight:300; color:#000; max-width:850px}
 .cityform-welcome-download {margin:32px 0 0 0}
 .cityform-welcome-download .btn {color:#4849a6; border-color:#4849a6}
@@ -6353,6 +6393,14 @@ footer {margin:60px 0 0 0}
 .cityform-welcome-download .btn svg {stroke:#4849a6}
 .cityform-welcome-download .btn:hover svg {stroke:#fff}
 .cityform-welcome-download .btn:active svg {stroke:#fff}
+
+@media screen and (min-width:1800px) {
+    .cityform-welcome-container {min-height:830px}
+    .cityform-welcome-logos {width:450px; margin:0 60px 0 0}
+    .cityform-welcome-container h1 {font-size:56px; line-height:70px}
+    .cityform-welcome-text {margin:30px 0 0 0; font-size:24px; line-height:36px}
+    .cityform-welcome-download {margin:40px 0 0 0}
+}
 
 @media screen and (max-width:1199px) {
     .cityform-welcome-bg {display:none}
@@ -6363,20 +6411,25 @@ footer {margin:60px 0 0 0}
     .cityform-welcome-download {margin:35px 0 0 0}
     .cityform-welcome-download .btn {font-size:14px; line-height:21px; padding:10px 20px; width:auto; display:inline-block; border-width:2px}
     .cityform-welcome-download .btn .btn-icon-programm {width:24px; height:24px}
+    .cityform-welcome-logos {float:none; position:absolute; left:14px; bottom:25px}
+}
+
+@media screen and (max-width:767px) {
+    .cityform-welcome-logos {left:20px}
 }
 
 @media screen and (max-width:479px) {
     .cityform-welcome-bg-mobile {background-size:800px 443px}
     .cityform-welcome-download .btn {font-size:12px; line-height:17px; padding:10px}
     .cityform-welcome-download .btn .btn-icon-programm {width:18px; height:18px}
+    .cityform-welcome-logos {width:200px; bottom:15px}
 }
 
 #cityform-about h2 {max-width:860px}
 .cityform-about {margin:40px 0 0 0}
 .cityform-about::after {content:""; display:block; clear:both}
-.cityform-about-main {float:left; width:56.2%}
+.cityform-about-main {float:left; max-width:70%}
 .cityform-about-main h4 {margin:0; font-weight:normal}
-.cityform-about-descr {float:right; width:32.15%}
 .cityform-about-world {margin:60px 0 0 0}
 .cityform-about-world::after {content:""; display:block; clear:both}
 .cityform-about-world-info {float:left; width:33.88%; font-size:22px; line-height:33px; color:#a0a0a0}
@@ -6396,12 +6449,22 @@ footer {margin:60px 0 0 0}
 .cityform-about-world-continent-city-moscow {font-weight:500; color:#000; position:relative}
 .cityform-about-world-continent-city-moscow svg {display:block; width:14px; height:13px; fill:#ff0000; position:absolute; left:-18px; top:50%; margin-top:-9px}
 
+@media screen and (min-width:1800px) {
+    .cityform-about-world-info {font-size:26px; line-height:39px}
+    .cityform-about-world-info span {font-size:56px; line-height:56px}
+    .cityform-about-world-group {margin:0; width:33.33%}
+    .cityform-about-world-group:nth-child(2) {padding-left:40px}
+    .cityform-about-world-continent-cities {width:50%}
+    .cityform-about-world-continent-cities+.cityform-about-world-continent-cities {margin-left:0}
+    .cityform-about-world-continent-title {font-size:22px; line-height:33px}
+    .cityform-about-world-continent-cities {font-size:22px; line-height:33px}
+}
+
 @media screen and (max-width:1199px) {
     #cityform-about h2 {font-size:40px; line-height:52px; margin:0}
     .cityform-about {margin:20px 0 0 0}
-    .cityform-about-main {float:none; width:auto}
+    .cityform-about-main {float:none; max-width:none}
     .cityform-about-main h4 {font-size:20px; line-height:30px}
-    .cityform-about-descr {float:none; width:auto; margin:20px 0 0 0}
     .cityform-about-world {margin:30px 0 0 0; padding:30px 0 0 0; border-top:1px solid #e2e2e2}
     .cityform-about-world-info {float:none; width:auto; font-size:20px; line-height:30px}
     .cityform-about-world-info-text-2::before {margin:30px 0; width:auto}
@@ -6495,7 +6558,6 @@ footer {margin:60px 0 0 0}
 .cityform-russia-scheme::after {content:""; display:block; clear:both}
 .cityform-russia-scheme-map {float:left; margin:35px 0 0 0; width:64.48%}
 .cityform-russia-scheme-img {position:relative}
-.cityform-russia-scheme-img img {display:block; width:100%}
 .cityform-russia-scheme-info {float:right; width:32.07%}
 .cityform-russia-scheme-regions {margin:40px 0 0 0}
 .cityform-russia-scheme-regions:first-child {margin:0}
@@ -6509,6 +6571,17 @@ footer {margin:60px 0 0 0}
 .cityform-russia-scheme-digit-title span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:20px; top:-10px; background:#fff}
 .cityform-russia-scheme-digit-title span:hover strong {display:block}
 .cityform-russia-scheme-digit-text {margin:9px 0 0 0; font-size:20px; line-height:30px; color:#676767}
+.cityform-russia-scheme-img svg {display:block; width:100%}
+.cityform-russia-scheme-img g {cursor:pointer}
+.cityform-russia-scheme-img g:hover {stroke:#fff; stroke-width:2px}
+.cityform-russia-scheme-img circle {position:relative}
+
+.window-hint {position:absolute; z-index:999; white-space:nowrap; pointer-events:none}
+.window-hint-inner {position:absolute; left:-35px; bottom:100%; margin-bottom:11px; background:#fff; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); padding:10px 13px; font-size:18px; line-height:18px; letter-spacing:0; color:#4849a6; font-weight:500}
+.window-hint.to-right .window-hint-inner {left:auto; right:-35px}
+.window-hint-inner::before {content:""; display:block; width:20px; height:20px; background:#fff; border-bottom:1px solid #e6e6e6; border-left:1px solid #e6e6e6; position:absolute; left:25px; bottom:-11px; transform:rotate(-45deg)}
+.window-hint.to-right .window-hint-inner::before {left:auto; right:25px}
+.window-hint-inner span {font-weight:bold}
 
 @media screen and (max-width:1199px) {
     #cityform-russia h2 {font-size:36px; line-height:47px; margin:0}
@@ -6621,18 +6694,7 @@ footer {margin:60px 0 0 0}
 .cityform-death-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-death-title span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-death-title span:hover strong {display:block}
-.cityform-death-scheme {margin:30px 0 0 0; display:table; width:100%; font-size:20px; line-height:30px; color:#676767}
-.cityform-death-scheme-row {display:table-row}
-.cityform-death-scheme-row-main {font-weight:600; color:#4849a6}
-.cityform-death-scheme-row-title {display:table-cell; vertical-align:top; padding:10px 10px 10px 0; white-space:nowrap; text-align:right}
-.cityform-death-scheme-row-value {display:table-cell; vertical-align:top; width:100%; padding:10px 0; position:relative; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
-.cityform-death-scheme-row-line {display:inline-block; vertical-align:top; height:5px; background:#e6e3f4; margin:14px 0 0 0; position:relative}
-.cityform-death-scheme-row-main .cityform-death-scheme-row-line {background:#4849a6}
-.cityform-death-scheme-row-value-text {display:inline-block; vertical-align:top; margin:0 0 0 10px; position:relative; font-size:20px; line-height:30px; letter-spacing:0}
-.cityform-death-scheme-row-back {position:absolute; left:0; top:0; right:0; bottom:0}
-.cityform-death-scheme-row-back-item {position:absolute; top:0; bottom:0; width:1px; background:#e2e2e2}
-.cityform-death-scheme-row-scale {position:absolute; left:0; top:0; right:0; bottom:0; font-size:20px; line-height:30px; letter-spacing:0}
-.cityform-death-scheme-row-scale-item {position:absolute; top:0; transform:translateX(-50%)}
+.cityform-death-scheme {margin:30px 0 0 0}
 .cityform-health-scheme {margin:60px 0 0 0; background:#f8f7ff; padding:40px 0 55px 0}
 .cityform-health-scheme-title {text-align:center; font-weight:600; font-size:30px; line-height:39px; color:#000}
 .cityform-health-scheme-content {width:1148px; height:583px; margin:40px auto 0 auto; position:relative}
@@ -6656,6 +6718,21 @@ footer {margin:60px 0 0 0}
 .cityform-health-scheme-item-close {display:none}
 .cityform-health-scheme-item-window {display:none}
 
+.chart-bar {display:table; width:100%; font-size:20px; line-height:30px; color:#676767}
+.chart-bar-row {display:table-row}
+.chart-bar-row:hover {color:#4849a6}
+.chart-bar-row-main {font-weight:600; color:#4849a6}
+.chart-bar-row-title {display:table-cell; vertical-align:top; padding:10px 10px 10px 0; white-space:nowrap; text-align:right}
+.chart-bar-row-value {display:table-cell; vertical-align:top; width:100%; padding:10px 0; position:relative; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
+.chart-bar-row-line {display:inline-block; vertical-align:top; height:5px; background:#e6e3f4; margin:14px 0 0 0; position:relative; transition:background 0.2s}
+.chart-bar-row-main .chart-bar-row-line {background:#4849a6}
+.chart-bar-row:hover .chart-bar-row-line {background:#4849a6}
+.chart-bar-row-value-text {display:inline-block; vertical-align:top; margin:0 0 0 10px; position:relative; font-size:20px; line-height:30px; letter-spacing:0}
+.chart-bar-row-back {position:absolute; left:0; top:0; right:0; bottom:0}
+.chart-bar-row-back-item {position:absolute; top:0; bottom:0; width:1px; background:#e2e2e2}
+.chart-bar-row-scale {position:absolute; left:0; top:0; right:0; bottom:0; font-size:20px; line-height:30px; letter-spacing:0}
+.chart-bar-row-scale-item {position:absolute; top:0; transform:translateX(-50%)}
+
 @media screen and (min-width:1200px) {
     .cityform-health-scheme-item:hover {background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); z-index:2}
     .cityform-health-scheme-item:hover .cityform-health-scheme-item-title span {background:none}
@@ -6666,11 +6743,12 @@ footer {margin:60px 0 0 0}
     #cityform-health h2 {font-size:36px; line-height:47px; margin:0}
     .cityform-health-text {margin:40px 0 0 0}
     .cityform-death-title {margin:40px 0 0 0}
-    .cityform-death-scheme {margin:36px 30px 0 0; line-height:24px; width:calc(100% - 30px)}
-    .cityform-death-scheme-row-title {width:204px; padding:10px 15px 10px 0; white-space:normal}
-    .cityform-death-scheme-row-value {width:auto; line-height:24px}
-    .cityform-death-scheme-row-line {margin:10px 0 0 0}
-    .cityform-death-scheme-row-scale {font-size:18px; line-height:27px}
+    .cityform-death-scheme {margin:36px 30px 0 0}
+    .chart-bar {line-height:24px}
+    .chart-bar-row-title {width:204px; padding:10px 15px 10px 0; white-space:normal}
+    .chart-bar-row-value {width:auto; line-height:24px}
+    .chart-bar-row-line {margin:10px 0 0 0}
+    .chart-bar-row-scale {font-size:18px; line-height:27px}
     .cityform-health-scheme {margin:40px -14px 0 -14px; padding:30px 14px}
     .cityform-health-scheme-title {color:#000}
     .cityform-health-scheme-content {width:auto; height:auto}
@@ -6697,7 +6775,10 @@ footer {margin:60px 0 0 0}
 
 @media screen and (max-width:479px) {
     #cityform-health h2 {font-size:28px; line-height:38px}
-    .cityform-death-scheme-row-title {width:120px}
+    .chart-bar {font-size:16px; line-height:24px}
+    .chart-bar-row-title {width:100px}
+    .chart-bar-row-value-text {font-size:16px; line-height:24px}
+    .chart-bar-row-scale {font-size:14px; line-height:20px}
     .cityform-health-scheme-img-mobile {display:none}
     .cityform-health-scheme-img-320 {display:block; text-align:center; line-height:0}
 }
@@ -6727,17 +6808,7 @@ footer {margin:60px 0 0 0}
 .cityform-loss-scheme-title span strong {display:none; position:absolute; left:17px; top:100%; margin-top:26px; z-index:20; white-space:nowrap; padding:20px; font-weight:normal; font-size:16px; line-height:24px; color:#504f4f; border:1px solid #e6e6e6; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); background:#fff}
 .cityform-loss-scheme-title span strong::before {content:""; display:block; width:20px; height:20px; border-left:1px solid #e6e6e6; border-top:1px solid #e6e6e6; transform:rotate(45deg); position:absolute; left:62px; top:-10px; background:#fff}
 .cityform-loss-scheme-title span:hover strong {display:block}
-.cityform-loss-scheme {margin:20px 0 0 0; display:table; width:100%; font-size:20px; line-height:30px; color:#676767}
-.cityform-loss-scheme-row {display:table-row}
-.cityform-loss-scheme-row-main {font-weight:600; color:#4849a6}
-.cityform-loss-scheme-row-title {display:table-cell; vertical-align:top; padding:10px 10px 10px 0; white-space:nowrap; text-align:right}
-.cityform-loss-scheme-row-value {display:table-cell; vertical-align:top; width:100%; padding:10px 0; position:relative}
-.cityform-loss-scheme-row-back {position:absolute; left:0; top:0; right:0; bottom:0}
-.cityform-loss-scheme-row-back-item {position:absolute; top:0; bottom:0; width:1px; background:#e2e2e2}
-.cityform-loss-scheme-row-line {float:left; height:5px; background:#e6e3f4; margin:14px 0 0 0; position:relative}
-.cityform-loss-scheme-row-main .cityform-loss-scheme-row-line {background:#4849a6}
-.cityform-loss-scheme-row-scale {position:absolute; left:0; top:0; right:0; bottom:0}
-.cityform-loss-scheme-row-scale-item {position:absolute; top:0; transform:translateX(-50%)}
+.cityform-loss-scheme {margin:20px 0 0 0}
 
 @media screen and (max-width:1199px) {
     #cityform-loss h2 {font-size:36px; line-height:47px; margin:0}
@@ -6751,18 +6822,12 @@ footer {margin:60px 0 0 0}
     .cityform-loss-notice svg {width:30px; height:30px; top:30px}
     .cityform-loss-scheme-title {margin:50px 0 0 0}
     .cityform-loss-scheme {margin:30px 0 0 0}
-    .cityform-loss-scheme-row-scale-item {font-size:18px; line-height:27px}
 }
 
 @media screen and (max-width:479px) {
     #cityform-loss h2 {font-size:28px; line-height:38px}
     .cityform-loss-notice {padding-left:40px}
     .cityform-loss-notice span {white-space:normal}
-    .cityform-loss-scheme-row-title {font-size:16px; line-height:24px}
-    .cityform-loss-scheme-row-scale-item {font-size:16px; line-height:24px}
-    .cityform-loss-scheme-row-title {padding:5px 10px 5px 0}
-    .cityform-loss-scheme-row-value {padding:5px 0}
-    .cityform-loss-scheme-row-line {margin-top:10px}
 }
 
 #cityform-factors h2 {max-width:860px}
@@ -6822,6 +6887,11 @@ footer {margin:60px 0 0 0}
 .cityform-factor-moscow-scheme {float:right; width:56%}
 .cityform-factor-moscow-scheme img {display:block; width:100%}
 
+@media screen and (min-width:1800px) {
+    .cityform-factor-moscow-text {width:50%; font-size:22px; line-height:33px}
+    .cityform-factor-moscow-scheme {width:46%}
+}
+
 @media screen and (max-width:1199px) {
     #cityform-factor-moscow h2 {font-size:36px; line-height:47px; margin:0}
     .cityform-factor-moscow {margin:43px 0 0 0}
@@ -6846,11 +6916,12 @@ footer {margin:60px 0 0 0}
 #cityform-recommend h2 {max-width:860px}
 .cityform-recommend {margin:50px 0 0 0; border-bottom:1px solid #e2e2e2}
 .cityform-recommend-item {border-top:1px solid #e2e2e2}
-.cityform-recommend-item-title {position:relative; cursor:pointer; font-weight:500; font-size:18px; line-height:27px; color:#000}
-.cityform-recommend-item-title strong {display:block; padding:30px 92px 30px 13px; margin:0 40px 0 30px; font-weight:500; transition:background 0.2s}
+.cityform-recommend-item-title {position:relative; cursor:pointer; font-weight:500; font-size:18px; line-height:27px; color:#000; position:relative}
 @media screen and (min-width:1200px) {
-    .cityform-recommend-item-title:hover strong {background:#f7f6fc}
+    .cityform-recommend-item-title::before {content:""; display:block; position:absolute; left:-20px; top:0; right:-20px; bottom:0; background:#f7f6fc; opacity:0; transition:opacity 0.2s}
+    .cityform-recommend-item-title:hover::before {opacity:1}
 }
+.cityform-recommend-item-title strong {display:block; padding:30px 92px 30px 13px; margin:0 40px 0 30px; font-weight:500; position:relative}
 .cityform-recommend-item-title span {position:absolute; left:0; top:26px; font-weight:bold; font-size:30px; line-height:45px; color:#4849a6}
 .cityform-recommend-item-title svg {display:block; width:24px; height:25px; position:absolute; right:0; top:32px; fill:none; transform:rotate(-180deg)}
 .cityform-recommend-item.open .cityform-recommend-item-title svg {transform:none}
@@ -6863,10 +6934,6 @@ footer {margin:60px 0 0 0}
 .cityform-recommend-item-team-item-photo img {display:block; width:100%; border-radius:50%}
 .cityform-recommend-item-team-item-name {margin:20px 0 0 0; font-weight:500; font-size:18px; line-height:27px; letter-spacing:0; color:#4849a6}
 .cityform-recommend-item-team-item-post {margin:5px 0 0 0; font-size:14px; line-height:21px; letter-spacing:0}
-.cityform-recommend-item-team-list {margin:45px 0 -20px 0; column-count:2; column-gap:20px}
-.cityform-recommend-item-team-list-item {-webkit-column-break-inside:avoid; page-break-inside:avoid; break-inside:avoid; break-inside:avoid-column}
-.cityform-recommend-item-team-list-item-name {font-size:18px; line-height:27px; font-weight:500; color:#4849a6}
-.cityform-recommend-item-team-list-item-post {font-size:14px; line-height:21px; padding:0 0 20px 0}
 .cityform-recommend-item-cities {margin:40px -20px 0 -20px; position:relative; z-index:1; font-size:0; line-height:0; letter-spacing:-1px}
 .cityform-recommend-item-cities-col {display:inline-block; vertical-align:top; width:33.33%; padding:0 20px; font-size:18px; line-height:27px; letter-spacing:0}
 .cityform-recommend-item-city {margin:20px 0 0 0}
@@ -6912,6 +6979,15 @@ footer {margin:60px 0 0 0}
 .cityform-recommend-item-indicators-item-bottom-right {float:right; width:50%; text-align:right}
 .cityform-recommend-item-indicators-item-bottom-title {font-weight:500}
 
+@media screen and (min-width:1800px) {
+    .cityform-recommend-item-title {font-size:22px; line-height:33px}
+    .cityform-recommend-item-team {margin-left:-20px; margin-right:-20px}
+    .cityform-recommend-item-team-item {padding-left:20px; padding-right:20px}
+    .cityform-recommend-item-team-item-name {font-size:22px; line-height:33px}
+    .cityform-recommend-item-team-item-post {font-size:16px; line-height:24px}
+    .cityform-recommend-item-city-header {font-size:22px; line-height:33px}
+}
+
 @media screen and (max-width:1199px) {
     #cityform-recommend h2 {font-size:36px; line-height:47px; margin:0}
     .cityform-recommend-item-title strong {padding-right:0}
@@ -6921,9 +6997,6 @@ footer {margin:60px 0 0 0}
     .cityform-recommend-item-team-item-photo img {width:100px}
     .cityform-recommend-item-team-item-info {display:table-cell; vertical-align:middle; padding:0 0 0 15px}
     .cityform-recommend-item-team-item-name {margin:0}
-    .cityform-recommend-item-team-list {margin:30px 0 0 0; column-count:1; column-gap:0}
-    .cityform-recommend-item-team-list-item {margin:20px 0 0 0}
-    .cityform-recommend-item-team-list-item-post {padding:0}
     .cityform-recommend-item-cities {margin:30px 0 0 0; height:auto !important}
     .cityform-recommend-item-cities-col {display:block; float:none; width:auto; padding:0; margin:20px 0 0 0}
     .cityform-recommend-item-indicators {margin:30px 0 0 0}
@@ -6966,9 +7039,35 @@ footer {margin:60px 0 0 0}
 .cityform-what-content ul {margin:0; padding:0}
 .cityform-what-content ul li {margin:0; padding:0 0 0 20px}
 .cityform-what-content ul li::before {left:0; top:11px; width:4px; height:4px; background:#b7afdd; border-radius:50%}
+.cityform-what-content h4 {font-size:24px; line-height:31px; margin:60px 0 0 0}
+.cityform-what-cities {margin:15px -10px 0 -10px; font-size:0; line-height:0; letter-spacing:-1px}
+.cityform-what-city {display:inline-block; vertical-align:top; width:50%; padding:20px 10px 0 10px}
+.cityform-what-city-logo {height:70px; line-height:70px}
+.cityform-what-city-logo img {max-height:70px; vertical-align:middle; display:inline-block}
+.cityform-what-city-title {margin:10px 0 0 0; font-weight:500; font-size:20px; line-height:26px; letter-spacing:0; color:#000}
+.cityform-what-city-name {margin:10px 0 0 0; font-weight:500; font-size:18px; line-height:23px; letter-spacing:0; color:#4849a6}
+.cityform-what-city-text {margin:20px 0 0 0; font-size:18px; line-height:27px; letter-spacing:0}
 .cityform-what-content-img {margin:46px 0 0 0; max-width:563px}
+.cityform-what-download-mobile {display:none}
 .cityform-what-notice {margin:30px 0 0 0; padding:30px 0 30px 43px; position:relative; font-size:20px; line-height:30px; border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2}
 .cityform-what-notice svg {display:block; width:21px; height:21px; position:absolute; left:0; top:34px; fill:#4849a6}
+
+@media screen and (min-width:1800px) {
+    .cityform-what-side {width:430px}
+    .cityform-what-menu ul {font-size:20px; line-height:30px}
+    .cityform-what-menu ul li a {padding-top:22px; padding-bottom:20px}
+    .cityform-what-menu ul li a span {transform:translateY(-50%) scale(1.2)}
+    .cityform-what-download .btn {padding:14px 0 15px 0; font-size:18px; line-height:23px}
+    .cityform-what-container {width:calc(100% - 495px)}
+    .cityform-what-content {font-size:22px; line-height:33px}
+    .cityform-what-content ul li::before {top:14px}
+    .cityform-what-content h4 {font-size:30px; line-height:38px; margin:60px 0 0 0}
+    .cityform-what-cities {margin:20px -20px 0 -20px}
+    .cityform-what-city {padding:20px 20px 0 20px}
+    .cityform-what-city-title {font-size:24px; line-height:31px}
+    .cityform-what-city-name {font-size:22px; line-height:33px}
+    .cityform-what-city-text {font-size:22px; line-height:33px}
+}
 
 @media screen and (max-width:1199px) {
     #cityform-what h2 {font-size:36px; line-height:47px; margin:0}
@@ -6990,24 +7089,45 @@ footer {margin:60px 0 0 0}
     .cityform-what-content-title-arrow {display:block; width:24px; height:24px; position:absolute; right:10px; top:50%; fill:none; stroke:#4849a6; margin-top:-12px; transform:rotate(-90deg)}
     .cityform-what-content-title a:hover .cityform-what-content-title-arrow {stroke:#fff}
     .cityform-what-content.open .cityform-what-content-title-arrow {stroke:#fff; transform:rotate(0deg)}
+    .cityform-what-download-mobile {display:block; margin:40px 0 0 0}
+    .cityform-what-cities {margin:40px 0 0 0}
+    .cityform-what-city {display:block; width:auto; margin:40px 0 0 0; padding:0}
+    .cityform-what-city-logo {height:auto; line-height:0}
+    .cityform-what-city-title {font-size:20px; line-height:26px}
+    .cityform-what-city-name {font-size:18px; line-height:27px}
+    .cityform-what-city-text {font-size:18px; line-height:27px}
 }
 
 @media screen and (max-width:479px) {
     #cityform-what h2 {font-size:28px; line-height:38px}
+    .cityform-what-content h4 {font-size:20px; line-height:30px}
 }
 
 .cityform-warning::after {content:""; display:block; clear:both}
 .cityform-warning-container {float:left; width:65%}
 .cityform-warning-container h2 {margin:0; padding:0}
-.cityform-warning-text {margin:43px 0 0 0; color:#4849a6; font-weight:500; font-size:22px; line-height:33px}
+.cityform-warning-container h4 {margin:43px 0 0 0; font-weight:normal}
+.cityform-warning-download {margin:40px 0 20px 0; width:380px}
+.cityform-warning-download .btn {color:#4849a6; border-color:#4849a6; font-size:14px; line-height:21px; padding:10px 18px 9px 18px; width:100%}
+.cityform-warning-download .btn:hover {color:#fff; background:#4849a6}
+.cityform-warning-download .btn:active {color:#fff; background:#454545; border-color:#454545}
+.cityform-warning-download .btn svg {stroke:#4849a6}
+.cityform-warning-download .btn:hover svg {stroke:#fff}
+.cityform-warning-download .btn:active svg {stroke:#fff}
 .cityform-warning-img {float:right; width:31%; line-height:0}
 .cityform-warning-img img {display:block; max-width:none}
+
+@media screen and (min-width:1800px) {
+    .cityform-warning-download {width:430px}
+    .cityform-warning-download .btn {padding:14px 0 15px 0; font-size:18px; line-height:23px}
+}
 
 @media screen and (max-width:1199px) {
     .cityform-warning-container {float:none; width:auto}
     .cityform-warning-text {margin:30px 0 0 0}
-    .cityform-warning-img {float:none; width:auto; margin:12px -20px}
+    .cityform-warning-img {float:none; width:auto; margin:50px -20px 60px -20px}
     .cityform-warning-img img {margin:0 auto; max-width:100%}
+    .cityform-warning-download {width:auto; margin:25px 0 0 0}
 }
 
 #cityform-final h3 {font-weight:bold}
@@ -7015,6 +7135,11 @@ footer {margin:60px 0 0 0}
 .cityform-team-group {-webkit-column-break-inside:avoid; page-break-inside:avoid; break-inside:avoid; break-inside:avoid-column}
 .cityform-team-group-title {font-size:18px; line-height:25px; font-weight:600; color:#000}
 .cityform-team-group-list {padding:0 0 20px 0; font-size:18px; line-height:28px; font-weight:500; color:#4849a6}
+
+@media screen and (min-width:1800px) {
+    .cityform-team-group-title {font-size:22px; line-height:33px}
+    .cityform-team-group-list {font-size:22px; line-height:33px}
+}
 
 @media screen and (max-width:1199px) {
     #cityform-final h2 {font-size:36px; line-height:47px; margin:0}
@@ -7039,7 +7164,7 @@ footer {margin:60px 0 0 0}
 .cityform-menu-open .cityform-menu-link svg:nth-child(1) {display:none}
 .cityform-menu-link svg:nth-child(2) {display:none; width:15px; height:15px}
 .cityform-menu-open .cityform-menu-link svg:nth-child(2) {display:block}
-.cityform-menu-current {position:absolute; right:73px; top:0; white-space:nowrap; background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); border:1px solid #e6e6e6; padding:0 25px; font-size:14px; line-height:62px; color:#4849a6; cursor:pointer}
+.cityform-menu-current {position:absolute; right:73px; top:0; white-space:nowrap; background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); border:1px solid #e6e6e6; padding:0 25px; font-size:16px; line-height:62px; color:#4849a6; cursor:pointer}
 .cityform-menu-open .cityform-menu-current {display:none}
 .cityform-menu-list {display:none; position:absolute; right:0; top:0; white-space:nowrap; padding:44px 98px 44px 45px; text-align:right; font-size:18px; line-height:20px; background:#fff; box-shadow:6px 6px 40px rgba(185, 185, 185, 0.25); border:1px solid #e6e6e6}
 .cityform-menu-open .cityform-menu-list {display:block}
@@ -7054,6 +7179,7 @@ footer {margin:60px 0 0 0}
 @media screen and (min-width:1800px) {
     .cityform-menu-container {right:130px; margin-top:140px}
     .cityform-menu.fixed .cityform-menu-container {top:90px; margin-top:0}
+    .cityform-menu-current {font-size:18px}
 }
 
 @media screen and (max-width:1199px) {
