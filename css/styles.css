@@ -570,7 +570,7 @@ header.fixed .nav-reg {margin-top:10px}
 .nav ul li.nav-fest a {color:#ffde4f}
 .nav ul li ul {display:none; position:absolute; left:0; top:60px; white-space:nowrap; background:#000; border:1px solid #1a1a1a; padding:0 40px 8px 18px; font-weight:normal; font-size:14px; line-height:21px; text-transform:none}
 .nav ul li:hover ul {display:block}
-.nav ul li ul::before {content:""; display:block; position:absolute; left:50%; top:-7px; width:12px; height:12px; border-left:1px solid #1a1a1a; border-top:1px solid #1a1a1a; margin-left:-6px; transform:rotate(45deg); background:#000}
+.nav ul li ul::before {content:""; display:block; position:absolute; left:20px; top:-7px; width:12px; height:12px; border-left:1px solid #1a1a1a; border-top:1px solid #1a1a1a; transform:rotate(45deg); background:#000}
 .nav ul li ul li {float:none; margin:10px 0 0 0}
 .nav ul li ul li:first-child {margin:10px 0 0 0}
 .nav ul li ul li a {display:inline; color:#fff; position:relative}
@@ -584,7 +584,7 @@ header.fixed .nav-reg {margin-top:10px}
 @media screen and (min-width:1200px) {
     header.fixed .nav {margin:0 0 0 43px}
     header.fixed .nav-inner > ul {line-height:65px}
-    header.fixed .nav ul li ul {top:45px}
+    header.fixed .nav ul li ul {top:55px}
 }
 
 @media screen and (min-width:1800px) {
@@ -595,6 +595,7 @@ header.fixed .nav-reg {margin-top:10px}
     .nav ul li.nav-fest {font-size:20px}
     .nav ul li ul {font-size:18px; line-height:27px; top:92px}
 
+    header.fixed .nav ul li ul {top:80px}
     header.fixed .nav-inner > ul {line-height:80px}
 }
 
@@ -624,7 +625,7 @@ header.fixed .nav-reg {margin-top:10px}
     .nav ul li.nav-fest a {padding:20px; background:#000; font-weight:600; font-size:24px; line-height:36px}
     .nav ul li ul {right:auto; white-space:normal; background:#fff; border:none; padding:0 0 30px 0; font-weight:500; font-size:20px; line-height:30px; text-transform:uppercase; display:block; position:absolute; left:0; top:0; z-index:-1; opacity:0; transform:translateX(100%); transition:transform 0.2s, opacity 0.2s}
     .nav ul li:hover ul {display:block}
-    .nav ul li.open ul {position:relative; transform:translateX(0); opacity:1}
+    .nav ul li.open ul {position:relative; transform:translateX(0); opacity:1; z-index:auto}
     .nav ul li ul::before {display:none}
     .nav ul li ul li {margin:0; border-top:1px solid #e8e8e8}
     .nav ul li ul li.nav-mobile-parent {display:block}
@@ -3131,6 +3132,15 @@ h1+.main-block {margin:80px 0 0 0}
 .analytics-service-text-descr *:first-child {margin-top:0}
 .analytics-service-text-descr *:last-child {margin-bottom:0}
 .analytics-service-close {display:none}
+
+@media screen and (min-width:1800px) {
+    .analytics-service-icon {height:80px; line-height:80px}
+    .analytics-service-icon img {max-height:80px; height:80px}
+    .analytics-service-title {margin-top:40px; font-size:24px; line-height:36px}
+    .analytics-service-text-title {font-size:22px; line-height:33px}
+    .analytics-service-text-descr {font-size:20px; line-height:30px}
+    .analytics-service-text-descr ul li::before {top:13px}
+}
 
 @media screen and (max-width:1599px) {
     .analytics-services-container {margin:0 -15px}
@@ -5974,7 +5984,7 @@ footer {margin:60px 0 0 0}
 .academy-welcome-tags::after {content:""; display:block; clear:both}
 .academy-welcome-tag {float:left; margin:0 10px 0 0; border:1px solid #fff; font-size:14px; line-height:18px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; padding:12px 19px}
 .page-main .academy-welcome-tag {background:#fff; color:#56a48c}
-.academy-welcome-title {margin:25px 0 0 0; font-size:80px; line-height:80px; font-weight:900; text-transform:uppercase}
+.academy-welcome-title {margin:25px 0 0 0; font-size:80px; line-height:91px; font-weight:900; text-transform:uppercase}
 .academy-welcome-subtitle {margin:15px 0 0 0; font-size:36px; line-height:54px; font-weight:300}
 .academy-welcome-subtitle-text {margin:-6px 0 0 0; font-size:22px; line-height:33px; font-weight:300}
 .academy-welcome-social {margin:97px 0 0 0}
