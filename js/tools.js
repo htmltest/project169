@@ -2690,3 +2690,66 @@ function createMoscowMap(curBlock, data) {
         curBlock.html(newMap);
     }
 }
+
+$(document).ready(function() {
+    $('.voiting-form').each(function() {
+        var curForm = $(this).find('form');
+        var validator = curForm.validate();
+        if (validator) {
+            validator.destroy();
+        }
+
+        curForm.data('curStep', 0);
+        $('.voiting-form-step').eq(0).addClass('active');
+        $('.voiting-form-ctrl-status-current').html(1);
+        $('.voiting-form-ctrl-status-count').html($('.voiting-form-step').length);
+
+        $('.voiting-form-step').each(function() {
+            var curStep = $(this);
+            curStep.find('.voiting-form-nominees').sortable({
+                axis: 'y',
+                stop: function(event, ui) {
+                    curStep.find('.voiting-form-nominee').each(function() {
+                        var curNominee = $(this);
+                        curNominee.find('.voiting-form-nominee-order').html((curNominee.index() + 1) + '.');
+                    });
+                }
+            });
+        });
+    });
+
+    $('.voiting-form-ctrl-btn a').click(function(e) {
+        var curForm = $('.voiting-form form');
+        var curStep = Number(curForm.data('curStep'));
+        curStep++;
+        curForm.data('curStep', curStep);
+        if (curStep >= $('.voiting-form-step').length) {
+            curForm.addClass('loading');
+            var results = [];
+            for (var i = 0; i < $('.voiting-form-step').length; i++) {
+                var curItem = $('.voiting-form-step').eq(i);
+                results.push([]);
+                for (var j = 0; j < curItem.find('.voiting-form-nominee').length; j++) {
+                    results[i].push(curItem.find('.voiting-form-nominee').eq(j).attr('data-id'));
+                }
+            }
+            $.ajax({
+                type: 'POST',
+                url: curForm.attr('action'),
+                dataType: 'json',
+                data: JSON.stringify(results),
+                cache: false
+            }).done(function(data) {
+                curForm.removeClass('loading');
+                $('.voiting-form').addClass('success');
+            });
+        } else {
+            $('.voiting-form-step.active').removeClass('active');
+            $('.voiting-form-step').eq(curStep).addClass('active');
+            $('.voiting-form-ctrl-status-current').html(curStep + 1);
+        }
+        $('html, body').animate({'scrollTop': $('.voiting-form').offset().top - $('header').height()});
+        e.preventDefault();
+    });
+
+});

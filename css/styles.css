@@ -7213,3 +7213,82 @@ footer {margin:60px 0 0 0}
 @media screen and (max-width:767px) {
     .cityform-menu-list {right:-10px}
 }
+
+.voiting-header {margin:106px 0 0 0}
+.voiting-header::after {content:""; display:block; clear:both}
+.voiting-header-welcome {float:left; clear:left; width:50%; padding:0 10px 0 0; font-weight:900; font-size:50px; line-height:60px; text-transform:uppercase; color:#001f45}
+.voiting-header-welcome span {display:block; color:#e10034}
+.voiting-header-title {float:right; clear:right; width:50%; padding:0 0 0 10px; font-weight:500; font-size:30px; line-height:39px; color:#000}
+.voiting-header-about {float:left; clear:left; width:50%; padding:0 10px 0 0; margin:35px 0 0 0}
+.voiting-header-logo {line-height:0}
+.voiting-header-logo img {display:block; width:200px}
+.voiting-header-descr {margin:44px 0 0 0; font-size:14px; line-height:20px; max-width:394px}
+.voiting-header-jury {float:right; clear:right; width:50%; padding:0 0 0 10px; margin:20px 0 0 0; font-size:18px; line-height:27px}
+.voiting-header-text {float:right; clear:right; width:50%; padding:0 0 0 10px; margin:20px 0 0 0; font-size:18px; line-height:27px; color:#000}
+
+@media screen and (min-width:1600px) {
+    .voiting-header-descr {font-size:16px; line-height:26px}
+}
+
+@media screen and (max-width:1199px) {
+    .voiting-header-welcome {float:none; width:auto; padding:0; font-size:30px; line-height:39px}
+    .voiting-header-title {float:none; width:auto; padding:0; margin:20px 0 0 0; font-size:24px; line-height:31px}
+    .voiting-header-about {float:none; width:auto; padding:0}
+    .voiting-header-jury {float:none; width:auto; padding:0}
+    .voiting-header-text {float:none; width:auto; padding:0}
+}
+
+.voiting-form {margin:50px 0 0 0; position:relative}
+.voiting-form form {margin:0; padding:0; position:relative}
+
+.voiting-form-step {position:absolute; left:-9999px; top:-9999px; opacity:0; width:100%; transition:opacity 0.2s}
+.voiting-form-step.active {position:relative; left:auto; top:auto; opacity:1}
+.voiting-form.success .voiting-form-step {display:none}
+.voiting-form-nomination {border-top:1px solid #d4d4d4; border-bottom:1px solid #e2e2e2; padding:50px 0 60px 0}
+.voiting-form-nomination::after {content:""; display:block; clear:both}
+.voiting-form-nomination-info {float:left; width:50%; padding:0 10px 0 0}
+.voiting-form-nomination-info-text {font-size:18px; line-height:27px; color:#000}
+.voiting-form-nomination-info-title {margin:4px 0 0 0; font-weight:500; font-size:30px; line-height:30px; color:#000}
+.voiting-form-nomination-descr {float:right; width:50%; padding:0 0 0 10px}
+.voiting-form-nomination-descr-title {font-size:18px; line-height:27px; color:#000}
+.voiting-form-nomination-descr-text {margin:20px 0 0 0; font-size:14px; line-height:20px}
+.voiting-form-nominees {margin:0 auto -1px auto; max-width:1000px}
+.voiting-form-nominee {border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; padding:12px 0; background:rgba(255, 255, 255, 0.8); margin:-1px 0}
+.voiting-form-nominee-inner {display:table; width:100%; border-collapse:collapse; cursor:move}
+.voiting-form-nominee-move-icon {display:table-cell; vertical-align:middle; width:37px}
+.voiting-form-nominee-move-icon svg {display:block; width:37px; height:37px; fill:#a1a1a1}
+.voiting-form-nominee-order {display:table-cell; vertical-align:middle; width:57px; padding:0 0 0 14px; font-weight:500; font-size:24px; line-height:36px; color:#000}
+.voiting-form-nominee-img {display:table-cell; vertical-align:middle; width:54px}
+.voiting-form-nominee-img img {display:block; width:54px; max-width:54px}
+.voiting-form-nominee-info {display:table-cell; vertical-align:middle; padding:0 0 0 46px}
+.voiting-form-nominee-title {font-weight:500; font-size:20px; line-height:26px}
+.voiting-form-nominee-text {margin:5px 0 0 0; font-size:16px; line-height:24px}
+
+@media screen and (min-width:1600px) {
+    .voiting-form-nomination-descr-text {font-size:16px; line-height:26px}
+}
+
+@media screen and (max-width:1199px) {
+    .voiting-form-nomination-info {float:none; width:auto; padding:0}
+    .voiting-form-nomination-descr {float:none; width:auto; padding:0; margin:20px 0 0 0}
+}
+
+.voiting-form-ctrl {margin:40px auto; max-width:1000px}
+.voiting-form.success .voiting-form-ctrl {display:none}
+.voiting-form-ctrl::after {content:""; display:block; clear:both}
+.voiting-form-ctrl-status {float:left; margin:9px 0 0 0; font-size:18px; line-height:27px}
+.voiting-form-ctrl-status span {font-weight:500; color:#000}
+.voiting-form-ctrl-btn {float:right}
+.voiting-form-ctrl-btn .btn {padding:9px 32px; font-size:14px; line-height:22px}
+
+@media screen and (max-width:1199px) {
+    .voiting-form-ctrl-status {float:none; margin:0}
+    .voiting-form-ctrl-btn {float:none; margin:20px 0 0 0}
+}
+
+.voiting-form-success {background:#f3f3f3; text-align:center; padding:75px 20px; position:absolute; left:-9999px; top:-9999px; opacity:0; transition:opacity 0.2px}
+.voiting-form.success .voiting-form-success {position:relative; left:auto; top:auto; opacity:1}
+.voiting-form-success-icon {line-height:0}
+.voiting-form-success-icon svg {display:block; width:56px; height:56px; margin:0 auto; fill:#e10034}
+.voiting-form-success-title {margin:24px auto 0 auto; max-width:532px; font-weight:500; font-size:30px; line-height:39px; color:#000}
+.voiting-form-success-text {margin:10px auto 0 auto; max-width:532px; font-size:18px; line-height:27px}
