@@ -2741,15 +2741,60 @@ $(document).ready(function() {
                 cache: false
             }).done(function(data) {
                 curForm.removeClass('loading');
-                $('.voiting-form').addClass('success');
+                $('.voiting-form, .voiting-header').addClass('success');
+                $('html, body').animate({'scrollTop': $('.voiting-form').offset().top - $('header').height() - 20});
             });
         } else {
             $('.voiting-form-step.active').removeClass('active');
             $('.voiting-form-step').eq(curStep).addClass('active');
             $('.voiting-form-ctrl-status-current').html(curStep + 1);
+            $('html, body').animate({'scrollTop': $('.voiting-form form').offset().top - $('header').height() - 20});
         }
-        $('html, body').animate({'scrollTop': $('.voiting-form').offset().top - $('header').height()});
         e.preventDefault();
     });
 
+    $('.award-nomination-2022-header').click(function() {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('.voiting-header-about-mobile-more a').click(function(e) {
+        $('.voiting-header-about').toggleClass('open');
+        e.preventDefault();
+    });
+
+});
+
+$(window).on('load resize', function() {
+    $('.award-nominants-2022').each(function() {
+        var curList = $(this);
+
+        curList.find('.award-nominant-2022-title').css({'min-height': '0px'});
+
+        curList.find('.award-nominant-2022-title').each(function() {
+            var curBlock = $(this);
+            var curHeight = curBlock.outerHeight();
+            var curTop = curBlock.parents().filter('.award-nominant-2022').offset().top;
+
+            curList.find('.award-nominant-2022-title').each(function() {
+                var otherBlock = $(this);
+                if (otherBlock.parents().filter('.award-nominant-2022').offset().top == curTop) {
+                    var newHeight = otherBlock.outerHeight();
+                    if (newHeight > curHeight) {
+                        curBlock.css({'min-height': newHeight + 'px'});
+                    } else {
+                        otherBlock.css({'min-height': curHeight + 'px'});
+                    }
+                }
+            });
+        });
+    });
+    
+    $('.voiting-form-step').each(function() {
+        var curStep = $(this);
+        if ($(window).width() > 1199) {
+            curStep.find('.voiting-form-nominees.ui-sortable').sortable('option', 'handle', false);
+        } else {
+            curStep.find('.voiting-form-nominees.ui-sortable').sortable('option', 'handle', '.voiting-form-nominee-move-icon');
+        }
+    });
 });

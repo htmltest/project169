@@ -5007,6 +5007,9 @@ footer {margin:60px 0 0 0}
 .window-nominee-title {margin:20px 0 0 0}
 .window-nominee-name {font-weight:600; font-size:22px; line-height:31px; color:#000; margin:6px 0 0 0}
 .window-nominee-status {margin:10px 0 0 0; font-weight:500; color:#4680c2; text-transform:uppercase}
+.window-nominee-link {margin:10px 0 0 0; font-weight:500; color:#4680c2}
+.window-nominee-link a {color:#4680c2; text-decoration:none}
+.window-nominee-link a:hover {text-decoration:underline}
 .window-nominee-text {float:right; width:637px}
 .window-nominee-text-title {font-weight:600; font-size:30px; line-height:30px; color:#000}
 .window-nominee-text-section {margin:26px 0 0 0}
@@ -5041,6 +5044,7 @@ footer {margin:60px 0 0 0}
     .window-nominee-title {margin:40px 0 0 0; text-align:center; border-top:1px solid #d9d9d9; padding:30px 0 0 0}
     .window-nominee-name {margin:5px 0 0 0; font-size:24px; line-height:34px; text-align:center}
     .window-nominee-status {margin:8px 0 0 0; text-align:center}
+    .window-nominee-link {margin:8px 0 0 0; text-align:center}
     .window-nominee-text {float:none; width:auto; margin:27px 0 0 0; border-top:1px solid #d9d9d9}
     .window-nominee-text-title {display:none}
     .window-nominee-text-section {margin:40px 0 0 0}
@@ -5055,6 +5059,7 @@ footer {margin:60px 0 0 0}
     .window-nominee-title {margin:50px 0 0 0; font-size:18px; line-height:27px}
     .window-nominee-name {margin:8px 0 0 0}
     .window-nominee-status {font-size:18px; line-height:27px}
+    .window-nominee-link {font-size:18px; line-height:27px}
     .window-nominee-text {margin:30px 0 0 0; padding:10px 0 0 0}
 }
 
@@ -7215,65 +7220,98 @@ footer {margin:60px 0 0 0}
 }
 
 .voiting-header {margin:106px 0 0 0}
+.voiting-header.success {display:none}
 .voiting-header::after {content:""; display:block; clear:both}
-.voiting-header-welcome {float:left; clear:left; width:50%; padding:0 10px 0 0; font-weight:900; font-size:50px; line-height:60px; text-transform:uppercase; color:#001f45}
-.voiting-header-welcome span {display:block; color:#e10034}
-.voiting-header-title {float:right; clear:right; width:50%; padding:0 0 0 10px; font-weight:500; font-size:30px; line-height:39px; color:#000}
-.voiting-header-about {float:left; clear:left; width:50%; padding:0 10px 0 0; margin:35px 0 0 0}
-.voiting-header-logo {line-height:0}
-.voiting-header-logo img {display:block; width:200px}
-.voiting-header-descr {margin:44px 0 0 0; font-size:14px; line-height:20px; max-width:394px}
-.voiting-header-jury {float:right; clear:right; width:50%; padding:0 0 0 10px; margin:20px 0 0 0; font-size:18px; line-height:27px}
-.voiting-header-text {float:right; clear:right; width:50%; padding:0 0 0 10px; margin:20px 0 0 0; font-size:18px; line-height:27px; color:#000}
-
-@media screen and (min-width:1600px) {
-    .voiting-header-descr {font-size:16px; line-height:26px}
-}
+.voiting-header-welcome {float:left; width:50%; padding:0 30px 0 0}
+.voiting-header-welcome-title {font-weight:900; font-size:50px; line-height:60px; text-transform:uppercase; color:#001f45}
+.voiting-header-welcome-title span {display:block; color:#e10034}
+.voiting-header-welcome-subtitle {margin:40px 0 0 0; font-weight:500; font-size:24px; line-height:31px; color:#000}
+.voiting-header-welcome-text {margin:20px 0 0 0; font-size:24px; line-height:34px; color:#000}
+.voiting-header-about {float:right; width:50%; padding:0 0 0 30px; margin:10px 0 0 0}
+.voiting-header-about-logo {line-height:0}
+.voiting-header-about-logo img {display:block; width:138px}
+.voiting-header-about-title {margin:54px 0 0 0; font-size:20px; line-height:30px; color:#000}
+.voiting-header-about-text {margin:20px 0 0 0; font-size:20px; line-height:30px}
+.voiting-header-about-mobile-more {display:none}
 
 @media screen and (max-width:1199px) {
-    .voiting-header-welcome {float:none; width:auto; padding:0; font-size:30px; line-height:39px}
-    .voiting-header-title {float:none; width:auto; padding:0; margin:20px 0 0 0; font-size:24px; line-height:31px}
-    .voiting-header-about {float:none; width:auto; padding:0}
-    .voiting-header-jury {float:none; width:auto; padding:0}
-    .voiting-header-text {float:none; width:auto; padding:0}
+    .voiting-header {margin:60px 0 0 0}
+    .voiting-header-welcome {float:none; width:auto; padding:0}
+    .voiting-header-welcome-title {font-size:46px; line-height:55px}
+    .voiting-header-welcome-subtitle {margin:20px 0 0 0}
+    .voiting-header-welcome-text {font-size:20px; line-height:28px}
+    .voiting-header-about {float:none; width:auto; padding:40px 0 0 0; margin:50px 0 0 0; border-top:1px solid #d4d4d4; position:relative}
+    .voiting-header-about-logo img {width:210px}
+    .voiting-header-about-title {margin:20px 0 0 0; position:absolute; left:-9999px; top:-9999px; opacity:0; width:100%; transition:opacity 0.2s}
+    .voiting-header-about.open .voiting-header-about-title {position:relative; left:auto; top:auto; opacity:1}
+    .voiting-header-about-text {font-size:18px; line-height:27px; position:absolute; left:-9999px; top:-9999px; opacity:0; width:100%; transition:opacity 0.2s}
+    .voiting-header-about.open .voiting-header-about-text {position:relative; left:auto; top:auto; opacity:1}
+    .voiting-header-about-mobile-more {display:block; margin:30px 0 0 0}
+    .voiting-header-about-mobile-more a {display:block; height:51px; background:#f4f4f4; text-decoration:none; color:#717171; font-size:16px; font-weight:500; line-height:51px; letter-spacing:0.05em; text-align:center; text-transform:uppercase}
+    .voiting-header-about-mobile-more a span:nth-child(2) {display:none}
+    .voiting-header-about.open .voiting-header-about-mobile-more a span:nth-child(1) {display:none}
+    .voiting-header-about.open .voiting-header-about-mobile-more a span:nth-child(2) {display:inline}
 }
 
-.voiting-form {margin:50px 0 0 0; position:relative}
-.voiting-form form {margin:0; padding:0; position:relative}
+.voiting-form {margin:50px 0 0 0; position:relative; border-top:1px solid #d4d4d4; padding:50px 0 0 0}
+.voiting-form.success {border-top:none; padding:0}
+
+@media screen and (max-width:1199px) {
+    .voiting-form {margin:40px 0 0 0; padding:30px 0 0 0}
+}
+
+.voiting-form.success .voiting-form-descr {display:none}
+.voiting-form-descr::after {content:""; display:block; clear:both}
+.voiting-form-descr-title {float:left; width:50%; padding:0 30px 0 0; font-size:24px; line-height:36px; color:#000}
+.voiting-form-descr-text {float:right; width:50%; padding:0 0 0 30px; font-size:20px; line-height:30px}
+
+@media screen and (max-width:1199px) {
+    .voiting-form-descr-title {float:none; width:auto; padding:0; font-size:18px; line-height:27px}
+    .voiting-form-descr-text {float:none; width:auto; padding:0; font-size:18px; line-height:27px; margin:20px 0 0 0}
+}
+
+.voiting-form form {margin:20px auto 0 auto; max-width:760px; padding:0; position:relative}
+.voiting-form.success form {margin:0; max-width:none}
+
+@media screen and (max-width:1199px) {
+    .voiting-form form {margin:50px 0 0 0; max-width:none}
+}
 
 .voiting-form-step {position:absolute; left:-9999px; top:-9999px; opacity:0; width:100%; transition:opacity 0.2s}
 .voiting-form-step.active {position:relative; left:auto; top:auto; opacity:1}
 .voiting-form.success .voiting-form-step {display:none}
-.voiting-form-nomination {border-top:1px solid #d4d4d4; border-bottom:1px solid #e2e2e2; padding:50px 0 60px 0}
-.voiting-form-nomination::after {content:""; display:block; clear:both}
-.voiting-form-nomination-info {float:left; width:50%; padding:0 10px 0 0}
-.voiting-form-nomination-info-text {font-size:18px; line-height:27px; color:#000}
-.voiting-form-nomination-info-title {margin:4px 0 0 0; font-weight:500; font-size:30px; line-height:30px; color:#000}
-.voiting-form-nomination-descr {float:right; width:50%; padding:0 0 0 10px}
-.voiting-form-nomination-descr-title {font-size:18px; line-height:27px; color:#000}
-.voiting-form-nomination-descr-text {margin:20px 0 0 0; font-size:14px; line-height:20px}
-.voiting-form-nominees {margin:0 auto -1px auto; max-width:1000px}
+.voiting-form-nomination-text {font-size:18px; line-height:27px; color:#000}
+.voiting-form-nomination-title {margin:4px 0 0 0; font-weight:500; font-size:30px; line-height:30px; color:#000}
+.voiting-form-nominees {margin:54px 0 0 0}
 .voiting-form-nominee {border-top:1px solid #e2e2e2; border-bottom:1px solid #e2e2e2; padding:12px 0; background:rgba(255, 255, 255, 0.8); margin:-1px 0}
 .voiting-form-nominee-inner {display:table; width:100%; border-collapse:collapse; cursor:move}
-.voiting-form-nominee-move-icon {display:table-cell; vertical-align:middle; width:37px}
+.voiting-form-nominee-move-icon {display:table-cell; vertical-align:top; width:37px; padding:10px 0 0 0}
 .voiting-form-nominee-move-icon svg {display:block; width:37px; height:37px; fill:#a1a1a1}
-.voiting-form-nominee-order {display:table-cell; vertical-align:middle; width:57px; padding:0 0 0 14px; font-weight:500; font-size:24px; line-height:36px; color:#000}
-.voiting-form-nominee-img {display:table-cell; vertical-align:middle; width:54px}
+.voiting-form-nominee-order {display:table-cell; vertical-align:top; width:57px; padding:9px 0 0 14px; font-weight:500; font-size:24px; line-height:36px; color:#000}
+.voiting-form-nominee-img {display:table-cell; vertical-align:top; width:54px}
 .voiting-form-nominee-img img {display:block; width:54px; max-width:54px}
 .voiting-form-nominee-info {display:table-cell; vertical-align:middle; padding:0 0 0 46px}
 .voiting-form-nominee-title {font-weight:500; font-size:20px; line-height:26px}
 .voiting-form-nominee-text {margin:5px 0 0 0; font-size:16px; line-height:24px}
 
-@media screen and (min-width:1600px) {
-    .voiting-form-nomination-descr-text {font-size:16px; line-height:26px}
-}
-
 @media screen and (max-width:1199px) {
-    .voiting-form-nomination-info {float:none; width:auto; padding:0}
-    .voiting-form-nomination-descr {float:none; width:auto; padding:0; margin:20px 0 0 0}
+    .voiting-form-nomination-text {font-size:20px; line-height:30px}
+    .voiting-form-nomination-title {margin:1px 0 0 0; font-weight:bold; font-size:32px; line-height:48px}
+    .voiting-form-nominees {margin:24px 0 0 0}
+    .voiting-form-nominee {padding:20px 0; position:relative; cursor:default}
+    .voiting-form-nominee-move-icon {display:block; position:absolute; right:0; top:50%; width:30px; padding:0; margin-top:-15px; cursor:move}
+    .voiting-form-nominee-move-icon::before {content:""; display:block; position:absolute; left:-20px; top:-20px; right:-20px; bottom:-20px}
+    .voiting-form-nominee-move-icon svg {width:30px; height:30px}
+    .voiting-form-nominee-order {vertical-align:middle; width:45px; padding:0; font-weight:bold; font-size:18px; line-height:23px; color:#4680c2}
+    .voiting-form-nominee-img {vertical-align:middle; width:50px}
+    .voiting-form-nominee-img img {width:50px; max-width:50px}
+    .voiting-form-nominee-info {padding:0 0 0 20px}
+    .voiting-form-nominee-title {font-weight:normal; font-size:18px; line-height:23px}
+    .voiting-form-nominee-title a {text-decoration:none}
+    .voiting-form-nominee-text {display:none}
 }
 
-.voiting-form-ctrl {margin:40px auto; max-width:1000px}
+.voiting-form-ctrl {margin:20px 0}
 .voiting-form.success .voiting-form-ctrl {display:none}
 .voiting-form-ctrl::after {content:""; display:block; clear:both}
 .voiting-form-ctrl-status {float:left; margin:9px 0 0 0; font-size:18px; line-height:27px}
@@ -7282,13 +7320,70 @@ footer {margin:60px 0 0 0}
 .voiting-form-ctrl-btn .btn {padding:9px 32px; font-size:14px; line-height:22px}
 
 @media screen and (max-width:1199px) {
-    .voiting-form-ctrl-status {float:none; margin:0}
-    .voiting-form-ctrl-btn {float:none; margin:20px 0 0 0}
+    .voiting-form-ctrl {margin:24px 0 0 0; padding:0 0 60px 0}
+    .voiting-form-ctrl-status {float:none; margin:0; font-size:20px; line-height:30px}
+    .voiting-form-ctrl-btn {float:none; margin:40px 0 0 0}
 }
 
 .voiting-form-success {background:#f3f3f3; text-align:center; padding:75px 20px; position:absolute; left:-9999px; top:-9999px; opacity:0; transition:opacity 0.2px}
 .voiting-form.success .voiting-form-success {position:relative; left:auto; top:auto; opacity:1}
 .voiting-form-success-icon {line-height:0}
 .voiting-form-success-icon svg {display:block; width:56px; height:56px; margin:0 auto; fill:#e10034}
-.voiting-form-success-title {margin:24px auto 0 auto; max-width:532px; font-weight:500; font-size:30px; line-height:39px; color:#000}
-.voiting-form-success-text {margin:10px auto 0 auto; max-width:532px; font-size:18px; line-height:27px}
+.voiting-form-success-title {margin:24px auto 0 auto; max-width:538px; font-weight:500; font-size:30px; line-height:39px; color:#000}
+.voiting-form-success-text {margin:10px auto 0 auto; max-width:538px; font-size:18px; line-height:27px}
+
+@media screen and (max-width:1199px) {
+    .voiting-form-success {padding:65px 15px}
+    .voiting-form-success-title {max-width:none}
+    .voiting-form-success-text {margin:20px 0 0 0; max-width:none; font-size:20px; line-height:30px}
+}
+
+.award-nominations-2022 {margin:76px 0 0 0; border-bottom:1px solid #e2e2e2}
+.award-nomination-2022 {border-top:1px solid #e2e2e2; position:relative}
+.award-nomination-2022-header {position:relative; cursor:pointer; padding:30px 200px 30px 54px; font-weight:500; font-size:30px; line-height:39px; color:#000; transition:color 0.2s}
+.award-nomination-2022-header:hover {color:#4680c2}
+.award-nomination-2022-header span {display:block; position:absolute; left:0; top:30px; color:#4680c2}
+.award-nomination-2022-header em {display:block; position:absolute; right:45px; top:38px; font-style:normal; font-weight:normal; font-size:18px; line-height:23px; color:#504f4f}
+.award-nomination-2022-header svg {display:block; position:absolute; right:0; top:34.5px; width:30px; height:30px; fill:none; stroke:#000; transition:transform 0.2s}
+.award-nomination-2022.open .award-nomination-2022-header svg {transform:rotate(-180deg)}
+.award-nominants-2022 {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s; font-size:0; line-height:0; letter-spacing:-1px; margin:0 0 30px 0; border-top:1px solid #f1f1f1; border-left:1px solid #f1f1f1}
+.award-nomination-2022.open .award-nominants-2022 {position:relative; left:auto; top:auto; opacity:1}
+.award-nominant-2022 {display:inline-block; vertical-align:top; width:25%; border-bottom:1px solid #f1f1f1; border-right:1px solid #f1f1f1}
+.award-nominant-2022 a {display:block; text-decoration:none; color:#000; transition:box-shadow 0.2s, color 0.2s; padding:20px; min-height:250px}
+.award-nominant-2022 a:hover {color:#ff2f66; box-shadow:0px 4px 20px rgba(0, 0, 0, 0.1)}
+.award-nominant-2022-logo {height:90px; line-height:90px}
+.award-nominant-2022-logo img {display:inline-block; vertical-align:middle; max-height:100%}
+.award-nominant-2022-title {margin:20px 0 0 0; font-size:20px; line-height:26px; letter-spacing:0; font-weight:300}
+
+@media screen and (max-width:1199px) {
+    .award-nominations-2022 {margin:40px 0 0 0}
+    .award-nomination-2022-header {padding:20px 60px 20px 44px; font-size:24px; line-height:31px}
+    .award-nomination-2022-header span {top:20px}
+    .award-nomination-2022-header em {position:relative; right:auto; top:auto; margin:5px 0 0 0}
+    .award-nomination-2022-header svg {top:20px}
+    .award-nominants-2022 {margin:0; border-left:none; border-top:none}
+    .award-nominant-2022 {display:block; width:auto; border-right:none; border-bottom:none; border-top:1px solid #f1f1f1; padding:20px 0}
+    .award-nominant-2022 a {display:table; width:100%; border-collapse:collapse; min-height:0}
+    .award-nominant-2022 a:hover {box-shadow:none}
+    .award-nominant-2022-logo {display:table-cell; vertical-align:middle; width:95px; height:95px; padding:15px; background:#e7e7e7; text-align:center; line-height:0}
+    .award-nominant-2022-title {display:table-cell; vertical-align:middle; margin:0; padding:0 0 0 20px}
+}
+
+.award-about-2022 {margin:50px 0 0 0}
+.award-about-2022::after {content:""; display:block; clear:both}
+.award-about-2022 .award-about-old {margin:0}
+.award-about-2022 .award-about-old h4 {margin:0}
+.award-about-2022 .award-about-right h4 {font-weight:normal; color:#504f4f; font-size:24px; line-height:36px}
+
+@media screen and (min-width:1800px) {
+    .award-about-2022 .award-about-right h4 {font-size:30px; line-height:40px}
+}
+
+
+@media screen and (max-width:1199px) {
+    .award-about-2022 {margin:30px 0 0 0}
+    .award-about-2022 .award-about-old {margin:40px 0 0 0}
+    .award-about-2022 .award-about-right {margin:40px 0 0 0}
+    .award-about-2022 .award-about-right h4 {display:none}
+    .award-about-2022 .award-about-right p {display:block}
+}
