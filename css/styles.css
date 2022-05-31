@@ -101,6 +101,15 @@ hr {margin:50px 0; height:1px; border:none; background:#c4c4c4}
 .wrapper tbody tr:last-child td {border-bottom:2px solid #000}
 .wrapper tbody tr:nth-child(odd) td {background:#f6f6f6}
 
+.big-table-scroll {margin:40px 0; overflow:auto; position:relative}
+.wrapper .big-table-scroll table {margin:0; width:auto; max-width:none}
+.big-table-scroll .mCSB_horizontal.mCSB_inside > .mCSB_container {margin:0 0 36px 0}
+.big-table-scroll .mCSB_scrollTools {opacity:1}
+.big-table-scroll .mCSB_scrollTools .mCSB_draggerContainer {opacity:1}
+.big-table-scroll .mCSB_scrollTools.mCSB_scrollTools_horizontal {height:6px}
+.big-table-scroll .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {height:6px; margin:0; border-radius:3px; background:#eaeaea}
+.big-table-scroll .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {height:6px; margin:0; border-radius:3px; background:#ff2f66}
+
 @media screen and (max-width:1199px) {
     .table-scroll {margin:40px -14px; overflow:auto; position:relative; padding:0 14px}
     .wrapper .table-scroll table {margin:0; width:1172px}
@@ -110,11 +119,15 @@ hr {margin:50px 0; height:1px; border:none; background:#c4c4c4}
     .table-scroll .mCSB_scrollTools.mCSB_scrollTools_horizontal {height:6px}
     .table-scroll .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {height:6px; margin:0; border-radius:3px; background:#eaeaea}
     .table-scroll .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {height:6px; margin:0; border-radius:3px; background:#ff2f66}
+
+    .big-table-scroll {margin:40px -14px; padding:0 14px}
 }
 
 @media screen and (max-width:767px) {
     .table-scroll {margin:40px -20px; padding:0 20px}
     .wrapper .table-scroll table {width:1160px}
+
+    .big-table-scroll {margin:40px -20px; padding:0 20px}
 }
 
 .wrapper form {margin:40px 0; padding:0}
@@ -5019,6 +5032,9 @@ footer {margin:60px 0 0 0}
 .window-nominee-text-section-text {margin:15px 0 0 0}
 .window-nominee-text-section-text > *:first-child {margin-top:0}
 .window-nominee-text-section-text > *:last-child {margin-bottom:0}
+.window-nominee-winner {margin:20px 0 0 0}
+.window-nominee-winner span {display:inline-block; vertical-align:top; background:#ff2f66; height:23px; padding:0 10px; color:#fff; font-weight:500; font-size:12px; line-height:25px; letter-spacing:0.05em; text-transform:uppercase}
+.window-nominee-winner+.window-nominee-title {margin:5px 0 0 0}
 
 @media screen and (min-width:1800px) {
     .window-nominee {width:1659px}
@@ -5049,6 +5065,8 @@ footer {margin:60px 0 0 0}
     .window-nominee-text-title {display:none}
     .window-nominee-text-section {margin:40px 0 0 0}
     .window-nominee-text-section-title {font-size:24px; line-height:40px; padding:0; margin:0 0 0 60px}
+    .window-nominee-winner {margin:40px 0 0 0; text-align:center; border-top:1px solid #d9d9d9; padding:30px 0 0 0}
+    .window-nominee-winner+.window-nominee-title {margin:10px 0 0 0; border-top:none; padding:0}
 }
 
 @media screen and (max-width:767px) {
@@ -5061,6 +5079,7 @@ footer {margin:60px 0 0 0}
     .window-nominee-status {font-size:18px; line-height:27px}
     .window-nominee-link {font-size:18px; line-height:27px}
     .window-nominee-text {margin:30px 0 0 0; padding:10px 0 0 0}
+    .window-nominee-winner {margin:50px 0 0 0; padding:40px 0 0 0}
 }
 
 @media screen and (max-width:479px) {
@@ -7253,6 +7272,10 @@ footer {margin:60px 0 0 0}
     .voiting-header-about.open .voiting-header-about-mobile-more a span:nth-child(2) {display:inline}
 }
 
+@media screen and (max-width:479px) {
+        .voiting-header-welcome-title {font-size:28px; line-height:42px}
+}
+
 .voiting-form {margin:50px 0 0 0; position:relative; border-top:1px solid #d4d4d4; padding:50px 0 0 0}
 .voiting-form.success {border-top:none; padding:0}
 
@@ -7274,6 +7297,10 @@ footer {margin:60px 0 0 0}
 .voiting-form.success form {margin:0; max-width:none}
 
 @media screen and (max-width:1199px) {
+    .voiting-form form {margin:50px auto 0 auto; max-width:600px}
+}
+
+@media screen and (max-width:767px) {
     .voiting-form form {margin:50px 0 0 0; max-width:none}
 }
 
@@ -7288,8 +7315,9 @@ footer {margin:60px 0 0 0}
 .voiting-form-nominee-move-icon {display:table-cell; vertical-align:top; width:37px; padding:10px 0 0 0}
 .voiting-form-nominee-move-icon svg {display:block; width:37px; height:37px; fill:#a1a1a1}
 .voiting-form-nominee-order {display:table-cell; vertical-align:top; width:57px; padding:9px 0 0 14px; font-weight:500; font-size:24px; line-height:36px; color:#000}
-.voiting-form-nominee-img {display:table-cell; vertical-align:top; width:54px}
-.voiting-form-nominee-img img {display:block; width:54px; max-width:54px}
+.voiting-form-nominee-img {display:table-cell; vertical-align:top; width:50px}
+.voiting-form-nominee-img div {width:50px; height:50px; border:1px solid #e7e7e7; padding:5px; line-height:38px}
+.voiting-form-nominee-img img {display:inline-block; vertical-align:middle; max-height:100%}
 .voiting-form-nominee-info {display:table-cell; vertical-align:middle; padding:0 0 0 46px}
 .voiting-form-nominee-title {font-weight:500; font-size:20px; line-height:26px}
 .voiting-form-nominee-text {margin:5px 0 0 0; font-size:16px; line-height:24px}
@@ -7303,8 +7331,6 @@ footer {margin:60px 0 0 0}
     .voiting-form-nominee-move-icon::before {content:""; display:block; position:absolute; left:-20px; top:-20px; right:-20px; bottom:-20px}
     .voiting-form-nominee-move-icon svg {width:30px; height:30px}
     .voiting-form-nominee-order {vertical-align:middle; width:45px; padding:0; font-weight:bold; font-size:18px; line-height:23px; color:#4680c2}
-    .voiting-form-nominee-img {vertical-align:middle; width:50px}
-    .voiting-form-nominee-img img {width:50px; max-width:50px}
     .voiting-form-nominee-info {padding:0 0 0 20px}
     .voiting-form-nominee-title {font-weight:normal; font-size:18px; line-height:23px}
     .voiting-form-nominee-title a {text-decoration:none}
@@ -7319,7 +7345,7 @@ footer {margin:60px 0 0 0}
 .voiting-form-ctrl-btn {float:right}
 .voiting-form-ctrl-btn .btn {padding:9px 32px; font-size:14px; line-height:22px}
 
-@media screen and (max-width:1199px) {
+@media screen and (max-width:767px) {
     .voiting-form-ctrl {margin:24px 0 0 0; padding:0 0 60px 0}
     .voiting-form-ctrl-status {float:none; margin:0; font-size:20px; line-height:30px}
     .voiting-form-ctrl-btn {float:none; margin:40px 0 0 0}
@@ -7343,30 +7369,44 @@ footer {margin:60px 0 0 0}
 .award-nomination-2022-header {position:relative; cursor:pointer; padding:30px 200px 30px 54px; font-weight:500; font-size:30px; line-height:39px; color:#000; transition:color 0.2s}
 .award-nomination-2022-header:hover {color:#4680c2}
 .award-nomination-2022-header span {display:block; position:absolute; left:0; top:30px; color:#4680c2}
+.award-nomination-2022-header span svg {display:inline-block; width:39px; height:36px; vertical-align:top; margin:-2px 0 0 0; fill:none}
 .award-nomination-2022-header em {display:block; position:absolute; right:45px; top:38px; font-style:normal; font-weight:normal; font-size:18px; line-height:23px; color:#504f4f}
-.award-nomination-2022-header svg {display:block; position:absolute; right:0; top:34.5px; width:30px; height:30px; fill:none; stroke:#000; transition:transform 0.2s}
-.award-nomination-2022.open .award-nomination-2022-header svg {transform:rotate(-180deg)}
+.award-nomination-2022-header > svg {display:block; position:absolute; right:0; top:34.5px; width:30px; height:30px; fill:none; stroke:#000; transition:transform 0.2s}
+.award-nomination-2022.open .award-nomination-2022-header > svg {transform:rotate(-180deg)}
 .award-nominants-2022 {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s; font-size:0; line-height:0; letter-spacing:-1px; margin:0 0 30px 0; border-top:1px solid #f1f1f1; border-left:1px solid #f1f1f1}
 .award-nomination-2022.open .award-nominants-2022 {position:relative; left:auto; top:auto; opacity:1}
-.award-nominant-2022 {display:inline-block; vertical-align:top; width:25%; border-bottom:1px solid #f1f1f1; border-right:1px solid #f1f1f1}
+.award-nominant-2022 {display:inline-block; vertical-align:top; width:25%; border-bottom:1px solid #f1f1f1; border-right:1px solid #f1f1f1; position:relative}
 .award-nominant-2022 a {display:block; text-decoration:none; color:#000; transition:box-shadow 0.2s, color 0.2s; padding:20px; min-height:250px}
 .award-nominant-2022 a:hover {color:#ff2f66; box-shadow:0px 4px 20px rgba(0, 0, 0, 0.1)}
 .award-nominant-2022-logo {height:90px; line-height:90px}
 .award-nominant-2022-logo img {display:inline-block; vertical-align:middle; max-height:100%}
 .award-nominant-2022-title {margin:20px 0 0 0; font-size:20px; line-height:26px; letter-spacing:0; font-weight:300}
+.award-nominant-2022-winner {position:absolute; right:0; top:0; background:#ff2f66; height:23px; padding:0 10px; color:#fff; font-weight:500; font-size:12px; line-height:25px; letter-spacing:0.05em; text-transform:uppercase}
 
 @media screen and (max-width:1199px) {
     .award-nominations-2022 {margin:40px 0 0 0}
     .award-nomination-2022-header {padding:20px 60px 20px 44px; font-size:24px; line-height:31px}
     .award-nomination-2022-header span {top:20px}
+    .award-nomination-2022-header span svg {width:34px; height:33px}
     .award-nomination-2022-header em {position:relative; right:auto; top:auto; margin:5px 0 0 0}
-    .award-nomination-2022-header svg {top:20px}
+    .award-nomination-2022-header > svg {top:20px}
+    .award-nominant-2022 {width:33.33%}
+    .award-nominant-2022-title {font-size:18px; line-height:24px}
+}
+
+@media screen and (max-width:767px) {
     .award-nominants-2022 {margin:0; border-left:none; border-top:none}
     .award-nominant-2022 {display:block; width:auto; border-right:none; border-bottom:none; border-top:1px solid #f1f1f1; padding:20px 0}
     .award-nominant-2022 a {display:table; width:100%; border-collapse:collapse; min-height:0}
     .award-nominant-2022 a:hover {box-shadow:none}
-    .award-nominant-2022-logo {display:table-cell; vertical-align:middle; width:95px; height:95px; padding:15px; background:#e7e7e7; text-align:center; line-height:0}
+    .award-nominant-2022-logo {display:table-cell; vertical-align:middle; width:95px; height:95px; padding:10px; border:1px solid #e7e7e7; text-align:center; line-height:0}
     .award-nominant-2022-title {display:table-cell; vertical-align:middle; margin:0; padding:0 0 0 20px}
+}
+
+@media screen and (max-width:479px) {
+    .award-nominant-2022-logo {width:70px; height:70px; padding:10px}
+    .award-nominant-2022-title {font-size:17px; line-height:21px}
+    .award-nominant-2022-winner {height:18px; font-size:10px; line-height:19px}
 }
 
 .award-about-2022 {margin:50px 0 0 0}

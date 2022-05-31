@@ -2762,6 +2762,17 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.big-table').each(function() {
+        var curTable = $(this);
+        curTable.wrap('<div class="big-table-scroll"></div>');
+        curTable.parent().mCustomScrollbar({
+            axis: 'x',
+            scrollButtons: {
+                enable: true
+            }
+        });
+    });
+
 });
 
 $(window).on('load resize', function() {
@@ -2788,7 +2799,7 @@ $(window).on('load resize', function() {
             });
         });
     });
-    
+
     $('.voiting-form-step').each(function() {
         var curStep = $(this);
         if ($(window).width() > 1199) {
