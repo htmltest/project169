@@ -40,6 +40,12 @@ $(document).ready(function() {
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#welcome-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#welcome-next"></use></svg></button>',
         dots: true
+    }).on('setPosition', function(event, slick) {
+        if ($('.welcome-slider .slick-slide.slick-current .welcome-slider-city').length == 1) {
+            $('.welcome-slider').addClass('welcome-slider-dots-blue');
+        } else {
+            $('.welcome-slider').removeClass('welcome-slider-dots-blue');
+        }
     });
 
     $('.main-block .speakers').each(function() {
