@@ -915,7 +915,7 @@ header.fixed .nav-reg {margin-top:10px}
 }
 
 @media screen and (max-width:767px) {
-    .welcome-slider-item-container {height:650px}
+    .welcome-slider-item-container {height:700px}
     .welcome-slider-item-city {padding:109px 0 0 4px}
     .welcome-slider-item-title {padding:30px 0 0 0}
     .welcome-slider-item-title-new {padding-top:0; font-size:32px; line-height:44px}
@@ -930,6 +930,8 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-social-item-btn .btn {padding:0; width:100%; height:56px; line-height:52px}
     .welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block}
     .welcome-social {display:none}
+    .welcome-social-item svg {width:32px; height:32px}
+    .welcome-social-item-zen svg {width:72px}
 }
 
 @media screen and (max-width:479px) {
@@ -938,8 +940,6 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-slider-item-container .welcome-social-inner {padding:20px 0 0 0}
     .welcome-slider-item-date {padding:20px 0 0 0; font-size:20px; line-height:30px}
     .welcome-slider-item-place {padding:0; font-size:20px; line-height:30px}
-    .welcome-social-item svg {width:32px; height:32px}
-    .welcome-social-item-zen svg {width:72px}
     .welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block}
     .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {margin-left:0}
     .welcome-social-item-btn .btn {padding:0; width:100%; height:44px; line-height:40px}
@@ -3816,6 +3816,7 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-header::after {content:""; display:block; clear:both}
 .programm-header h1 {float:left; margin:0}
 .programm-download {float:right; margin:11px 0 0 0}
+.programm-download+.programm-download {margin-right:10px}
 
 @media screen and (min-width:1800px) {
     .programm-download {margin:23px 0 0 0}
@@ -6051,9 +6052,9 @@ footer {margin:60px 0 0 0}
 @media screen and (max-width:767px) {
     .academy-welcome-social-link {margin:0 20px 0 0}
     .academy-welcome-social-link a {padding:17px; border-width:3px; font-size:20px; line-height:26px; height:auto}
-    .academy-welcome-social-item {margin-top:10px}
-    .academy-welcome-social-item svg {width:44px; height:44px}
-    .academy-welcome-social-item-zen svg {width:99px}
+    .academy-welcome-social-item {margin-top:16px}
+    .academy-welcome-social-item svg {width:32px; height:32px}
+    .academy-welcome-social-item-zen svg {width:72px}
 }
 
 @media screen and (max-width:479px) {
@@ -7483,7 +7484,7 @@ footer {margin:60px 0 0 0}
 @media screen and (max-width:767px) {
     .welcome-slider-city .welcome-slider-item-bg {background-image:url(../images/welcome-slider-city-mobile.svg); background-position:left top}
     .welcome-slider-city .welcome-slider-item-city {padding-top:115px; padding-left:268px; padding-right:0}
-    .welcome-slider-city .welcome-slider-item-title {padding-top:110px; white-space:normal}
+    .welcome-slider-city .welcome-slider-item-title {padding-top:130px; white-space:normal}
     .welcome-slider-city .welcome-slider-item-subtitle {font-size:18px; line-height:27px; padding:10px 0 0 0}
     .welcome-slider-city .welcome-slider-item-date {right:auto; left:288px; width:auto; top:195px}
     .welcome-slider-city .welcome-slider-item-place {right:auto; left:288px; width:auto; top:225px}
@@ -7491,7 +7492,7 @@ footer {margin:60px 0 0 0}
     .welcome-slider-city .welcome-slider-item-btns::after {content:""; display:block; clear:both}
     .welcome-slider-city .welcome-slider-item-btns a {float:left; margin:0}
     .welcome-slider-city .welcome-slider-item-btns a+a {float:right}
-    .welcome-slider-city .welcome-slider-item-container .welcome-social-inner {padding-top:10px; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
+    .welcome-slider-city .welcome-slider-item-container .welcome-social-inner {padding-top:20px; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
     .welcome-slider-city .welcome-social-item {float:none; display:inline-block; vertical-align:top}
 }
 
@@ -7504,4 +7505,103 @@ footer {margin:60px 0 0 0}
     .welcome-slider-city .welcome-slider-item-btns a {float:none; display:block; margin:10px 0 0 0}
     .welcome-slider-city .welcome-slider-item-btns a+a {float:none}
     .welcome-slider-city .welcome-slider-item-container .welcome-social-inner {padding-top:20px}
+}
+
+.btn svg.btn-icon-map {fill:#000000; stroke:none}
+
+.program-22-ctrl {margin:40px 0 0 0}
+.program-22-ctrl::after {content:""; display:block; clear:both}
+.program-22-ctrl-dates {float:left}
+.program-22-ctrl-date {float:left; margin:0 0 0 10px; height:44px; font-size:16px; font-weight:600; line-height:44px; text-decoration:none; color:#8a8a8a; padding:0 20px; background:#ededed; transition:background 0.2s, color 0.2s}
+.program-22-ctrl-date:first-child {margin:0}
+.program-22-ctrl-date.active,
+.program-22-ctrl-date:hover {text-decoration:none; color:#ffffff; background:#000000}
+.program-22-ctrl-date span {font-size:12px; font-weight:300}
+.program-22-ctrl-date svg {display:inline-block; vertical-align:middle; margin:-4px 10px 0 0; width:22px; height:22px; fill:#8a8a8a; transition:fill 0.2s}
+.program-22-ctrl-date.active svg,
+.program-22-ctrl-date:hover svg {fill:#ffffff}
+.program-22-ctrl .programm-filter {float:right; margin:0}
+.program-22-ctrl .programm-filter-params {float:right; width:auto; margin:0 10px 0 0; height:44px}
+.program-22-ctrl .programm-filter-params::after {pointer-events:none}
+.program-22-ctrl .programm-filter-btn {float:right}
+.programm-filter-open .program-22-ctrl .programm-filter-window {left:auto; right:0}
+
+.program-22-sections {margin:50px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
+.program-22-sections ul {display:inline-block; vertical-align:top; min-width:100%; margin:0; padding:0; list-style:none; border-bottom:2px solid #dfdfdf}
+.program-22-sections ul li {display:inline-block; vertical-align:top; margin:0 0 0 30px; padding:0}
+.program-22-sections ul li:first-child {margin:0}
+.program-22-sections ul li::before {display:none}
+.program-22-sections ul li a {display:block; padding:0 0 10px 0; font-size:14px; line-height:14px; font-weight:500; letter-spacing:0; text-transform:uppercase; text-decoration:none; color:#c1c1c1; position:relative; transition:color 0.2s}
+.program-22-sections ul li.active a,
+.program-22-sections ul li a:hover {color:#000000}
+.program-22-sections ul li.active a::after {content:""; display:block; position:absolute; left:0; bottom:-2px; right:0; height:2px; background:#000000}
+
+.program-22-container {margin:20px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden}
+.program-22-content {display:inline-block; vertical-align:top}
+.program-22-day {display:inline-block; vertical-align:top; width:177px; margin:0 0 0 20px; white-space:normal}
+.program-22-day:first-child {margin:0}
+.program-22-day-date {font-weight:500; font-size:22px; line-height:29px; letter-spacing:0; color:#000000}
+.program-22-day-name {font-size:14px; line-height:18px; letter-spacing:0; color:#8a8a8a}
+.program-22-event {display:block; text-decoration:none; margin:30px 0 0 0; position:relative}
+.program-22-event:hover {text-decoration:none}
+.program-22-event::before {content:""; display:block; position:absolute; left:-5px; top:-5px; right:-5px; bottom:-5px; background:#fff; box-shadow:4px 4px 20px rgba(85, 85, 85, 0.14); opacity:0; transition:opacity 0.2s; pointer-events:none}
+.program-22-event:hover::before {opacity:1}
+.program-22-event-time {margin:10px 0 0 0; font-weight:bold; font-size:22px; line-height:29px; letter-spacing:0; color:#000000; position:relative}
+.program-22-event-place {margin:10px 0 0 0; font-weight:600; font-size:14px; line-height:18px; letter-spacing:0; color:#4f4898; position:relative}
+.program-22-event-type {margin:5px 0 0 0; position:relative}
+.program-22-event-type span {display:inline-block; vertical-align:top; padding:5px 6px; font-weight:300; font-size:10px; line-height:13px; letter-spacing:0.05em; text-transform:uppercase; color:#000000}
+.program-22-event-title {margin:5px 0 0 0; font-weight:normal; font-size:14px; line-height:18px; letter-spacing:0; color:#000000; position:relative}
+.program-22-event-photo {margin:10px 0 0 0; position:relative}
+.program-22-event-photo img {display:block; width:100%}
+
+.welcome-slider-award-22 .welcome-slider-item-bg::before {background:#000000; opacity:1; bottom:0; height:80px}
+.welcome-slider-award-22-logo {padding:132px 0 0 0; line-height:0}
+.welcome-slider-award-22-logo img {display:block; width:273px}
+.welcome-slider-award-22-title {padding:80px 0 0 0; font-weight:bold; font-size:48px; line-height:62px; letter-spacing:0; text-transform:uppercase; color:#ffffff; max-width:800px}
+.welcome-slider-award-22-btns {padding:30px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px}
+.welcome-slider-award-22-btns a {display:inline-block; vertical-align:top; height:52px; margin:0 0 0 10px; padding:0 18px; border:2px solid #ffffff; font-weight:600; font-size:16px; line-height:48px; letter-spacing:0.05em; text-transform:uppercase; color:#ffffff; text-decoration:none; transition:background 0.2s, border-color 0.2s, color 0.2s}
+.welcome-slider-award-22-btns a:first-child {margin:0}
+.welcome-slider-award-22-btns a:hover {background:#636499}
+.welcome-slider-award-22-btns a svg {display:inline-block; vertical-align:middle; margin:-2px 6px 0 0; width:22px; height:22px; fill:none; stroke:#ffffff; transition:stroke 0.2s}
+.welcome-slider-award-22 .welcome-social-inner {padding:40px 0 0 0}
+.welcome-slider-award-22 .welcome-social-item a {position:relative; display:block}
+.welcome-slider-award-22 .welcome-social-item a::before {content:""; display:block; position:absolute; left:5px; top:5px; right:5px; bottom:5px; background:#ffffff}
+.welcome-slider-award-22 .welcome-social-item svg {fill:#000000; position:relative}
+.welcome-slider-award-22 .welcome-social-item a:hover svg {fill:#636499}
+
+@media screen and (min-width:1800px) {
+    .welcome-slider-award-22 .welcome-slider-item-bg::before {height:110px}
+    .welcome-slider-award-22-logo {float:left; padding:279px 0 0 0}
+    .welcome-slider-award-22-logo img {width:257px}
+    .welcome-slider-award-22-container {float:left; padding:254px 0 0 0; margin:0 0 0 70px; width:1050px}
+    .welcome-slider-award-22-title {padding:0; font-size:90px; line-height:117px; max-width:none}
+    .welcome-slider-award-22-btns {padding:55px 0 0 0}
+    .welcome-slider-award-22 .welcome-social-item a::before {left:8px; top:8px; right:8px; bottom:8px}
+}
+
+@media screen and (max-width:1199px) {
+    .welcome-slider-award-22 .welcome-slider-item-bg {background-position:75% center}
+    .welcome-slider-award-22-logo {padding:132px 26px 0 26px}
+    .welcome-slider-award-22-logo img {width:205px}
+    .welcome-slider-award-22-title {padding:37px 26px 0 26px; font-size:40px; line-height:52px; max-width:none}
+    .welcome-slider-award-22-btns {padding:20px 26px 0 26px}
+    .welcome-slider-award-22 .welcome-social-inner {padding:30px 26px 0 26px}
+    .welcome-slider-award-22 .welcome-social-item svg {width:32px; height:32px}
+    .welcome-slider-award-22 .welcome-social-item-zen svg {width:72px}
+}
+
+@media screen and (max-width:767px) {
+    .welcome-slider-award-22 .welcome-slider-item-bg {background-position:80% top}
+    .welcome-slider-award-22-logo {padding:130px 0 0 0}
+    .welcome-slider-award-22-logo img {width:167px}
+    .welcome-slider-award-22-title {padding:30px 0 0 0; font-size:30px; line-height:39px}
+    .welcome-slider-award-22-btns {padding:20px 0 0 0}
+    .welcome-slider-award-22-btns::after {content:""; display:block; clear:both}
+    .welcome-slider-award-22-btns a {float:left; clear:left; margin:10px 0 0 0}
+    .welcome-slider-award-22-btns a:first-child {margin:0}
+    .welcome-slider-award-22 .welcome-social-inner {padding:30px 0 0 0}
+}
+
+@media screen and (max-width:479px) {
+    .welcome-slider-award-22-btns a {width:100%; padding:0; text-align:center}
 }

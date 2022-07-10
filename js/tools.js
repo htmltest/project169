@@ -2133,7 +2133,12 @@ $(window).on('load resize scroll', function() {
     });
 
     $('.programm-filter-params').each(function() {
-        $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 70) + 'px'});
+        if ($('.program-22-ctrl').length == 0) {
+            $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 70) + 'px'});
+        } else {
+            $('.programm-filter').css({'width': ($('.program-22-ctrl').width() - $('.program-22-ctrl-dates').width()) + 'px'});
+            $('.programm-filter-params').css({'max-width': ($('.program-22-ctrl').width() - $('.program-22-ctrl-dates').width() - $('.programm-filter-btn').width() - 30) + 'px'});
+        }
     });
 
     var curMarginTop = Number($('html').css('margin-top').replace('px', ''));
@@ -2815,3 +2820,100 @@ $(window).on('load resize', function() {
         }
     });
 });
+
+$(document).ready(function() {
+
+    $('.program-22-ctrl').each(function() {
+        var newHTML = '';
+        for (var i = 0; i < programm22Data.types.length; i++) {
+            var curItem = programm22Data.types[i];
+            newHTML += '<div class="form-checkbox"><label><input type="checkbox" name="type' + curItem.id + '" value="' + curItem.id + '" /><span><em style="background:' + curItem.color + '"></em>' + curItem.title + '</span></label>';
+        }
+        $('.programm-filter-window-checkboxes-types').html(newHTML);
+
+        newHTML = '';
+        for (var i = 0; i < programm22Data.weeks.length; i++) {
+            var curItem = programm22Data.weeks[i];
+            newHTML += '<a href="#" class="program-22-ctrl-date" data-id="' + curItem.id + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#program-22-ctrl-date"></use></svg>' + curItem.title + '</a>';
+        }
+        $('.program-22-ctrl-dates').html(newHTML);
+        $('.program-22-ctrl-dates .program-22-ctrl-date').eq(0).addClass('active');
+
+        newHTML = '<ul>';
+        for (var i = 0; i < programm22Data.sections.length; i++) {
+            var curItem = programm22Data.sections[i];
+            newHTML += '<li><a href="#" data-id="' + curItem.id + '">' + curItem.title + '</a></li>';
+        }
+        newHTML += '</ul>';
+        $('.program-22-sections').html(newHTML);
+        $('.program-22-sections li').eq(0).addClass('active');
+
+        updateProgram22();
+    });
+
+    $('.program-22-container').mCustomScrollbar({
+        axis: 'x'
+    });
+
+    $('body').on('click', '.program-22-ctrl-date', function(e) {
+       var curItem = $(this);
+       if (!curItem.hasClass('active')) {
+           $('.program-22-ctrl-date.active').removeClass('active');
+           curItem.addClass('active');
+           updateProgram22();
+       }
+       e.preventDefault();
+    });
+
+    $('body').on('click', '.program-22-sections a', function(e) {
+       var curItem = $(this).parent();
+       if (!curItem.hasClass('active')) {
+           $('.program-22-sections li.active').removeClass('active');
+           curItem.addClass('active');
+           updateProgram22();
+       }
+       e.preventDefault();
+    });
+
+});
+
+function updateProgram22() {
+    var newHTML = '';
+
+    var curWeekID = $('.program-22-ctrl-date.active').attr('data-id');
+    var curWeek = null;
+    for (var i = 0; i < programm22Data.weeks.length; i++) {
+        if (programm22Data.weeks[i].id == curWeekID) {
+            curWeek = programm22Data.weeks[i];
+        }
+    }
+    for (var i = 0; i < curWeek.days.length; i++) {
+        var curDay = curWeek.days[i];
+        newHTML += '<div class="program-22-day"><div class="program-22-day-date">' + curDay.title + '</div><div class="program-22-day-name">' + curDay.name + '</div>';
+        for (var j = 0; j < programm22Data.events.length; j++) {
+            var curEvent = programm22Data.events[j];
+            if (curEvent.date == curDay.date) {
+                newHTML +=  '<a href="' + curEvent.url + '" class="program-22-event">';
+                if (typeof(curEvent.photoprev) != 'undefined' && curEvent.photoprev && typeof(curEvent.photo) != 'undefined') {
+                    newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
+                }
+                newHTML +=      '<div class="program-22-event-time">' + curEvent.time + '</div>' +
+                                '<div class="program-22-event-place">' + curEvent.place + '</div>';
+                for (var k = 0; k < programm22Data.types.length; k++) {
+                    var curType = programm22Data.types[k];
+                    if (curType.id == curEvent.type) {
+                        newHTML += '<div class="program-22-event-type"><span style="background-color:' + curType.color + '">' + curType.title + '</span></div>'
+                    }
+                }
+                newHTML +=      '<div class="program-22-event-title">' + curEvent.title + '</div>';
+                if (typeof(curEvent.photo) != 'undefined' && (typeof(curEvent.photoprev) == 'undefined' || !curEvent.photoprev)) {
+                    newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
+                }
+
+                newHTML +=  '</a>';
+            }
+        }
+        newHTML += '</div>';
+    }
+    $('.program-22-content').html(newHTML);
+}
