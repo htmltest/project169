@@ -29,23 +29,35 @@ $(document).ready(function() {
         }
     });
 
-    $('.welcome-slider').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 5000,
-        pauseOnFocus: false,
-        pauseOnHover: false,
-        prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#welcome-prev"></use></svg></button>',
-        nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#welcome-next"></use></svg></button>',
-        dots: true
-    }).on('setPosition', function(event, slick) {
-        if ($('.welcome-slider .slick-slide.slick-current .welcome-slider-city').length == 1) {
-            $('.welcome-slider').addClass('welcome-slider-dots-blue');
-        } else {
-            $('.welcome-slider').removeClass('welcome-slider-dots-blue');
+    $('.welcome-slider').each(function() {
+        var curTime = 5000;
+        if (typeof($('.welcome-slider-item').eq(0).attr('data-time')) != 'undefined') {
+            curTime = Number($('.welcome-slider-item').eq(0).attr('data-time'));
         }
+
+        $('.welcome-slider').slick({
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: curTime,
+            pauseOnFocus: false,
+            pauseOnHover: false,
+            prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#welcome-prev"></use></svg></button>',
+            nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#welcome-next"></use></svg></button>',
+            dots: true
+        }).on('setPosition', function(event, slick) {
+            if ($('.welcome-slider .slick-slide.slick-current .welcome-slider-city').length == 1) {
+                $('.welcome-slider').addClass('welcome-slider-dots-blue');
+            } else {
+                $('.welcome-slider').removeClass('welcome-slider-dots-blue');
+            }
+            var newTime = 5000;
+            if (typeof($('.welcome-slider .slick-current .welcome-slider-item').attr('data-time')) != 'undefined') {
+                newTime = Number($('.welcome-slider .slick-current .welcome-slider-item').attr('data-time'));
+            }
+            $('.welcome-slider').slick('slickSetOption', 'autoplaySpeed', newTime);
+        });
     });
 
     $('.main-block .speakers').each(function() {
