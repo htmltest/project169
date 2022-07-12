@@ -1683,7 +1683,11 @@ function updateProgrammFilter() {
 
     $('.programm-filter-window-checkboxes .form-checkbox input:checked').each(function() {
         var curInput = $(this);
-        paramsHTML += '<div class="programm-filter-param">' + curInput.parent().find('span').html() + '<a href="#" data-type="checkbox" data-name="' + curInput.attr('name') + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#programm-filter-param-remove"></use></svg></a></div>';
+        var styleColor = '';
+        if (curInput.parent().find('span em').length == 1) {
+            styleColor = ' style="background:' + curInput.parent().find('span em').css('background-color') + '"';
+        }
+        paramsHTML += '<div class="programm-filter-param"' + styleColor + '>' + curInput.parent().find('span').html() + '<a href="#" data-type="checkbox" data-name="' + curInput.attr('name') + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#programm-filter-param-remove"></use></svg></a></div>';
         countParams++;
     });
 
@@ -2136,8 +2140,7 @@ $(window).on('load resize scroll', function() {
         if ($('.program-22-ctrl').length == 0) {
             $('.programm-filter-params').css({'width': ($('.programm-ctrl').width() - $('.programm-dates').width() - $('.programm-filter-btn').width() - 70) + 'px'});
         } else {
-            $('.programm-filter').css({'width': ($('.program-22-ctrl').width() - $('.program-22-ctrl-dates').width()) + 'px'});
-            $('.programm-filter-params').css({'max-width': ($('.program-22-ctrl').width() - $('.program-22-ctrl-dates').width() - $('.programm-filter-btn').width() - 30) + 'px'});
+            $('.programm-filter-params').css({'width': ($('.program-22-ctrl').width() - $('.program-22-ctrl-dates').width() - $('.programm-filter-btn').width() - 30) + 'px'});
         }
     });
 
@@ -2849,6 +2852,7 @@ $(document).ready(function() {
         $('.program-22-sections li').eq(0).addClass('active');
 
         updateProgram22();
+        updateProgram22Count();
     });
 
     $('.program-22-container').mCustomScrollbar({
@@ -2861,6 +2865,7 @@ $(document).ready(function() {
            $('.program-22-ctrl-date.active').removeClass('active');
            curItem.addClass('active');
            updateProgram22();
+            updateProgram22Count();
        }
        e.preventDefault();
     });
@@ -2871,49 +2876,272 @@ $(document).ready(function() {
            $('.program-22-sections li.active').removeClass('active');
            curItem.addClass('active');
            updateProgram22();
+            updateProgram22Count();
        }
        e.preventDefault();
+    });
+
+    $('body').on('change', '.programm-filter-window-checkboxes-speakers .form-checkbox input', function() {
+        updateProgram22Disabled();
+        updateProgrammFilter();
+        updateProgram22Count();
+        $('html').removeClass('programm-filter-open');
+        if ($(window).width() < 1200) {
+            $('.wrapper').css('margin-top', 0);
+            $(window).scrollTop($('html').data('scrollTop'));
+        }
+    });
+
+    $('body').on('change', '.programm-filter-window-checkboxes-types .form-checkbox input', function() {
+        updateProgram22Disabled();
+        updateProgrammFilter();
+        updateProgram22Count();
+        $('html').removeClass('programm-filter-open');
+        if ($(window).width() < 1200) {
+            $('.wrapper').css('margin-top', 0);
+            $(window).scrollTop($('html').data('scrollTop'));
+        }
+    });
+
+    $('body').on('click', '.programm-filter-param a', function(e) {
+        updateProgram22Disabled();
+        updateProgram22Count();
+        e.preventDefault();
     });
 
 });
 
 function updateProgram22() {
-    var newHTML = '';
+    $('.program-22-ctrl').each(function() {
+        $('.program-22-content').stop(true, true);
+        $('.program-22-content').animate({'opacity': 0}, 300, function() {
+            var newHTML = '';
 
-    var curWeekID = $('.program-22-ctrl-date.active').attr('data-id');
-    var curWeek = null;
-    for (var i = 0; i < programm22Data.weeks.length; i++) {
-        if (programm22Data.weeks[i].id == curWeekID) {
-            curWeek = programm22Data.weeks[i];
-        }
-    }
-    for (var i = 0; i < curWeek.days.length; i++) {
-        var curDay = curWeek.days[i];
-        newHTML += '<div class="program-22-day"><div class="program-22-day-date">' + curDay.title + '</div><div class="program-22-day-name">' + curDay.name + '</div>';
-        for (var j = 0; j < programm22Data.events.length; j++) {
-            var curEvent = programm22Data.events[j];
-            if (curEvent.date == curDay.date) {
-                newHTML +=  '<a href="' + curEvent.url + '" class="program-22-event">';
-                if (typeof(curEvent.photoprev) != 'undefined' && curEvent.photoprev && typeof(curEvent.photo) != 'undefined') {
-                    newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
+            var curWeekID = $('.program-22-ctrl-date.active').attr('data-id');
+            var curWeek = null;
+            for (var i = 0; i < programm22Data.weeks.length; i++) {
+                if (programm22Data.weeks[i].id == curWeekID) {
+                    curWeek = programm22Data.weeks[i];
                 }
-                newHTML +=      '<div class="program-22-event-time">' + curEvent.time + '</div>' +
-                                '<div class="program-22-event-place">' + curEvent.place + '</div>';
-                for (var k = 0; k < programm22Data.types.length; k++) {
-                    var curType = programm22Data.types[k];
-                    if (curType.id == curEvent.type) {
-                        newHTML += '<div class="program-22-event-type"><span style="background-color:' + curType.color + '">' + curType.title + '</span></div>'
+            }
+            for (var i = 0; i < curWeek.days.length; i++) {
+                var curDay = curWeek.days[i];
+                newHTML += '<div class="program-22-day"><div class="program-22-day-date">' + curDay.title + '</div><div class="program-22-day-name">' + curDay.name + '</div>';
+                for (var j = 0; j < programm22Data.events.length; j++) {
+                    var curEvent = programm22Data.events[j];
+                    if (curEvent.date == curDay.date) {
+                        var curSection = $('.program-22-sections li.active a').attr('data-id');
+                        if (curSection == '' || curEvent.sections.indexOf(curSection) != -1) {
+
+                            var activeEventSpeaker = false;
+                            $('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').each(function() {
+                                var curVal = $(this).val();
+                                if (curVal != '0') {
+                                    if (curEvent.speakers.indexOf(curVal) != -1) {
+                                        activeEventSpeaker = true;
+                                    }
+                                } else {
+                                    activeEventSpeaker = true;
+                                }
+                            });
+                            if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length == 0) {
+                                activeEventSpeaker = true;
+                            }
+
+                            var activeEventSections = false;
+                            $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
+                                var curVal = $(this).val();
+                                if (curEvent.type == curVal) {
+                                    activeEventSections = true;
+                                }
+                            });
+                            if ($('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length == 0) {
+                                activeEventSections = true;
+                            }
+
+                            var eventDisabledClass = '';
+                            if (!(activeEventSpeaker && activeEventSections)) {
+                                eventDisabledClass = ' disabled';
+                            }
+                            newHTML +=  '<a href="' + curEvent.url + '" class="program-22-event' + eventDisabledClass + '" target="_blank" data-id="' + curEvent.id + '">';
+                            if (typeof(curEvent.photoprev) != 'undefined' && curEvent.photoprev && typeof(curEvent.photo) != 'undefined') {
+                                newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
+                            }
+                            newHTML +=      '<div class="program-22-event-time">' + curEvent.time + '</div>' +
+                                            '<div class="program-22-event-place">' + curEvent.place + '</div>';
+                            for (var k = 0; k < programm22Data.types.length; k++) {
+                                var curType = programm22Data.types[k];
+                                if (curType.id == curEvent.type) {
+                                    newHTML += '<div class="program-22-event-type"><span style="background-color:' + curType.color + '">' + curType.title + '</span></div>'
+                                }
+                            }
+                            newHTML +=      '<div class="program-22-event-title">' + curEvent.title + '</div>';
+                            if (typeof(curEvent.photo) != 'undefined' && (typeof(curEvent.photoprev) == 'undefined' || !curEvent.photoprev)) {
+                                newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
+                            }
+
+                            newHTML +=  '</a>';
+                        }
                     }
                 }
-                newHTML +=      '<div class="program-22-event-title">' + curEvent.title + '</div>';
-                if (typeof(curEvent.photo) != 'undefined' && (typeof(curEvent.photoprev) == 'undefined' || !curEvent.photoprev)) {
-                    newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
-                }
+                newHTML += '</div>';
+            }
+            $('.program-22-content').html(newHTML);
+            $('.program-22-content').css({'top': '5px'});
+            $('.program-22-content').animate({'opacity': 1, 'top': 0}, 300);
+        });
+    });
+}
 
-                newHTML +=  '</a>';
+function updateProgram22Disabled() {
+    $('.program-22-ctrl').each(function() {
+        for (var j = 0; j < programm22Data.events.length; j++) {
+            var curEvent = programm22Data.events[j];
+
+            var activeEventSpeaker = false;
+            $('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').each(function() {
+                var curVal = $(this).val();
+                if (curVal != '0') {
+                    if (curEvent.speakers.indexOf(curVal) != -1) {
+                        activeEventSpeaker = true;
+                    }
+                } else {
+                    activeEventSpeaker = true;
+                }
+            });
+            if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length == 0) {
+                activeEventSpeaker = true;
+            }
+
+            var activeEventSections = false;
+            $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
+                var curVal = $(this).val();
+                if (curEvent.type == curVal) {
+                    activeEventSections = true;
+                }
+            });
+            if ($('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length == 0) {
+                activeEventSections = true;
+            }
+
+            if (activeEventSpeaker && activeEventSections) {
+                $('.program-22-event[data-id="' + curEvent.id + '"]').removeClass('disabled');
+            } else {
+                $('.program-22-event[data-id="' + curEvent.id + '"]').addClass('disabled');
             }
         }
-        newHTML += '</div>';
-    }
-    $('.program-22-content').html(newHTML);
+    });
+}
+
+function updateProgram22Count() {
+    $('.program-22-ctrl').each(function() {
+
+        $('.program-22-ctrl-date em').remove();
+        if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length > 0 || $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length > 0) {
+            for (var i = 0; i < programm22Data.weeks.length; i++) {
+                var curCount = 0;
+                var curWeek = programm22Data.weeks[i];
+                for (var k = 0; k < curWeek.days.length; k++) {
+                    var curDay = curWeek.days[k];
+                    for (var j = 0; j < programm22Data.events.length; j++) {
+                        var curEvent = programm22Data.events[j];
+                        if (curEvent.date == curDay.date) {
+
+                            var activeEventSpeaker = false;
+                            $('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').each(function() {
+                                var curVal = $(this).val();
+                                if (curVal != '0') {
+                                    if (curEvent.speakers.indexOf(curVal) != -1) {
+                                        activeEventSpeaker = true;
+                                    }
+                                } else {
+                                    activeEventSpeaker = true;
+                                }
+                            });
+                            if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length == 0) {
+                                activeEventSpeaker = true;
+                            }
+
+                            var activeEventSections = false;
+                            $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
+                                var curVal = $(this).val();
+                                if (curEvent.type == curVal) {
+                                    activeEventSections = true;
+                                }
+                            });
+                            if ($('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length == 0) {
+                                activeEventSections = true;
+                            }
+
+                            if (activeEventSpeaker && activeEventSections) {
+                                curCount++;
+                            }
+                        }
+                    }
+                }
+                if (curCount > 0) {
+                    $('.program-22-ctrl-date[data-id="' + curWeek.id + '"]').append('<em>' + curCount + '</em>');
+                }
+            }
+        }
+
+        $('.program-22-sections em').remove();
+        if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length > 0 || $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length > 0) {
+            for (var i = 0; i < programm22Data.sections.length; i++) {
+                var curCount = 0;
+                var curSection = programm22Data.sections[i];
+                var curWeekID = $('.program-22-ctrl-date.active').attr('data-id');
+                var curWeek = null;
+                for (var m = 0; m < programm22Data.weeks.length; m++) {
+                    if (programm22Data.weeks[m].id == curWeekID) {
+                        curWeek = programm22Data.weeks[m];
+                    }
+                }
+                for (var k = 0; k < curWeek.days.length; k++) {
+                    var curDay = curWeek.days[k];
+                    for (var j = 0; j < programm22Data.events.length; j++) {
+                        var curEvent = programm22Data.events[j];
+                        if (curEvent.date == curDay.date) {
+                            if (curSection.id == '' || curEvent.sections.indexOf(curSection.id) != -1) {
+
+                                var activeEventSpeaker = false;
+                                $('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').each(function() {
+                                    var curVal = $(this).val();
+                                    if (curVal != '0') {
+                                        if (curEvent.speakers.indexOf(curVal) != -1) {
+                                            activeEventSpeaker = true;
+                                        }
+                                    } else {
+                                        activeEventSpeaker = true;
+                                    }
+                                });
+                                if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length == 0) {
+                                    activeEventSpeaker = true;
+                                }
+
+                                var activeEventSections = false;
+                                $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
+                                    var curVal = $(this).val();
+                                    if (curEvent.type == curVal) {
+                                        activeEventSections = true;
+                                    }
+                                });
+                                if ($('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length == 0) {
+                                    activeEventSections = true;
+                                }
+
+                                if (activeEventSpeaker && activeEventSections) {
+                                    curCount++;
+                                }
+                            }
+                        }
+                    }
+                }
+                if (curCount > 0) {
+                    $('.program-22-sections li a[data-id="' + curSection.id + '"]').append('<em>' + curCount + '</em>');
+                }
+            }
+        }
+
+    });
 }
