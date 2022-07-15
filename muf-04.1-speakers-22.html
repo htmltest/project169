@@ -115,12 +115,12 @@
                 <div class="container">
 
                     <div class="speakers-header">
-                        <h1>Спикеры всех лет</h1>
+                        <h1>Спикеры</h1>
                         <div class="video-ctrl">
                             <div class="video-search">
                                 <form action="#" method="post">
                                     <div class="video-search-inner">
-                                        <div class="form-input"><input type="text" name="search" value="" placeholder="ПОИСК" class="required" /></div>
+                                        <div class="form-input"><input type="text" name="search" value="" placeholder="ПОИСК" /><a href="#" class="form-input-clear"><svg><use xlink:href="images/sprite.svg#programm-filter-param-remove"></use></svg></a></div>
                                         <div class="video-search-submit"><button><svg><use xlink:href="images/sprite.svg#header-search"></use></svg></button></div>
                                     </div>
                                 </form>
@@ -141,46 +141,31 @@
                             <form action="ajax/speakers.html" method="post">
                                 <!-- speakers filter group -->
                                 <div class="speakers-filter-group open">
-                                    <div class="speakers-filter-group-header">Год участия<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
-                                    <a href="#" class="speakers-filter-group-reset">Сбросить</a>
-                                    <a href="#" class="speakers-filter-group-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
-                                    <div class="speakers-filter-group-container">
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="year1" /><span>2019</span><strong>4</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="year2" /><span>2018</span><strong>91</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="year3" /><span>2017</span><strong>3</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="year4" checked="checked" /><span>2016</span><strong>44</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="year5" /><span>2015</span><strong>12</strong></label></div>
-                                        <div class="speakers-filter-group-all"><a href="#"><span>еще <em></em></span><span>свернуть</span></a></div>
-                                    </div>
-                                    <div class="speakers-filter-group-apply"><a href="#" class="btn">Применить</a></div>
-                                </div>
-                                <!-- speakers filter group END -->
-
-                                <!-- speakers filter group -->
-                                <div class="speakers-filter-group">
-                                    <div class="speakers-filter-group-header">Секции программы<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
-                                    <a href="#" class="speakers-filter-group-reset">Сбросить</a>
-                                    <a href="#" class="speakers-filter-group-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
-                                    <div class="speakers-filter-group-container">
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="section1" /><span>Ток-шоу</span><strong>91</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="section2" /><span>Панельная дискуссия</span><strong>2</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="section3" /><span>Круглый стол</span><strong>21</strong></label></div>
-                                        <div class="speakers-filter-group-all"><a href="#"><span>еще <em></em></span><span>свернуть</span></a></div>
-                                    </div>
-                                    <div class="speakers-filter-group-apply"><a href="#" class="btn">Применить</a></div>
-                                </div>
-                                <!-- speakers filter group END -->
-
-                                <!-- speakers filter group -->
-                                <div class="speakers-filter-group">
                                     <div class="speakers-filter-group-header">День мероприятия<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
                                     <a href="#" class="speakers-filter-group-reset">Сбросить</a>
                                     <a href="#" class="speakers-filter-group-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
                                     <div class="speakers-filter-group-container">
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date1" /><span>1 июля 2021</span><strong>91</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date2" /><span>2 июля 2021</span><strong>2</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date3" /><span>3 июля 2021</span><strong>21</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date4" /><span>4 июля 2021</span><strong>33</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date1" /><span>01 августа <em class="speakers-filter-item-day">| понедельник</em></span><strong>130</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date2" /><span>02 августа <em class="speakers-filter-item-day">| вторник</em></span><strong>68</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date3" /><span>03 августа <em class="speakers-filter-item-day">| среда</em></span><strong>12</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date4" /><span>04 августа <em class="speakers-filter-item-day">| четверг</em></span><strong>130</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date5" /><span>05 августа <em class="speakers-filter-item-day">| пятница</em></span><strong>68</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date6" /><span>06 августа <em class="speakers-filter-item-day">| суббота</em></span><strong>12</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date7" /><span>07 августа <em class="speakers-filter-item-day">| воскресенье</em></span><strong>130</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date8" /><span>08 августа <em class="speakers-filter-item-day">| понедельник</em></span><strong>130</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date9" /><span>09 августа <em class="speakers-filter-item-day">| вторник</em></span><strong>68</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date10" /><span>10 августа <em class="speakers-filter-item-day">| среда</em></span><strong>12</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date11" /><span>11 августа <em class="speakers-filter-item-day">| четверг</em></span><strong>130</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date12" /><span>12 августа <em class="speakers-filter-item-day">| пятница</em></span><strong>68</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date13" /><span>13 августа <em class="speakers-filter-item-day">| суббота</em></span><strong>12</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date14" /><span>14 августа <em class="speakers-filter-item-day">| воскресенье</em></span><strong>130</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date15" /><span>15 августа <em class="speakers-filter-item-day">| понедельник</em></span><strong>130</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date16" /><span>16 августа <em class="speakers-filter-item-day">| вторник</em></span><strong>68</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date17" /><span>17 августа <em class="speakers-filter-item-day">| среда</em></span><strong>12</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date18" /><span>18 августа <em class="speakers-filter-item-day">| четверг</em></span><strong>130</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date19" /><span>19 августа <em class="speakers-filter-item-day">| пятница</em></span><strong>68</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date20" /><span>20 августа <em class="speakers-filter-item-day">| суббота</em></span><strong>12</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="date21" /><span>21 августа <em class="speakers-filter-item-day">| воскресенье</em></span><strong>130</strong></label></div>
                                         <div class="speakers-filter-group-all"><a href="#"><span>еще <em></em></span><span>свернуть</span></a></div>
                                     </div>
                                     <div class="speakers-filter-group-apply"><a href="#" class="btn">Применить</a></div>
@@ -189,35 +174,18 @@
 
                                 <!-- speakers filter group -->
                                 <div class="speakers-filter-group open">
-                                    <div class="speakers-filter-group-header">Категории спикера<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
+                                    <div class="speakers-filter-group-header">Зоны мероприятия<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
                                     <a href="#" class="speakers-filter-group-reset">Сбросить</a>
                                     <a href="#" class="speakers-filter-group-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
                                     <div class="speakers-filter-group-container">
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="category1" /><span>Чиновники</span><strong>91</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="category2" /><span>Бизнес</span><strong>2</strong></label></div>
-                                        <div class="speakers-filter-item"><label><input type="checkbox" name="category3" /><span>Эксперты</span><strong>21</strong></label></div>
-                                        <div class="speakers-filter-group-all"><a href="#"><span>еще <em></em></span><span>свернуть</span></a></div>
-                                    </div>
-                                    <div class="speakers-filter-group-apply"><a href="#" class="btn">Применить</a></div>
-                                </div>
-                                <!-- speakers filter group END -->
-
-                                <!-- speakers filter group -->
-                                <div class="speakers-filter-group open">
-                                    <div class="speakers-filter-group-header">Страна<svg><use xlink:href="images/sprite.svg#speakers-filter-arrow"></use></svg></div>
-                                    <a href="#" class="speakers-filter-group-reset">Сбросить</a>
-                                    <a href="#" class="speakers-filter-group-close"><svg><use xlink:href="images/sprite.svg#programm-filter-close"></use></svg></a>
-                                    <div class="speakers-filter-group-container">
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country1" /><span><em><img src="files/flags/Russia.png" alt="" /></em>Россия</span><strong>13</strong></label></div>
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country2" checked="checked" /><span><em><img src="files/flags/United-Kingdom.png" alt="" /></em>Англия</span><strong>44</strong></label></div>
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country3" /><span><em><img src="files/flags/Spain.png" alt="" /></em>Испания</span><strong>9</strong></label></div>
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country4" /><span><em><img src="files/flags/Ukraine.png" alt="" /></em>Украина</span><strong>3</strong></label></div>
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country5" checked="checked" /><span><em><img src="files/flags/Belarus.png" alt="" /></em>Белорусия</span><strong>1</strong></label></div>
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country6" /><span><em><img src="files/flags/France.png" alt="" /></em>Франция</span><strong>57</strong></label></div>
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country7" /><span><em><img src="files/flags/Turkey.png" alt="" /></em>Турция</span><strong>33</strong></label></div>
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country9" /><span><em><img src="files/flags/Turkey.png" alt="" /></em>Турция</span><strong>33</strong></label></div>
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country8" /><span><em><img src="files/flags/Turkey.png" alt="" /></em>Турция</span><strong>33</strong></label></div>
-                                        <div class="speakers-filter-item speakers-filter-item-country"><label><input type="checkbox" name="country10" /><span><em><img src="files/flags/Turkey.png" alt="" /></em>Турция</span><strong>33</strong></label></div>
+                                        <div class="speakers-filter-subtitle">1 этаж</div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="zone1" /><span>Кинотеатр</span><strong>1</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="zone2" /><span>Амфитеатр</span><strong>1</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="zone3" /><span>Зал пресс-конференций</span><strong>8</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="zone4" /><span>Зона мастер-классов</span><strong>8</strong></label></div>
+                                        <div class="speakers-filter-subtitle">2 этаж</div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="zone5" /><span>Зона мастер-классов</span><strong>8</strong></label></div>
+                                        <div class="speakers-filter-item"><label><input type="checkbox" name="zone6" /><span>Площадка для мастер-классов</span><strong>8</strong></label></div>
                                         <div class="speakers-filter-group-all"><a href="#"><span>еще <em></em></span><span>свернуть</span></a></div>
                                     </div>
                                     <div class="speakers-filter-group-apply"><a href="#" class="btn">Применить</a></div>
@@ -235,6 +203,38 @@
                         <div class="speakers-container">
                             <div class="speakers-content">
 
+                                <div class="speakers-letters">
+                                    <a href="#"">А</a>
+                                    <a href="#">Б</a>
+                                    <a href="#">В</a>
+                                    <a href="#">Г</a>
+                                    <a href="#">Д</a>
+                                    <a href="#">Е</a>
+                                    <a href="#">Ж</a>
+                                    <span>З</span>
+                                    <span>И</span>
+                                    <span>Й</span>
+                                    <a href="#">К</a>
+                                    <a href="#">Л</a>
+                                    <a href="#">М</a>
+                                    <a href="#">Н</a>
+                                    <a href="#">О</a>
+                                    <a href="#">П</a>
+                                    <a href="#">Р</a>
+                                    <a href="#">С</a>
+                                    <a href="#">Т</a>
+                                    <span>У</span>
+                                    <a href="#">Ф</a>
+                                    <a href="#">Х</a>
+                                    <a href="#">Ц</a>
+                                    <a href="#">Ч</a>
+                                    <a href="#">Щ</a>
+                                    <a href="#">Ш</a>
+                                    <a href="#">Э</a>
+                                    <a href="#">Ю</a>
+                                    <a href="#">Я</a>
+                                </div>
+
                                 <!-- speakers -->
                                 <div class="speakers">
                                     <div class="speaker">
@@ -246,7 +246,7 @@
                                     </div>
                                     <div class="speaker">
                                         <a href="#" class="speaker-inner">
-                                            <div class="speaker-photo"><img src="files/speaker-02.jpg" alt="" /></div>
+                                            <div class="speaker-photo"><img src="images/speaker.png" alt="" /></div>
                                             <div class="speaker-name">Илариа Капуа</div>
                                             <div class="speaker-text">Вирусолог, Университет Флориды</div>
                                         </a>
@@ -440,6 +440,20 @@
 
                     </div>
                     <!-- speakers page -->
+
+                    <div class="speakers-years">
+                        <div class="speakers-years-inner">
+                            <div class="speakers-years-item">
+                                <a href="#">Спикеры <strong>2018</strong></a>
+                            </div>
+                            <div class="speakers-years-item">
+                                <a href="#">Спикеры <strong>2017</strong></a>
+                            </div>
+                            <div class="speakers-years-item">
+                                <a href="#">Спикеры <strong>2016</strong></a>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>

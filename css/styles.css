@@ -850,6 +850,7 @@ header.fixed .nav-reg {margin-top:10px}
 .welcome-social-item a {display:block}
 .welcome-social-item svg {display:block; width:32px; height:32px; fill:#fff; transition:fill 0.2s}
 .welcome-social-item-zen svg {width:72px}
+.welcome-social-item-vk svg {width:118px}
 .welcome-social-item a:hover svg {fill:#94d6ea}
 .welcome-social-item a.btn {border-color:#fff; color:#fff; margin-top:-6px}
 .welcome-social-item a.btn:hover {border-color:#fff; background:#fff; color:#000}
@@ -881,7 +882,8 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {margin-left:40px}
     .welcome-social-item:first-child {margin:0}
     .welcome-social-item svg {width:44px; height:44px}
-    .welcome-social-item-zen svg {width:99px}
+    .welcome-social-item-zen svg {width:96px}
+    .welcome-social-item-vk svg {width:163px}
     .welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block}
 }
 
@@ -902,7 +904,8 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {margin-left:40px}
     .welcome-social-item:first-child {margin:0}
     .welcome-social-item svg {width:44px; height:44px}
-    .welcome-social-item-zen svg {width:99px}
+    .welcome-social-item-zen svg {width:96px}
+    .welcome-social-item-vk svg {width:163px}
     .welcome-social-item a.btn {margin-top:0}
     .welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block}
     .archive-card-slider-type-1 .welcome-slider-item-bg::before {background:linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%); opacity:0.8}
@@ -932,6 +935,7 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-social {display:none}
     .welcome-social-item svg {width:32px; height:32px}
     .welcome-social-item-zen svg {width:72px}
+    .welcome-social-item-vk svg {width:118px}
 }
 
 @media screen and (max-width:479px) {
@@ -4425,17 +4429,19 @@ footer {margin:60px 0 0 0}
 }
 
 .footer-social {background:#000; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
-.footer-social-item {display:inline-block; vertical-align:top; width:20%; border-right:1px solid #2c2c2c}
+.footer-social-item {display:inline-block; vertical-align:top; width:33.33%; border-right:1px solid #2c2c2c}
 .footer-social-item:first-child {border-left:1px solid #2c2c2c}
 .footer-social-item a {display:block; height:66px; line-height:66px; transition:background 0.2s}
 .footer-social-item a:hover {background:#282727}
-.footer-social-item a svg {width:28px; height:28px; display:inline-block; vertical-align:middle; fill:#fff}
-.footer-social-item-zen a svg {width:63px}
+.footer-social-item a svg {width:34px; height:34px; display:inline-block; vertical-align:middle; fill:#fff}
+.footer-social-item-zen a svg {width:74px}
+.footer-social-item-vk a svg {width:126px}
 
 @media screen and (min-width:1800px) {
     .footer-social-item a {height:76px; line-height:76px}
-    .footer-social-item a svg {width:38px; height:38px}
-    .footer-social-item-zen a svg {width:85px}
+    .footer-social-item a svg {width:40px; height:40px}
+    .footer-social-item-zen a svg {width:87px}
+    .footer-social-item-vk a svg {width:148px}
     .footer-social-item:first-child {border-left:none}
     .footer-social-item:last-child {border-right:none}
 }
@@ -4449,13 +4455,17 @@ footer {margin:60px 0 0 0}
 @media screen and (max-width:767px) {
     .footer-social-item a {height:80px; line-height:80px}
     .footer-social-item a svg {width:40px; height:40px}
-    .footer-social-item-zen a svg {width:90px}
+    .footer-social-item-zen a svg {width:87px}
+    .footer-social-item-vk a svg {width:148px}
 }
 
 @media screen and (max-width:479px) {
     .footer-social {font-size:17px; line-height:27px; letter-spacing:0; height:80px; overflow:hidden; position:relative; text-align:justify}
     .footer-social-item {width:auto}
     .footer-social .container::after {content:""; display:inline-block; width:100%}
+    .footer-social-item a svg {width:34px; height:34px}
+    .footer-social-item-zen a svg {width:74px}
+    .footer-social-item-vk a svg {width:126px}
 }
 
 .footer-content {background:#f8f8f8; padding:40px 0 30px 0}
@@ -7449,8 +7459,9 @@ footer {margin:60px 0 0 0}
 .welcome-slider-city .welcome-slider-item-btns a.welcome-slider-city-map svg {fill:#435391}
 .welcome-slider-city .welcome-slider-item-btns a.welcome-slider-city-map:hover svg {fill:#ffffff}
 .welcome-slider-city .welcome-slider-item-container .welcome-social-inner {padding-top:30px}
-.welcome-slider-city .welcome-social-item svg {fill:#000000}
-.welcome-slider-city .welcome-social-item a:hover svg {fill:#435391}
+.welcome-slider-city .welcome-social-item a {background:#000000; transition:background 0.2s; border-radius:8px}
+.welcome-slider-city .welcome-social-item a:hover {background:#435391}
+.welcome-slider-city .welcome-social-item svg {fill:#fff}
 .welcome-slider-dots-blue .slick-prev svg,
 .welcome-slider-dots-blue .slick-next svg {stroke:#435391}
 .welcome-slider-dots-blue .slick-prev:hover,
@@ -7468,6 +7479,7 @@ footer {margin:60px 0 0 0}
     .welcome-slider-city .welcome-slider-item-date {padding-top:20px}
     .welcome-slider-city .welcome-slider-item-btns {padding:60px 60px 0 60px}
     .welcome-slider-city .welcome-slider-item-btns a {margin:0 20px 0 0; height:60px; padding:0 38px; line-height:56px}
+    .welcome-slider-city .welcome-social-item a {border-radius:12px}
 }
 
 @media screen and (max-width:1199px) {
@@ -7545,7 +7557,7 @@ footer {margin:60px 0 0 0}
 .program-22-day {display:inline-block; vertical-align:top; width:177px; margin:0 0 0 20px; white-space:normal}
 .program-22-day:first-child {margin:0}
 .program-22-day-date {font-weight:500; font-size:22px; line-height:29px; letter-spacing:0; color:#000000}
-.program-22-day-name {font-size:14px; line-height:18px; letter-spacing:0; color:#8a8a8a}
+.program-22-day-name {font-size:14px; line-height:18px; letter-spacing:0; color:#8a8a8a; font-weight:300}
 .program-22-event {display:block; text-decoration:none; margin:30px 0 0 0; position:relative; transition:opacity 0.2s}
 .program-22-event.disabled {opacity:0.25}
 .program-22-event:hover {text-decoration:none}
@@ -7558,6 +7570,18 @@ footer {margin:60px 0 0 0}
 .program-22-event-title {margin:5px 0 0 0; font-weight:normal; font-size:14px; line-height:18px; letter-spacing:0; color:#000000; position:relative}
 .program-22-event-photo {margin:10px 0 0 0; position:relative}
 .program-22-event-photo img {display:block; width:100%}
+
+.program-22-container .mCSB_horizontal.mCSB_inside > .mCSB_container {margin-bottom:49px}
+.program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal {height:14px; left:20px; right:20px}
+.program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonLeft,
+.program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight {width:14px}
+.program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonLeft {background:url(../images/program-22-scroll-prev.svg) no-repeat}
+.program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_buttonRight {background:url(../images/program-22-scroll-next.svg) no-repeat}
+.program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal a + .mCSB_draggerContainer {margin:0 23px}
+.program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_draggerRail {margin:6px 0 0 0; height:4px; border-radius:0}
+.program-22-container .mCSB_scrollTools .mCSB_draggerRail {background:#dfdfdf}
+.program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {margin:6px 0 0 0; height:4px; border-radius:0}
+.program-22-container .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {background:#4f4898}
 
 .welcome-slider-award-22 .welcome-slider-item-bg::before {background:#000000; opacity:1; bottom:0; height:80px}
 .welcome-slider-award-22-logo {padding:132px 0 0 0; line-height:0}
@@ -7610,3 +7634,66 @@ footer {margin:60px 0 0 0}
 @media screen and (max-width:479px) {
     .welcome-slider-award-22-btns a {width:100%; padding:0; text-align:center}
 }
+
+.event-header-title .page-back-link {margin:0 0 20px 0}
+.event-header-where-22 {padding:20px}
+.event-header-where-22 .event-header-place {margin:15px 0 0 0; font-weight:600; font-size:18px; line-height:27px; color:#000000}
+.event-header-where-22 .event-header-place a {text-decoration:none}
+.event-header-place-22-floor {margin:10px 0 0 0; font-weight:300; font-size:16px; line-height:24px; color:#000000}
+.event-header-place-22-map-link {margin:21px 0 0 0; font-size:14px; line-height:21px}
+.event-header-place-22-map-link a {color:#818382; text-decoration:none; transition:color 0.2s}
+.event-header-place-22-map-link a:hover {color:#000000}
+.event-header-place-22-map-link a svg {display:inline-block; vertical-align:middle; margin:-2px 5px 0 0; width:18px; height:18px; fill:#818382; transition:fill 0.2s}
+.event-header-place-22-map-link a:hover svg {fill:#000000}
+
+@media screen and (min-width:1800px) {
+    .event-header-where-22 {padding:30px; width:540px; margin:0}
+    .event-header-where-22 .event-header-place {margin:10px 0 0 0; font-size:24px; line-height:36px}
+    .event-header-place-22-floor {margin:5px 0 0 0; font-size:24px; line-height:36px}
+    .event-header-place-22-map-link {margin:15px 0 0 0; font-size:20px; line-height:26px}
+}
+
+.event-header-partner {float:left; clear:left; width:340px; margin:40px 0 0 0}
+.event-header-partner h3 {margin:0; font-size:24px; line-height:24px; font-weight:bold}
+.event-header-partner-item {margin:25px 0 0 0}
+.event-header-partner-item-logo {line-height:0}
+.event-header-partner-item-title {margin:17px 0 0 0; font-weight:300; font-size:18px; line-height:27px; color:#000000}
+.event-header-persones {float:right; clear:right; width:calc(100% - 393px); margin:60px 0 0 0}
+.event-header-persones-inner {margin:0 -10px}
+.event-header-persones-title {font-weight:bold; font-size:24px; line-height:24px; margin:0 0 30px 0; color:#000000}
+.event-header-persones-moderator {float:left; width:33.33%; padding:0 10px}
+.event-header-persones-moderator .speaker {display:block; width:auto; padding:0}
+.event-header-persones-speakers {float:left; width:66.66%; padding:0 10px}
+.event-header-persones-speakers .speakers {margin-top:0}
+.event-header-persones-speakers .speaker {width:50%}
+
+@media screen and (min-width:1800px) {
+    .event-header-partner {float:right; clear:right; width:540px}
+    .event-header-partner-item-title {margin:20px 0 0 0; font-size:22px; line-height:33px}
+    .event-header-persones {float:left; clear:left; width:100%; margin:120px 0 0 0}
+    .event-header-persones-title {font-size:36px; line-height:36px}
+    .event-header-persones-moderator {width:16.66%}
+    .event-header-persones-speakers {width:83.33%}
+    .event-header-persones-speakers .speaker {width:20%}
+}
+
+.events-list-22 {font-size:16px; line-height:21px}
+.events-list-22 .events-item-date {width:144px; line-height:21px}
+.events-list-22 .events-item-date span {display:block}
+.events-list-22 .events-item-place {font-weight:normal; width:338px; line-height:21px}
+.events-list-22 .events-item-session-hash {margin:0 0 0 -5px; font-weight:normal; font-size:0; line-height:0; letter-spacing:-1px; color:#000000}
+.events-list-22 .events-item-session-hash span {display:inline-block; vertical-align:top; margin:5px 0 0 5px; height:23px; padding:0 6px; font-size:10px; line-height:23px; letter-spacing:0.05em; text-transform:uppercase}
+
+@media screen and (min-width:1800px) {
+    .events-list-22 {font-size:22px; line-height:29px}
+    .events-list-22 .events-item-date {width:260px; line-height:29px}
+    .events-list-22 .events-item-place {width:420px; line-height:29px}
+}
+
+.speakers-filter-subtitle {font-weight:300; font-size:16px; line-height:16px; color:#2c2c2c}
+.speakers-filter-item+.speakers-filter-subtitle {margin:20px 0 0 0}
+.speakers-filter-item-day {font-style:normal; color:#8a8a8a; font-size:10px; line-height:10px; font-weight:300}
+
+.speaker-card-session-date-place {display:inline-block; margin:0 0 0 5px; vertical-align:middle; height:23px; font-weight:normal; letter-spacing:0; font-size:14px; line-height:24px; padding:0 6px; background:#eaeaea; color:#414141}
+.speaker-card-session-date-place div {display:inline; font-weight:300; font-size:10px}
+.speaker-card-session-date-type {display:inline-block; margin:0 0 0 7px; vertical-align:middle; height:23px; font-weight:300; letter-spacing:0.05em; font-size:10px; line-height:24px; padding:0 6px; text-transform:uppercase; color:#000000}

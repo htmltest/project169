@@ -924,7 +924,7 @@ $(document).ready(function() {
     });
 
     $(document).click(function(e) {
-        if ($(e.target).parents().filter('.programm-filter').length == 0 && $(e.target).parents().filter('.programm-filter-window-block-params-item').length == 0) {
+        if ($(e.target).parents().filter('.programm-filter-window').length == 0 && $(e.target).parents().filter('.programm-filter-btn').length == 0) {
             $('html').removeClass('programm-filter-open');
         }
     });
@@ -2868,7 +2868,10 @@ $(document).ready(function() {
     });
 
     $('.program-22-container').mCustomScrollbar({
-        axis: 'x'
+        axis: 'x',
+        scrollButtons: {
+            enable: true
+        }
     });
 
     $('body').on('click', '.program-22-ctrl-date', function(e) {
@@ -2897,22 +2900,12 @@ $(document).ready(function() {
         updateProgram22Disabled();
         updateProgrammFilter();
         updateProgram22Count();
-        $('html').removeClass('programm-filter-open');
-        if ($(window).width() < 1200) {
-            $('.wrapper').css('margin-top', 0);
-            $(window).scrollTop($('html').data('scrollTop'));
-        }
     });
 
     $('body').on('change', '.programm-filter-window-checkboxes-types .form-checkbox input', function() {
         updateProgram22Disabled();
         updateProgrammFilter();
         updateProgram22Count();
-        $('html').removeClass('programm-filter-open');
-        if ($(window).width() < 1200) {
-            $('.wrapper').css('margin-top', 0);
-            $(window).scrollTop($('html').data('scrollTop'));
-        }
     });
 
     $('body').on('click', '.programm-filter-param a', function(e) {
