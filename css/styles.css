@@ -847,12 +847,13 @@ header.fixed .nav-reg {margin-top:10px}
 .welcome-slider-item-container .welcome-social-inner {float:none; padding:56px 0 0 60px}
 .welcome-social-item {float:left; margin:0 0 0 18px}
 .welcome-social-item:first-child {margin:0}
-.welcome-social-item a {display:block}
-.welcome-social-item svg {display:block; width:32px; height:32px; fill:#fff; transition:fill 0.2s}
+.welcome-social-item a {display:block; background:#ffffff; transition:background 0.2s; border-radius:8px}
+.welcome-social-item a:hover {background:#435391}
+.welcome-social-item svg {display:block; width:32px; height:32px; fill:#000000; transition:fill 0.2s}
 .welcome-social-item-zen svg {width:72px}
 .welcome-social-item-vk svg {width:118px}
 .welcome-social-item a:hover svg {fill:#94d6ea}
-.welcome-social-item a.btn {border-color:#fff; color:#fff; margin-top:-6px}
+.welcome-social-item a.btn {border-color:#fff; color:#fff; margin-top:-6px; background:none}
 .welcome-social-item a.btn:hover {border-color:#fff; background:#fff; color:#000}
 .welcome-social-item a.btn:active {border-color:#fff; background:#fff; color:#000}
 .welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block; fill:none; stroke:#fff}
@@ -6022,16 +6023,9 @@ footer {margin:60px 0 0 0}
 .academy-welcome-title {margin:25px 0 0 0; font-size:80px; line-height:91px; font-weight:900; text-transform:uppercase}
 .academy-welcome-subtitle {margin:15px 0 0 0; font-size:36px; line-height:54px; font-weight:300}
 .academy-welcome-subtitle-text {margin:-6px 0 0 0; font-size:22px; line-height:33px; font-weight:300}
-.academy-welcome-social {margin:97px 0 0 0}
-.academy-welcome-social::after {content:""; display:block; clear:both}
-.academy-welcome-social-link {float:left; margin:-6px 6px 0 0}
-.academy-welcome-social-link a {display:block; border:2px solid #fff; color:#fff; padding:0 18px; height:44px; font-size:14px; font-weight:600; line-height:40px; text-transform:uppercase; letter-spacing:0.05em; text-decoration:none; transition:background 0.2s, color 0.2s}
-.academy-welcome-social-link a:hover {background:#fff; color:#56a48c}
-.academy-welcome-social-item {float:left; margin:0 0 0 20px}
-.academy-welcome-social-item:first-child {margin-left:0}
-.academy-welcome-social-item svg {display:block; width:32px; height:32px; fill:#fff; transition:fill 0.2s}
-.academy-welcome-social-item-zen svg {width:72px}
-.academy-welcome-social-item a:hover svg {fill:#94d6ea}
+.welcome-academy .welcome-social-inner {margin:77px 0 0 0; padding:0}
+.welcome-academy .welcome-social-item svg {fill:#59a58c}
+.welcome-academy .welcome-social-item a:hover svg {fill:#ffffff}
 .academy-welcome-urban {float:right; line-height:0; padding:126px 60px 0 0; margin-top:80px}
 .academy-welcome-urban span {float:left; width:160px; font-weight:bold; font-size:24px; line-height:20px; text-transform:uppercase; color:#fff}
 .academy-welcome-urban img {float:left}
@@ -6040,10 +6034,6 @@ footer {margin:60px 0 0 0}
 @media screen and (min-width:1800px) {
     .academy-welcome-content {margin-top:110px}
     .academy-welcome-urban {margin-top:110px}
-    .academy-welcome-social-link {margin-right:20px}
-    .academy-welcome-social-link a {padding:15px 24px 14px 24px; font-size:18px; line-height:23px; height:auto}
-    .academy-welcome-social-item svg {width:44px; height:44px}
-    .academy-welcome-social-item-zen svg {width:99px}
 }
 
 @media screen and (max-width:1199px) {
@@ -6052,7 +6042,7 @@ footer {margin:60px 0 0 0}
     .academy-welcome-title {margin:25px 0 0 0; font-size:60px; line-height:66px}
     .academy-welcome-subtitle {margin:0; font-size:26px; line-height:39px}
     .academy-welcome-subtitle-text {margin:-4px 0 0 0; font-size:20px; line-height:30px}
-    .academy-welcome-social {margin:28px 0 0 0}
+    .welcome-academy .welcome-social-inner {margin:28px 0 0 0}
     .academy-welcome-urban {display:none}
     .academy-welcome-urban-mobile {display:block; line-height:0; margin:84px 0 0 0}
     .page-main .academy-welcome-urban-mobile {margin:40px 0 0 0}
@@ -6062,9 +6052,6 @@ footer {margin:60px 0 0 0}
 @media screen and (max-width:767px) {
     .academy-welcome-social-link {margin:0 20px 0 0}
     .academy-welcome-social-link a {padding:17px; border-width:3px; font-size:20px; line-height:26px; height:auto}
-    .academy-welcome-social-item {margin-top:16px}
-    .academy-welcome-social-item svg {width:32px; height:32px}
-    .academy-welcome-social-item-zen svg {width:72px}
 }
 
 @media screen and (max-width:479px) {
@@ -6414,8 +6401,9 @@ footer {margin:60px 0 0 0}
 }
 
 .academy-feedback h3 {font-weight:600}
-.academy-feedback .health-feedback-social-item a svg {fill:#6bcdb2}
-.academy-feedback .health-feedback-social-item a:hover svg {fill:#000}
+.academy-feedback .health-feedback-social-item a {background:#6bcdb2; border-radius:8px}
+.academy-feedback .health-feedback-social-item a:hover {background:#435391}
+.academy-feedback .health-feedback-social-item a svg {fill:#ffffff}
 
 @media screen and (max-width:1199px) {
     .academy-feedback .health-feedback-social {display:none}
@@ -7593,10 +7581,9 @@ footer {margin:60px 0 0 0}
 .welcome-slider-award-22-btns a:hover {background:#636499}
 .welcome-slider-award-22-btns a svg {display:inline-block; vertical-align:middle; margin:-2px 6px 0 0; width:22px; height:22px; fill:none; stroke:#ffffff; transition:stroke 0.2s}
 .welcome-slider-award-22 .welcome-social-inner {padding:40px 0 0 0}
-.welcome-slider-award-22 .welcome-social-item a {position:relative; display:block}
-.welcome-slider-award-22 .welcome-social-item a::before {content:""; display:block; position:absolute; left:5px; top:5px; right:5px; bottom:5px; background:#ffffff}
-.welcome-slider-award-22 .welcome-social-item svg {fill:#000000; position:relative}
-.welcome-slider-award-22 .welcome-social-item a:hover svg {fill:#636499}
+.welcome-slider-award-22 .welcome-social-item a {background:#000000; transition:background 0.2s; border-radius:8px}
+.welcome-slider-award-22 .welcome-social-item a:hover {background:#435391}
+.welcome-slider-award-22 .welcome-social-item svg {fill:#fff}
 
 @media screen and (min-width:1800px) {
     .welcome-slider-award-22 .welcome-slider-item-bg::before {height:110px}
@@ -7605,7 +7592,7 @@ footer {margin:60px 0 0 0}
     .welcome-slider-award-22-container {float:left; padding:254px 0 0 0; margin:0 0 0 70px; width:1050px}
     .welcome-slider-award-22-title {padding:0; font-size:90px; line-height:117px; max-width:none}
     .welcome-slider-award-22-btns {padding:55px 0 0 0}
-    .welcome-slider-award-22 .welcome-social-item a::before {left:8px; top:8px; right:8px; bottom:8px}
+    .welcome-slider-award-22 .welcome-social-item a {border-radius:12px}
 }
 
 @media screen and (max-width:1199px) {
@@ -7615,8 +7602,6 @@ footer {margin:60px 0 0 0}
     .welcome-slider-award-22-title {padding:37px 26px 0 26px; font-size:40px; line-height:52px; max-width:none}
     .welcome-slider-award-22-btns {padding:20px 26px 0 26px}
     .welcome-slider-award-22 .welcome-social-inner {padding:30px 26px 0 26px}
-    .welcome-slider-award-22 .welcome-social-item svg {width:32px; height:32px}
-    .welcome-slider-award-22 .welcome-social-item-zen svg {width:72px}
 }
 
 @media screen and (max-width:767px) {
