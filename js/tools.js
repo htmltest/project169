@@ -2834,6 +2834,12 @@ $(window).on('load resize', function() {
             curStep.find('.voiting-form-nominees.ui-sortable').sortable('option', 'handle', '.voiting-form-nominee-move-icon');
         }
     });
+
+    $('.program-22-ctrl').each(function() {
+        if ($('.program-22-ctrl-dates .program-22-ctrl-date').length > 0) {
+            updateProgram22();
+        }
+    });
 });
 
 $(document).ready(function() {
@@ -2865,6 +2871,10 @@ $(document).ready(function() {
 
         updateProgram22();
         updateProgram22Count();
+    });
+
+    $('.program-22-sections').mCustomScrollbar({
+        axis: 'x'
     });
 
     $('.program-22-container').mCustomScrollbar({
@@ -2914,6 +2924,15 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('body').on('click', '.program-22-day-title', function(e) {
+        $(this).parent().toggleClass('open');
+    });
+
+    $('body').on('click', '.program-22-day-close a', function(e) {
+        $(this).parent().parent().removeClass('open');
+        e.preventDefault();
+    });
+
 });
 
 function updateProgram22() {
@@ -2924,72 +2943,81 @@ function updateProgram22() {
 
             var curWeekID = $('.program-22-ctrl-date.active').attr('data-id');
             var curWeek = null;
-            for (var i = 0; i < programm22Data.weeks.length; i++) {
-                if (programm22Data.weeks[i].id == curWeekID) {
-                    curWeek = programm22Data.weeks[i];
-                }
-            }
-            for (var i = 0; i < curWeek.days.length; i++) {
-                var curDay = curWeek.days[i];
-                newHTML += '<div class="program-22-day"><div class="program-22-day-date">' + curDay.title + '</div><div class="program-22-day-name">' + curDay.name + '</div>';
-                for (var j = 0; j < programm22Data.events.length; j++) {
-                    var curEvent = programm22Data.events[j];
-                    if (curEvent.date == curDay.date) {
-                        var curSection = $('.program-22-sections li.active a').attr('data-id');
-                        if (curSection == '' || curEvent.sections.indexOf(curSection) != -1) {
-
-                            var activeEventSpeaker = false;
-                            $('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').each(function() {
-                                var curVal = $(this).val();
-                                if (curVal != '0') {
-                                    if (curEvent.speakers.indexOf(curVal) != -1) {
-                                        activeEventSpeaker = true;
-                                    }
-                                } else {
-                                    activeEventSpeaker = true;
-                                }
-                            });
-                            if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length == 0) {
-                                activeEventSpeaker = true;
-                            }
-
-                            var activeEventSections = false;
-                            $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
-                                var curVal = $(this).val();
-                                if (curEvent.type == curVal) {
-                                    activeEventSections = true;
-                                }
-                            });
-                            if ($('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length == 0) {
-                                activeEventSections = true;
-                            }
-
-                            var eventDisabledClass = '';
-                            if (!(activeEventSpeaker && activeEventSections)) {
-                                eventDisabledClass = ' disabled';
-                            }
-                            newHTML +=  '<a href="' + curEvent.url + '" class="program-22-event' + eventDisabledClass + '" target="_blank" data-id="' + curEvent.id + '">';
-                            if (typeof(curEvent.photoprev) != 'undefined' && curEvent.photoprev && typeof(curEvent.photo) != 'undefined') {
-                                newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
-                            }
-                            newHTML +=      '<div class="program-22-event-time">' + curEvent.time + '</div>' +
-                                            '<div class="program-22-event-place">' + curEvent.place + '</div>';
-                            for (var k = 0; k < programm22Data.types.length; k++) {
-                                var curType = programm22Data.types[k];
-                                if (curType.id == curEvent.type) {
-                                    newHTML += '<div class="program-22-event-type"><span style="background-color:' + curType.color + '">' + curType.title + '</span></div>'
-                                }
-                            }
-                            newHTML +=      '<div class="program-22-event-title">' + curEvent.title + '</div>';
-                            if (typeof(curEvent.photo) != 'undefined' && (typeof(curEvent.photoprev) == 'undefined' || !curEvent.photoprev)) {
-                                newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
-                            }
-
-                            newHTML +=  '</a>';
-                        }
+            if ($(window).width() > 767) {
+                for (var i = 0; i < programm22Data.weeks.length; i++) {
+                    if (programm22Data.weeks[i].id == curWeekID) {
+                        curWeek = [programm22Data.weeks[i]];
                     }
                 }
-                newHTML += '</div>';
+            } else {
+                curWeek = programm22Data.weeks;
+            }
+            for (var w = 0; w < curWeek.length; w++) {
+                newHTML += '<div class="program-22-week-number">' + $('.program-22-container').attr('data-mobileweektext') + ' ' + (w + 1) + '</div>';
+                for (var i = 0; i < curWeek[w].days.length; i++) {
+                    var curDay = curWeek[w].days[i];
+                    newHTML += '<div class="program-22-day"><div class="program-22-day-title"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#program-22-day-title"></use></svg><div class="program-22-day-date">' + curDay.title + '</div><div class="program-22-day-name">' + curDay.name + '</div></div>';
+                    for (var j = 0; j < programm22Data.events.length; j++) {
+                        var curEvent = programm22Data.events[j];
+                        if (curEvent.date == curDay.date) {
+                            var curSection = $('.program-22-sections li.active a').attr('data-id');
+                            if (curSection == '' || curEvent.sections.indexOf(curSection) != -1) {
+
+                                var activeEventSpeaker = false;
+                                $('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').each(function() {
+                                    var curVal = $(this).val();
+                                    if (curVal != '0') {
+                                        if (curEvent.speakers.indexOf(curVal) != -1) {
+                                            activeEventSpeaker = true;
+                                        }
+                                    } else {
+                                        activeEventSpeaker = true;
+                                    }
+                                });
+                                if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length == 0) {
+                                    activeEventSpeaker = true;
+                                }
+
+                                var activeEventSections = false;
+                                $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').each(function() {
+                                    var curVal = $(this).val();
+                                    if (curEvent.type == curVal) {
+                                        activeEventSections = true;
+                                    }
+                                });
+                                if ($('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length == 0) {
+                                    activeEventSections = true;
+                                }
+
+                                var eventDisabledClass = '';
+                                if (!(activeEventSpeaker && activeEventSections)) {
+                                    eventDisabledClass = ' disabled';
+                                }
+                                newHTML +=  '<a href="' + curEvent.url + '" class="program-22-event' + eventDisabledClass + '" target="_blank" data-id="' + curEvent.id + '">';
+                                if (typeof(curEvent.photoprev) != 'undefined' && curEvent.photoprev && typeof(curEvent.photo) != 'undefined') {
+                                    newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
+                                }
+                                newHTML +=      '<div class="program-22-event-time">' + curEvent.time + '</div>' +
+                                                '<div class="program-22-event-params">' +
+                                                    '<div class="program-22-event-place">' + curEvent.place + '</div>';
+                                for (var k = 0; k < programm22Data.types.length; k++) {
+                                    var curType = programm22Data.types[k];
+                                    if (curType.id == curEvent.type) {
+                                        newHTML +=  '<div class="program-22-event-type"><span style="background-color:' + curType.color + '">' + curType.title + '</span></div>'
+                                    }
+                                }
+                                newHTML +=      '</div>';
+                                newHTML +=      '<div class="program-22-event-title">' + curEvent.title + '</div>';
+                                if (typeof(curEvent.photo) != 'undefined' && (typeof(curEvent.photoprev) == 'undefined' || !curEvent.photoprev)) {
+                                    newHTML +=  '<div class="program-22-event-photo"><img src="' + curEvent.photo + '" alt="" /></div>';
+                                }
+
+                                newHTML +=  '</a>';
+                            }
+                        }
+                    }
+                    newHTML += '<div class="program-22-day-close"><a href="#"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#program-22-day-close"></use></svg><span>' + $('.program-22-container').attr('data-mobileclosetext') + '</span></a></div></div>';
+                }
             }
             $('.program-22-content').html(newHTML);
             $('.program-22-content').css({'top': '5px'});
@@ -3146,6 +3174,17 @@ function updateProgram22Count() {
                     $('.program-22-sections li a[data-id="' + curSection.id + '"]').append('<em>' + curCount + '</em>');
                 }
             }
+        }
+
+        $('.program-22-day-date span').remove();
+        if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length > 0 || $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length > 0) {
+            $('.program-22-day').each(function() {
+                var curDay = $(this);
+                var curCount = curDay.find('.program-22-event:not(.disabled)').length;
+                if (curCount > 0) {
+                    curDay.find('.program-22-day-date').append('<span>' + curCount + '</span>');
+                }
+            });
         }
 
     });

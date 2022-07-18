@@ -844,7 +844,9 @@ header.fixed .nav-reg {margin-top:10px}
 .welcome-social {position:absolute; left:0; bottom:0; right:0}
 .welcome-social .container::after {display:none}
 .welcome-social-inner {float:left; padding:0 0 30px 60px}
+.welcome-social-inner::after {content:""; display:block; clear:both}
 .welcome-slider-item-container .welcome-social-inner {float:none; padding:56px 0 0 60px}
+.welcome-slider-item-container .welcome-social-inner+.welcome-social-inner {padding-top:0; margin-top:30px}
 .welcome-social-item {float:left; margin:0 0 0 18px}
 .welcome-social-item:first-child {margin:0}
 .welcome-social-item a {display:block; background:#ffffff; transition:background 0.2s; border-radius:8px}
@@ -853,13 +855,13 @@ header.fixed .nav-reg {margin-top:10px}
 .welcome-social-item-zen svg {width:72px}
 .welcome-social-item-vk svg {width:118px}
 .welcome-social-item a:hover svg {fill:#94d6ea}
-.welcome-social-item a.btn {border-color:#fff; color:#fff; margin-top:-6px; background:none}
+.welcome-social-item a.btn {border-color:#fff; color:#fff; margin-top:-6px; background:none; border-radius:0}
 .welcome-social-item a.btn:hover {border-color:#fff; background:#fff; color:#000}
 .welcome-social-item a.btn:active {border-color:#fff; background:#fff; color:#000}
 .welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block; fill:none; stroke:#fff}
 .welcome-social-item a.btn:hover svg {stroke:#000}
 .welcome-social-item a.btn:active svg {stroke:#000}
-.welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {margin-left:36px}
+.welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {clear:left; margin-left:0}
 .welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block; margin:-2px 0 0 6px}
 
 .welcome-slider-item-title-new-right {float:right; width:230px; font-weight:900; margin:181px 0 0 0; font-size:40px; line-height:40px; text-transform:uppercase; color:#fff}
@@ -880,7 +882,7 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-social-inner {padding:0 0 40px 60px}
     .welcome-slider-item-container .welcome-social-inner {padding:40px 0 0 60px}
     .welcome-social-item {margin:0 0 0 20px}
-    .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {margin-left:40px}
+    .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {clear:left; margin-left:0}
     .welcome-social-item:first-child {margin:0}
     .welcome-social-item svg {width:44px; height:44px}
     .welcome-social-item-zen svg {width:96px}
@@ -902,7 +904,7 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-social-inner {padding:0 0 40px 46px}
     .welcome-slider-item-container .welcome-social-inner {padding:40px 0 0 46px}
     .welcome-social-item {margin:0 0 0 20px}
-    .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {margin-left:40px}
+    .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {clear:left; margin-left:0}
     .welcome-social-item:first-child {margin:0}
     .welcome-social-item svg {width:44px; height:44px}
     .welcome-social-item-zen svg {width:96px}
@@ -930,7 +932,6 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-slider-item-container .welcome-social-inner {padding:30px 0 0 0}
     .welcome-social-item-btn {width:100%; margin:0 0 10px}
     .welcome-social-item-btn:first-child {margin:0 0 10px 0; width:100%}
-    .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {margin-left:0}
     .welcome-social-item-btn .btn {padding:0; width:100%; height:56px; line-height:52px}
     .welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block}
     .welcome-social {display:none}
@@ -946,7 +947,6 @@ header.fixed .nav-reg {margin-top:10px}
     .welcome-slider-item-date {padding:20px 0 0 0; font-size:20px; line-height:30px}
     .welcome-slider-item-place {padding:0; font-size:20px; line-height:30px}
     .welcome-social-item a.btn svg {width:24px; height:24px; display:inline-block}
-    .welcome-social-item-btn+.welcome-social-item:not(.welcome-social-item-btn) {margin-left:0}
     .welcome-social-item-btn .btn {padding:0; width:100%; height:44px; line-height:40px}
 }
 
@@ -1643,6 +1643,9 @@ header.fixed .nav-reg {margin-top:10px}
     .speaker-card-session-title {margin:0}
     .speaker-card-session-types {margin:12px 0 0 -8px}
     .speaker-card-session-types a {font-size:16px; line-height:21px}
+    .speaker-card-sessions-22 {padding-bottom:30px}
+    .speaker-card-sessions-22 .speaker-card-session {margin:30px 0 0 0; padding:30px 0 0 0}
+    .speaker-card-sessions-22 .speaker-card-sessions-title+.speaker-card-session {padding:0; border-top:none}
 }
 
 @media screen and (max-width:467px) {
@@ -1674,12 +1677,14 @@ header.fixed .nav-reg {margin-top:10px}
 
 @media screen and (max-width:1199px) {
     .speaker-card-descr {margin:80px 0 0 0; float:left; clear:left; width:100%}
+    .speaker-card-descr-22 {margin:40px 0 0 0}
     .speaker-card-descr-title {font-size:32px; line-height:48px}
     .speaker-card-descr-more {margin:20px 0 0 0}
 }
 
 @media screen and (max-width:767px) {
     .speaker-card-descr {margin:60px 0 0 0; float:none; width:auto}
+    .speaker-card-descr-22 {margin:40px 0 0 0}
     .speaker-card-descr-title {font-size:24px; line-height:24px}
     .speaker-card-descr-more {margin:11px 0 0 0}
     .speaker-card-descr-more a {font-size:16px; line-height:21px; padding:15px 26px}
@@ -4109,8 +4114,8 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-filter-window-checkboxes {border-top:1px solid #e9e9e9}
     .programm-filter-window-checkboxes .form-checkbox {margin:0; border-bottom:1px solid #e9e9e9}
     .programm-filter-window-checkboxes .form-checkbox label {margin:0; padding:20px 0}
-    .programm-filter-window-checkboxes .form-checkbox em {width:28px; height:28px}
-    .programm-filter-window-checkboxes .form-checkbox span {font-weight:500; color:#2c2c2c}
+    .programm-filter-window-checkboxes .form-checkbox em {width:28px; height:28px; margin-top:-4px}
+    .programm-filter-window-checkboxes .form-checkbox span {font-weight:500; color:#2c2c2c; overflow:visible}
     .programm-filter-window-checkboxes .form-checkbox strong {color:#959595}
     .programm-filter-window-checkbox-hint {display:none}
 
@@ -4157,6 +4162,7 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-filter-window-block.open .programm-filter-window-block-apply {position:fixed}
     .programm-filter-window form {bottom:105px}
     .programm-filter-window-block.open .programm-filter-window-checkboxes-wraper {bottom:105px}
+    .programm-filter-window-checkboxes .form-checkbox em {margin-top:0}
 }
 
 @media screen and (max-width:479px) {
@@ -5688,11 +5694,11 @@ footer {margin:60px 0 0 0}
 .health-feedback-social {margin:33px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px}
 .health-feedback-social-item {display:inline-block; vertical-align:top; margin:0 0 0 18px}
 .health-feedback-social-item:first-child {margin:0}
-.health-feedback-social-item a {display:block; width:32px}
-.health-feedback-social-item-zen a {width:72px}
-.health-feedback-social-item a svg {display:block; width:32px; height:32px; fill:#4f947d; transition:fill 0.2s}
-.health-feedback-social-item-zen a svg {width:72px}
-.health-feedback-social-item a:hover svg {fill:#000}
+.health-feedback-social-item a {display:block; background:#6bcdb2; border-radius:8px}
+.health-feedback-social-item a:hover {background:#435391}
+.health-feedback-social-item a svg {display:block; width:32px; height:32px; fill:#ffffff; transition:fill 0.2s}
+.health-feedback-social-item-zen a svg {width:70px}
+.health-feedback-social-item-vk a svg {width:119px}
 
 @media screen and (max-width:1199px) {
     .health-feedback-left {float:none; width:auto}
@@ -5707,10 +5713,18 @@ footer {margin:60px 0 0 0}
     .health-feedback-social {margin:40px 0 0 0}
     .health-feedback-social-item {margin:0 0 0 30px}
     .health-feedback-social-item:first-child {margin:0}
-    .health-feedback-social-item a {width:46px}
-    .health-feedback-social-item-zen a {width:103px}
+    .health-feedback-social-item a {border-radius:12px}
     .health-feedback-social-item a svg {width:46px; height:46px}
-    .health-feedback-social-item-zen a svg {width:103px}
+    .health-feedback-social-item-zen a svg {width:100px}
+    .health-feedback-social-item-vk a svg {width:170px}
+}
+
+@media screen and (max-width:479px) {
+    .health-feedback-social-item {margin:0 0 0 20px}
+    .health-feedback-social-item:first-child {margin:0}
+    .health-feedback-social-item a svg {width:32px; height:32px}
+    .health-feedback-social-item-zen a svg {width:70px}
+    .health-feedback-social-item-vk a svg {width:119px}
 }
 
 .exponents-header {display:table; width:100%}
@@ -6023,7 +6037,7 @@ footer {margin:60px 0 0 0}
 .academy-welcome-title {margin:25px 0 0 0; font-size:80px; line-height:91px; font-weight:900; text-transform:uppercase}
 .academy-welcome-subtitle {margin:15px 0 0 0; font-size:36px; line-height:54px; font-weight:300}
 .academy-welcome-subtitle-text {margin:-6px 0 0 0; font-size:22px; line-height:33px; font-weight:300}
-.welcome-academy .welcome-social-inner {margin:77px 0 0 0; padding:0}
+.welcome-academy .welcome-social-inner {margin:30px 0 0 0; padding:0}
 .welcome-academy .welcome-social-item svg {fill:#59a58c}
 .welcome-academy .welcome-social-item a:hover svg {fill:#ffffff}
 .academy-welcome-urban {float:right; line-height:0; padding:126px 60px 0 0; margin-top:80px}
@@ -6401,13 +6415,6 @@ footer {margin:60px 0 0 0}
 }
 
 .academy-feedback h3 {font-weight:600}
-.academy-feedback .health-feedback-social-item a {background:#6bcdb2; border-radius:8px}
-.academy-feedback .health-feedback-social-item a:hover {background:#435391}
-.academy-feedback .health-feedback-social-item a svg {fill:#ffffff}
-
-@media screen and (max-width:1199px) {
-    .academy-feedback .health-feedback-social {display:none}
-}
 
 #ownd-url {display:none}
 
@@ -7510,6 +7517,22 @@ footer {margin:60px 0 0 0}
 .btn svg.btn-icon-map {fill:#000000; stroke:none; transition:fill 0.2s}
 .btn:hover svg.btn-icon-map {fill:#ffffff}
 
+@media screen and (max-width:1199px) {
+    .page-programm-22 {margin:80px 0 0 0}
+    .page-programm-22 .programm-header {display:flex; flex-flow:wrap}
+    .page-programm-22 .programm-header h1 {float:none; margin:0; width:100%; order:0}
+    .page-programm-22 .programm-download {float:left; margin:20px 10px 0 0; order:2}
+    .page-programm-22 .programm-download+.programm-download {order:1}
+}
+
+@media screen and (max-width:767px) {
+    .page-programm-22 {margin:40px 0 0 0}
+    .page-programm-22 .programm-download {position:relative; right:auto; top:auto; margin:20px 0 0 10px}
+    .page-programm-22 .programm-download+.programm-download {margin-left:148px}
+    .page-programm-22 .programm-download .btn {height:44px; font-size:14px; line-height:40px; letter-spacing:0.05em; width:auto; padding:0 16px}
+    .page-programm-22 .programm-download .btn svg {position:relative; left:auto; top:auto; display:inline-block; vertical-align:middle; margin:-2px 6px 0 0; width:24px; height:24px}
+}
+
 .program-22-ctrl {margin:40px 0 0 0}
 .program-22-ctrl::after {content:""; display:block; clear:both}
 .program-22-ctrl-dates {float:left}
@@ -7529,8 +7552,26 @@ footer {margin:60px 0 0 0}
 .program-22-ctrl .programm-filter-btn {float:right}
 .programm-filter-open .program-22-ctrl .programm-filter-window {left:auto; right:0}
 
-.program-22-sections {margin:50px 0 0 0; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
-.program-22-sections ul {display:inline-block; vertical-align:top; min-width:100%; margin:0; padding:0; list-style:none; border-bottom:2px solid #dfdfdf}
+@media screen and (max-width:1199px) {
+    .program-22-ctrl {margin:0}
+    .program-22-ctrl .programm-filter {border-top:none; padding:0}
+    .program-22-ctrl .programm-filter-btn {float:left; margin:-45px 0 0 374px}
+    .program-22-ctrl .programm-filter-params {display:none}
+    .program-22-ctrl-dates {float:left; width:100%; margin:40px 0 0 0}
+    .programm-filter-open .program-22-ctrl .programm-filter-window {left:0}
+}
+
+@media screen and (max-width:767px) {
+    .program-22-ctrl .programm-filter {position:relative; left:auto; top:auto; right:auto; float:left}
+    .program-22-ctrl .programm-filter-btn {margin:-44px 0 0 0}
+    .program-22-ctrl .programm-filter-btn a {height:44px; line-height:40px; font-size:14px; width:137px; position:relative; background:#000000; color:#ffffff}
+    .program-22-ctrl .programm-filter-btn a svg {width:24px; height:24px; stroke:#ffffff}
+    .program-22-ctrl .programm-filter-btn span.visible {display:block; margin:0; position:absolute; right:-7px; top:-7px; width:20px; height:20px; line-height:20px; font-size:10px; font-weight:bold; padding:0; min-width:0}
+    .program-22-ctrl-dates {display:none}
+}
+
+.program-22-sections {margin:30px -20px 0 0; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
+.program-22-sections ul {display:inline-block; vertical-align:top; min-width:calc(100% - 20px); margin:20px 20px 0 0; padding:0; list-style:none; border-bottom:2px solid #dfdfdf}
 .program-22-sections ul li {display:inline-block; vertical-align:top; margin:0 0 0 30px; padding:0}
 .program-22-sections ul li:first-child {margin:0}
 .program-22-sections ul li::before {display:none}
@@ -7539,12 +7580,24 @@ footer {margin:60px 0 0 0}
 .program-22-sections ul li a:hover {color:#000000}
 .program-22-sections ul li.active a::after {content:""; display:block; position:absolute; left:0; bottom:-2px; right:0; height:2px; background:#000000}
 .program-22-sections ul li a em {display:block; position:absolute; right:-10px; top:-14px; width:20px; height:20px; font-style:normal; font-weight:bold; font-size:10px; line-height:20px; letter-spacing:0; text-align:center; color:#ffffff; background:#ff0000; border-radius:50%}
+.program-22-sections .mCSB_horizontal.mCSB_inside > .mCSB_container {margin-bottom:0}
+.program-22-sections .mCSB_scrollTools.mCSB_scrollTools_horizontal {height:0; opacity:0}
+
+@media screen and (max-width:1199px) {
+    .program-22-sections {margin:10px -20px 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .program-22-sections {margin:20px -20px 0 0}
+}
 
 .program-22-container {margin:20px -20px 0 -20px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden}
 .program-22-content {display:inline-block; vertical-align:top; position:relative; padding:0 20px}
 .program-22-day {display:inline-block; vertical-align:top; width:177px; margin:0 0 0 20px; white-space:normal}
 .program-22-day:first-child {margin:0}
+.program-22-day-title svg {display:none}
 .program-22-day-date {font-weight:500; font-size:22px; line-height:29px; letter-spacing:0; color:#000000}
+.program-22-day-date span {display:none}
 .program-22-day-name {font-size:14px; line-height:18px; letter-spacing:0; color:#8a8a8a; font-weight:300}
 .program-22-event {display:block; text-decoration:none; margin:30px 0 0 0; position:relative; transition:opacity 0.2s}
 .program-22-event.disabled {opacity:0.25}
@@ -7558,6 +7611,53 @@ footer {margin:60px 0 0 0}
 .program-22-event-title {margin:5px 0 0 0; font-weight:normal; font-size:14px; line-height:18px; letter-spacing:0; color:#000000; position:relative}
 .program-22-event-photo {margin:10px 0 0 0; position:relative}
 .program-22-event-photo img {display:block; width:100%}
+.program-22-day-close {display:none}
+.program-22-week-number {display:none}
+
+@media screen and (min-width:1800px) {
+    .program-22-container {margin-top:30px}
+    .program-22-day {width:190px; margin:0 0 0 40px}
+    .program-22-day:first-child {margin:0}
+}
+
+@media screen and (max-width:1199px) {
+    .program-22-container {margin-top:20px}
+    .program-22-day {width:233px; margin:0 0 0 20px}
+    .program-22-day:first-child {margin:0}
+}
+
+@media screen and (max-width:767px) {
+    .program-22-container {margin:30px 0 0 0; overflow:visible; white-space:normal}
+    .program-22-content {display:block; padding:0; border-bottom:1px solid #f7f7f7}
+    .program-22-day {display:block; width:auto; margin:0; border-top:1px solid #f7f7f7; position:relative}
+    .program-22-day-title {position:relative; cursor:pointer; padding:20px 0}
+    .program-22-day-title svg {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:none; margin:-2px 10px 0 0; transition:transform 0.2s}
+    .program-22-day.open .program-22-day-title svg {transform:rotate(-180deg)}
+    .program-22-day-date {display:inline-block; vertical-align:middle; margin:0 0 0 10px; font-size:20px; line-height:26px; position:relative}
+    .program-22-day-date span {display:block; position:absolute; right:-10px; top:-7px; width:20px; height:20px; border-radius:50%; text-align:center; background:#FF0000; color:#FFFFFF; font-weight:bold; font-size:10px; line-height:20px}
+    .program-22-day-name {display:inline-block; vertical-align:middle; margin:0 0 0 20px}
+    .program-22-event {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s; border-top:1px solid #f7f7f7; margin:20px 0 0 0; padding:20px 0 0 0}
+    .program-22-event::before {display:none}
+    .program-22-event.disabled {opacity:0}
+    .program-22-day.open .program-22-event {position:relative; left:auto; top:auto; opacity:1}
+    .program-22-day.open .program-22-event.disabled {opacity:0.25}
+    .program-22-day-title+.program-22-event {border-top:none; margin:0; padding:0}
+    .program-22-event-time {margin:0}
+    .program-22-event-params {margin:10px 0 0 0}
+    .program-22-event-place {display:inline-block; vertical-align:middle; margin:0; font-size:16px; line-height:21px}
+    .program-22-event-type {display:inline-block; vertical-align:middle; margin:0 0 0 10px}
+    .program-22-event-type span {padding:6px 10px; font-size:14px; line-height:18px}
+    .program-22-event-title {margin:10px 0 0 0; font-size:18px; line-height:27px}
+    .program-22-event-photo {max-width:177px}
+    .program-22-event-photo:first-child {margin:0 0 10px 0}
+    .program-22-day-close {padding:20px 0}
+    .program-22-day.open .program-22-day-close {display:block}
+    .program-22-day-close a {display:block; font-size:18px; line-height:27px; font-weight:normal; color:#4849A6; text-decoration:none}
+    .program-22-day-close a svg {display:inline-block; vertical-align:middle; width:14px; height:14px; margin:-2px 12px 0 5px; fill:none}
+    .program-22-day-close a span {border-bottom:1px dashed #4849A6}
+    .program-22-week-number {display:block; font-size:12px; height:12px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:#000000; padding:40px 0 20px 0; border-top:1px solid #f7f7f7}
+    .program-22-week-number:first-child {padding-top:20px; border-top:none}
+}
 
 .program-22-container .mCSB_horizontal.mCSB_inside > .mCSB_container {margin-bottom:49px}
 .program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal {height:14px; left:20px; right:20px}
@@ -7570,6 +7670,10 @@ footer {margin:60px 0 0 0}
 .program-22-container .mCSB_scrollTools .mCSB_draggerRail {background:#dfdfdf}
 .program-22-container .mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger .mCSB_dragger_bar {margin:6px 0 0 0; height:4px; border-radius:0}
 .program-22-container .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {background:#4f4898}
+
+@media screen and (max-width:767px) {
+    .program-22-container .mCSB_horizontal.mCSB_inside > .mCSB_container {margin-bottom:0}
+}
 
 .welcome-slider-award-22 .welcome-slider-item-bg::before {background:#000000; opacity:1; bottom:0; height:80px}
 .welcome-slider-award-22-logo {padding:132px 0 0 0; line-height:0}
@@ -7638,6 +7742,26 @@ footer {margin:60px 0 0 0}
     .event-header-place-22-map-link {margin:15px 0 0 0; font-size:20px; line-height:26px}
 }
 
+@media screen and (max-width:1199px) {
+    .event-header-22 {padding:135px 0 0 0}
+    .event-header-22 .event-header-title .page-back-link {display:none}
+    .event-header-where-22 {right:0; background:#F8F8F8}
+    .event-header-where-22 .event-header-date {width:40%; font-size:18px; line-height:27px}
+    .event-header-where-22 .event-header-place {margin:0}
+    .event-header-place-22-floor {float:left; clear:none; font-size:18px; line-height:27px; margin:0 0 0 9px}
+    .event-header-place-22-map-link {float:left; width:100%; margin:10px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .event-header-22 {padding:0}
+    .event-header-where-22 {right:auto}
+    .event-header-where-22::after {content:""; display:block; clear:both}
+    .event-header-where-22 .event-header-date {width:auto; font-size:22px; line-height:29px}
+    .event-header-where-22 .event-header-place {margin:10px 0 0 0; font-size:22px; line-height:33px}
+    .event-header-place-22-floor {float:none; font-size:22px; line-height:33px; margin:5px 0 0 0}
+    .event-header-place-22-map-link {float:none; width:auto; margin:20px 0 0 0; font-size:16px; line-height:21px}
+}
+
 .event-header-partner {float:left; clear:left; width:340px; margin:40px 0 0 0}
 .event-header-partner h3 {margin:0; font-size:24px; line-height:24px; font-weight:bold}
 .event-header-partner-item {margin:25px 0 0 0}
@@ -7662,6 +7786,25 @@ footer {margin:60px 0 0 0}
     .event-header-persones-speakers .speaker {width:20%}
 }
 
+@media screen and (max-width:1199px) {
+    .event-header-partner {width:175px; margin:50px 0 0 0}
+    .event-header-partner h3 {line-height:31px}
+    .event-header-partner-item {margin:30px 0 0 0}
+    .event-header-partner-item-title {margin:20px 0 0 0; font-weight:normal; font-size:16px; line-height:24px}
+    .event-header-persones {width:100%; margin:104px 0 0 0}
+    .event-header-persones-moderator {width:25%}
+    .event-header-persones-speakers {width:75%}
+    .event-header-persones-speakers .speaker {width:33.33%}
+}
+
+@media screen and (max-width:767px) {
+    .event-header-partner {width:auto; float:none; margin:80px 0 0 0}
+    .event-header-persones {float:none; width:auto; margin:60px 0 0 0}
+    .event-header-persones-moderator {width:50%}
+    .event-header-persones-speakers {width:100%; margin:60px 0 0 0}
+    .event-header-persones-speakers .speaker {width:50%}
+}
+
 .events-list-22 {font-size:16px; line-height:21px}
 .events-list-22 .events-item-date {width:144px; line-height:21px}
 .events-list-22 .events-item-date span {display:block}
@@ -7675,10 +7818,36 @@ footer {margin:60px 0 0 0}
     .events-list-22 .events-item-place {width:420px; line-height:29px}
 }
 
+@media screen and (max-width:1199px) {
+    .events-list-22 {font-size:20px; line-height:30px}
+    .events-list-22 .events-list-headers {font-size:12px; line-height:18px}
+    .events-list-22 .events-item-date {width:155px; line-height:30px}
+    .events-list-22 .events-item-place {width:240px; line-height:30px}
+}
+
+@media screen and (max-width:767px) {
+    .events-list-22 .events-item {padding:20px 0}
+    .events-list-22 .events-item-place {position:relative; width:auto; left:auto; bottom:auto; right:auto; margin:10px 0 0 0; font-weight:bold}
+    .events-list-22 .events-item-session {margin:15px 0 0 0}
+    .events-list-22 .events-item-session-hash span {font-size:14px; line-height:30px; padding:0 10px; height:30px}
+}
+
 .speakers-filter-subtitle {font-weight:300; font-size:16px; line-height:16px; color:#2c2c2c}
 .speakers-filter-item+.speakers-filter-subtitle {margin:20px 0 0 0}
-.speakers-filter-item-day {font-style:normal; color:#8a8a8a; font-size:10px; line-height:10px; font-weight:300}
+.speakers-filter-item-day {font-style:normal; color:#8a8a8a; font-size:10px; line-height:10px; font-weight:300; letter-spacing:0.03em}
 
+@media screen and (max-width:1199px) {
+    .speakers-filter-item-day {font-size:14px; line-height:14px}
+}
+
+.speaker-card-session-date-tags {display:inline-block}
 .speaker-card-session-date-place {display:inline-block; margin:0 0 0 5px; vertical-align:middle; height:23px; font-weight:normal; letter-spacing:0; font-size:14px; line-height:24px; padding:0 6px; background:#eaeaea; color:#414141}
 .speaker-card-session-date-place div {display:inline; font-weight:300; font-size:10px}
 .speaker-card-session-date-type {display:inline-block; margin:0 0 0 7px; vertical-align:middle; height:23px; font-weight:300; letter-spacing:0.05em; font-size:10px; line-height:24px; padding:0 6px; text-transform:uppercase; color:#000000}
+
+@media screen and (max-width:767px) {
+    .speaker-card-session-date-tags {display:block; margin:5px 0 15px 0}
+    .speaker-card-session-date-place {margin:0; height:30px; font-size:16px; line-height:30px; padding:0 10px}
+    .speaker-card-session-date-place div {font-weight:400; color:#999999}
+    .speaker-card-session-date-type {margin:0 0 0 10px; height:30px; font-size:16px; line-height:30px; padding:0 10px}
+}
