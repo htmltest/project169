@@ -2834,23 +2834,46 @@ $(window).on('load resize', function() {
             curStep.find('.voiting-form-nominees.ui-sortable').sortable('option', 'handle', '.voiting-form-nominee-move-icon');
         }
     });
-
-    $('.program-22-ctrl').each(function() {
-        if ($('.program-22-ctrl-dates .program-22-ctrl-date').length > 0) {
-            updateProgram22();
-        }
-    });
 });
 
 $(document).ready(function() {
 
     $('.program-22-ctrl').each(function() {
         var newHTML = '';
+
+        $('.programm-filter-window-checkboxes-types').mCustomScrollbar('destroy');
         for (var i = 0; i < programm22Data.types.length; i++) {
             var curItem = programm22Data.types[i];
-            newHTML += '<div class="form-checkbox"><label><input type="checkbox" name="type' + curItem.id + '" value="' + curItem.id + '" /><span><em style="background:' + curItem.color + '"></em>' + curItem.title + '</span></label>';
+            newHTML += '<div class="form-checkbox"><label><input type="checkbox" name="type' + curItem.id + '" value="' + curItem.id + '" /><span><em style="background:' + curItem.color + '"></em>' + curItem.title + '</span></label></div>';
         }
         $('.programm-filter-window-checkboxes-types').html(newHTML);
+        $('.programm-filter-window-checkboxes-types').each(function() {
+            var curWrapper = $(this).parent();
+            $(this).mCustomScrollbar({
+                axis: 'y',
+                callbacks: {
+                    onInit: function() {
+                        curWrapper.removeClass('with-top');
+                        curWrapper.addClass('with-bottom');
+                    },
+
+                    whileScrolling: function() {
+                        if (this.mcs.topPct == 100) {
+                            curWrapper.removeClass('with-bottom');
+                        } else {
+                            curWrapper.addClass('with-bottom');
+                        }
+
+                        if (this.mcs.topPct == 0) {
+                            curWrapper.removeClass('with-top');
+                        } else {
+                            curWrapper.addClass('with-top');
+
+                        }
+                    }
+                }
+            });
+        });
 
         newHTML = '';
         for (var i = 0; i < programm22Data.weeks.length; i++) {
@@ -2931,6 +2954,12 @@ $(document).ready(function() {
     $('body').on('click', '.program-22-day-close a', function(e) {
         $(this).parent().parent().removeClass('open');
         e.preventDefault();
+    });
+
+    $('.program-22-ctrl').each(function() {
+        if ($('.programm-header .programm-download').length == 0) {
+            $('.programm-filter-btn').addClass('programm-filter-btn-without-headerbtns');
+        }
     });
 
 });
