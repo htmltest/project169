@@ -7592,15 +7592,21 @@ footer {margin:60px 0 0 0}
     .program-22-sections-mobile {display:block; float:right; margin:20px 0 0 0; width:calc(100% - 150px); position:relative}
     .program-22-sections-mobile-current {cursor:pointer; position:relative; border:2px solid #000000; height:44px; padding:0 0 0 18px; font-weight:600; font-size:14px; line-height:40px; letter-spacing:0.05em; text-transform:uppercase; color:#000000}
     .program-22-sections-mobile-current svg {display:block; position:absolute; right:18px; top:12px; width:16px; height:16px; fill:#000000}
+    .program-22-sections-mobile-current span span {display:none}
     .program-22-sections-mobile.open .program-22-sections-mobile-current svg {transform:rotate(-180deg)}
     .program-22-sections-mobile ul {display:none; position:absolute; left:0; top:100%; right:0; margin-top:-2px; background:#ffffff; z-index:20; border:2px solid #000000; font-weight:500; font-size:18px; line-height:27px; text-transform:uppercase; color:#000000; max-height:350px; overflow:auto}
     .program-22-sections-mobile.open ul {display:block}
     .program-22-sections-mobile ul li {margin:0; padding:0; border-top:2px solid #d9d9d9}
     .program-22-sections-mobile ul li::before {display:none}
     .program-22-sections-mobile ul li:first-child {border-top:none}
-    .program-22-sections-mobile ul li a {display:block; text-decoration:none; padding:15px 14px; color:#828282; background:none; position:relative; text-transform:none}
+    .program-22-sections-mobile ul li a {display:block; text-decoration:none; padding:6px 14px; color:#828282; background:none; position:relative; text-transform:none}
     .program-22-sections-mobile ul li.active a {color:#000000}
     .program-22-sections-mobile ul li.active a::after {content:""; display:block; position:absolute; right:10px; top:50%; width:22px; height:22px; margin-top:-11px; background:url(../images/select-mobile.svg) no-repeat}
+    .program-22-sections-mobile ul li.with-count a::after {display:none}
+    .program-22-sections-mobile ul li a span {display:block; position:absolute; right:8px; top:50%; margin-top:-10px; min-width:20px; height:20px; font-weight:500; font-size:14px; line-height:20px; padding:0 5px; text-align:center; border-radius:13.5px; color:#4e4e4e; background:#e2e2e2}
+    .program-22-sections-mobile ul li.active a span {color:#fff; background:#ff5858}
+    .program-22-sections-mobile ul li.empty a {color:#b9b9b9}
+    .program-22-sections-mobile ul li.empty a span {color:#b9b9b9; background:#eeeeee}
 }
 
 .program-22-sections {margin:30px -20px 0 0; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap}
@@ -7886,4 +7892,23 @@ footer {margin:60px 0 0 0}
     .speaker-card-session-date-place {margin:0; height:30px; font-size:16px; line-height:30px; padding:0 10px}
     .speaker-card-session-date-place div {font-weight:400; color:#999999}
     .speaker-card-session-date-type {margin:0 0 0 10px; height:30px; font-size:16px; line-height:30px; padding:0 10px}
+}
+
+.program-22-container-main {margin-top:40px}
+
+@media screen and (min-width:1800px) {
+    .program-22-container-main {margin-top:60px}
+}
+
+@media screen and (max-width:1199px) {
+    .program-22-container-main {margin-top:30px}
+}
+
+@media screen and (max-width:767px) {
+    .program-22-container-main {margin-top:40px}
+    .program-22-container-main .program-22-day {width:auto; padding:30px 0 0 0; margin:30px 0 0 0}
+    .program-22-container-main .program-22-day:first-child {border-top:none; margin:0; padding:0}
+    .program-22-container-main .program-22-day-title {padding:0}
+    .program-22-container-main .program-22-day-date {margin:0}
+    .program-22-container-main .program-22-event {position:relative; left:auto; top:auto; opacity:1; margin:20px 0 0 0}
 }
