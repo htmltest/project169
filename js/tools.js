@@ -3245,7 +3245,7 @@ function updateProgram22Count() {
         }
 
         $('.program-22-day-date span').remove();
-        if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length > 0 || $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length > 0) {
+        if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length > 0 || $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length > 0 || $('.program-22-sections-mobile ul li.active a').attr('data-id') != '') {
             $('.program-22-day').each(function() {
                 var curDay = $(this);
                 var curCount = curDay.find('.program-22-event:not(.disabled)').length;
@@ -3253,18 +3253,6 @@ function updateProgram22Count() {
                     curDay.find('.program-22-day-date').append('<span>' + curCount + '</span>');
                 }
             });
-        }
-        if ($(window).width() < 768) {
-            $('.program-22-day-date span').remove();
-            if ($('.program-22-sections-mobile ul li.active a').attr('data-id') != '') {
-                $('.program-22-day').each(function() {
-                    var curDay = $(this);
-                    var curCount = curDay.find('.program-22-event:not(.disabled)').length;
-                    if (curCount > 0) {
-                        curDay.find('.program-22-day-date').append('<span>' + curCount + '</span>');
-                    }
-                });
-            }
         }
     });
 }
