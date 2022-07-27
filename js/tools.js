@@ -2991,6 +2991,11 @@ $(document).ready(function() {
             $('.programm-filter-btn').addClass('programm-filter-btn-without-headerbtns');
         }
     });
+    
+    $('.program-22-schedule-close').click(function(e) {
+        $('.program-22-schedule').fadeOut();
+        e.preventDefault();
+    });
 
 });
 

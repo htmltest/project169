@@ -7912,3 +7912,58 @@ footer {margin:60px 0 0 0}
     .program-22-container-main .program-22-day-date {margin:0}
     .program-22-container-main .program-22-event {position:relative; left:auto; top:auto; opacity:1; margin:20px 0 0 0}
 }
+
+.program-22-schedule {margin:30px 0 50px 0; position:relative; background:#F7F2F0; padding:20px}
+.program-22-schedule::after {content:""; display:block; clear:both}
+.program-22-schedule-title {float:left; font-weight:500; font-size:22px; line-height:29px; color:#000000}
+.program-22-schedule-item {float:left; margin:0 0 0 64px}
+.program-22-schedule-item-date {font-weight:normal; font-size:22px; line-height:29px; color:#595166}
+.program-22-schedule-item-time {margin:5px 0 0 0; font-weight:bold; font-size:22px; line-height:29px; color:#000000}
+.program-22-schedule-close {display:block; position:absolute; right:20px; top:24px}
+.program-22-schedule-close svg {display:block; width:20px; height:20px; fill:#000000; transition:fill 0.2s}
+.program-22-schedule-close:hover svg {fill:#FF2F66}
+
+@media screen and (min-width:1800px) {
+    .program-22-schedule {margin:40px 0 50px 0; padding:50px 30px}
+    .program-22-schedule-item {margin:0 0 0 60px}
+    .program-22-schedule-item-date {display:inline}
+    .program-22-schedule-item-time {display:inline; margin:0 0 0 5px}
+}
+
+@media screen and (max-width:1199px) {
+    .program-22-schedule {margin:30px 0; padding:16px 20px 20px 20px}
+    .program-22-schedule-title {float:none}
+    .program-22-schedule-item {margin:20px 0 0 0}
+    .program-22-schedule-item+.program-22-schedule-item {margin-left:50px}
+    .program-22-schedule-close {top:20px}
+}
+
+@media screen and (max-width:767px) {
+    .program-22-schedule {margin:30px 0 40px 0}
+    .program-22-schedule-item {float:none}
+    .program-22-schedule-item+.program-22-schedule-item {margin-left:0}
+}
+
+.welcome-slider-city-map-new-mobile {display:none}
+.welcome-slider-city-page .welcome-slider-item-btns a.welcome-slider-city-map-new {border-color:transparent; padding:0}
+.welcome-slider-city-page .welcome-slider-item-btns a.welcome-slider-city-map-new:hover {background:#f7f2f0; color:#000000}
+.welcome-slider-city-page .welcome-slider-item-btns a.welcome-slider-city-map-new:hover svg {fill:#000000}
+
+@media screen and (max-width:1199px) {
+    .welcome-slider-city-page .welcome-slider-item-btns a.welcome-slider-city-map-new {position:absolute; left:60px; top:600px}
+}
+
+@media screen and (max-width:767px) {
+    .welcome-slider-city-page .welcome-slider-item-btns a.welcome-slider-city-reg {padding:0 16px}
+    .welcome-slider-city-page .welcome-slider-item-btns a.welcome-slider-city-map {padding:0 16px}
+    .welcome-slider-city-page .welcome-slider-item-container .welcome-social-inner {text-align:left}
+    .welcome-slider-city-page .welcome-slider-item-btns a.welcome-slider-city-map-new {display:none}
+    .welcome-slider-city-page .welcome-social-item {margin-left:6px}
+    .welcome-slider-city-page .welcome-social-item:first-child {margin-left:0}
+    .welcome-slider-city-map-new-mobile {display:inline-block; vertical-align:middle; margin:0 0 0 20px; font-weight:600; font-size:16px; line-height:32px; text-transform:uppercase; color:#435391; text-decoration:none; letter-spacing:0}
+    .welcome-slider-city-map-new-mobile svg {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:#435391; margin:-2px 8px 0 0}
+}
+
+@media screen and (max-width:479px) {
+    .welcome-slider-city-map-new-mobile {display:block; margin:20px 0 0 0}
+}
