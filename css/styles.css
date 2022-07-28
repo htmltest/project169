@@ -7785,7 +7785,7 @@ footer {margin:60px 0 0 0}
 }
 
 @media screen and (max-width:1199px) {
-    .event-header-22 {padding:135px 0 0 0}
+    .event-header-22 {padding:230px 0 0 0}
     .event-header-22 .event-header-title .page-back-link {display:none}
     .event-header-where-22 {right:0; background:#F8F8F8}
     .event-header-where-22 .event-header-date {width:40%; font-size:18px; line-height:27px}
@@ -7817,6 +7817,7 @@ footer {margin:60px 0 0 0}
 .event-header-persones-speakers {float:left; width:66.66%; padding:0 10px}
 .event-header-persones-speakers .speakers {margin-top:0}
 .event-header-persones-speakers .speaker {width:50%}
+.event-header-persones-speakers .speakers+.event-header-persones-title {margin-top:55px}
 
 @media screen and (min-width:1800px) {
     .event-header-partner {float:right; clear:right; width:540px}
@@ -7826,6 +7827,7 @@ footer {margin:60px 0 0 0}
     .event-header-persones-moderator {width:16.66%}
     .event-header-persones-speakers {width:83.33%}
     .event-header-persones-speakers .speaker {width:20%}
+    .event-header-persones-speakers .speakers+.event-header-persones-title {margin-top:60px}
 }
 
 @media screen and (max-width:1199px) {
@@ -7837,6 +7839,7 @@ footer {margin:60px 0 0 0}
     .event-header-persones-moderator {width:25%}
     .event-header-persones-speakers {width:75%}
     .event-header-persones-speakers .speaker {width:33.33%}
+    .event-header-persones-speakers .speakers+.event-header-persones-title {margin-top:60px}
 }
 
 @media screen and (max-width:767px) {
@@ -7966,4 +7969,23 @@ footer {margin:60px 0 0 0}
 
 @media screen and (max-width:479px) {
     .welcome-slider-city-map-new-mobile {display:block; margin:20px 0 0 0}
+}
+
+.event-registration {float:left; clear:left; margin:13px 0 0 0; width:275px}
+.event-registration a {display:block; color:#FFFFFF; background:#435391; border:2px solid #435391; height:52px; text-align:center; text-decoration:none; font-weight:600; font-size:16px; line-height:48px; letter-spacing:0.05em; text-transform:uppercase; transition:color 0.2s, background 0.2s}
+.event-registration a:hover {color:#435391; background:#FFFFFF}
+.event-registration a svg {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:#FFFFFF; margin:-2px 6px 0 0; transition:fill 0.2s}
+.event-registration a:hover svg {fill:#435391}
+
+@media screen and (min-width:1800px) {
+    .event-registration {float:right; clear:right; margin:15px 0 0 0; width:540px}
+    .event-registration a {display:inline-block; vertical-align:top; padding:0 20px}
+}
+
+@media screen and (max-width:1199px) {
+    .event-registration {float:none; clear:none; margin:0; position:absolute; left:0; top:118px}
+}
+
+@media screen and (max-width:767px) {
+    .event-registration {position:relative; left:auto; top:auto; margin:15px 0 0 0; width:100%}
 }
