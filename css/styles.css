@@ -7919,8 +7919,11 @@ footer {margin:60px 0 0 0}
 .program-22-schedule {margin:30px 0 50px 0; position:relative; background:#F7F2F0; padding:20px}
 .program-22-schedule-page {margin:30px 0 20px 0}
 .program-22-schedule::after {content:""; display:block; clear:both}
-.program-22-schedule-title {float:left; font-weight:500; font-size:22px; line-height:29px; color:#000000}
-.program-22-schedule-item {float:left; margin:0 0 0 64px}
+.program-22-schedule-title {font-weight:500; font-size:22px; line-height:29px; color:#000000}
+.program-22-schedule-list {margin:20px 0 0 0}
+.program-22-schedule-list::after {content:""; display:block; clear:both}
+.program-22-schedule-item {float:left; margin:0 0 0 60px}
+.program-22-schedule-item:first-child {margin:0}
 .program-22-schedule-item-date {font-weight:normal; font-size:22px; line-height:29px; color:#595166}
 .program-22-schedule-item-time {margin:5px 0 0 0; font-weight:bold; font-size:22px; line-height:29px; color:#000000}
 .program-22-schedule-close {display:block; position:absolute; right:20px; top:24px}
@@ -7928,27 +7931,30 @@ footer {margin:60px 0 0 0}
 .program-22-schedule-close:hover svg {fill:#FF2F66}
 
 @media screen and (min-width:1800px) {
-    .program-22-schedule {margin:40px 0 50px 0; padding:50px 30px}
+    .program-22-schedule {margin:40px 0 50px 0}
     .program-22-schedule-page {margin:40px 0 30px 0}
+    .program-22-schedule-title {float:left; margin:34px 0 0 0}
+    .program-22-schedule-list {float:left; margin:0 0 0 60px}
     .program-22-schedule-item {margin:0 0 0 60px}
-    .program-22-schedule-item-date {display:inline}
-    .program-22-schedule-item-time {display:inline; margin:0 0 0 5px}
 }
 
 @media screen and (max-width:1199px) {
     .program-22-schedule {margin:30px 0; padding:16px 20px 20px 20px}
     .program-22-schedule-page {margin:30px 0 20px 0}
     .program-22-schedule-title {float:none}
-    .program-22-schedule-item {margin:20px 0 0 0}
-    .program-22-schedule-item+.program-22-schedule-item {margin-left:50px}
+    .program-22-schedule-list {margin:0 0 0 -70px}
+    .program-22-schedule-item {margin:20px 0 0 70px}
+    .program-22-schedule-item:first-child {margin:20px 0 0 70px}
+    .program-22-schedule-item:nth-child(2n - 1) {clear:left}
     .program-22-schedule-close {top:20px}
 }
 
 @media screen and (max-width:767px) {
     .program-22-schedule {margin:30px 0 40px 0}
     .program-22-schedule-page {margin:30px 0 40px 0}
-    .program-22-schedule-item {float:none}
-    .program-22-schedule-item+.program-22-schedule-item {margin-left:0}
+    .program-22-schedule-list {margin:20px 0 0 0}
+    .program-22-schedule-item {float:none; clear:none; margin:15px 0 0 0}
+    .program-22-schedule-item:first-child {margin:15px 0 0 0}
 }
 
 .welcome-slider-city-map-new-mobile {display:none}
