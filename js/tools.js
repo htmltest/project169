@@ -3493,6 +3493,8 @@ $(document).ready(function() {
             if ($('.window-hint-scheme-inner').offset().left + $('.window-hint-scheme-inner').outerWidth() > $('.wrapper').width()) {
                 $('.window-hint-scheme').addClass('to-right');
             }
+            var curID = $(this).attr('data-id');
+            $('.scheme-list-item a[data-id="' + curID + '"]').addClass('hover');
         }
     });
 
@@ -3513,6 +3515,22 @@ $(document).ready(function() {
     $('body').on('mouseleave', '.scheme-map-back g', function(e) {
         if ($(window).width() > 1119) {
             $('.window-hint-scheme').remove();
+            $('.scheme-list-item a.hover').removeClass('hover');
+        }
+    });
+
+    $('body').on('mouseenter', '.scheme-list-item a', function(e) {
+        if ($(window).width() > 1199) {
+            var curID = $(this).attr('data-id');
+            $('.scheme-map-back g[data-id="' + curID + '"]').addClass('hover');
+            $('.scheme-map-point[data-id="' + curID + '"]').addClass('hover');
+        }
+    });
+
+    $('body').on('mouseleave', '.scheme-list-item a', function(e) {
+        if ($(window).width() > 1119) {
+            $('.scheme-map-back g.hover').removeClass('hover');
+            $('.scheme-map-point.hover').removeClass('hover');
         }
     });
 

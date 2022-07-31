@@ -8232,6 +8232,7 @@ footer {margin:60px 0 0 0}
 .scheme-map-container svg {display:block; width:100%; height:auto; fill:none}
 
 .scheme-map-back g {opacity:0.6; transition:opacity 0.2s; cursor:pointer}
+.scheme-map-back g.hover,
 .scheme-map-back g:hover {opacity:1}
 
 .scheme-map-point-title {fill:#404040; transition:fill 0.2s, opacity 0.2s; opacity:0.4}
@@ -8265,8 +8266,12 @@ footer {margin:60px 0 0 0}
 .scheme-list-item {border-top:1px solid #E9E9E9}
 .scheme-list-item:first-child {border-top:none}
 .scheme-list-item a {display:block; padding:15px 15px 15px 40px; margin:0 -15px; position:relative; color:#000000; text-decoration:none; transition:background 0.2s}
+.scheme-list-item a.hover,
 .scheme-list-item a:hover {background:#FAFAFA}
 .scheme-list-item a::before {content:""; display:block; width:16px; height:16px; border:1px solid #717171; border-radius:50%; position:absolute; left:15px; top:30px; background:#FFFFFF}
+.scheme-list-item a::after {content:""; display:block; width:8px; height:8px; background:#000000; border-radius:50%; position:absolute; left:19px; top:34px; transform:scale(0); transition:transform 0.2s}
+.scheme-list-item a.hover::after,
+.scheme-list-item a:hover::after {transform:scale(1)}
 .scheme-list-item-name {font-weight:500; font-size:10px; line-height:13px; color:#ABABAB}
 .scheme-list-item-title {margin:2px 0 0 0; font-size:14px; line-height:18px; font-weight:500}
 
@@ -8338,3 +8343,47 @@ footer {margin:60px 0 0 0}
 .window-hint-scheme-inner::before {content:""; display:block; width:10px; height:10px; background:#fff; border-bottom:1px solid #e6e6e6; border-left:1px solid #e6e6e6; position:absolute; left:25px; bottom:-6px; transform:rotate(-45deg)}
 .window-hint-scheme.to-right .window-hint-scheme-inner::before {left:auto; right:25px}
 .window-hint-scheme-inner span {font-weight:bold}
+
+.main-block-scheme .main-header {overflow:hidden}
+.main-block-scheme .main-header h2 {font-size:72px; line-height:94px; max-width:calc(100% - 300px); background:url(../images/scheme-title.jpg) no-repeat center; background-size:cover; -webkit-background-clip:text; webkit-background-clip:text; -webkit-text-fill-color:transparent}
+.main-block-scheme .main-header-link {margin:24px 0 0 0}
+.main-block-scheme .main-header-link .btn svg {width:24px; height:24px; fill:#000000; stroke:none; transition:fill 0.2s}
+.main-block-scheme .main-header-link .btn:hover svg {fill:#ffffff}
+.main-scheme-img {font-size:0; line-height:0; letter-spacing:-1px; margin:-60px 0 0 0; position:relative}
+.main-scheme-img img {display:block; width:100%}
+.main-scheme-img-left {display:inline-block; vertical-align:bottom; width:34.39%; padding:0 17px 0 0}
+.main-scheme-img-right {display:inline-block; vertical-align:bottom; width:65.61%; padding:0 0 0 17px}
+
+@media screen and (min-width:1500px) {
+    .main-block-scheme .main-header h2 {font-size:90px; line-height:117px; max-width:calc(100% - 400px)}
+    .main-block-scheme .main-header-link {margin:32px 0 0 0}
+    .main-block-scheme .main-header-link .btn svg {width:30px; height:30px}
+    .main-scheme-img {margin:-76px 0 0 0}
+    .main-scheme-img-left {padding:0 10px 0 0}
+    .main-scheme-img-right {padding:0 0 0 10px}
+}
+
+@media screen and (max-width:1110px) {
+    .main-block-scheme .main-header h2 {font-size:42px; line-height:55px; max-width:50%}
+    .main-scheme-img {margin:-30px 0 0 0}
+    .main-scheme-img-left {padding:0 7px 0 0}
+    .main-scheme-img-right {padding:0 0 0 7px}
+}
+
+@media screen and (max-width:1024px) {
+    .main-block-scheme .main-header h2 {max-width:calc(100% - 350px)}
+}
+
+@media screen and (max-width:840px) {
+    .main-block-scheme .main-header h2 {max-width:320px}
+    .main-scheme-img {margin:-81px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .main-block-scheme .main-header h2 {max-width:none}
+    .main-scheme-img {margin:30px 0 0 0}
+    .main-scheme-img-left {display:none}
+    .main-scheme-img-right {padding:0; display:block; width:auto}
+    .main-block-scheme .main-mobile-link .btn svg {width:30px; height:30px; fill:#000000; stroke:none; transition:fill 0.2s}
+    .main-block-scheme .main-mobile-link .btn:hover svg {fill:#ffffff}
+}
