@@ -3316,6 +3316,15 @@ $(document).ready(function() {
             $('.scheme-list-floor').eq(curIndex).addClass('active');
             $('.scheme-map-floor.active').removeClass('active');
             $('.scheme-map-floor').eq(curIndex).addClass('active');
+
+            var curZoom = 1;
+            var curLeft = 0;
+            var curTop = 0;
+
+            $('.scheme-map-wrap').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px) scale(' + curZoom + ')'});
+            $('.scheme-map-wrap').data('curLeft', curLeft);
+            $('.scheme-map-wrap').data('curTop', curTop);
+            $('.scheme-map-wrap').data('zoom', curZoom);
         }
         e.preventDefault();
     });
@@ -3532,6 +3541,35 @@ $(document).ready(function() {
             $('.scheme-map-back g.hover').removeClass('hover');
             $('.scheme-map-point.hover').removeClass('hover');
         }
+    });
+
+    $('body').on('click', '.scheme-list-item a', function(e) {
+        if ($(window).width() > 1199) {
+            var curWidth = $('.scheme-map-floor.active .scheme-map-back svg').width();
+            var curHeight = $('.scheme-map-floor.active .scheme-map-back svg').height();
+            var curDiff = curWidth / 3375;
+
+            var curID = $(this).attr('data-id');
+            var curItem = $('.scheme-map-floor.active .scheme-map-back g[data-id="' + curID + '"]');
+            var itemBBox = curItem[0].getBBox();
+            var itemX = itemBBox.x * curDiff;
+            var itemY = itemBBox.y * curDiff;
+            var itemWidth = itemBBox.width * curDiff;
+            var itemHeight = itemBBox.height * curDiff;
+
+            var curZoom = Number($('.scheme-map-wrap').data('zoom'));
+            var curLeft = curWidth / 2 - (itemX + itemWidth / 2);
+            var curTop = curHeight / 2 - (itemY + itemHeight / 2);
+
+            $('.scheme-map-wrap').css({'transition': 'transform 0.3s'});
+            $('.scheme-map-wrap').css({'transform': 'translate(' + curLeft + 'px, ' + curTop + 'px) scale(' + curZoom + ')'});
+            window.setTimeout(function() {
+                $('.scheme-map-wrap').css({'transition': 'none'});
+            }, 300);
+            $('.scheme-map-wrap').data('curLeft', curLeft);
+            $('.scheme-map-wrap').data('curTop', curTop);
+        }
+        e.preventDefault();
     });
 
 });
