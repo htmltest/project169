@@ -679,7 +679,11 @@ $(document).ready(function() {
             $('.window-video-slider-list-item-inner').html('');
             $('.window-video-social-item-link').attr('data-clipboard-text', $('.window-video-slider-list-item').eq(currentSlide).find('.window-video-slider-list-item-inner').attr('data-videourl'));
             $('.window-video-slider-list-item').eq(currentSlide).find('.window-video-slider-list-item-inner').each(function() {
-                $(this).html('<iframe width="560" height="315" src="' + $(this).attr('data-videourl') + '?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+                var symbolSep = '&';
+                if ($(this).attr('data-videourl').indexOf('?') == -1) {
+                    symbolSep = '?';
+                }
+                $(this).html('<iframe width="560" height="315" src="' + $(this).attr('data-videourl') + symbolSep + 'rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
             });
         });
 
@@ -709,7 +713,11 @@ $(document).ready(function() {
     });
 
     $('.award-video-preview').click(function(e) {
-        $(this).parent().html('<iframe width="560" height="315" src="' + $(this).attr('href') + '?rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+        var symbolSep = '&';
+        if ($(this).attr('href').indexOf('?') == -1) {
+            symbolSep = '?';
+        }
+        $(this).parent().html('<iframe width="560" height="315" src="' + $(this).attr('href') + symbolSep + 'rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
         e.preventDefault();
     });
 
@@ -1268,7 +1276,11 @@ $(document).ready(function() {
         var curPlayer = $(this).parents().filter('.main-stream-video-player');
         $('.main-stream-video-player-content').html('');
         $('.main-stream-video-player.start').removeClass('start');
-        curPlayer.find('.main-stream-video-player-content').html('<iframe width="560" height="315" src="' + $(this).attr('href') + '?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+        var symbolSep = '&';
+        if ($(this).attr('href').indexOf('?') == -1) {
+            symbolSep = '?';
+        }
+        curPlayer.find('.main-stream-video-player-content').html('<iframe width="560" height="315" src="' + $(this).attr('href') + symbolSep + 'autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
         curPlayer.addClass('start');
         e.preventDefault();
     });
@@ -3424,13 +3436,13 @@ $(document).ready(function() {
     var isTouchCapable = 'ontouchstart' in window || window.DocumentTouch && document instanceof window.DocumentTouch || navigator.maxTouchPoints > 0 || window.navigator.msMaxTouchPoints > 0;
 
     if (!isTouchCapable) {
-        $('.scheme-map-wrap').on('mousedown', function(e) {
+        $('.scheme-map').on('mousedown', function(e) {
             mapDrag = true;
             mapStartX = e.pageX;
             mapStartY = e.pageY;
         });
 
-        $('.scheme-map-wrap').on('mousemove', function(e) {
+        $('.scheme-map').on('mousemove', function(e) {
             if (mapDrag) {
                 mapMove = true;
                 var curZoom = Number($('.scheme-map-wrap').data('zoom'));
@@ -3461,13 +3473,13 @@ $(document).ready(function() {
             }
         });
     } else {
-        $('.scheme-map-wrap').on('touchstart', function(e) {
+        $('.scheme-map').on('touchstart', function(e) {
             mapDrag = true;
             mapStartX = e.originalEvent.touches[0].pageX;
             mapStartY = e.originalEvent.touches[0].pageY;
         });
 
-        $('.scheme-map-wrap').on('touchmove', function(e) {
+        $('.scheme-map').on('touchmove', function(e) {
             if (mapDrag) {
                 var curZoom = Number($('.scheme-map-wrap').data('zoom'));
                 var curLeft = Number($('.scheme-map-wrap').data('curLeft'));

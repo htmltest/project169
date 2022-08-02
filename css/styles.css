@@ -8229,7 +8229,11 @@ footer {margin:60px 0 0 0}
 .scheme-map-back {position:relative; backface-visibility:hidden}
 .scheme-map-front {position:absolute; left:0; top:0; right:0; bottom:0; pointer-events:none}
 .scheme-map-points {position:absolute; left:0; top:0; right:0; bottom:0; pointer-events:none}
-.scheme-map-container svg {display:block; width:100%; height:auto; fill:none}
+.scheme-map-container svg {display:block; width:75%; height:auto; fill:none; margin:0 0 0 auto}
+
+@media screen and (max-width:1199px) {
+    .scheme-map-container svg {width:100%; margin:0}
+}
 
 .scheme-map-back g {opacity:0.6; transition:opacity 0.2s; cursor:pointer}
 .scheme-map-back g.hover,
