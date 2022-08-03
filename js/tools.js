@@ -1000,6 +1000,19 @@ $(document).ready(function() {
         });
     });
 
+    $('.programm-filter-window-checkboxes-search .form-input-clear').on('click', function(e) {
+        var curValue = $(this).val().toLowerCase();
+        var curBlock = $(this).parents().filter('.programm-filter-window-block-with-search');
+        curBlock.find('.programm-filter-window-checkboxes-wraper-with-search .form-checkbox').each(function() {
+            var curItem = $(this);
+            if (curItem.find('span').text().toLowerCase().indexOf(curValue) == -1) {
+                curItem.addClass('hidden');
+            } else {
+                curItem.removeClass('hidden');
+            }
+        });
+    });
+
     $('.programm-filter-window-checkboxes .form-checkbox input').change(function() {
         updateProgrammFilter();
     });
@@ -3288,6 +3301,14 @@ $(window).on('load resize scroll', function() {
 
 });
 
+$(window).on('load resize', function() {
+
+    $('.scheme-list-inner').each(function() {
+        $(this).css({'max-height': $('.scheme').height() - 40});
+    });
+
+});
+
 $(document).ready(function() {
 
     $('body').on('click', '.window-zone-menu ul li a', function(e) {
@@ -3564,7 +3585,7 @@ $(document).ready(function() {
             var curID = $(this).attr('data-id');
             var curItem = $('.scheme-map-floor.active .scheme-map-back g[data-id="' + curID + '"]');
             var itemBBox = curItem[0].getBBox();
-            var itemX = itemBBox.x * curDiff;
+            var itemX = itemBBox.x * curDiff + $('.scheme-map-floor.active .scheme-map-back svg').offset().left * curDiff;
             var itemY = itemBBox.y * curDiff;
             var itemWidth = itemBBox.width * curDiff;
             var itemHeight = itemBBox.height * curDiff;
@@ -3584,6 +3605,20 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    if ($('.scheme').length == 1) {
+        if (window.location.hash != '') {
+            var curID = window.location.hash.replace('#', '');
+            var curLink = $('.scheme-list-item a[data-id="' + curID + '"]');
+            if (curLink.length == 1) {
+                var curListFloor = curLink.parents().filter('.scheme-list-floor');
+                if (!curListFloor.hasClass('active')) {
+                    var curIndex = $('.scheme-list-floor').index(curListFloor);
+                    $('.scheme-floor a').eq(curIndex).trigger('click');
+                }
+                curLink.trigger('click');
+            }
+        }
+    }
 });
 
 function windowAudio() {

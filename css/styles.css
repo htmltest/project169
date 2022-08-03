@@ -3746,9 +3746,9 @@ h1+.main-block {margin:80px 0 0 0}
 .events-item {display:table-row; color:#000}
 .events-item-date {display:table-cell; vertical-align:top; padding:20px 0; font-size:16px; line-height:16px; width:250px; border-top:1px solid #e8e8e8}
 .events-item-date span {font-weight:500}
-.events-item-place {display:table-cell; vertical-align:top; padding:20px 0; font-size:16px; line-height:16px; width:202px; border-top:1px solid #e8e8e8; font-weight:500}
+.events-item-place {display:table-cell; vertical-align:top; padding:20px 20px 20px 0; font-size:16px; line-height:16px; width:202px; border-top:1px solid #e8e8e8; font-weight:500}
 .events-item-session {display:table-cell; vertical-align:top; padding:20px 0; border-top:1px solid #e8e8e8}
-.events-item-session-title {color:#000}
+.events-item-session-title {color:#000; font-weight:600}
 .events-item-session-title a {text-decoration:none}
 .events-item-session-hash {color:#b2b2b2; font-weight:500; font-size:14px; line-height:21px}
 
@@ -4047,7 +4047,11 @@ h1+.main-block {margin:80px 0 0 0}
 .programm-filter-window-block-with-search .programm-filter-window-checkboxes-wraper {position:relative; margin:8px 0 0 0}
 .programm-filter-window-checkboxes-window {position:absolute; left:-9999px; top:-9999px; width:100%; background:#fff; z-index:99; border:1px solid #d9d9d9; box-shadow:4px 4px 40px rgba(0, 0, 0, 0.1)}
 .programm-filter-window-checkboxes-wraper.open .programm-filter-window-checkboxes-window {left:0; top:100%}
-.programm-filter-window-checkboxes-search {margin:0; padding:4px}
+.programm-filter-window-checkboxes-search {margin:0 4px; padding:0; border-bottom:1px solid #d9d9d9; position:relative}
+.programm-filter-window-checkboxes-search > svg {content:""; display:block; width:16px; height:16px; position:absolute; right:14px; top:50%; margin-top:-8px; fill:none; pointer-events:none}
+.programm-filter-window-checkboxes-search input {border-width:0; height:47px; padding:13px 74px 13px 15px; font-size:14px; line-height:21px; font-weight:500}
+.programm-filter-window-checkboxes-search .form-input-clear {right:44px; width:22px; height:22px; margin-top:-11px}
+.programm-filter-window-checkboxes-search .form-input-clear svg {width:22px; height:22px}
 .programm-filter-window-checkboxes-wraper-with-search .form-checkbox {margin:0; border-top:1px solid #d9d9d9}
 .programm-filter-window-checkboxes-wraper-with-search .form-checkbox.hidden {display:none}
 .programm-filter-window-checkboxes-wraper-with-search .form-checkbox:first-child {border-top:none}
@@ -4132,8 +4136,10 @@ h1+.main-block {margin:80px 0 0 0}
     .programm-filter-window-checkboxes-wraper-with-search .programm-filter-window-checkboxes .form-checkbox span {overflow:visible}
     .programm-filter-window-checkboxes-wraper-with-search .form-checkbox strong {right:0; top:0}
     .programm-filter-window-checkboxes-search {padding:0 0 40px 0; position:relative; border-bottom:1px solid #d9d9d9}
-    .programm-filter-window-checkboxes-search input {height:60px; padding:17px 50px 14px 15px; font-size:18px; line-height:27px}
+    .programm-filter-window-checkboxes-search input {height:60px; padding:17px 50px 14px 15px; font-size:18px; line-height:27px; border-width:1px}
+    .programm-filter-window-checkboxes-search > svg {display:none}
     .programm-filter-window-checkboxes-search::after {content:""; display:block; position:absolute; right:9px; top:13px; width:32px; height:32px; background:url(../images/programm-filter-window-checkboxes-search.svg) no-repeat; pointer-events:none}
+    .programm-filter-window-checkboxes-search.full .form-input-clear {display:none}
 
     .programm-filter-window-block-params {font-size:0; line-height:0; letter-spacing:-1px; margin:-24px 0 20px -8px}
     .programm-filter-window-block-params.visible {display:block}
@@ -7555,6 +7561,7 @@ footer {margin:60px 0 0 0}
 .program-22-ctrl .programm-filter-param {direction:ltr}
 .program-22-ctrl .programm-filter-btn {float:right}
 .programm-filter-open .program-22-ctrl .programm-filter-window {left:auto; right:0}
+.program-22-ctrl .programm-filter-window-checkboxes {max-height:269px}
 
 @media screen and (min-width:1800px) {
     .program-22-ctrl .programm-filter-btn {margin-top:-6px}
@@ -7569,6 +7576,7 @@ footer {margin:60px 0 0 0}
     .program-22-ctrl .programm-filter-params {display:none}
     .program-22-ctrl-dates {float:left; width:100%; margin:40px 0 0 0}
     .programm-filter-open .program-22-ctrl .programm-filter-window {left:0}
+    .program-22-ctrl .programm-filter-window-checkboxes {max-height:none}
 }
 
 @media screen and (max-width:767px) {
@@ -8229,7 +8237,11 @@ footer {margin:60px 0 0 0}
 .scheme-map-back {position:relative; backface-visibility:hidden}
 .scheme-map-front {position:absolute; left:0; top:0; right:0; bottom:0; pointer-events:none}
 .scheme-map-points {position:absolute; left:0; top:0; right:0; bottom:0; pointer-events:none}
-.scheme-map-container svg {display:block; width:75%; height:auto; fill:none; margin:0 0 0 auto}
+.scheme-map-container svg {display:block; width:70%; height:auto; fill:none; margin:0 0 0 auto}
+
+@media screen and (min-width:1500px) {
+    .scheme-map-container svg {width:75%}
+}
 
 @media screen and (max-width:1199px) {
     .scheme-map-container svg {width:100%; margin:0}
@@ -8289,6 +8301,8 @@ footer {margin:60px 0 0 0}
 
 @media screen and (max-width:1199px) {
     .scheme-list {left:14px}
+    .scheme-list-inner {max-height:calc(100vh - 80px) !important}
+    .scheme-list-item a::after {display:none}
 }
 
 @media screen and (max-width:767px) {
@@ -8390,4 +8404,36 @@ footer {margin:60px 0 0 0}
     .main-scheme-img-right {padding:0; display:block; width:auto}
     .main-block-scheme .main-mobile-link .btn svg {width:30px; height:30px; fill:#000000; stroke:none; transition:fill 0.2s}
     .main-block-scheme .main-mobile-link .btn:hover svg {fill:#ffffff}
+}
+
+.main-stream-22::before {content:""; display:block; height:4px; background:url(../images/main-stream-22-top.png) no-repeat; background-size:100%}
+.main-stream-22::after {content:""; display:block; height:4px; background:url(../images/main-stream-22-bottom.png) no-repeat; background-size:100%}
+.main-stream-22-inner {padding:70px 0}
+.main-stream-22-inner::after {content:""; display:block; clear:both}
+.main-stream-22-header {float:left; clear:left; width:25.86%}
+.main-stream-22-logo {line-height:0}
+.main-stream-22-title {margin:46px 0 0 0; font-weight:bold; font-size:48px; line-height:62px; color:#000000}
+.main-stream-22-text {margin:5px 0 0 0; font-weight:300; font-size:28px; line-height:36px; color:#000000}
+.main-stream-22-video {float:right; clear:right; width:59.22%}
+.main-stream-22-video-inner {position:relative; padding:63% 0 0 0}
+.main-stream-22-video-inner iframe {position:absolute; left:0; top:0; width:100%; height:100%}
+.main-stream-22-links {float:left; clear:left; width:25.86%; margin:49px 0 0 0}
+.main-stream-22-link-btn {margin:10px 0 0 0}
+.main-stream-22-link-btn:first-child {margin:0}
+.main-stream-22-link-btn a {display:inline-block; vertical-align:top; line-height:44px; text-decoration:none; height:44px; border:none; padding:0 20px; font-weight:500; font-size:14px; letter-spacing:0.05em; text-transform:uppercase; background:#F4F4F4; transition:color 0.2s, background 0.2s; color:#000000}
+.main-stream-22-link-btn a:hover {background:#000; color:#fff}
+.main-stream-22-link-btn a svg {display:inline-block; width:24px; height:24px; vertical-align:middle; margin:-2px 10px 0 0; fill:#717171; transition:fill 0.2s}
+.main-stream-22-link-btn a:hover svg {fill:#fff}
+
+@media screen and (max-width:1199px) {
+    .main-stream-22::before {height:3px}
+    .main-stream-22::after {height:3px}
+    .main-stream-22-inner {padding:40px 0}
+    .main-stream-22-header {float:none; clear:auto; width:auto}
+    .main-stream-22-logo {width:221px}
+    .main-stream-22-title {margin:30px 0 0 0; font-size:36px; line-height:47px}
+    .main-stream-22-text {margin:2px 0 0 0; font-size:22px; line-height:29px}
+    .main-stream-22-video {float:none; clear:none; width:auto; margin:20px 0 0 0}
+    .main-stream-22-video-inner {padding:63% 0 0 0}
+    .main-stream-22-links {float:none; clear:none; width:auto; margin:20px 0 0 0}
 }
