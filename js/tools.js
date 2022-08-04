@@ -3696,3 +3696,106 @@ function stopAllAudio() {
         curAudio.removeClass('playing');
     });
 }
+
+$(document).ready(function() {
+
+    $('.main-city-timer').each(function() {
+        updateTimer();
+    });
+
+    $('.main-city-stream-link').click(function() {
+        $('.main-city-stream').toggleClass('open');
+    });
+
+});
+
+function updateTimer() {
+    var minutes = 60;
+    var hours   = minutes * 60;
+    var days    = hours * 24;
+
+    var curTimer = $('.main-city-timer');
+    var timerLeft = Math.floor((new Date(curTimer.attr('data-timestamp')) - (new Date())) / 1000);
+
+    var timerDays = Math.floor(timerLeft / days);
+    if (timerDays < 0) {
+        timerDays = 0;
+    }
+    $('#stream-22-timer-days span').html(('0' + timerDays).slice(-2));
+    $('#stream-22-timer-days').parent().find('.main-city-timer-time-value-title').html(
+        getNumberText(
+            timerDays,
+            $('#stream-22-timer-days').parent().find('.main-city-timer-time-value-title').attr('data-title1'),
+            $('#stream-22-timer-days').parent().find('.main-city-timer-time-value-title').attr('data-title2'),
+            $('#stream-22-timer-days').parent().find('.main-city-timer-time-value-title').attr('data-title3')
+        )
+    );
+
+    timerLeft -= timerDays * days;
+
+    var timerHours = Math.floor(timerLeft / hours);
+    if (timerHours < 0) {
+        timerHours = 0;
+    }
+    $('#stream-22-timer-hours span').html(('0' + timerHours).slice(-2));
+    $('#stream-22-timer-hours').parent().find('.main-city-timer-time-value-title').html(
+        getNumberText(
+            timerHours,
+            $('#stream-22-timer-hours').parent().find('.main-city-timer-time-value-title').attr('data-title1'),
+            $('#stream-22-timer-hours').parent().find('.main-city-timer-time-value-title').attr('data-title2'),
+            $('#stream-22-timer-hours').parent().find('.main-city-timer-time-value-title').attr('data-title3')
+        )
+    );
+
+    timerLeft -= timerHours * hours;
+
+    var timerMinutes = Math.floor(timerLeft / minutes);
+    if (timerMinutes < 0) {
+        timerMinutes = 0;
+    }
+    $('#stream-22-timer-minutes span').html(('0' + timerMinutes).slice(-2));
+    $('#stream-22-timer-minutes').parent().find('.main-city-timer-time-value-title').html(
+        getNumberText(
+            timerMinutes,
+            $('#stream-22-timer-minutes').parent().find('.main-city-timer-time-value-title').attr('data-title1'),
+            $('#stream-22-timer-minutes').parent().find('.main-city-timer-time-value-title').attr('data-title2'),
+            $('#stream-22-timer-minutes').parent().find('.main-city-timer-time-value-title').attr('data-title3')
+        )
+    );
+
+    timerLeft -= timerMinutes * minutes;
+
+    if (timerLeft < 0) {
+        timerLeft = 0;
+    }
+
+    $('#stream-22-timer-seconds span').html(('0' + timerLeft).slice(-2));
+    $('#stream-22-timer-seconds').parent().find('.main-city-timer-time-value-title').html(
+        getNumberText(
+            timerLeft,
+            $('#stream-22-timer-seconds').parent().find('.main-city-timer-time-value-title').attr('data-title1'),
+            $('#stream-22-timer-seconds').parent().find('.main-city-timer-time-value-title').attr('data-title2'),
+            $('#stream-22-timer-seconds').parent().find('.main-city-timer-time-value-title').attr('data-title3')
+        )
+    );
+
+    setTimeout(updateTimer, 1000);
+}
+
+function getNumberText(number, title1, title2, title3) {
+    var num100 = number % 100;
+    var num10 = number % 10;
+    if (num100 >= 5 && num100 <= 20) {
+        return title1;
+    } else if (num10 == 0) {
+        return title1;
+    } else if (num10 == 1) {
+        return title2;
+    } else if (num10 >= 2 && num10 <= 4) {
+        return title3;
+    } else if (num10 >= 5 && num10 <= 9) {
+        return title1;
+    } else {
+        return title3;
+    }
+}

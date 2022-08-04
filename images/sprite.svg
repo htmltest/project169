@@ -515,4 +515,8 @@
         <path d="M14.6656 14.9166L11.7656 12.0166" stroke="#8A8A8A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
     </symbol>
 
+    <symbol viewBox="0 0 24 25" id="main-city-stream-link">
+        <path d="M3.77 6.25586L2 8.02586L12 18.0259L22 8.02586L20.23 6.25586L12 14.4859L3.77 6.25586Z" />
+    </symbol>
+
 </svg>
