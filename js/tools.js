@@ -3780,6 +3780,10 @@ function updateTimer() {
     );
 
     setTimeout(updateTimer, 1000);
+    if (timerDays == 0 && timerHours == 0 && timerMinutes == 0 && timerLeft == 0) {
+        $('.main-city-timer').remove();
+        $('.main-city-stream').addClass('visible open');
+    }
 }
 
 function getNumberText(number, title1, title2, title3) {
