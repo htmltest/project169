@@ -2903,12 +2903,16 @@ $(document).ready(function() {
         });
 
         newHTML = '';
+        var activeIndex = 0;
         for (var i = 0; i < programm22Data.weeks.length; i++) {
             var curItem = programm22Data.weeks[i];
+            if (typeof(curItem.isActive) != 'undefined' && curItem.isActive) {
+                activeIndex = i;
+            }
             newHTML += '<a href="#" class="program-22-ctrl-date" data-id="' + curItem.id + '"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#program-22-ctrl-date"></use></svg>' + curItem.title + '</a>';
         }
         $('.program-22-ctrl-dates').html(newHTML);
-        $('.program-22-ctrl-dates .program-22-ctrl-date').eq(0).addClass('active');
+        $('.program-22-ctrl-dates .program-22-ctrl-date').eq(activeIndex).addClass('active');
 
         newHTML = '<ul>';
         for (var i = 0; i < programm22Data.sections.length; i++) {
