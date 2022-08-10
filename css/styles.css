@@ -8362,46 +8362,28 @@ footer {margin:60px 0 0 0}
 .window-hint-scheme.to-right .window-hint-scheme-inner::before {left:auto; right:25px}
 .window-hint-scheme-inner span {font-weight:bold}
 
-.main-block-scheme .main-header {overflow:hidden}
-.main-block-scheme .main-header h2 {font-size:72px; line-height:94px; max-width:calc(100% - 300px); background:url(../images/scheme-title.jpg) no-repeat center; background-size:cover; -webkit-background-clip:text; webkit-background-clip:text; -webkit-text-fill-color:transparent}
-.main-block-scheme .main-header-link {margin:24px 0 0 0}
 .main-block-scheme .main-header-link .btn svg {width:24px; height:24px; fill:#000000; stroke:none; transition:fill 0.2s}
 .main-block-scheme .main-header-link .btn:hover svg {fill:#ffffff}
-.main-scheme-img {font-size:0; line-height:0; letter-spacing:-1px; margin:-60px 0 0 0; position:relative}
+.main-scheme-img {font-size:0; line-height:0; letter-spacing:-1px; margin:30px -60px 0 -60px; position:relative}
 .main-scheme-img img {display:block; width:100%}
-.main-scheme-img-left {display:inline-block; vertical-align:bottom; width:34.39%; padding:0 17px 0 0}
-.main-scheme-img-right {display:inline-block; vertical-align:bottom; width:65.61%; padding:0 0 0 17px}
+.main-scheme-img-left {display:inline-block; vertical-align:bottom; width:34.84%; padding:0 13px 0 0}
+.main-scheme-img-right {display:inline-block; vertical-align:bottom; width:65.16%; padding:0 0 0 13px}
 
-@media screen and (min-width:1500px) {
-    .main-block-scheme .main-header h2 {font-size:90px; line-height:117px; max-width:calc(100% - 400px)}
-    .main-block-scheme .main-header-link {margin:32px 0 0 0}
+@media screen and (min-width:1800px) {
     .main-block-scheme .main-header-link .btn svg {width:30px; height:30px}
-    .main-scheme-img {margin:-76px 0 0 0}
-    .main-scheme-img-left {padding:0 10px 0 0}
-    .main-scheme-img-right {padding:0 0 0 10px}
+    .main-scheme-img {margin:60px -130px 0 -130px}
+    .main-scheme-img-left {padding:0 20px 0 0}
+    .main-scheme-img-right {padding:0 0 0 20px}
 }
 
-@media screen and (max-width:1110px) {
-    .main-block-scheme .main-header h2 {font-size:42px; line-height:55px; max-width:50%}
-    .main-scheme-img {margin:-30px 0 0 0}
-    .main-scheme-img-left {padding:0 7px 0 0}
-    .main-scheme-img-right {padding:0 0 0 7px}
-}
-
-@media screen and (max-width:1024px) {
-    .main-block-scheme .main-header h2 {max-width:calc(100% - 350px)}
-}
-
-@media screen and (max-width:840px) {
-    .main-block-scheme .main-header h2 {max-width:320px}
-    .main-scheme-img {margin:-81px 0 0 0}
+@media screen and (max-width:1199px) {
+    .main-scheme-img {margin:40px -14px 0 -14px}
+    .main-scheme-img-left {display:none}
+    .main-scheme-img-right {display:block; width:auto; padding:0}
 }
 
 @media screen and (max-width:767px) {
-    .main-block-scheme .main-header h2 {max-width:none}
-    .main-scheme-img {margin:30px 0 0 0}
-    .main-scheme-img-left {display:none}
-    .main-scheme-img-right {padding:0; display:block; width:auto}
+    .main-scheme-img {margin:30px -20px 0 -20px}
     .main-block-scheme .main-mobile-link .btn svg {width:30px; height:30px; fill:#000000; stroke:none; transition:fill 0.2s}
     .main-block-scheme .main-mobile-link .btn:hover svg {fill:#ffffff}
 }
