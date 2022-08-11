@@ -3711,6 +3711,16 @@ $(document).ready(function() {
         $('.main-city-stream').toggleClass('open');
     });
 
+    $('.event-header-stream-link').click(function(e) {
+        var curLink = $(this);
+        var symbolSep = '&';
+        if (curLink.attr('href').indexOf('?') == -1) {
+            symbolSep = '?';
+        }
+        curLink.parent().html('<iframe width="560" height="315" src="' + curLink.attr('href') + symbolSep + 'rel=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>');
+        e.preventDefault();
+    });
+
 });
 
 function updateTimer() {

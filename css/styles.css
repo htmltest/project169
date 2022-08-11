@@ -8626,3 +8626,13 @@ footer {margin:60px 0 0 0}
     .main-city-stream-container .main-stream-22-logo {display:none}
     .main-city-stream-container .main-stream-22-link-btn a {padding-left:5px; padding-right:5px}
 }
+
+.event-header-stream {margin:0 0 30px 0; background:#000000; padding:27px 27px 19px 27px}
+.event-header-stream-video {position:relative; padding:57.44% 0 0 0}
+.event-header-stream-link {display:block; position:absolute; left:0; top:0; right:0; bottom:0}
+.event-header-stream-link-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover; opacity:0.5}
+.event-header-stream-link-icon {position:absolute; left:50%; top:50%; width:85px; height:85px; background:rgba(255, 255, 255, 0.6); border-radius:50%; transform:translate(-50%, -50%); transition:background 0.2s}
+.event-header-stream-link:hover .event-header-stream-link-icon {background:#FFFFFF}
+.event-header-stream-link-icon svg {display:block; width:85px; height:85px; fill:#000000}
+.event-header-stream-video iframe {display:block; position:absolute; left:0; top:0; width:100%; height:100%}
+.event-header-stream-title {margin:10px 0 0 0; color:#FFFFFF}
