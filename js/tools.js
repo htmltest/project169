@@ -2948,6 +2948,25 @@ $(document).ready(function() {
         axis: 'x',
         scrollButtons: {
             enable: true
+        },
+        callbacks: {
+            onInit: function() {
+                $('.program-22-container').addClass('with-right');
+            },
+            whileScrolling: function() {
+                if (this.mcs.leftPct == 100) {
+                    $('.program-22-container').removeClass('with-right');
+                } else {
+                    $('.program-22-container').addClass('with-right');
+                }
+
+                if (this.mcs.leftPct == 0) {
+                    $('.program-22-container').removeClass('with-left');
+                } else {
+                    $('.program-22-container').addClass('with-left');
+
+                }
+            }
         }
     });
 
@@ -3051,7 +3070,13 @@ function updateProgram22() {
                 newHTML += '<div class="program-22-week-number">' + $('.program-22-container').attr('data-mobileweektext') + ' ' + (w + 1) + '</div>';
                 for (var i = 0; i < curWeek[w].days.length; i++) {
                     var curDay = curWeek[w].days[i];
-                    newHTML += '<div class="program-22-day"><div class="program-22-day-title"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#program-22-day-title"></use></svg><div class="program-22-day-date">' + curDay.title + '</div><div class="program-22-day-name">' + curDay.name + '</div></div>';
+                    var classToday = '';
+                    var todayTitle = '';
+                    if (typeof(curDay.today) != 'undefined') {
+                        classToday = ' today';
+                        todayTitle = '<div class="program-22-day-title-today">' + curDay.today + '</div>';
+                    }
+                    newHTML += '<div class="program-22-day' + classToday + '"><div class="program-22-day-title"><div class="program-22-day-title-inner">' + todayTitle + '<svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#program-22-day-title"></use></svg><div class="program-22-day-date">' + curDay.title + '</div><div class="program-22-day-name">' + curDay.name + '</div></div></div>';
                     for (var j = 0; j < programm22Data.events.length; j++) {
                         var curEvent = programm22Data.events[j];
                         if (curEvent.date == curDay.date) {
