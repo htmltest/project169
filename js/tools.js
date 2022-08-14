@@ -2966,6 +2966,7 @@ $(document).ready(function() {
                     $('.program-22-container').addClass('with-left');
 
                 }
+                $('.program-22-more').css({'margin-left': -this.mcs.left});
             }
         }
     });
@@ -3044,6 +3045,12 @@ $(document).ready(function() {
 
     $('.program-22-schedule-close').click(function(e) {
         $('.program-22-schedule').fadeOut();
+        e.preventDefault();
+    });
+
+    $('.program-22-more a').click(function(e) {
+        $('.program-22-container-short').toggleClass('open');
+        $('.program-22-more a').toggleClass('open');
         e.preventDefault();
     });
 
@@ -3306,12 +3313,15 @@ function updateProgram22Count() {
         }
 
         $('.program-22-day-date span').remove();
+        $('.program-22-day').removeClass('empty');
         if ($('.programm-filter-window-checkboxes-speakers .form-checkbox input:checked').length > 0 || $('.programm-filter-window-checkboxes-types .form-checkbox input:checked').length > 0 || $('.program-22-sections-mobile ul li.active a').attr('data-id') != '') {
             $('.program-22-day').each(function() {
                 var curDay = $(this);
                 var curCount = curDay.find('.program-22-event:not(.disabled)').length;
                 if (curCount > 0) {
                     curDay.find('.program-22-day-date').append('<span>' + curCount + '</span>');
+                } else {
+                    curDay.addClass('empty');
                 }
             });
         }

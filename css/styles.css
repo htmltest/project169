@@ -7638,10 +7638,10 @@ footer {margin:60px 0 0 0}
     .program-22-sections {display:none}
 }
 
-.program-22-container {margin:0 -20px 0 -20px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden}
-.program-22-container.with-right::after {content:""; display:block; width:178px; top:0; bottom:0; position:absolute; right:0; z-index:2; background:linear-gradient(-90deg, #FFFFFF 28.72%, rgba(255, 255, 255, 0) 100%); pointer-events:none}
-.program-22-container.with-left::before {content:""; display:block; width:178px; top:0; bottom:0; position:absolute; left:0; z-index:2; background:linear-gradient(90deg, #FFFFFF 28.72%, rgba(255, 255, 255, 0) 100%); pointer-events:none}
-.program-22-content {display:inline-block; vertical-align:top; position:relative; padding:20px 20px 0 20px}
+.program-22-container {margin:0 -60px 0 -60px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden}
+.program-22-container.with-right::after {content:""; display:block; width:60px; top:0; bottom:0; position:absolute; right:0; z-index:2; background:linear-gradient(-90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%); pointer-events:none}
+.program-22-container.with-left::before {content:""; display:block; width:60px; top:0; bottom:0; position:absolute; left:0; z-index:2; background:linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%); pointer-events:none}
+.program-22-content {display:inline-block; vertical-align:top; position:relative; padding:20px 60px 0 60px}
 .program-22-day {display:inline-block; vertical-align:top; width:177px; margin:0 0 0 20px; white-space:normal}
 .program-22-day:first-child,
 .program-22-week-number:first-child+.program-22-day {margin:0}
@@ -7667,26 +7667,50 @@ footer {margin:60px 0 0 0}
 .program-22-event-photo img {display:block; width:100%}
 .program-22-day-close {display:none}
 .program-22-week-number {display:none}
+.program-22-container-short .program-22-content {position:relative; overflow:hidden; max-height:600px; margin-bottom:80px; padding-bottom:20px !important}
+.program-22-container-short.open .program-22-content {max-height:none}
+.program-22-container-short .program-22-content::after {content:""; display:block; position:absolute; left:0; bottom:0; right:0; height:100px; background:linear-gradient(360deg, #FFFFFF 28.72%, rgba(255, 255, 255, 0) 100%)}
+.program-22-container-short.open .program-22-content::after {display:none}
+.program-22-more {position:absolute; left:60px; bottom:0; width:calc(100vw - 120px)}
+.program-22-more a {display:block; height:44px; background:#F4F4F4; text-align:center; text-decoration:none; color:#717171; font-weight:500; font-size:14px; line-height:44px; text-transform:uppercase; letter-spacing:0.05em; transition:color 0.2s, background 0.2s}
+.program-22-more a:hover {color:#FFFFFF; background:#000000}
+.program-22-more a span+span {display:none}
+.program-22-more a.open span {display:none}
+.program-22-more a.open span+span {display:inline}
+.program-22-more a svg {display:inline-block; vertical-align:middle; width:24px; height:24px; margin:-2px 10px 0 10px; fill:#717171; transition:fill 0.2s; transition:transform 0.2s}
+.program-22-more a.open svg {transform:rotate(-180deg)}
+.program-22-more a:hover svg {fill:#FFFFFF}
 
 @media screen and (min-width:1800px) {
-    .program-22-container {margin-top:10px}
+    .program-22-container {margin:10px -130px 0 -130px}
+    .program-22-container.with-right::after,
+    .program-22-container.with-left::before {width:130px}
+    .program-22-content {padding:20px 130px 0 130px}
     .program-22-day {width:190px; margin:0 0 0 40px}
     .program-22-day:first-child,
     .program-22-week-number:first-child+.program-22-day {margin:0}
+    .program-22-more {left:130px; width:calc(100vw - 260px)}
 }
 
 @media screen and (max-width:1199px) {
-    .program-22-container {margin-top:0}
+    .program-22-container {margin:0 -14px}
+    .program-22-container.with-right::after,
+    .program-22-container.with-left::before {width:14px}
+    .program-22-content {padding:20px 14px 0 14px}
     .program-22-day {width:233px; margin:0 0 0 20px}
     .program-22-day:first-child,
     .program-22-week-number:first-child+.program-22-day {margin:0}
+    .program-22-more {left:14px; width:calc(100vw - 28px)}
 }
 
 @media screen and (max-width:767px) {
     .program-22-container {margin:30px 0 0 0; overflow:visible; white-space:normal}
+    .program-22-container.with-right::after,
+    .program-22-container.with-left::before {display:none}
     .program-22-content {display:block; padding:0; border-bottom:1px solid #f7f7f7}
     .program-22-day {display:block; width:auto; margin:0; border-top:1px solid #f7f7f7; position:relative}
     .program-22-day-title {position:relative; cursor:pointer; padding:20px 0}
+    .program-22-day.empty .program-22-day-title {opacity:0.5}
     .program-22-day-title-inner {display:block}
     .program-22-day.today .program-22-day-title-inner::before {display:none}
     .program-22-day-title-today {left:auto; top:50%; right:0; transform:translateY(-50%)}
@@ -7699,7 +7723,8 @@ footer {margin:60px 0 0 0}
     .program-22-event::before {display:none}
     .program-22-event.disabled {opacity:0}
     .program-22-day.open .program-22-event {position:relative; left:auto; top:auto; opacity:1}
-    .program-22-day.open .program-22-event.disabled {opacity:0.25}
+    .program-22-day.empty.open .program-22-event {position:absolute; left:-9999px; top:-9999px}
+    .program-22-day.open .program-22-event.disabled {position:absolute; left:-9999px; top:-9999px}
     .program-22-day-title+.program-22-event {border-top:none; margin:0; padding:0}
     .program-22-event-time {margin:0}
     .program-22-event-params {margin:10px 0 0 0}
@@ -7716,6 +7741,9 @@ footer {margin:60px 0 0 0}
     .program-22-day-close a span {border-bottom:1px dashed #4849A6}
     .program-22-week-number {display:block; font-size:12px; height:12px; font-weight:500; text-transform:uppercase; letter-spacing:0.1em; color:#000000; padding:40px 0 20px 0; border-top:1px solid #f7f7f7}
     .program-22-week-number:first-child {padding-top:20px; border-top:none}
+    .program-22-container-short .program-22-content {max-height:none; margin-bottom:0; padding-bottom:0 !important}
+    .program-22-container-short .program-22-content::after {display:none}
+    .program-22-more {width:0; display:none}
 }
 
 .program-22-container .mCSB_horizontal.mCSB_inside > .mCSB_container {margin-bottom:49px}
