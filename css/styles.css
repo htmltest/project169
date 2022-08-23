@@ -7641,7 +7641,7 @@ footer {margin:60px 0 0 0}
 .program-22-container {margin:0 -60px 0 -60px; font-size:0; line-height:0; letter-spacing:-1px; white-space:nowrap; position:relative; overflow:hidden}
 .program-22-container.with-right::after {content:""; display:block; width:60px; top:0; bottom:0; position:absolute; right:0; z-index:2; background:linear-gradient(-90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%); pointer-events:none}
 .program-22-container.with-left::before {content:""; display:block; width:60px; top:0; bottom:0; position:absolute; left:0; z-index:2; background:linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%); pointer-events:none}
-.program-22-content {display:inline-block; vertical-align:top; position:relative; padding:20px 60px 0 60px}
+.program-22-content {display:inline-block; vertical-align:top; position:relative; padding:30px 60px 0 60px}
 .program-22-day {display:inline-block; vertical-align:top; width:177px; margin:0 0 0 20px; white-space:normal}
 .program-22-day:first-child,
 .program-22-week-number:first-child+.program-22-day {margin:0}
@@ -7673,13 +7673,13 @@ footer {margin:60px 0 0 0}
 .program-22-container-short.open .program-22-content::after {display:none}
 .program-22-more {position:absolute; left:60px; bottom:0; width:calc(100vw - 120px)}
 .program-22-more a {display:block; height:44px; background:#F4F4F4; text-align:center; text-decoration:none; color:#717171; font-weight:500; font-size:14px; line-height:44px; text-transform:uppercase; letter-spacing:0.05em; transition:color 0.2s, background 0.2s}
-.program-22-more a:hover {color:#FFFFFF; background:#000000}
+.program-22-more a:hover {color:#000000}
 .program-22-more a span+span {display:none}
 .program-22-more a.open span {display:none}
 .program-22-more a.open span+span {display:inline}
 .program-22-more a svg {display:inline-block; vertical-align:middle; width:24px; height:24px; margin:-2px 10px 0 10px; fill:#717171; transition:fill 0.2s; transition:transform 0.2s}
 .program-22-more a.open svg {transform:rotate(-180deg)}
-.program-22-more a:hover svg {fill:#FFFFFF}
+.program-22-more a:hover svg {fill:#000000}
 
 @media screen and (min-width:1800px) {
     .program-22-container {margin:10px -130px 0 -130px}
@@ -7696,7 +7696,7 @@ footer {margin:60px 0 0 0}
     .program-22-container {margin:0 -14px}
     .program-22-container.with-right::after,
     .program-22-container.with-left::before {width:14px}
-    .program-22-content {padding:20px 14px 0 14px}
+    .program-22-content {padding:30px 14px 0 14px}
     .program-22-day {width:233px; margin:0 0 0 20px}
     .program-22-day:first-child,
     .program-22-week-number:first-child+.program-22-day {margin:0}
