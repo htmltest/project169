@@ -8717,3 +8717,85 @@ footer {margin:60px 0 0 0}
 .event-header-stream-link-icon svg {display:block; width:85px; height:85px; fill:#000000}
 .event-header-stream-video iframe {display:block; position:absolute; left:0; top:0; width:100%; height:100%}
 .event-header-stream-title {margin:10px 0 0 0; color:#FFFFFF}
+
+.welcome-slider-city-23 .welcome-slider-item-bg {background:url(../images/main-slider-city-23.jpg) no-repeat right bottom; background-size:auto 100%}
+.welcome-slider-city-23 .welcome-slider-item-bg::before {background:#000000; opacity:1; bottom:0; height:80px}
+.welcome-slider-city-23 .welcome-slider-item-bg::after {background:linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0.7) 49.79%, rgba(0, 0, 0, 0) 100%); height:auto; bottom:0; opacity:1}
+.welcome-slider-city-23 .welcome-slider-item-subtitle {font-weight:300; font-size:30px; line-height:39px; color:#FFFFFF; padding:30px 60px 0 60px; text-transform:uppercase; letter-spacing:0}
+.welcome-slider-city-23 .welcome-slider-item-date {color:#818382}
+
+@media screen and (min-width:1800px) {
+    .welcome-slider-city-23 .welcome-slider-item-bg::before {height:110px}
+    .welcome-slider-city-23 .welcome-slider-item-subtitle {font-size:48px; line-height:62px; padding:20px 60px 0 60px}
+}
+
+@media screen and (max-width:1199px) {
+    .welcome-slider-city-23 .welcome-slider-item-subtitle {font-size:24px; line-height:36px; padding:20px 46px 0 46px}
+}
+
+@media screen and (max-width:767px) {
+    .welcome-slider-city-23 .welcome-slider-item-subtitle {font-size:18px; line-height:27px; padding:10px 0 0 0}
+}
+
+.archive-digits-23 {margin:66px 0 0 -56px; width:calc(100% + 56px); white-space:nowrap}
+.archive-digits-23 .archive-digit {padding:0 56px}
+.archive-digits-23 .archive-digit:nth-child(1) {width:auto}
+.archive-digits-23 .archive-digit:nth-child(2) {width:auto}
+.archive-digits-23 .archive-digit:nth-child(3) {width:auto}
+.archive-digits-23 .archive-digit:nth-child(4) {width:auto}
+.archive-digits-23 .archive-digit:nth-child(5) {width:auto}
+.archive-digits-23 .archive-digit-value {font-size:50px; line-height:65px}
+.archive-digits-23 .archive-digit-pre {left:56px}
+
+@media screen and (min-width:1800px) {
+    .archive-digits-23 .archive-digit-value {font-size:64px; line-height:83px}
+}
+@media screen and (max-width:1199px) {
+    .archive-digits-23 {margin:47px 0 0 -30px; width:calc(100% + 30px)}
+    .archive-digits-23 .archive-digit {padding:0 20px 0 30px}
+    .archive-digits-23 .archive-digit-value {font-size:34px; line-height:44px}
+    .archive-digits-23 .archive-digit-pre {left:30px}
+}
+
+@media screen and (max-width:767px) {
+    .archive-digits-23 {margin:3px 0 0 0; width:auto; white-space:normal}
+    .archive-digits-23 .archive-digit {padding:37px 0 0 0; width:50%}
+    .archive-digits-23 .archive-digit:nth-child(1) {width:50%}
+    .archive-digits-23 .archive-digit:nth-child(2) {width:50%}
+    .archive-digits-23 .archive-digit:nth-child(3) {width:50%}
+    .archive-digits-23 .archive-digit:nth-child(4) {width:50%}
+    .archive-digits-23 .archive-digit:nth-child(5) {width:50%}
+    .archive-digits-23 .archive-digit-value {font-size:40px; line-height:52px}
+    .archive-digits-23 .archive-digit-pre {left:0}
+}
+
+@media screen and (max-width:479px) {
+    .archive-digits-23 .archive-digit {display:block; width:auto}
+    .archive-digits-23 .archive-digit:nth-child(1) {width:auto}
+    .archive-digits-23 .archive-digit:nth-child(2) {width:auto}
+    .archive-digits-23 .archive-digit:nth-child(3) {width:auto}
+    .archive-digits-23 .archive-digit:nth-child(4) {width:auto}
+    .archive-digits-23 .archive-digit:nth-child(5) {width:auto}
+}
+
+.archive-card-fest-23 .archive-card-fest-photos {margin:40px 0 0 0}
+.archive-card-fest-23 .archive-card-fest-photos+.archive-card-fest-photos {margin:20px 0 0 0}
+.archive-card-fest-23 .archive-card-fest-text h4 {font-size:22px; font-weight:500}
+
+@media screen and (min-width:1800px) {
+    .archive-card-fest-23 .archive-card-fest-text h4 {font-size:30px; line-height:45px; font-weight:500}
+}
+
+@media screen and (max-width:1199px) {
+    .archive-card-fest-23 .archive-card-fest-text {margin:40px 0 0 0}
+    .archive-card-fest-23 .archive-card-fest-text h4 {font-size:24px; line-height:36px; font-weight:500; margin:20px 0 0 0}
+    .archive-card-fest-23 .archive-card-fest-text p {margin:20px 0}
+    .archive-card-fest-23 .archive-card-fest-photos {padding:0 0 0 20px; margin:0}
+    .archive-card-fest-23 .archive-card-fest-photos+.archive-card-fest-photos {margin:0}
+}
+
+@media screen and (max-width:767px) {
+    .archive-card-fest-23 {margin:80px 0 0 0; display:block}
+    .archive-card-fest-23 .archive-card-fest-photos {padding:20px 0 0 0}
+    .archive-card-fest-23 .archive-card-fest-photos .btn {text-align:left}
+}
