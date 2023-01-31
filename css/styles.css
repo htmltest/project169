@@ -2104,6 +2104,7 @@ a.partners-group-global-logo-inner:hover {top:-5px}
 .archive-card-about-link:first-child {margin:0}
 .btn-icon-programm {width:24px; height:24px}
 .btn-icon-image {width:24px; height:24px}
+.btn-icon-map {width:24px; height:24px; fill:none; stroke:#1C1B1F}
 
 .archive-card-about-online-title {max-width:472px}
 .archive-card-about-online-subtitle {max-width:406px; margin:14px 0 0 0; font-size:22px; line-height:29px}
@@ -8808,4 +8809,14 @@ footer {margin:60px 0 0 0}
     .archive-card-fest-23 {margin:80px 0 0 0; display:block}
     .archive-card-fest-23 .archive-card-fest-photos {padding:20px 0 0 0}
     .archive-card-fest-23 .archive-card-fest-photos .btn {text-align:left}
+}
+
+.btn-photobank-icon {display:inline-block; vertical-align:middle; width:24px; height:24px; fill:none; stroke:#25282B; margin:-2px 6px 0 0}
+
+@media screen and (min-width:1800px) {
+    .btn-photobank-icon {width:30px; height:30px}
+}
+
+@media screen and (max-width:767px) {
+    .btn-photobank-icon {width:30px; height:30px}
 }
